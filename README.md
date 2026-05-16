@@ -2,7 +2,7 @@
 
 **🟢 Live Demo:** [qr.genzfrontir.com](https://qr.genzfrontir.com)  
 **Owner:** Sayad Md Bayezid Hosan ([www.sayadbayezid.com](https://www.sayadbayezid.com))
-
+![(https://commons.wikimedia.org/wiki/File:Sayad_Md_Bayezid_Hosan_Portrait.jpg)
 ![SmartGen Logo](https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/smartgen-logo.png) SmartGen is a comprehensive, client-side web utility platform designed to provide developers, marketers, and everyday users with a suite of fast, secure, and 100% free tools. From QR code generation to advanced SEO utilities and text manipulation, SmartGen aims to be your go-to resource for essential digital tasks, all accessible directly in your browser without any server-side processing.
 
 ## ✨ Features

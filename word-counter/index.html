@@ -7,6 +7,39 @@
     <meta name="description" content="Count words, characters, and estimate reading time for your content.">
     <link rel="stylesheet" href="../assets/css/style.css">
     <script src="../assets/js/app.js" defer></script>
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Are my texts saved?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No, all counting happens locally in your browser. Your text is never sent to our servers."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What is the character limit for Twitter?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Twitter currently has a 280-character limit for most users."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How many words should a blog post be?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "For SEO purposes, many experts recommend at least 1,000 to 1,500 words for deep-dive articles."
+            }
+        }
+    ]
+}
+    </script>
 </head>
 <body>
     <header id="main-header"></header>
@@ -47,15 +80,38 @@
                 <li>Character count (with and without spaces)</li>
                 <li>Accurate reading time estimation</li>
             </ul>
-            <h2>FAQs</h2>
-            <h3>Are my texts saved?</h3>
-            <p>No, all counting happens locally in your browser. Your text is never sent to our servers.</p>
-            <h3>What is the character limit for Twitter?</h3>
-            <p>Twitter currently has a 280-character limit for most users.</p>
-            <h3>How many words should a blog post be?</h3>
-            <p>For SEO purposes, many experts recommend at least 1,000 to 1,500 words for deep-dive articles.</p>
-        </section>
-    </main>
+            <section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-container">
+        <div class="accordion-item">
+            <button class="accordion-header">
+                <span>Are my texts saved?</span>
+                <div class="accordion-icon"></div>
+            </button>
+            <div class="accordion-content">
+                <p>No, all counting happens locally in your browser. Your text is never sent to our servers.</p>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <button class="accordion-header">
+                <span>What is the character limit for Twitter?</span>
+                <div class="accordion-icon"></div>
+            </button>
+            <div class="accordion-content">
+                <p>Twitter currently has a 280-character limit for most users.</p>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <button class="accordion-header">
+                <span>How many words should a blog post be?</span>
+                <div class="accordion-icon"></div>
+            </button>
+            <div class="accordion-content">
+                <p>For SEO purposes, many experts recommend at least 1,000 to 1,500 words for deep-dive articles.</p>
+            </div>
+        </div>
+    </div>
+</section></main>
     <footer id="main-footer"></footer>
     <script>
         function count() {

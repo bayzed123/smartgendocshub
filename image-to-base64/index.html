@@ -7,6 +7,39 @@
     <meta name="description" content="Convert images to Base64 strings for use in HTML, CSS, and JSON.">
     <link rel="stylesheet" href="../assets/css/style.css">
     <script src="../assets/js/app.js" defer></script>
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Are my images uploaded to a server?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No, the conversion happens entirely within your web browser. Your images are never uploaded or stored on our servers."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Does Base64 increase file size?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, Base64 encoding typically increases the data size by about 33% compared to the original binary file."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How do I use the string in HTML?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "You can use it in an img tag like this: <code>&lt;img src=\"data:image/png;base64,...\"&gt;</code>."
+            }
+        }
+    ]
+}
+    </script>
 </head>
 <body>
     <header id="main-header"></header>
@@ -37,15 +70,38 @@
                 <li>Instant client-side conversion</li>
                 <li>No file size upload limits (browser dependent)</li>
             </ul>
-            <h2>FAQs</h2>
-            <h3>Are my images uploaded to a server?</h3>
-            <p>No, the conversion happens entirely within your web browser. Your images are never uploaded or stored on our servers.</p>
-            <h3>Does Base64 increase file size?</h3>
-            <p>Yes, Base64 encoding typically increases the data size by about 33% compared to the original binary file.</p>
-            <h3>How do I use the string in HTML?</h3>
-            <p>You can use it in an img tag like this: <code>&lt;img src="data:image/png;base64,..."&gt;</code>.</p>
-        </section>
-    </main>
+            <section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-container">
+        <div class="accordion-item">
+            <button class="accordion-header">
+                <span>Are my images uploaded to a server?</span>
+                <div class="accordion-icon"></div>
+            </button>
+            <div class="accordion-content">
+                <p>No, the conversion happens entirely within your web browser. Your images are never uploaded or stored on our servers.</p>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <button class="accordion-header">
+                <span>Does Base64 increase file size?</span>
+                <div class="accordion-icon"></div>
+            </button>
+            <div class="accordion-content">
+                <p>Yes, Base64 encoding typically increases the data size by about 33% compared to the original binary file.</p>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <button class="accordion-header">
+                <span>How do I use the string in HTML?</span>
+                <div class="accordion-icon"></div>
+            </button>
+            <div class="accordion-content">
+                <p>You can use it in an img tag like this: <code>&lt;img src="data:image/png;base64,..."&gt;</code>.</p>
+            </div>
+        </div>
+    </div>
+</section></main>
     <footer id="main-footer"></footer>
     <script>
         function convertI64() {

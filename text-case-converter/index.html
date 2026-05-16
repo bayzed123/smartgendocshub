@@ -7,6 +7,39 @@
     <meta name="description" content="Convert your text to UPPERCASE, lowercase, Title Case, and more instantly.">
     <link rel="stylesheet" href="../assets/css/style.css">
     <script src="../assets/js/app.js" defer></script>
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Does it handle special characters?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, special characters and numbers remain unchanged during conversion."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Is there a limit to the text size?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Our tool can handle large blocks of text, but extremely large files (several megabytes) might slow down your browser."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Is this tool free?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, it is 100% free and works entirely in your browser for maximum privacy."
+            }
+        }
+    ]
+}
+    </script>
 </head>
 <body>
     <header id="main-header"></header>
@@ -39,15 +72,38 @@
                 <li>Multiple format support</li>
                 <li>One-click copy functionality</li>
             </ul>
-            <h2>FAQs</h2>
-            <h3>Does it handle special characters?</h3>
-            <p>Yes, special characters and numbers remain unchanged during conversion.</p>
-            <h3>Is there a limit to the text size?</h3>
-            <p>Our tool can handle large blocks of text, but extremely large files (several megabytes) might slow down your browser.</p>
-            <h3>Is this tool free?</h3>
-            <p>Yes, it is 100% free and works entirely in your browser for maximum privacy.</p>
-        </section>
-    </main>
+            <section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-container">
+        <div class="accordion-item">
+            <button class="accordion-header">
+                <span>Does it handle special characters?</span>
+                <div class="accordion-icon"></div>
+            </button>
+            <div class="accordion-content">
+                <p>Yes, special characters and numbers remain unchanged during conversion.</p>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <button class="accordion-header">
+                <span>Is there a limit to the text size?</span>
+                <div class="accordion-icon"></div>
+            </button>
+            <div class="accordion-content">
+                <p>Our tool can handle large blocks of text, but extremely large files (several megabytes) might slow down your browser.</p>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <button class="accordion-header">
+                <span>Is this tool free?</span>
+                <div class="accordion-icon"></div>
+            </button>
+            <div class="accordion-content">
+                <p>Yes, it is 100% free and works entirely in your browser for maximum privacy.</p>
+            </div>
+        </div>
+    </div>
+</section></main>
     <footer id="main-footer"></footer>
     <script>
         function convert(type) {

@@ -223,3 +223,81 @@ footer {
     color: #94a3b8;
     font-size: 0.9rem;
 }
+
+/* Accordion Styles */
+.faq-section {
+    margin-top: 3rem;
+}
+
+.faq-container {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.accordion-item {
+    border-bottom: 1px solid var(--border);
+}
+
+.accordion-header {
+    width: 100%;
+    padding: 1.25rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.accordion-header:hover {
+    color: var(--primary);
+}
+
+.accordion-icon {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.accordion-icon::before,
+.accordion-icon::after {
+    content: '';
+    position: absolute;
+    background-color: currentColor;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.accordion-icon::before {
+    width: 12px;
+    height: 2px;
+}
+
+.accordion-icon::after {
+    width: 2px;
+    height: 12px;
+}
+
+.accordion-item.active .accordion-icon {
+    transform: rotate(45deg);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease;
+    color: var(--text-secondary);
+}
+
+.accordion-item.active .accordion-content {
+    max-height: 500px; /* Adjust based on content */
+    padding-bottom: 1.25rem;
+}

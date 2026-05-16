@@ -7,6 +7,39 @@
     <meta name="description" content="Calculate your exact age or the time between two dates instantly.">
     <link rel="stylesheet" href="../assets/css/style.css">
     <script src="../assets/js/app.js" defer></script>
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Is my birth date private?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, the calculation is done entirely in your browser. We do not store or transmit your personal dates."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can I calculate future dates?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "This tool is optimized for calculating age from the past to the present."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Does it handle leap years?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, our JavaScript-based logic correctly handles the extra day in February during leap years."
+            }
+        }
+    ]
+}
+    </script>
 </head>
 <body>
     <header id="main-header"></header>
@@ -35,15 +68,38 @@
                 <li>Real-time calculation</li>
                 <li>Clean, easy-to-read interface</li>
             </ul>
-            <h2>FAQs</h2>
-            <h3>Is my birth date private?</h3>
-            <p>Yes, the calculation is done entirely in your browser. We do not store or transmit your personal dates.</p>
-            <h3>Can I calculate future dates?</h3>
-            <p>This tool is optimized for calculating age from the past to the present.</p>
-            <h3>Does it handle leap years?</h3>
-            <p>Yes, our JavaScript-based logic correctly handles the extra day in February during leap years.</p>
-        </section>
-    </main>
+            <section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-container">
+        <div class="accordion-item">
+            <button class="accordion-header">
+                <span>Is my birth date private?</span>
+                <div class="accordion-icon"></div>
+            </button>
+            <div class="accordion-content">
+                <p>Yes, the calculation is done entirely in your browser. We do not store or transmit your personal dates.</p>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <button class="accordion-header">
+                <span>Can I calculate future dates?</span>
+                <div class="accordion-icon"></div>
+            </button>
+            <div class="accordion-content">
+                <p>This tool is optimized for calculating age from the past to the present.</p>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <button class="accordion-header">
+                <span>Does it handle leap years?</span>
+                <div class="accordion-icon"></div>
+            </button>
+            <div class="accordion-content">
+                <p>Yes, our JavaScript-based logic correctly handles the extra day in February during leap years.</p>
+            </div>
+        </div>
+    </div>
+</section></main>
     <footer id="main-footer"></footer>
     <script>
         function calcAge() {

@@ -7,6 +7,39 @@
     <meta name="description" content="Generate tracking links for your marketing campaigns with our UTM builder.">
     <link rel="stylesheet" href="../assets/css/style.css">
     <script src="../assets/js/app.js" defer></script>
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "What is UTM Source?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Source identifies the platform where the traffic originates, like 'google' or 'facebook'."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Are UTM links case-sensitive?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, 'Email' and 'email' will show up as different sources in your analytics."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can I use spaces in UTM tags?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "It's best to use underscores (_) or hyphens (-) instead of spaces to avoid encoding issues."
+            }
+        }
+    ]
+}
+    </script>
 </head>
 <body>
     <header id="main-header"></header>
@@ -49,15 +82,38 @@
                 <li>Standardized parameter formatting</li>
                 <li>One-click copy</li>
             </ul>
-            <h2>FAQs</h2>
-            <h3>What is UTM Source?</h3>
-            <p>Source identifies the platform where the traffic originates, like 'google' or 'facebook'.</p>
-            <h3>Are UTM links case-sensitive?</h3>
-            <p>Yes, 'Email' and 'email' will show up as different sources in your analytics.</p>
-            <h3>Can I use spaces in UTM tags?</h3>
-            <p>It's best to use underscores (_) or hyphens (-) instead of spaces to avoid encoding issues.</p>
-        </section>
-    </main>
+            <section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-container">
+        <div class="accordion-item">
+            <button class="accordion-header">
+                <span>What is UTM Source?</span>
+                <div class="accordion-icon"></div>
+            </button>
+            <div class="accordion-content">
+                <p>Source identifies the platform where the traffic originates, like 'google' or 'facebook'.</p>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <button class="accordion-header">
+                <span>Are UTM links case-sensitive?</span>
+                <div class="accordion-icon"></div>
+            </button>
+            <div class="accordion-content">
+                <p>Yes, 'Email' and 'email' will show up as different sources in your analytics.</p>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <button class="accordion-header">
+                <span>Can I use spaces in UTM tags?</span>
+                <div class="accordion-icon"></div>
+            </button>
+            <div class="accordion-content">
+                <p>It's best to use underscores (_) or hyphens (-) instead of spaces to avoid encoding issues.</p>
+            </div>
+        </div>
+    </div>
+</section></main>
     <footer id="main-footer"></footer>
     <script>
         function buildUTM() {

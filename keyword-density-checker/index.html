@@ -7,6 +7,39 @@
     <meta name="description" content="Analyze the frequency of keywords in your text to optimize for SEO.">
     <link rel="stylesheet" href="../assets/css/style.css">
     <script src="../assets/js/app.js" defer></script>
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "What is keyword stuffing?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Keyword stuffing is the practice of loading a webpage with keywords in an attempt to manipulate a site's ranking in search results. This can lead to penalties from Google."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Does this tool handle stop words?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, our tool filters out common \"stop words\" like 'the', 'is', and 'at' to give you more meaningful results."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can I analyze a whole website?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "This tool is designed for analyzing specific blocks of text or individual articles."
+            }
+        }
+    ]
+}
+    </script>
 </head>
 <body>
     <header id="main-header"></header>
@@ -35,15 +68,38 @@
                 <li>Top keyword frequency list</li>
                 <li>Percentage-based calculations</li>
             </ul>
-            <h2>FAQs</h2>
-            <h3>What is keyword stuffing?</h3>
-            <p>Keyword stuffing is the practice of loading a webpage with keywords in an attempt to manipulate a site's ranking in search results. This can lead to penalties from Google.</p>
-            <h3>Does this tool handle stop words?</h3>
-            <p>Yes, our tool filters out common "stop words" like 'the', 'is', and 'at' to give you more meaningful results.</p>
-            <h3>Can I analyze a whole website?</h3>
-            <p>This tool is designed for analyzing specific blocks of text or individual articles.</p>
-        </section>
-    </main>
+            <section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-container">
+        <div class="accordion-item">
+            <button class="accordion-header">
+                <span>What is keyword stuffing?</span>
+                <div class="accordion-icon"></div>
+            </button>
+            <div class="accordion-content">
+                <p>Keyword stuffing is the practice of loading a webpage with keywords in an attempt to manipulate a site's ranking in search results. This can lead to penalties from Google.</p>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <button class="accordion-header">
+                <span>Does this tool handle stop words?</span>
+                <div class="accordion-icon"></div>
+            </button>
+            <div class="accordion-content">
+                <p>Yes, our tool filters out common "stop words" like 'the', 'is', and 'at' to give you more meaningful results.</p>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <button class="accordion-header">
+                <span>Can I analyze a whole website?</span>
+                <div class="accordion-icon"></div>
+            </button>
+            <div class="accordion-content">
+                <p>This tool is designed for analyzing specific blocks of text or individual articles.</p>
+            </div>
+        </div>
+    </div>
+</section></main>
     <footer id="main-footer"></footer>
     <script>
         function checkDensity() {

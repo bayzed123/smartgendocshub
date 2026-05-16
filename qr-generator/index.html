@@ -8,6 +8,39 @@
     <link rel="stylesheet" href="../assets/css/style.css">
     <script src="../assets/js/app.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Are these QR codes permanent?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, the QR codes generated here are static, meaning they will work as long as the underlying data (like a URL) remains valid."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can I use these for commercial purposes?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Absolutely! All tools on SmartGen are free for both personal and commercial use."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Do you store my data?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No, our generator works entirely in your browser. We do not store any information you enter."
+            }
+        }
+    ]
+}
+    </script>
 </head>
 <body>
     <header id="main-header"></header>
@@ -45,15 +78,38 @@
                 <li>100% free and private</li>
             </ul>
 
-            <h2>Frequently Asked Questions</h2>
-            <h3>Are these QR codes permanent?</h3>
-            <p>Yes, the QR codes generated here are static, meaning they will work as long as the underlying data (like a URL) remains valid.</p>
-            <h3>Can I use these for commercial purposes?</h3>
-            <p>Absolutely! All tools on SmartGen are free for both personal and commercial use.</p>
-            <h3>Do you store my data?</h3>
-            <p>No, our generator works entirely in your browser. We do not store any information you enter.</p>
-        </section>
-    </main>
+            <section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-container">
+        <div class="accordion-item">
+            <button class="accordion-header">
+                <span>Are these QR codes permanent?</span>
+                <div class="accordion-icon"></div>
+            </button>
+            <div class="accordion-content">
+                <p>Yes, the QR codes generated here are static, meaning they will work as long as the underlying data (like a URL) remains valid.</p>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <button class="accordion-header">
+                <span>Can I use these for commercial purposes?</span>
+                <div class="accordion-icon"></div>
+            </button>
+            <div class="accordion-content">
+                <p>Absolutely! All tools on SmartGen are free for both personal and commercial use.</p>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <button class="accordion-header">
+                <span>Do you store my data?</span>
+                <div class="accordion-icon"></div>
+            </button>
+            <div class="accordion-content">
+                <p>No, our generator works entirely in your browser. We do not store any information you enter.</p>
+            </div>
+        </div>
+    </div>
+</section></main>
     <footer id="main-footer"></footer>
     <script>
         let qrcode = new QRCode(document.getElementById("qrcode"), {

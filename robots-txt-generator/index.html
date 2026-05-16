@@ -7,6 +7,39 @@
     <meta name="description" content="Create robots.txt files to guide search engine crawlers on your website.">
     <link rel="stylesheet" href="../assets/css/style.css">
     <script src="../assets/js/app.js" defer></script>
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Where should I upload this file?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Upload the robots.txt file to the root directory of your website (e.g., example.com/robots.txt)."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Does robots.txt hide pages from users?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No, it only provides instructions for automated crawlers. Users can still access the pages if they have the URL."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can I block all bots?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, by using <code>User-agent: *</code> and <code>Disallow: /</code>, but this will stop your site from appearing in search results."
+            }
+        }
+    ]
+}
+    </script>
 </head>
 <body>
     <header id="main-header"></header>
@@ -41,15 +74,38 @@
                 <li>Sitemap integration</li>
                 <li>Clean, readable output</li>
             </ul>
-            <h2>FAQs</h2>
-            <h3>Where should I upload this file?</h3>
-            <p>Upload the robots.txt file to the root directory of your website (e.g., example.com/robots.txt).</p>
-            <h3>Does robots.txt hide pages from users?</h3>
-            <p>No, it only provides instructions for automated crawlers. Users can still access the pages if they have the URL.</p>
-            <h3>Can I block all bots?</h3>
-            <p>Yes, by using <code>User-agent: *</code> and <code>Disallow: /</code>, but this will stop your site from appearing in search results.</p>
-        </section>
-    </main>
+            <section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-container">
+        <div class="accordion-item">
+            <button class="accordion-header">
+                <span>Where should I upload this file?</span>
+                <div class="accordion-icon"></div>
+            </button>
+            <div class="accordion-content">
+                <p>Upload the robots.txt file to the root directory of your website (e.g., example.com/robots.txt).</p>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <button class="accordion-header">
+                <span>Does robots.txt hide pages from users?</span>
+                <div class="accordion-icon"></div>
+            </button>
+            <div class="accordion-content">
+                <p>No, it only provides instructions for automated crawlers. Users can still access the pages if they have the URL.</p>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <button class="accordion-header">
+                <span>Can I block all bots?</span>
+                <div class="accordion-icon"></div>
+            </button>
+            <div class="accordion-content">
+                <p>Yes, by using <code>User-agent: *</code> and <code>Disallow: /</code>, but this will stop your site from appearing in search results.</p>
+            </div>
+        </div>
+    </div>
+</section></main>
     <footer id="main-footer"></footer>
     <script>
         function buildRobots() {

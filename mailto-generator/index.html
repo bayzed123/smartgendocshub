@@ -7,6 +7,39 @@
     <meta name="description" content="Generate professional email links with subject and body pre-filled.">
     <link rel="stylesheet" href="../assets/css/style.css">
     <script src="../assets/js/app.js" defer></script>
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Does this work on all devices?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, it works on any device that has an email client configured (like Outlook, Apple Mail, or Gmail)."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can I add CC or BCC?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "This version focuses on the primary recipient for simplicity, which is the most common use case."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Is it safe from spammers?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "While mailto links are convenient, they are visible to web scrapers. We recommend using them for public contact addresses."
+            }
+        }
+    ]
+}
+    </script>
 </head>
 <body>
     <header id="main-header"></header>
@@ -45,15 +78,38 @@
                 <li>Support for subject and body</li>
                 <li>Instant HTML code generation</li>
             </ul>
-            <h2>FAQs</h2>
-            <h3>Does this work on all devices?</h3>
-            <p>Yes, it works on any device that has an email client configured (like Outlook, Apple Mail, or Gmail).</p>
-            <h3>Can I add CC or BCC?</h3>
-            <p>This version focuses on the primary recipient for simplicity, which is the most common use case.</p>
-            <h3>Is it safe from spammers?</h3>
-            <p>While mailto links are convenient, they are visible to web scrapers. We recommend using them for public contact addresses.</p>
-        </section>
-    </main>
+            <section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-container">
+        <div class="accordion-item">
+            <button class="accordion-header">
+                <span>Does this work on all devices?</span>
+                <div class="accordion-icon"></div>
+            </button>
+            <div class="accordion-content">
+                <p>Yes, it works on any device that has an email client configured (like Outlook, Apple Mail, or Gmail).</p>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <button class="accordion-header">
+                <span>Can I add CC or BCC?</span>
+                <div class="accordion-icon"></div>
+            </button>
+            <div class="accordion-content">
+                <p>This version focuses on the primary recipient for simplicity, which is the most common use case.</p>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <button class="accordion-header">
+                <span>Is it safe from spammers?</span>
+                <div class="accordion-icon"></div>
+            </button>
+            <div class="accordion-content">
+                <p>While mailto links are convenient, they are visible to web scrapers. We recommend using them for public contact addresses.</p>
+            </div>
+        </div>
+    </div>
+</section></main>
     <footer id="main-footer"></footer>
     <script>
         function buildMail() {

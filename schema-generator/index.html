@@ -7,6 +7,39 @@
     <meta name="description" content="Generate JSON-LD schema markup to improve your website's search engine visibility.">
     <link rel="stylesheet" href="../assets/css/style.css">
     <script src="../assets/js/app.js" defer></script>
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Where do I put this code?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "You can place the generated <code>&lt;script&gt;</code> tag in either the <code>&lt;head&gt;</code> or the <code>&lt;body&gt;</code> of your HTML."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Does schema improve rankings?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "While not a direct ranking factor, it helps search engines understand your content better, which can lead to rich snippets and higher click-through rates."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Is this tool free?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, like all SmartGen tools, the Schema Generator is completely free to use."
+            }
+        }
+    ]
+}
+    </script>
 </head>
 <body>
     <header id="main-header"></header>
@@ -45,15 +78,38 @@
                 <li>Organization-type support</li>
                 <li>Instant code generation</li>
             </ul>
-            <h2>FAQs</h2>
-            <h3>Where do I put this code?</h3>
-            <p>You can place the generated <code>&lt;script&gt;</code> tag in either the <code>&lt;head&gt;</code> or the <code>&lt;body&gt;</code> of your HTML.</p>
-            <h3>Does schema improve rankings?</h3>
-            <p>While not a direct ranking factor, it helps search engines understand your content better, which can lead to rich snippets and higher click-through rates.</p>
-            <h3>Is this tool free?</h3>
-            <p>Yes, like all SmartGen tools, the Schema Generator is completely free to use.</p>
-        </section>
-    </main>
+            <section class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-container">
+        <div class="accordion-item">
+            <button class="accordion-header">
+                <span>Where do I put this code?</span>
+                <div class="accordion-icon"></div>
+            </button>
+            <div class="accordion-content">
+                <p>You can place the generated <code>&lt;script&gt;</code> tag in either the <code>&lt;head&gt;</code> or the <code>&lt;body&gt;</code> of your HTML.</p>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <button class="accordion-header">
+                <span>Does schema improve rankings?</span>
+                <div class="accordion-icon"></div>
+            </button>
+            <div class="accordion-content">
+                <p>While not a direct ranking factor, it helps search engines understand your content better, which can lead to rich snippets and higher click-through rates.</p>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <button class="accordion-header">
+                <span>Is this tool free?</span>
+                <div class="accordion-icon"></div>
+            </button>
+            <div class="accordion-content">
+                <p>Yes, like all SmartGen tools, the Schema Generator is completely free to use.</p>
+            </div>
+        </div>
+    </div>
+</section></main>
     <footer id="main-footer"></footer>
     <script>
         function buildSchema() {

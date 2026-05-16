@@ -1,6 +1,6 @@
 # SmartGen: All-in-One Digital & Web Utility Platform 🚀
 
-**Owner:** Sayad Md Bayezid Hosan (Connect With Bayezid)
+**Owner:** Sayad Md Bayezid Hosan ([www.sayadbayzed.com](https://www.sayadbayzed.com))
 
 ![SmartGen Logo](https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/smartgen-logo.png) <!-- Placeholder for a logo, assuming one exists or will be created -->
 
@@ -71,6 +71,10 @@ We welcome contributions to SmartGen! If you have suggestions for new tools, imp
 3.  Commit your changes (`git commit -m 'Add some AmazingFeature'`).
 4.  Push to the branch (`git push origin feature/AmazingFeature`).
 5.  Open a Pull Request.
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🗓️ Upcoming Updates (For Next AI Agent)
 

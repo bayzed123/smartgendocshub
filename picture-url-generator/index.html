@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Picture URL Generator - SmartGen</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        .generator-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .tool-section {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .upload-area {
+            border: 3px dashed #3b82f6;
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: var(--bg-primary);
+        }
+
+        .upload-area:hover {
+            border-color: #8b5cf6;
+            background: rgba(139, 92, 246, 0.05);
+        }
+
+        .upload-area.dragover {
+            border-color: #8b5cf6;
+            background: rgba(139, 92, 246, 0.1);
+        }
+
+        .upload-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .upload-text {
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .upload-hint {
+            font-size: 0.9rem;
+            color: #8b5cf6;
+        }
+
+        #imageInput {
+            display: none;
+        }
+
+        .preview-section {
+            display: none;
+            margin-top: 2rem;
+        }
+
+        .preview-section.active {
+            display: block;
+        }
+
+        .image-preview {
+            max-width: 100%;
+            max-height: 300px;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .url-output {
+            background: var(--bg-primary);
+            border: 1px solid #3b82f6;
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            word-break: break-all;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            color: var(--text-primary);
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            flex: 1;
+            min-width: 150px;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: #3b82f6;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #2563eb;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+
+        .btn-secondary {
+            background: #8b5cf6;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #7c3aed;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .loading.active {
+            display: block;
+        }
+
+        .spinner {
+            border: 4px solid rgba(59, 130, 246, 0.2);
+            border-top: 4px solid #3b82f6;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .status-message {
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            display: none;
+        }
+
+        .status-message.active {
+            display: block;
+        }
+
+        .status-success {
+            background: rgba(34, 197, 94, 0.1);
+            color: #22c55e;
+            border: 1px solid #22c55e;
+        }
+
+        .status-error {
+            background: rgba(239, 68, 68, 0.1);
+            color: #ef4444;
+            border: 1px solid #ef4444;
+        }
+
+        .ad-banner-space {
+            background: var(--bg-secondary);
+            border: 2px dashed #8b5cf6;
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            margin: 2rem 0;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .seo-content {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--bg-secondary);
+        }
+
+        .seo-content h2 {
+            font-size: 1.8rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .seo-content h3 {
+            font-size: 1.3rem;
+            margin-top: 1.2rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-primary);
+        }
+
+        .seo-content p {
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .faq-item {
+            background: var(--bg-secondary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border-left: 4px solid #3b82f6;
+        }
+
+        .faq-question {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .faq-answer {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <header id="main-header"></header>
+
+    <main class="generator-container">
+        <h1 style="text-align: center; margin-bottom: 0.5rem;">Picture URL Generator</h1>
+        <p style="text-align: center; color: var(--text-secondary); margin-bottom: 2rem;">Upload an image and get a direct live link instantly</p>
+
+        <div class="tool-section">
+            <div class="upload-area" id="uploadArea">
+                <div class="upload-icon">📸</div>
+                <div class="upload-text"><strong>Click to upload or drag and drop</strong></div>
+                <div class="upload-hint">PNG, JPG, GIF or WebP (Max 32MB)</div>
+                <input type="file" id="imageInput" accept="image/*">
+            </div>
+
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>Uploading your image...</p>
+            </div>
+
+            <div class="status-message" id="statusMessage"></div>
+
+            <div class="preview-section" id="previewSection">
+                <img id="imagePreview" class="image-preview" alt="Preview">
+                <p style="color: var(--text-secondary); margin-bottom: 1rem;"><strong>Image URL:</strong></p>
+                <div class="url-output" id="urlOutput"></div>
+                <div class="button-group">
+                    <button class="btn btn-primary" id="copyBtn">📋 Copy URL</button>
+                    <button class="btn btn-secondary" id="resetBtn">🔄 Upload Another</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="ad-banner-space">
+            📢 Advertisement Space
+        </div>
+
+        <div class="seo-content">
+            <h2>What is a Picture URL Generator?</h2>
+            <p>A Picture URL Generator is an essential online tool that allows users to upload images and receive direct, shareable links instantly. This utility is invaluable for content creators, social media managers, developers, and anyone who needs to share images across the internet. Instead of manually hosting images on complex servers or dealing with cumbersome file management systems, our Picture URL Generator simplifies the entire process by providing instant, permanent links to your images.</p>
+
+            <h3>How Does the Picture URL Generator Work?</h3>
+            <p>Our Picture URL Generator uses advanced cloud technology to upload your images securely and provide you with a direct, permanent URL. Simply select or drag-and-drop your image file, and our system processes it instantly. Within seconds, you'll receive a shareable link that you can use anywhere—in emails, social media posts, websites, or documentation. The process is completely client-side, meaning your images are uploaded directly to our secure servers without any intermediate processing, ensuring maximum speed and privacy.</p>
+
+            <h3>Why Use Our Picture URL Generator?</h3>
+            <p>Our Picture URL Generator offers numerous advantages over traditional image hosting methods. First, it's incredibly fast—upload and get your link in seconds. Second, it's completely free and requires no registration or account creation. Third, the generated URLs are permanent and reliable, perfect for long-term use. Fourth, our tool supports multiple image formats including PNG, JPG, GIF, and WebP. Finally, the interface is intuitive and user-friendly, making it accessible to everyone regardless of technical expertise.</p>
+
+            <h2>Key Features of Our Picture URL Generator</h2>
+
+            <div class="faq-item">
+                <div class="faq-question">❓ Is there a file size limit for image uploads?</div>
+                <div class="faq-answer">Our Picture URL Generator supports images up to 32MB in size. This generous limit accommodates high-resolution photos, graphics, and other image types. For most users, this is more than sufficient for typical use cases including social media, web content, and documentation.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">❓ How long will my image URL remain active?</div>
+                <div class="faq-answer">The URLs generated by our Picture URL Generator are permanent and will remain active indefinitely. You can share these links with confidence, knowing they will continue to work for years to come. This makes our tool perfect for archival purposes, documentation, and long-term content storage.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">❓ Can I use the generated URLs for commercial purposes?</div>
+                <div class="faq-answer">Yes, absolutely! The URLs generated by our Picture URL Generator can be used for both personal and commercial purposes. Whether you're building a business website, creating marketing materials, or developing commercial applications, you can confidently use the generated URLs without any restrictions or licensing concerns.</div>
+            </div>
+
+            <h2>Best Practices for Using Picture URL Generator</h2>
+            <p>To get the most out of our Picture URL Generator, consider these best practices. Always ensure your images are optimized for web use to maintain fast loading times. Use descriptive filenames when possible to help with organization and SEO. Test your generated URLs in different contexts to ensure they display correctly. Keep a record of important image URLs for future reference. Remember that while our service is reliable, it's always good practice to maintain backups of critical images on your own systems as well.</p>
+
+            <p>Whether you're a blogger, developer, marketer, or casual user, our Picture URL Generator is the perfect solution for quickly sharing images online. Try it today and experience the simplicity and convenience of instant image hosting!</p>
+        </div>
+    </main>
+
+    <footer id="main-footer"></footer>
+
+    <script src="../assets/js/app.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

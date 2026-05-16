@@ -21,6 +21,7 @@ function injectNavbar() {
                 <nav>
                     <a href="${prefix}">Home</a>
                     <a href="${prefix}#tools">Tools</a>
+                    <a href="${prefix}updates/">Updates</a>
                     <button id="theme-toggle" style="background:none; border:none; cursor:pointer; font-size:1.2rem;">🌓</button>
                 </nav>
             </div>

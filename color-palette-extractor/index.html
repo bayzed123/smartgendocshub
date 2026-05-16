@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Palette Extractor - SmartGen</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        .extractor-container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .tool-section {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .upload-area {
+            border: 3px dashed #3b82f6;
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: var(--bg-primary);
+        }
+
+        .upload-area:hover {
+            border-color: #8b5cf6;
+            background: rgba(139, 92, 246, 0.05);
+        }
+
+        .upload-area.dragover {
+            border-color: #8b5cf6;
+            background: rgba(139, 92, 246, 0.1);
+        }
+
+        .upload-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .upload-text {
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        #imageInput {
+            display: none;
+        }
+
+        .preview-section {
+            display: none;
+            margin-top: 2rem;
+        }
+
+        .preview-section.active {
+            display: block;
+        }
+
+        .image-preview {
+            max-width: 100%;
+            max-height: 300px;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .palette-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .color-card {
+            background: var(--bg-primary);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .color-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .color-swatch {
+            width: 100%;
+            height: 100px;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+
+        .color-swatch:hover {
+            opacity: 0.9;
+        }
+
+        .color-info {
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .color-label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .color-value {
+            font-family: 'Courier New', monospace;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            word-break: break-all;
+        }
+
+        .copy-btn {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .copy-btn:hover {
+            background: #2563eb;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            flex: 1;
+            min-width: 150px;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: #3b82f6;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #2563eb;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+
+        .btn-secondary {
+            background: #8b5cf6;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #7c3aed;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .loading.active {
+            display: block;
+        }
+
+        .spinner {
+            border: 4px solid rgba(59, 130, 246, 0.2);
+            border-top: 4px solid #3b82f6;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .ad-banner-space {
+            background: var(--bg-secondary);
+            border: 2px dashed #8b5cf6;
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            margin: 2rem 0;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .seo-content {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--bg-secondary);
+        }
+
+        .seo-content h2 {
+            font-size: 1.8rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .seo-content h3 {
+            font-size: 1.3rem;
+            margin-top: 1.2rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-primary);
+        }
+
+        .seo-content p {
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .faq-item {
+            background: var(--bg-secondary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border-left: 4px solid #3b82f6;
+        }
+
+        .faq-question {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .faq-answer {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <header id="main-header"></header>
+
+    <main class="extractor-container">
+        <h1 style="text-align: center; margin-bottom: 0.5rem;">Color Palette & HEX Extractor</h1>
+        <p style="text-align: center; color: var(--text-secondary); margin-bottom: 2rem;">Upload an image and extract dominant colors with copyable HEX and RGB values</p>
+
+        <div class="tool-section">
+            <div class="upload-area" id="uploadArea">
+                <div class="upload-icon">🎨</div>
+                <div class="upload-text"><strong>Click to upload or drag and drop</strong></div>
+                <div style="font-size: 0.9rem; color: #8b5cf6;">PNG, JPG, GIF or WebP</div>
+                <input type="file" id="imageInput" accept="image/*">
+            </div>
+
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>Extracting colors from your image...</p>
+            </div>
+
+            <div class="preview-section" id="previewSection">
+                <img id="imagePreview" class="image-preview" alt="Preview">
+                <h3 style="margin-bottom: 1rem;">Extracted Color Palette</h3>
+                <div class="palette-grid" id="paletteGrid"></div>
+                <div class="button-group">
+                    <button class="btn btn-secondary" id="resetBtn">🔄 Upload Another</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="ad-banner-space">
+            📢 Advertisement Space
+        </div>
+
+        <div class="seo-content">
+            <h2>Understanding Color Palette Extraction</h2>
+            <p>A Color Palette & HEX Extractor is a powerful tool designed for designers, developers, and content creators who need to identify and extract colors from images. This utility uses advanced image processing algorithms to analyze images and identify the dominant colors present. By extracting these colors in both HEX and RGB formats, users can easily incorporate these color schemes into their design projects, websites, and applications. Whether you're working on brand consistency, creating design mockups, or analyzing visual content, our Color Palette Extractor simplifies the process of color discovery and documentation.</p>
+
+            <h3>How Does Color Extraction Work?</h3>
+            <p>Our Color Palette Extractor uses HTML5 Canvas technology to analyze images at the pixel level. When you upload an image, the tool processes it to identify the most prominent colors. The extraction algorithm samples pixels across the entire image and groups similar colors together, then ranks them by frequency and prominence. The result is a curated palette of the most important colors in your image, presented in both HEX (hexadecimal) and RGB (red, green, blue) formats. This dual format ensures compatibility with any design tool or programming language you might be using.</p>
+
+            <h3>Why Use a Color Palette Extractor?</h3>
+            <p>Color extraction is invaluable for maintaining visual consistency across your brand and projects. Instead of manually trying to match colors or guessing HEX codes, our tool automatically identifies the exact colors used in any image. This is particularly useful for designers who want to match brand colors, developers building color schemes for applications, marketers analyzing competitor branding, and artists exploring color harmony. The extracted colors can be directly copied and used in CSS, design software, or any other application that accepts HEX or RGB values.</p>
+
+            <h2>Key Features and Benefits</h2>
+
+            <div class="faq-item">
+                <div class="faq-question">❓ What image formats are supported?</div>
+                <div class="faq-answer">Our Color Palette Extractor supports all common image formats including PNG, JPG, GIF, and WebP. This wide format support ensures you can work with images from virtually any source, whether they're screenshots, photographs, design mockups, or web graphics.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">❓ How many colors will be extracted from my image?</div>
+                <div class="faq-answer">Our tool extracts the most dominant and visually significant colors from your image, typically presenting 5-10 primary colors. This focused palette makes it easier to work with and implement the color scheme without overwhelming you with too many options.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">❓ Can I use the extracted colors for commercial projects?</div>
+                <div class="faq-answer">Yes, absolutely! The colors extracted from your images are yours to use freely. Whether you're using them for personal projects, commercial designs, or client work, you have full rights to implement the extracted color schemes in any way you see fit.</div>
+            </div>
+
+            <h2>Practical Applications for Color Extraction</h2>
+            <p>Color palette extraction has numerous practical applications across different industries. Web designers use it to match website colors to brand guidelines or competitor analysis. Mobile app developers extract colors from mockups to implement consistent user interfaces. Graphic designers use it to maintain color consistency across multiple projects. Marketing teams analyze competitor websites to understand color psychology strategies. Interior designers extract colors from inspiration images to create cohesive design schemes. The versatility of color extraction makes it an essential tool for anyone working in visual design or development.</p>
+
+            <p>Our Color Palette & HEX Extractor streamlines the color discovery process, saving you time and ensuring accuracy. Whether you're a professional designer or someone just exploring color combinations, this tool provides instant access to the exact colors you need in formats you can use immediately.</p>
+        </div>
+    </main>
+
+    <footer id="main-footer"></footer>
+
+    <script src="../assets/js/app.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

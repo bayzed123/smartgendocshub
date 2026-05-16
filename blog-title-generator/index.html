@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Title Generator - SmartGen</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        .generator-container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .tool-section {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #3b82f6;
+            border-radius: 8px;
+            font-size: 1rem;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            transition: border-color 0.3s ease;
+            font-family: inherit;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #8b5cf6;
+            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+        }
+
+        .form-hint {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-top: 0.3rem;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            flex: 1;
+            min-width: 150px;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: #3b82f6;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #2563eb;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+
+        .btn-secondary {
+            background: #8b5cf6;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #7c3aed;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+        }
+
+        .titles-section {
+            display: none;
+            margin-top: 2rem;
+        }
+
+        .titles-section.active {
+            display: block;
+        }
+
+        .titles-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .title-item {
+            background: var(--bg-primary);
+            border: 2px solid #3b82f6;
+            border-radius: 8px;
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .title-item:hover {
+            border-color: #8b5cf6;
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.2);
+        }
+
+        .title-text {
+            flex: 1;
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            line-height: 1.5;
+        }
+
+        .title-number {
+            color: #8b5cf6;
+            font-weight: 700;
+            font-size: 0.9rem;
+            min-width: 30px;
+        }
+
+        .copy-btn-small {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .copy-btn-small:hover {
+            background: #2563eb;
+            transform: scale(1.05);
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .loading.active {
+            display: block;
+        }
+
+        .spinner {
+            border: 4px solid rgba(59, 130, 246, 0.2);
+            border-top: 4px solid #3b82f6;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .ad-banner-space {
+            background: var(--bg-secondary);
+            border: 2px dashed #8b5cf6;
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            margin: 2rem 0;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .seo-content {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--bg-secondary);
+        }
+
+        .seo-content h2 {
+            font-size: 1.8rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .seo-content h3 {
+            font-size: 1.3rem;
+            margin-top: 1.2rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-primary);
+        }
+
+        .seo-content p {
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .faq-item {
+            background: var(--bg-secondary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border-left: 4px solid #3b82f6;
+        }
+
+        .faq-question {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .faq-answer {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .title-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .copy-btn-small {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="main-header"></header>
+
+    <main class="generator-container">
+        <h1 style="text-align: center; margin-bottom: 0.5rem;">Blog Title/Headline Generator</h1>
+        <p style="text-align: center; color: var(--text-secondary); margin-bottom: 2rem;">Generate SEO-friendly blog titles and headlines instantly</p>
+
+        <div class="tool-section">
+            <div class="form-group">
+                <label class="form-label">Enter Your Keyword or Topic</label>
+                <input type="text" class="form-input" id="keywordInput" placeholder="e.g., Digital Marketing, Web Design, AI Tools" maxlength="100">
+                <div class="form-hint">Enter the main topic or keyword for your blog post</div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Number of Titles to Generate</label>
+                <input type="number" class="form-input" id="countInput" value="10" min="5" max="20">
+                <div class="form-hint">Choose between 5 and 20 titles</div>
+            </div>
+
+            <div class="button-group">
+                <button class="btn btn-primary" onclick="generateTitles()">✨ Generate Titles</button>
+                <button class="btn btn-secondary" onclick="clearGenerator()">🔄 Clear</button>
+            </div>
+
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+                <p>Generating SEO-friendly titles...</p>
+            </div>
+
+            <div class="titles-section" id="titlesSection">
+                <h3 style="margin-bottom: 1.5rem;">Generated Blog Titles</h3>
+                <div class="titles-list" id="titlesList"></div>
+            </div>
+        </div>
+
+        <div class="ad-banner-space">
+            📢 Advertisement Space
+        </div>
+
+        <div class="seo-content">
+            <h2>The Power of Effective Blog Titles</h2>
+            <p>A blog title is often the first impression your content makes on potential readers. In the digital age where attention spans are limited and search engine optimization is crucial, crafting compelling and SEO-friendly blog titles is an essential skill. A great blog title not only attracts clicks from search results and social media but also sets expectations for the content that follows. Our Blog Title Generator uses intelligent algorithms and proven copywriting techniques to create titles that are optimized for both search engines and human readers, helping you maximize your blog's reach and engagement.</p>
+
+            <h3>Why Blog Titles Matter for SEO</h3>
+            <p>Blog titles serve multiple purposes in your content strategy. From an SEO perspective, titles are one of the most important on-page ranking factors. Search engines use titles to understand what your content is about, and they appear prominently in search results. A well-optimized title that includes your target keyword can significantly improve your visibility in search results. Beyond SEO, titles are crucial for click-through rates. Even if your content ranks well, a boring or unclear title won't encourage people to click. Our Blog Title Generator creates titles that balance SEO optimization with compelling copywriting to maximize both visibility and engagement.</p>
+
+            <h3>How to Use Generated Titles Effectively</h3>
+            <p>When you generate titles using our tool, you'll receive multiple options with different angles and approaches. Review each suggestion and consider which one best represents your content and appeals to your target audience. You can use the generated titles as-is, or use them as inspiration to create your own variations. Remember that while our generator creates SEO-optimized titles, you should always ensure the title accurately reflects your content to maintain reader trust and reduce bounce rates. Test different titles if possible, and monitor which ones perform best in terms of clicks and engagement.</p>
+
+            <h2>Key Features of Our Blog Title Generator</h2>
+
+            <div class="faq-item">
+                <div class="faq-question">❓ Are the generated titles guaranteed to rank in Google?</div>
+                <div class="faq-answer">While our Blog Title Generator creates SEO-optimized titles that follow best practices, ranking in Google depends on many factors including content quality, backlinks, domain authority, and competition. Our titles give you a strong foundation for SEO, but success requires comprehensive content optimization and a solid overall SEO strategy.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">❓ Can I use these titles for different types of content?</div>
+                <div class="faq-answer">Absolutely! Our Blog Title Generator works for various content types including blog posts, articles, news items, product reviews, tutorials, and more. Simply enter your keyword or topic, and the generator will create titles appropriate for your content type and audience.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">❓ How often should I update my blog titles?</div>
+                <div class="faq-answer">While it's generally best to keep titles consistent once published, you can update them if you notice they're not performing well or if your content has evolved. Many content management systems allow you to update titles without affecting URLs, which helps maintain SEO value while improving click-through rates.</div>
+            </div>
+
+            <h2>Best Practices for Blog Titles</h2>
+            <p>When creating or selecting blog titles, keep these best practices in mind. First, include your primary keyword naturally in the title—forcing keywords often results in awkward, unreadable titles. Second, keep titles between 50-60 characters to ensure they display fully in search results. Third, make titles descriptive and specific rather than vague or clickbait-style. Fourth, use numbers and power words when appropriate, as these tend to attract clicks. Fifth, avoid duplicate titles across your blog, as this can confuse search engines and readers. Finally, ensure your title accurately represents your content to maintain reader trust and reduce bounce rates.</p>
+
+            <p>Our Blog Title Generator combines these best practices with AI-powered copywriting to help you create titles that stand out in search results and attract clicks. Whether you're a blogger, content marketer, or business owner, this tool can save you time and help you create more effective content that reaches your target audience.</p>
+        </div>
+    </main>
+
+    <footer id="main-footer"></footer>
+
+    <script src="../assets/js/app.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPM & ROI Calculator - SmartGen</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        .calculator-container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .calculator-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .calculator-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .calculator-section {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #3b82f6;
+            border-radius: 8px;
+            font-size: 1rem;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            transition: border-color 0.3s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #8b5cf6;
+            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+        }
+
+        .form-hint {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-top: 0.3rem;
+        }
+
+        .result-box {
+            background: var(--bg-primary);
+            border: 2px solid #3b82f6;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .result-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .result-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #3b82f6;
+            word-break: break-word;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            flex: 1;
+            min-width: 120px;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: #3b82f6;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #2563eb;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+
+        .btn-secondary {
+            background: #8b5cf6;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #7c3aed;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+        }
+
+        .ad-banner-space {
+            background: var(--bg-secondary);
+            border: 2px dashed #8b5cf6;
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            margin: 2rem 0;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .seo-content {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--bg-secondary);
+        }
+
+        .seo-content h2 {
+            font-size: 1.8rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .seo-content h3 {
+            font-size: 1.3rem;
+            margin-top: 1.2rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-primary);
+        }
+
+        .seo-content p {
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .faq-item {
+            background: var(--bg-secondary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border-left: 4px solid #3b82f6;
+        }
+
+        .faq-question {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .faq-answer {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .info-box {
+            background: rgba(59, 130, 246, 0.1);
+            border-left: 4px solid #3b82f6;
+            padding: 1rem;
+            border-radius: 4px;
+            margin-bottom: 1.5rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header id="main-header"></header>
+
+    <main class="calculator-container">
+        <h1 style="text-align: center; margin-bottom: 0.5rem;">CPM & ROI Calculator</h1>
+        <p style="text-align: center; color: var(--text-secondary); margin-bottom: 2rem;">Calculate Cost Per Mille and Return on Investment for your digital marketing campaigns</p>
+
+        <div class="calculator-grid">
+            <div class="calculator-section">
+                <div class="section-title">💰 CPM Calculator</div>
+                <div class="info-box">
+                    CPM (Cost Per Mille) = (Total Cost / Total Impressions) × 1000
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Total Cost ($)</label>
+                    <input type="number" class="form-input" id="cpmCost" placeholder="Enter total cost" min="0" step="0.01">
+                    <div class="form-hint">Total amount spent on the campaign</div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Total Impressions</label>
+                    <input type="number" class="form-input" id="cpmImpressions" placeholder="Enter total impressions" min="0">
+                    <div class="form-hint">Number of times your ad was displayed</div>
+                </div>
+                <button class="btn btn-primary" onclick="calculateCPM()">Calculate CPM</button>
+                <div class="result-box" id="cpmResult" style="display: none;">
+                    <div class="result-label">CPM (Cost Per 1000 Impressions)</div>
+                    <div class="result-value" id="cpmValue">$0.00</div>
+                </div>
+            </div>
+
+            <div class="calculator-section">
+                <div class="section-title">📈 ROI Calculator</div>
+                <div class="info-box">
+                    ROI (%) = ((Revenue - Cost) / Cost) × 100
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Total Revenue ($)</label>
+                    <input type="number" class="form-input" id="roiRevenue" placeholder="Enter total revenue" min="0" step="0.01">
+                    <div class="form-hint">Total revenue generated from the campaign</div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Total Cost ($)</label>
+                    <input type="number" class="form-input" id="roiCost" placeholder="Enter total cost" min="0" step="0.01">
+                    <div class="form-hint">Total amount invested in the campaign</div>
+                </div>
+                <button class="btn btn-primary" onclick="calculateROI()">Calculate ROI</button>
+                <div class="result-box" id="roiResult" style="display: none;">
+                    <div class="result-label">ROI (Return on Investment)</div>
+                    <div class="result-value" id="roiValue">0.00%</div>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-bottom: 2rem;">
+            <button class="btn btn-secondary" onclick="clearAllCalculations()">🔄 Clear All</button>
+        </div>
+
+        <div class="ad-banner-space">
+            📢 Advertisement Space
+        </div>
+
+        <div class="seo-content">
+            <h2>Understanding CPM and ROI in Digital Marketing</h2>
+            <p>In the world of digital marketing, understanding key performance metrics is essential for success. Two of the most important metrics that marketers use are CPM (Cost Per Mille) and ROI (Return on Investment). These metrics help businesses evaluate the effectiveness of their advertising campaigns, optimize their marketing spend, and make data-driven decisions about future investments. Our CPM & ROI Calculator makes it easy to compute these critical metrics instantly, allowing you to focus on strategy rather than complex calculations.</p>
+
+            <h3>What is CPM and Why Does It Matter?</h3>
+            <p>CPM stands for Cost Per Mille, which is Latin for "cost per thousand." It represents the cost an advertiser pays for every 1,000 impressions their ad receives. CPM is a fundamental metric in digital advertising because it allows marketers to compare the efficiency of different campaigns and platforms on a standardized basis. A lower CPM indicates that you're getting more impressions for your money, which is generally more cost-effective. Understanding your CPM helps you negotiate better rates with advertising platforms and identify which channels provide the best value for your marketing budget.</p>
+
+            <h3>Understanding ROI and Its Importance</h3>
+            <p>ROI, or Return on Investment, measures the profitability of a marketing campaign by comparing the revenue generated to the cost invested. ROI is expressed as a percentage and shows how much profit you make for every dollar spent on marketing. A positive ROI indicates that your campaign is profitable, while a negative ROI suggests you're losing money. By calculating ROI, marketers can determine which campaigns are worth scaling up and which need optimization or elimination. This metric is crucial for justifying marketing budgets and demonstrating the value of marketing efforts to stakeholders.</p>
+
+            <h2>How to Use the CPM & ROI Calculator Effectively</h2>
+
+            <div class="faq-item">
+                <div class="faq-question">❓ How do I calculate my CPM accurately?</div>
+                <div class="faq-answer">To calculate CPM accurately, you need two pieces of information: your total campaign cost and the total number of impressions. Impressions are counted every time your ad is displayed, regardless of whether someone clicks on it. Simply enter these values into the CPM Calculator, and it will compute your cost per thousand impressions instantly. This helps you understand how efficiently you're spending your advertising budget.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">❓ What's considered a good ROI for marketing campaigns?</div>
+                <div class="faq-answer">A good ROI varies by industry and campaign type, but generally, an ROI of 100% or higher is considered excellent. This means you're making at least one dollar in profit for every dollar spent. However, even an ROI of 50% can be acceptable depending on your business goals and industry standards. The key is to track your ROI consistently and work to improve it over time through optimization and testing.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">❓ Can I use these calculators for different types of marketing?</div>
+                <div class="faq-answer">Absolutely! Both CPM and ROI calculations are universal metrics that apply to any type of marketing campaign, whether it's social media advertising, search engine marketing, email campaigns, or traditional advertising. The principles remain the same across all channels, making these calculators versatile tools for any marketer regardless of their specialization.</div>
+            </div>
+
+            <h2>Optimizing Your Marketing Performance</h2>
+            <p>Once you've calculated your CPM and ROI, the next step is optimization. If your CPM is higher than industry benchmarks, consider switching to different advertising platforms or refining your targeting. If your ROI is lower than expected, analyze your conversion funnel to identify bottlenecks. Test different ad creatives, landing pages, and audience segments to improve performance. Remember that marketing is an iterative process—continuous testing and optimization based on these metrics will lead to better results over time.</p>
+
+            <p>Our CPM & ROI Calculator is designed to make these calculations quick and effortless, allowing you to spend more time on strategy and optimization. Use it regularly to monitor your campaign performance and make informed decisions about your marketing investments.</p>
+        </div>
+    </main>
+
+    <footer id="main-footer"></footer>
+
+    <script src="../assets/js/app.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

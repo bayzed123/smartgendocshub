@@ -4,7 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SmartGen - Updates & Changelog</title>
+    <meta name="description" content="Track all the latest improvements, new features, and updates to SmartGen platform. Stay informed about new tools and enhancements.">
     <link rel="stylesheet" href="../assets/css/style.css">
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How often does SmartGen release updates?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "SmartGen follows an agile development cycle with regular updates released based on feature completion and user feedback. Major updates are typically released monthly, with minor updates and bug fixes deployed as needed to ensure optimal platform performance."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Will updates affect my existing tools and data?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No, SmartGen updates are designed to be backward compatible. All existing tools continue to work seamlessly, and your data remains safe and accessible. We carefully plan updates to ensure zero disruption to your workflow and experience."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How can I request a new feature or report a bug?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "We welcome user feedback and feature requests. You can report bugs or suggest new features by visiting our GitHub repository or contacting our support team directly. Your feedback helps us prioritize development and create tools that truly meet user needs."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What types of tools does SmartGen offer?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "SmartGen offers a comprehensive suite of digital utility tools including QR code generators, SEO tools (meta tags, robots.txt, schema generators), text utilities (word counter, case converter), marketing tools (UTM builder, hashtag generator), and specialized tools like image converters, password generators, and more. All tools are completely free to use."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Is SmartGen completely free?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, SmartGen is 100% free. All our tools are available at no cost, with no hidden fees, subscriptions, or premium features. We believe in providing quality digital utilities accessible to everyone."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can I use SmartGen tools for commercial purposes?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Absolutely! SmartGen tools can be used for both personal and commercial purposes. Whether you're running a business, managing marketing campaigns, or working on personal projects, you're free to use any of our tools without restrictions."
+            }
+        }
+    ]
+}
+    </script>
     <style>
         .updates-container {
             max-width: 900px;
@@ -156,23 +213,35 @@
             color: var(--text-secondary);
         }
 
-        .faq-item {
+        .faq-section {
+            margin-top: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .faq-container {
+            max-width: 100%;
+            margin: 0 auto;
             background: var(--bg-secondary);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+
+        .faq-container .accordion-item {
+            border-bottom: 1px solid var(--border);
+        }
+
+        .faq-container .accordion-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-container .accordion-header {
             padding: 1.5rem;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-            border-left: 4px solid #3b82f6;
+            font-size: 1rem;
         }
 
-        .faq-question {
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: var(--text-primary);
-        }
-
-        .faq-answer {
-            color: var(--text-secondary);
-            line-height: 1.6;
+        .faq-container .accordion-content {
+            padding: 0 1.5rem 1.5rem 1.5rem;
         }
     </style>
 </head>
@@ -206,20 +275,69 @@
 
             <h2>Frequently Asked Questions About SmartGen Updates</h2>
 
-            <div class="faq-item">
-                <div class="faq-question">❓ How often does SmartGen release updates?</div>
-                <div class="faq-answer">SmartGen follows an agile development cycle with regular updates released based on feature completion and user feedback. Major updates are typically released monthly, with minor updates and bug fixes deployed as needed to ensure optimal platform performance.</div>
-            </div>
+            <section class="faq-section">
+                <div class="faq-container">
+                    <div class="accordion-item active">
+                        <button class="accordion-header">
+                            <span>How often does SmartGen release updates?</span>
+                            <span class="accordion-icon"></span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>SmartGen follows an agile development cycle with regular updates released based on feature completion and user feedback. Major updates are typically released monthly, with minor updates and bug fixes deployed as needed to ensure optimal platform performance.</p>
+                        </div>
+                    </div>
 
-            <div class="faq-item">
-                <div class="faq-question">❓ Will updates affect my existing tools and data?</div>
-                <div class="faq-answer">No, SmartGen updates are designed to be backward compatible. All existing tools continue to work seamlessly, and your data remains safe and accessible. We carefully plan updates to ensure zero disruption to your workflow and experience.</div>
-            </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>Will updates affect my existing tools and data?</span>
+                            <span class="accordion-icon"></span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>No, SmartGen updates are designed to be backward compatible. All existing tools continue to work seamlessly, and your data remains safe and accessible. We carefully plan updates to ensure zero disruption to your workflow and experience.</p>
+                        </div>
+                    </div>
 
-            <div class="faq-item">
-                <div class="faq-question">❓ How can I request a new feature or report a bug?</div>
-                <div class="faq-answer">We welcome user feedback and feature requests. You can report bugs or suggest new features by visiting our GitHub repository or contacting our support team directly. Your feedback helps us prioritize development and create tools that truly meet user needs.</div>
-            </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>How can I request a new feature or report a bug?</span>
+                            <span class="accordion-icon"></span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>We welcome user feedback and feature requests. You can report bugs or suggest new features by visiting our GitHub repository or contacting our support team directly. Your feedback helps us prioritize development and create tools that truly meet user needs.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>What types of tools does SmartGen offer?</span>
+                            <span class="accordion-icon"></span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>SmartGen offers a comprehensive suite of digital utility tools including QR code generators, SEO tools (meta tags, robots.txt, schema generators), text utilities (word counter, case converter), marketing tools (UTM builder, hashtag generator), and specialized tools like image converters, password generators, and more. All tools are completely free to use.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>Is SmartGen completely free?</span>
+                            <span class="accordion-icon"></span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Yes, SmartGen is 100% free. All our tools are available at no cost, with no hidden fees, subscriptions, or premium features. We believe in providing quality digital utilities accessible to everyone.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>Can I use SmartGen tools for commercial purposes?</span>
+                            <span class="accordion-icon"></span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Absolutely! SmartGen tools can be used for both personal and commercial purposes. Whether you're running a business, managing marketing campaigns, or working on personal projects, you're free to use any of our tools without restrictions.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             <h2>The SmartGen Commitment to Excellence</h2>
             <p>SmartGen is dedicated to providing a world-class platform for digital utilities. Our development team works tirelessly to ensure that every update brings tangible value to users. Whether it's improving performance, adding new tools, or refining existing features, every change is made with user satisfaction in mind. We believe in continuous improvement and transparency, which is why we maintain this detailed changelog for all our users.</p>

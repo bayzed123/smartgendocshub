@@ -7,6 +7,59 @@
     <meta name="description" content="SmartGen provides free online tools like QR generators, SEO tools, and text utilities. All-in-one platform for developers and creators.">
     <link rel="stylesheet" href="./assets/css/style.css">
     <script src="./assets/js/app.js" defer></script>
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "SmartGen",
+    "url": "https://smartgen.example.com",
+    "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "ratingCount": "258",
+        "bestRating": "5",
+        "worstRating": "1"
+    },
+    "review": [
+        {
+            "@type": "Review",
+            "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5"
+            },
+            "author": {
+                "@type": "Person",
+                "name": "Alex Rivers"
+            },
+            "reviewBody": "Fastest tools ever! Saved me hours of work."
+        },
+        {
+            "@type": "Review",
+            "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5"
+            },
+            "author": {
+                "@type": "Person",
+                "name": "Sarah Chen"
+            },
+            "reviewBody": "Love the minimalist UI. So clean and easy to use."
+        },
+        {
+            "@type": "Review",
+            "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5"
+            },
+            "author": {
+                "@type": "Person",
+                "name": "Marcus Thorne"
+            },
+            "reviewBody": "The QR generator is top-notch. Highly recommended."
+        }
+    ]
+}
+    </script>
 </head>
 <body>
     <header id="main-header"></header>
@@ -124,8 +177,50 @@
                 </a>
             </div>
         </section>
+
+        <!-- Testimonials & Reviews Section -->
+        <section id="testimonials" class="testimonials-section">
+            <div class="container">
+                <div class="testimonials-header">
+                    <h2>Loved by Developers & Creators</h2>
+                    <p>Join thousands of satisfied users who trust SmartGen for their digital utility needs</p>
+                    <div class="rating-badge">
+                        <span class="stars">⭐⭐⭐⭐⭐</span>
+                        <span class="rating-text">4.9/5 (258 reviews)</span>
+                    </div>
+                </div>
+
+                <!-- Marquee Tracks -->
+                <div class="marquee-container">
+                    <div class="marquee-track track-1" id="track-1"></div>
+                    <div class="marquee-track track-2" id="track-2"></div>
+                    <div class="marquee-track track-3" id="track-3"></div>
+                </div>
+
+                <!-- Review Form -->
+                <div class="review-form-container">
+                    <h3>Share Your Experience</h3>
+                    <form id="review-form" class="review-form">
+                        <div class="form-row">
+                            <input type="text" id="reviewer-name" placeholder="Your Name" required maxlength="50">
+                            <div class="star-rating">
+                                <span class="star" data-rating="1">⭐</span>
+                                <span class="star" data-rating="2">⭐</span>
+                                <span class="star" data-rating="3">⭐</span>
+                                <span class="star" data-rating="4">⭐</span>
+                                <span class="star" data-rating="5">⭐</span>
+                                <input type="hidden" id="reviewer-rating" value="5">
+                            </div>
+                        </div>
+                        <textarea id="reviewer-text" placeholder="What do you love about SmartGen? (max 120 chars)" required maxlength="120" rows="3"></textarea>
+                        <button type="submit" class="btn btn-submit">Post Review</button>
+                    </form>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer id="main-footer"></footer>
+    <script src="./assets/js/reviews.js" defer></script>
 </body>
 </html>

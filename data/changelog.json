@@ -1,5 +1,10 @@
 [
   {
+    "title": "Update FAQ section on updates page with interactive accordion and JSON-LD schema",
+    "date": "2026-05-16T22:18:45Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "Fix Picture URL Generator: Integrate ImgBB API, add preview and delete URL",
     "date": "2026-05-16T22:08:20Z",
     "description": "Platform improvement and optimization."

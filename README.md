@@ -1,10 +1,9 @@
-# SmartGen: All-in-One Digital & Web Utility Platform 🚀
+# [SmartGen: All-in-One Digital & Web Utility Platform 🚀](https://qr.genzfrontir.com)
 
-**Owner:** Sayad Md Bayezid Hosan ([www.sayadbayzed.com](https://www.sayadbayzed.com))
+**🟢 Live Demo:** [qr.genzfrontir.com](https://qr.genzfrontir.com)  
+**Owner:** Sayad Md Bayezid Hosan ([www.sayadbayezid.com](https://www.sayadbayezid.com))
 
-![SmartGen Logo](https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/smartgen-logo.png) <!-- Placeholder for a logo, assuming one exists or will be created -->
-
-SmartGen is a comprehensive, client-side web utility platform designed to provide developers, marketers, and everyday users with a suite of fast, secure, and 100% free tools. From QR code generation to advanced SEO utilities and text manipulation, SmartGen aims to be your go-to resource for essential digital tasks, all accessible directly in your browser without any server-side processing.
+![SmartGen Logo](https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/smartgen-logo.png) SmartGen is a comprehensive, client-side web utility platform designed to provide developers, marketers, and everyday users with a suite of fast, secure, and 100% free tools. From QR code generation to advanced SEO utilities and text manipulation, SmartGen aims to be your go-to resource for essential digital tasks, all accessible directly in your browser without any server-side processing.
 
 ## ✨ Features
 
@@ -55,7 +54,7 @@ To get a copy of SmartGen up and running on your local machine for development a
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/bayzed123/SmartGenQR.oi.git
+    git clone [https://github.com/bayzed123/SmartGenQR.oi.git](https://github.com/bayzed123/SmartGenQR.oi.git)
     cd SmartGenQR.oi
     ```
 
@@ -71,6 +70,25 @@ We welcome contributions to SmartGen! If you have suggestions for new tools, imp
 3.  Commit your changes (`git commit -m 'Add some AmazingFeature'`).
 4.  Push to the branch (`git push origin feature/AmazingFeature`).
 5.  Open a Pull Request.
+
+## 💖 Support the Project
+
+If you find this utility platform helpful, consider supporting its development. Your appreciation keeps the project alive and free for everyone!
+
+<div align="left">
+  <a href="https://www.paypal.me/connectwithbayezid" target="_blank">
+    <img src="https://raw.githubusercontent.com/bayzed123/sayadbayezid-portfolio-/main/assets/images/paypal_logo.png" width="150" alt="Support via PayPal">
+  </a>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="https://www.payoneer.com/" target="_blank">
+    <img src="https://raw.githubusercontent.com/bayzed123/sayadbayezid-portfolio-/main/assets/images/payoneer_logo.png" width="150" alt="Support via Payoneer">
+  </a>
+</div>
+
+* **PayPal:** [@connectwithbayezid](https://www.paypal.me/connectwithbayezid)
+* **Payoneer:** `cwb.agency@outlook.com`
+
+---
 
 ## 📄 License
 

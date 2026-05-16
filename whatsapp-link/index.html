@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Direct Message Link Generator | SmartGen</title>
+    <meta name="description" content="Create direct chat links for WhatsApp with custom messages.">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="../assets/js/app.js" defer></script>
+</head>
+<body>
+    <header id="main-header"></header>
+    <main class="container">
+        <div class="tool-container">
+            <h1>WhatsApp Link Generator</h1>
+            <div class="form-group">
+                <label class="form-label">Phone Number (with country code)</label>
+                <input type="tel" id="wa-phone" class="form-input" placeholder="1234567890" oninput="buildWA()">
+            </div>
+            <div class="form-group">
+                <label class="form-label">Pre-filled Message</label>
+                <textarea id="wa-msg" class="form-textarea" placeholder="Hello! I'm interested in..." oninput="buildWA()"></textarea>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Generated Link</label>
+                <input type="text" id="wa-result" class="form-input" readonly>
+            </div>
+            <button class="btn btn-primary" onclick="copyWA()" style="width: 100%;">Copy WhatsApp Link</button>
+        </div>
+
+        <div class="ad-banner-space">AdSense Banner Space</div>
+
+        <section class="seo-content">
+            <h2>What is a WhatsApp Link Generator?</h2>
+            <p>A WhatsApp link allows your customers or friends to start a chat with you instantly without having your phone number saved in their contacts. It uses the 'wa.me' shortcut provided by WhatsApp.</p>
+            <h2>How to Use</h2>
+            <p>Enter your full phone number starting with the country code (but without the '+' sign). Add an optional message that will automatically appear in the user's text input field when they click the link.</p>
+            <h2>Features</h2>
+            <ul>
+                <li>Instant chat redirection</li>
+                <li>Custom message support</li>
+                <li>No registration required</li>
+            </ul>
+            <h2>FAQs</h2>
+            <h3>Do I need to include the '+' in the phone number?</h3>
+            <p>No, just use the numbers, e.g., 15551234567.</p>
+            <h3>Is this service free?</h3>
+            <p>Yes, creating WhatsApp links on SmartGen is completely free.</p>
+            <h3>Can I use this for my business?</h3>
+            <p>Definitely! It's a great way to let customers contact you from your website or social media profiles.</p>
+        </section>
+    </main>
+    <footer id="main-footer"></footer>
+    <script>
+        function buildWA() {
+            const phone = document.getElementById('wa-phone').value.replace(/\D/g, '');
+            const msg = encodeURIComponent(document.getElementById('wa-msg').value);
+            if (!phone) {
+                document.getElementById('wa-result').value = '';
+                return;
+            }
+            document.getElementById('wa-result').value = `https://wa.me/${phone}${msg ? '?text=' + msg : ''}`;
+        }
+
+        function copyWA() {
+            const result = document.getElementById('wa-result');
+            result.select();
+            document.execCommand('copy');
+            alert('WhatsApp link copied!');
+        }
+    </script>
+</body>
+</html>

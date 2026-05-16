@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image to Base64 Converter | SmartGen</title>
+    <meta name="description" content="Convert images to Base64 strings for use in HTML, CSS, and JSON.">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="../assets/js/app.js" defer></script>
+</head>
+<body>
+    <header id="main-header"></header>
+    <main class="container">
+        <div class="tool-container">
+            <h1>Image to Base64 Converter</h1>
+            <div class="form-group">
+                <label class="form-label">Select an Image</label>
+                <input type="file" id="i64-file" class="form-input" accept="image/*" onchange="convertI64()">
+            </div>
+            <div class="form-group">
+                <label class="form-label">Base64 String</label>
+                <textarea id="i64-result" class="form-textarea" readonly rows="10" placeholder="Base64 string will appear here..."></textarea>
+            </div>
+            <button class="btn btn-primary" onclick="copyI64()" style="width: 100%;">Copy Base64 String</button>
+        </div>
+
+        <div class="ad-banner-space">AdSense Banner Space</div>
+
+        <section class="seo-content">
+            <h2>What is Base64 Encoding?</h2>
+            <p>Base64 is a group of binary-to-text encoding schemes that represent binary data in an ASCII string format. By converting an image to Base64, you can embed the image data directly into your HTML, CSS, or JSON files.</p>
+            <h2>When to Use Base64 Images</h2>
+            <p>Base64 is ideal for small icons or images that you want to load instantly without making an additional HTTP request. It's also useful for passing image data through APIs that only accept text.</p>
+            <h2>Features</h2>
+            <ul>
+                <li>Supports JPG, PNG, GIF, and WebP</li>
+                <li>Instant client-side conversion</li>
+                <li>No file size upload limits (browser dependent)</li>
+            </ul>
+            <h2>FAQs</h2>
+            <h3>Are my images uploaded to a server?</h3>
+            <p>No, the conversion happens entirely within your web browser. Your images are never uploaded or stored on our servers.</p>
+            <h3>Does Base64 increase file size?</h3>
+            <p>Yes, Base64 encoding typically increases the data size by about 33% compared to the original binary file.</p>
+            <h3>How do I use the string in HTML?</h3>
+            <p>You can use it in an img tag like this: <code>&lt;img src="data:image/png;base64,..."&gt;</code>.</p>
+        </section>
+    </main>
+    <footer id="main-footer"></footer>
+    <script>
+        function convertI64() {
+            const file = document.getElementById('i64-file').files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                document.getElementById('i64-result').value = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function copyI64() {
+            const result = document.getElementById('i64-result');
+            result.select();
+            document.execCommand('copy');
+            alert('Base64 string copied!');
+        }
+    </script>
+</body>
+</html>

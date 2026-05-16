@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meta Tag & OG Generator | SmartGen</title>
+    <meta name="description" content="Generate SEO-friendly meta tags and Open Graph tags for your website.">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="../assets/js/app.js" defer></script>
+</head>
+<body>
+    <header id="main-header"></header>
+    <main class="container">
+        <div class="tool-container">
+            <h1>Meta Tag & OG Generator</h1>
+            <div class="form-group">
+                <label class="form-label">Site Title</label>
+                <input type="text" id="meta-title" class="form-input" placeholder="My Awesome Website" oninput="buildMeta()">
+            </div>
+            <div class="form-group">
+                <label class="form-label">Site Description</label>
+                <textarea id="meta-desc" class="form-textarea" placeholder="Describe your website for search engines..." oninput="buildMeta()"></textarea>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Keywords (comma separated)</label>
+                <input type="text" id="meta-keys" class="form-input" placeholder="seo, tools, smartgen" oninput="buildMeta()">
+            </div>
+            <div class="form-group">
+                <label class="form-label">Generated Tags</label>
+                <textarea id="meta-result" class="form-textarea" readonly rows="10"></textarea>
+            </div>
+            <button class="btn btn-primary" onclick="copyMeta()" style="width: 100%;">Copy Meta Tags</button>
+        </div>
+
+        <div class="ad-banner-space">AdSense Banner Space</div>
+
+        <section class="seo-content">
+            <h2>What are Meta Tags?</h2>
+            <p>Meta tags are snippets of text that describe a page's content; they don't appear on the page itself, but only in the page's source code. Meta tags are essentially little content descriptors that help tell search engines what a web page is about.</p>
+            <h2>Importance of Open Graph (OG) Tags</h2>
+            <p>Open Graph tags are meta tags that control how your website's content is displayed when shared on social media platforms like Facebook, LinkedIn, and Twitter. They help increase click-through rates by making your links look professional.</p>
+            <h2>Features</h2>
+            <ul>
+                <li>SEO optimized structure</li>
+                <li>Social media ready (Open Graph)</li>
+                <li>Instant preview in code format</li>
+            </ul>
+            <h2>FAQs</h2>
+            <h3>Where do I put these tags?</h3>
+            <p>Paste the generated code inside the <code>&lt;head&gt;</code> section of your HTML document.</p>
+            <h3>How many keywords should I use?</h3>
+            <p>While modern search engines rely less on keywords, 5-10 relevant terms can still be helpful for some directories.</p>
+            <h3>What is the ideal description length?</h3>
+            <p>Keep your description between 150-160 characters for the best display in search results.</p>
+        </section>
+    </main>
+    <footer id="main-footer"></footer>
+    <script>
+        function buildMeta() {
+            const title = document.getElementById('meta-title').value;
+            const desc = document.getElementById('meta-desc').value;
+            const keys = document.getElementById('meta-keys').value;
+
+            let code = `<!-- Primary Meta Tags -->\n`;
+            code += `<title>${title}</title>\n`;
+            code += `<meta name="title" content="${title}">\n`;
+            code += `<meta name="description" content="${desc}">\n`;
+            if (keys) code += `<meta name="keywords" content="${keys}">\n`;
+            
+            code += `\n<!-- Open Graph / Facebook -->\n`;
+            code += `<meta property="og:type" content="website">\n`;
+            code += `<meta property="og:title" content="${title}">\n`;
+            code += `<meta property="og:description" content="${desc}">\n`;
+            
+            code += `\n<!-- Twitter -->\n`;
+            code += `<meta property="twitter:card" content="summary_large_image">\n`;
+            code += `<meta property="twitter:title" content="${title}">\n`;
+            code += `<meta property="twitter:description" content="${desc}">`;
+
+            document.getElementById('meta-result').value = code;
+        }
+
+        function copyMeta() {
+            const result = document.getElementById('meta-result');
+            result.select();
+            document.execCommand('copy');
+            alert('Meta tags copied!');
+        }
+    </script>
+</body>
+</html>

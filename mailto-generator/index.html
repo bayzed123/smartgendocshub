@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mailto Link Generator | SmartGen</title>
+    <meta name="description" content="Generate professional email links with subject and body pre-filled.">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="../assets/js/app.js" defer></script>
+</head>
+<body>
+    <header id="main-header"></header>
+    <main class="container">
+        <div class="tool-container">
+            <h1>Mailto Link Generator</h1>
+            <div class="form-group">
+                <label class="form-label">Recipient Email</label>
+                <input type="email" id="mail-to" class="form-input" placeholder="hello@example.com" oninput="buildMail()">
+            </div>
+            <div class="form-group">
+                <label class="form-label">Subject Line</label>
+                <input type="text" id="mail-sub" class="form-input" placeholder="Inquiry about services" oninput="buildMail()">
+            </div>
+            <div class="form-group">
+                <label class="form-label">Email Body</label>
+                <textarea id="mail-body" class="form-textarea" placeholder="Hi there..." oninput="buildMail()"></textarea>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Generated HTML Code</label>
+                <input type="text" id="mail-result" class="form-input" readonly>
+            </div>
+            <button class="btn btn-primary" onclick="copyMail()" style="width: 100%;">Copy HTML Link</button>
+        </div>
+
+        <div class="ad-banner-space">AdSense Banner Space</div>
+
+        <section class="seo-content">
+            <h2>What is a Mailto Link?</h2>
+            <p>A 'mailto' link is a type of HTML link that activates the default mail client on the user's computer or mobile device to send an email. It can include a recipient, subject, and even a pre-written message body.</p>
+            <h2>How to Use</h2>
+            <p>Enter the destination email address and optionally fill in the subject and body fields. The tool will generate the 'mailto:' URI and the corresponding HTML code for you to paste into your website.</p>
+            <h2>Features</h2>
+            <ul>
+                <li>Automatic URL encoding</li>
+                <li>Support for subject and body</li>
+                <li>Instant HTML code generation</li>
+            </ul>
+            <h2>FAQs</h2>
+            <h3>Does this work on all devices?</h3>
+            <p>Yes, it works on any device that has an email client configured (like Outlook, Apple Mail, or Gmail).</p>
+            <h3>Can I add CC or BCC?</h3>
+            <p>This version focuses on the primary recipient for simplicity, which is the most common use case.</p>
+            <h3>Is it safe from spammers?</h3>
+            <p>While mailto links are convenient, they are visible to web scrapers. We recommend using them for public contact addresses.</p>
+        </section>
+    </main>
+    <footer id="main-footer"></footer>
+    <script>
+        function buildMail() {
+            const to = document.getElementById('mail-to').value;
+            const sub = encodeURIComponent(document.getElementById('mail-sub').value);
+            const body = encodeURIComponent(document.getElementById('mail-body').value);
+            
+            if (!to) {
+                document.getElementById('mail-result').value = '';
+                return;
+            }
+
+            let mailto = `mailto:${to}`;
+            let params = [];
+            if (sub) params.push(`subject=${sub}`);
+            if (body) params.push(`body=${body}`);
+            
+            if (params.length > 0) {
+                mailto += '?' + params.join('&');
+            }
+
+            document.getElementById('mail-result').value = `<a href="${mailto}">Send Email</a>`;
+        }
+
+        function copyMail() {
+            const result = document.getElementById('mail-result');
+            result.select();
+            document.execCommand('copy');
+            alert('HTML code copied!');
+        }
+    </script>
+</body>
+</html>

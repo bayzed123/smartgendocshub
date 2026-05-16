@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word, Character & Reading Time Counter | SmartGen</title>
+    <meta name="description" content="Count words, characters, and estimate reading time for your content.">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="../assets/js/app.js" defer></script>
+</head>
+<body>
+    <header id="main-header"></header>
+    <main class="container">
+        <div class="tool-container">
+            <h1>Word & Character Counter</h1>
+            <div class="form-group">
+                <label class="form-label">Type or paste your text</label>
+                <textarea id="wc-text" class="form-textarea" rows="10" placeholder="Start typing..." oninput="count()"></textarea>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; text-align: center;">
+                <div style="padding: 1rem; background: var(--background); border-radius: 8px; border: 1px solid var(--border);">
+                    <div id="wc-words" style="font-size: 1.5rem; font-weight: bold;">0</div>
+                    <div style="font-size: 0.8rem; color: var(--text-secondary);">Words</div>
+                </div>
+                <div style="padding: 1rem; background: var(--background); border-radius: 8px; border: 1px solid var(--border);">
+                    <div id="wc-chars" style="font-size: 1.5rem; font-weight: bold;">0</div>
+                    <div style="font-size: 0.8rem; color: var(--text-secondary);">Characters</div>
+                </div>
+                <div style="padding: 1rem; background: var(--background); border-radius: 8px; border: 1px solid var(--border);">
+                    <div id="wc-time" style="font-size: 1.5rem; font-weight: bold;">0m</div>
+                    <div style="font-size: 0.8rem; color: var(--text-secondary);">Read Time</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ad-banner-space">AdSense Banner Space</div>
+
+        <section class="seo-content">
+            <h2>Why Use a Word Counter?</h2>
+            <p>Whether you're writing a blog post, an academic essay, or a social media update, keeping track of your word and character count is essential. Many platforms have strict limits, and search engines often prefer content of a certain length.</p>
+            <h2>Estimating Reading Time</h2>
+            <p>Our tool uses an average reading speed of 200 words per minute to estimate how long it will take for a typical reader to finish your content. This is a great metric to include at the top of your blog posts to improve user experience.</p>
+            <h2>Features</h2>
+            <ul>
+                <li>Real-time counting</li>
+                <li>Character count (with and without spaces)</li>
+                <li>Accurate reading time estimation</li>
+            </ul>
+            <h2>FAQs</h2>
+            <h3>Are my texts saved?</h3>
+            <p>No, all counting happens locally in your browser. Your text is never sent to our servers.</p>
+            <h3>What is the character limit for Twitter?</h3>
+            <p>Twitter currently has a 280-character limit for most users.</p>
+            <h3>How many words should a blog post be?</h3>
+            <p>For SEO purposes, many experts recommend at least 1,000 to 1,500 words for deep-dive articles.</p>
+        </section>
+    </main>
+    <footer id="main-footer"></footer>
+    <script>
+        function count() {
+            const text = document.getElementById('wc-text').value;
+            const words = text.trim() ? text.trim().split(/\s+/).length : 0;
+            const chars = text.length;
+            const time = Math.ceil(words / 200);
+
+            document.getElementById('wc-words').innerText = words;
+            document.getElementById('wc-chars').innerText = chars;
+            document.getElementById('wc-time').innerText = time + 'm';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schema Markup (JSON-LD) Generator | SmartGen</title>
+    <meta name="description" content="Generate JSON-LD schema markup to improve your website's search engine visibility.">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="../assets/js/app.js" defer></script>
+</head>
+<body>
+    <header id="main-header"></header>
+    <main class="container">
+        <div class="tool-container">
+            <h1>Schema Markup Generator</h1>
+            <div class="form-group">
+                <label class="form-label">Organization Name</label>
+                <input type="text" id="sch-name" class="form-input" placeholder="SmartGen Inc." oninput="buildSchema()">
+            </div>
+            <div class="form-group">
+                <label class="form-label">Website URL</label>
+                <input type="url" id="sch-url" class="form-input" placeholder="https://example.com" oninput="buildSchema()">
+            </div>
+            <div class="form-group">
+                <label class="form-label">Logo URL</label>
+                <input type="url" id="sch-logo" class="form-input" placeholder="https://example.com/logo.png" oninput="buildSchema()">
+            </div>
+            <div class="form-group">
+                <label class="form-label">Generated JSON-LD</label>
+                <textarea id="sch-result" class="form-textarea" readonly rows="10"></textarea>
+            </div>
+            <button class="btn btn-primary" onclick="copySchema()" style="width: 100%;">Copy Schema Markup</button>
+        </div>
+
+        <div class="ad-banner-space">AdSense Banner Space</div>
+
+        <section class="seo-content">
+            <h2>What is Schema Markup?</h2>
+            <p>Schema markup is code (semantic vocabulary) that you put on your website to help the search engines return more informative results for users. It tells the search engines what your data means, not just what it says.</p>
+            <h2>Benefits of JSON-LD</h2>
+            <p>JSON-LD is the recommended format by Google for implementing schema markup. It's easy to add to a page because it can be placed anywhere in the HTML and doesn't interfere with the visible content.</p>
+            <h2>Features</h2>
+            <ul>
+                <li>Valid JSON-LD format</li>
+                <li>Organization-type support</li>
+                <li>Instant code generation</li>
+            </ul>
+            <h2>FAQs</h2>
+            <h3>Where do I put this code?</h3>
+            <p>You can place the generated <code>&lt;script&gt;</code> tag in either the <code>&lt;head&gt;</code> or the <code>&lt;body&gt;</code> of your HTML.</p>
+            <h3>Does schema improve rankings?</h3>
+            <p>While not a direct ranking factor, it helps search engines understand your content better, which can lead to rich snippets and higher click-through rates.</p>
+            <h3>Is this tool free?</h3>
+            <p>Yes, like all SmartGen tools, the Schema Generator is completely free to use.</p>
+        </section>
+    </main>
+    <footer id="main-footer"></footer>
+    <script>
+        function buildSchema() {
+            const name = document.getElementById('sch-name').value;
+            const url = document.getElementById('sch-url').value;
+            const logo = document.getElementById('sch-logo').value;
+
+            const schema = {
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                "name": name,
+                "url": url,
+                "logo": logo
+            };
+
+            document.getElementById('sch-result').value = `<script type="application/ld+json">\n${JSON.stringify(schema, null, 2)}\n<\/script>`;
+        }
+
+        function copySchema() {
+            const result = document.getElementById('sch-result');
+            result.select();
+            document.execCommand('copy');
+            alert('Schema markup copied!');
+        }
+    </script>
+</body>
+</html>

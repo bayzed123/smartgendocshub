@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age & Date Calculator | SmartGen</title>
+    <meta name="description" content="Calculate your exact age or the time between two dates instantly.">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="../assets/js/app.js" defer></script>
+</head>
+<body>
+    <header id="main-header"></header>
+    <main class="container">
+        <div class="tool-container">
+            <h1>Age & Date Calculator</h1>
+            <div class="form-group">
+                <label class="form-label">Date of Birth</label>
+                <input type="date" id="age-dob" class="form-input" oninput="calcAge()">
+            </div>
+            <div id="age-result" style="text-align: center; margin-top: 2rem;">
+                <p style="color: var(--text-secondary);">Enter your birth date to see results</p>
+            </div>
+        </div>
+
+        <div class="ad-banner-space">AdSense Banner Space</div>
+
+        <section class="seo-content">
+            <h2>What is an Age Calculator?</h2>
+            <p>An age calculator is a tool that determines the interval between two dates. Most commonly, it's used to find out exactly how many years, months, and days old a person is based on their birth date.</p>
+            <h2>How the Calculation Works</h2>
+            <p>Our tool takes your birth date and compares it with the current date, accounting for leap years and the varying number of days in each month to provide a precise breakdown of your age.</p>
+            <h2>Features</h2>
+            <ul>
+                <li>Precise years, months, and days</li>
+                <li>Real-time calculation</li>
+                <li>Clean, easy-to-read interface</li>
+            </ul>
+            <h2>FAQs</h2>
+            <h3>Is my birth date private?</h3>
+            <p>Yes, the calculation is done entirely in your browser. We do not store or transmit your personal dates.</p>
+            <h3>Can I calculate future dates?</h3>
+            <p>This tool is optimized for calculating age from the past to the present.</p>
+            <h3>Does it handle leap years?</h3>
+            <p>Yes, our JavaScript-based logic correctly handles the extra day in February during leap years.</p>
+        </section>
+    </main>
+    <footer id="main-footer"></footer>
+    <script>
+        function calcAge() {
+            const dobVal = document.getElementById('age-dob').value;
+            if (!dobVal) return;
+
+            const dob = new Date(dobVal);
+            const now = new Date();
+
+            let years = now.getFullYear() - dob.getFullYear();
+            let months = now.getMonth() - dob.getMonth();
+            let days = now.getDate() - dob.getDate();
+
+            if (days < 0) {
+                months--;
+                days += new Date(now.getFullYear(), now.getMonth(), 0).getDate();
+            }
+            if (months < 0) {
+                years--;
+                months += 12;
+            }
+
+            document.getElementById('age-result').innerHTML = `
+                <div style="font-size: 2.5rem; font-weight: bold; color: var(--primary);">${years}</div>
+                <div style="font-size: 1.1rem;">Years Old</div>
+                <p style="margin-top: 1rem; color: var(--text-secondary);">${months} months and ${days} days</p>
+            `;
+        }
+    </script>
+</body>
+</html>

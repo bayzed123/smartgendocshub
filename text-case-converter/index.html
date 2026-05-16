@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Case Converter | SmartGen</title>
+    <meta name="description" content="Convert your text to UPPERCASE, lowercase, Title Case, and more instantly.">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="../assets/js/app.js" defer></script>
+</head>
+<body>
+    <header id="main-header"></header>
+    <main class="container">
+        <div class="tool-container">
+            <h1>Text Case Converter</h1>
+            <div class="form-group">
+                <textarea id="tc-text" class="form-textarea" rows="10" placeholder="Paste your text here..."></textarea>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem;">
+                <button class="btn btn-primary" onclick="convert('upper')">UPPERCASE</button>
+                <button class="btn btn-primary" onclick="convert('lower')">lowercase</button>
+                <button class="btn btn-primary" onclick="convert('title')">Title Case</button>
+                <button class="btn btn-primary" onclick="convert('sentence')">Sentence case</button>
+            </div>
+            <button class="btn btn-primary" onclick="copyTC()" style="width: 100%; margin-top: 1rem; background: var(--success);">Copy Result</button>
+        </div>
+
+        <div class="ad-banner-space">AdSense Banner Space</div>
+
+        <section class="seo-content">
+            <h2>What is a Case Converter?</h2>
+            <p>A case converter is a handy web tool that allows you to change the capitalization of a block of text with a single click. It's perfect for fixing text written in all caps or converting titles to the correct format.</p>
+            <h2>Available Conversion Types</h2>
+            <p><strong>UPPERCASE:</strong> Converts all letters to capitals. <strong>lowercase:</strong> Converts all letters to small letters. <strong>Title Case:</strong> Capitalizes the first letter of every word. <strong>Sentence case:</strong> Capitalizes only the first letter of each sentence.</p>
+            <h2>Features</h2>
+            <ul>
+                <li>Instant conversion</li>
+                <li>Multiple format support</li>
+                <li>One-click copy functionality</li>
+            </ul>
+            <h2>FAQs</h2>
+            <h3>Does it handle special characters?</h3>
+            <p>Yes, special characters and numbers remain unchanged during conversion.</p>
+            <h3>Is there a limit to the text size?</h3>
+            <p>Our tool can handle large blocks of text, but extremely large files (several megabytes) might slow down your browser.</p>
+            <h3>Is this tool free?</h3>
+            <p>Yes, it is 100% free and works entirely in your browser for maximum privacy.</p>
+        </section>
+    </main>
+    <footer id="main-footer"></footer>
+    <script>
+        function convert(type) {
+            const area = document.getElementById('tc-text');
+            let text = area.value;
+
+            if (type === 'upper') text = text.toUpperCase();
+            if (type === 'lower') text = text.toLowerCase();
+            if (type === 'title') {
+                text = text.toLowerCase().split(' ').map(s => s.charAt(0).toUpperCase() + s.substring(1)).join(' ');
+            }
+            if (type === 'sentence') {
+                text = text.toLowerCase().replace(/(^\s*\w|[\.\!\?]\s*\w)/g, c => c.toUpperCase());
+            }
+
+            area.value = text;
+        }
+
+        function copyTC() {
+            const area = document.getElementById('tc-text');
+            area.select();
+            document.execCommand('copy');
+            alert('Converted text copied!');
+        }
+    </script>
+</body>
+</html>

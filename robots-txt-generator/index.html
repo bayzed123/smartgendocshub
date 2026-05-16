@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robots.txt Generator | SmartGen</title>
+    <meta name="description" content="Create robots.txt files to guide search engine crawlers on your website.">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="../assets/js/app.js" defer></script>
+</head>
+<body>
+    <header id="main-header"></header>
+    <main class="container">
+        <div class="tool-container">
+            <h1>Robots.txt Generator</h1>
+            <div class="form-group">
+                <label class="form-label">Sitemap URL</label>
+                <input type="url" id="robot-sitemap" class="form-input" placeholder="https://example.com/sitemap.xml" oninput="buildRobots()">
+            </div>
+            <div class="form-group">
+                <label class="form-label">Disallowed Paths (one per line)</label>
+                <textarea id="robot-disallow" class="form-textarea" placeholder="/admin/\n/private/" oninput="buildRobots()"></textarea>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Generated Robots.txt</label>
+                <textarea id="robot-result" class="form-textarea" readonly rows="8"></textarea>
+            </div>
+            <button class="btn btn-primary" onclick="copyRobots()" style="width: 100%;">Copy Robots.txt</button>
+        </div>
+
+        <div class="ad-banner-space">AdSense Banner Space</div>
+
+        <section class="seo-content">
+            <h2>What is a Robots.txt File?</h2>
+            <p>A robots.txt file tells search engine crawlers which pages or files the crawler can or can't request from your site. This is used mainly to avoid overloading your site with requests; it is not a mechanism for keeping a web page out of Google.</p>
+            <h2>How to Use</h2>
+            <p>Define your sitemap URL to help bots find your content faster. Add any directories or pages you want to keep private from search results (like admin panels or temporary files) in the disallowed paths section.</p>
+            <h2>Features</h2>
+            <ul>
+                <li>Standard robots.txt syntax</li>
+                <li>Sitemap integration</li>
+                <li>Clean, readable output</li>
+            </ul>
+            <h2>FAQs</h2>
+            <h3>Where should I upload this file?</h3>
+            <p>Upload the robots.txt file to the root directory of your website (e.g., example.com/robots.txt).</p>
+            <h3>Does robots.txt hide pages from users?</h3>
+            <p>No, it only provides instructions for automated crawlers. Users can still access the pages if they have the URL.</p>
+            <h3>Can I block all bots?</h3>
+            <p>Yes, by using <code>User-agent: *</code> and <code>Disallow: /</code>, but this will stop your site from appearing in search results.</p>
+        </section>
+    </main>
+    <footer id="main-footer"></footer>
+    <script>
+        function buildRobots() {
+            const sitemap = document.getElementById('robot-sitemap').value;
+            const disallow = document.getElementById('robot-disallow').value.split('\n');
+
+            let code = `User-agent: *\n`;
+            disallow.forEach(path => {
+                if (path.trim()) {
+                    code += `Disallow: ${path.trim()}\n`;
+                }
+            });
+            code += `Allow: /\n`;
+            if (sitemap) {
+                code += `\nSitemap: ${sitemap}`;
+            }
+
+            document.getElementById('robot-result').value = code;
+        }
+
+        function copyRobots() {
+            const result = document.getElementById('robot-result');
+            result.select();
+            document.execCommand('copy');
+            alert('Robots.txt content copied!');
+        }
+        buildRobots();
+    </script>
+</body>
+</html>

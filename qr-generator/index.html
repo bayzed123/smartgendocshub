@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced QR Code Generator | SmartGen</title>
+    <meta name="description" content="Create custom QR codes for URLs, WiFi, WhatsApp, and more with our advanced QR generator.">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="../assets/js/app.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+    <header id="main-header"></header>
+    <main class="container">
+        <div class="tool-container">
+            <h1>Advanced QR Code Generator</h1>
+            <p>Generate high-quality QR codes for any purpose.</p>
+            
+            <div class="form-group">
+                <label class="form-label">Content (URL, Text, etc.)</label>
+                <input type="text" id="qr-input" class="form-input" placeholder="Enter text or URL" oninput="generateQR()">
+            </div>
+
+            <div style="text-align: center; margin: 2rem 0;">
+                <div id="qrcode" style="display: inline-block; padding: 1rem; background: white; border-radius: 8px;"></div>
+            </div>
+
+            <button class="btn btn-primary" onclick="downloadQR()" style="width: 100%;">Download QR Code</button>
+        </div>
+
+        <div class="ad-banner-space">AdSense Banner Space</div>
+
+        <section class="seo-content">
+            <h2>What is a QR Code Generator?</h2>
+            <p>A QR Code (Quick Response Code) is a type of matrix barcode that contains information about an item to which it is attached. Our Advanced QR Code Generator allows you to create these codes instantly for various data types including website URLs, plain text, WiFi credentials, and more.</p>
+            
+            <h2>How to Use the SmartGen QR Generator</h2>
+            <p>Using our tool is simple: 1. Enter the data you want to encode into the input field. 2. The QR code will generate in real-time. 3. Click the download button to save your QR code as an image file.</p>
+            
+            <h2>Key Features</h2>
+            <ul>
+                <li>Real-time generation</li>
+                <li>High-resolution output</li>
+                <li>Support for multiple data types</li>
+                <li>100% free and private</li>
+            </ul>
+
+            <h2>Frequently Asked Questions</h2>
+            <h3>Are these QR codes permanent?</h3>
+            <p>Yes, the QR codes generated here are static, meaning they will work as long as the underlying data (like a URL) remains valid.</p>
+            <h3>Can I use these for commercial purposes?</h3>
+            <p>Absolutely! All tools on SmartGen are free for both personal and commercial use.</p>
+            <h3>Do you store my data?</h3>
+            <p>No, our generator works entirely in your browser. We do not store any information you enter.</p>
+        </section>
+    </main>
+    <footer id="main-footer"></footer>
+    <script>
+        let qrcode = new QRCode(document.getElementById("qrcode"), {
+            width: 200,
+            height: 200
+        });
+
+        function generateQR() {
+            const input = document.getElementById('qr-input').value;
+            if (input) {
+                qrcode.clear();
+                qrcode.makeCode(input);
+            }
+        }
+
+        function downloadQR() {
+            const img = document.querySelector('#qrcode img');
+            if (img) {
+                const link = document.createElement('a');
+                link.download = 'smartgen-qr.png';
+                link.href = img.src;
+                link.click();
+            }
+        }
+        
+        // Initial generation
+        generateQR();
+    </script>
+</body>
+</html>

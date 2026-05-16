@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyword Density Checker | SmartGen</title>
+    <meta name="description" content="Analyze the frequency of keywords in your text to optimize for SEO.">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="../assets/js/app.js" defer></script>
+</head>
+<body>
+    <header id="main-header"></header>
+    <main class="container">
+        <div class="tool-container">
+            <h1>Keyword Density Checker</h1>
+            <div class="form-group">
+                <label class="form-label">Paste your text here</label>
+                <textarea id="kd-text" class="form-textarea" rows="10" placeholder="Paste your article or content..."></textarea>
+            </div>
+            <button class="btn btn-primary" onclick="checkDensity()" style="width: 100%;">Analyze Keywords</button>
+            
+            <div id="kd-results" style="margin-top: 2rem;"></div>
+        </div>
+
+        <div class="ad-banner-space">AdSense Banner Space</div>
+
+        <section class="seo-content">
+            <h2>What is Keyword Density?</h2>
+            <p>Keyword density refers to the percentage of times a keyword or phrase appears on a web page compared to the total number of words on the page. In the context of SEO, keyword density can be used to determine whether a web page is relevant to a specific keyword or keyword phrase.</p>
+            <h2>How to Optimize Density</h2>
+            <p>While there is no "perfect" percentage, most SEO experts suggest keeping your primary keyword density around 1-2%. This ensures that search engines understand your topic without flagging your content as "keyword stuffing."</p>
+            <h2>Features</h2>
+            <ul>
+                <li>Total word count analysis</li>
+                <li>Top keyword frequency list</li>
+                <li>Percentage-based calculations</li>
+            </ul>
+            <h2>FAQs</h2>
+            <h3>What is keyword stuffing?</h3>
+            <p>Keyword stuffing is the practice of loading a webpage with keywords in an attempt to manipulate a site's ranking in search results. This can lead to penalties from Google.</p>
+            <h3>Does this tool handle stop words?</h3>
+            <p>Yes, our tool filters out common "stop words" like 'the', 'is', and 'at' to give you more meaningful results.</p>
+            <h3>Can I analyze a whole website?</h3>
+            <p>This tool is designed for analyzing specific blocks of text or individual articles.</p>
+        </section>
+    </main>
+    <footer id="main-footer"></footer>
+    <script>
+        function checkDensity() {
+            const text = document.getElementById('kd-text').value;
+            if (!text) return;
+
+            const words = text.toLowerCase().match(/\b\w+\b/g);
+            const totalWords = words.length;
+            const stopWords = ['the', 'is', 'at', 'which', 'on', 'and', 'a', 'an', 'to', 'in', 'of', 'for', 'with', 'it'];
+            
+            const freq = {};
+            words.forEach(w => {
+                if (w.length > 2 && !stopWords.includes(w)) {
+                    freq[w] = (freq[w] || 0) + 1;
+                }
+            });
+
+            const sorted = Object.entries(freq).sort((a, b) => b[1] - a[1]).slice(0, 10);
+            
+            let html = `<h3>Results (Total Words: ${totalWords})</h3>`;
+            html += `<table style="width:100%; margin-top:1rem; border-collapse:collapse;">`;
+            html += `<tr style="background:var(--border);"><th style="padding:0.5rem; text-align:left;">Keyword</th><th style="padding:0.5rem;">Count</th><th style="padding:0.5rem;">Density</th></tr>`;
+            
+            sorted.forEach(([word, count]) => {
+                const density = ((count / totalWords) * 100).toFixed(2);
+                html += `<tr style="border-bottom:1px solid var(--border);"><td style="padding:0.5rem;">${word}</td><td style="padding:0.5rem; text-align:center;">${count}</td><td style="padding:0.5rem; text-align:center;">${density}%</td></tr>`;
+            });
+            html += `</table>`;
+
+            document.getElementById('kd-results').innerHTML = html;
+        }
+    </script>
+</body>
+</html>

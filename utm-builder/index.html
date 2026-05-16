@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UTM Campaign Link Builder | SmartGen</title>
+    <meta name="description" content="Generate tracking links for your marketing campaigns with our UTM builder.">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="../assets/js/app.js" defer></script>
+</head>
+<body>
+    <header id="main-header"></header>
+    <main class="container">
+        <div class="tool-container">
+            <h1>UTM Campaign Link Builder</h1>
+            <div class="form-group">
+                <label class="form-label">Website URL *</label>
+                <input type="url" id="utm-url" class="form-input" placeholder="https://example.com" oninput="buildUTM()">
+            </div>
+            <div class="form-group">
+                <label class="form-label">Campaign Source *</label>
+                <input type="text" id="utm-source" class="form-input" placeholder="google, newsletter" oninput="buildUTM()">
+            </div>
+            <div class="form-group">
+                <label class="form-label">Campaign Medium</label>
+                <input type="text" id="utm-medium" class="form-input" placeholder="cpc, email" oninput="buildUTM()">
+            </div>
+            <div class="form-group">
+                <label class="form-label">Campaign Name</label>
+                <input type="text" id="utm-name" class="form-input" placeholder="summer_sale" oninput="buildUTM()">
+            </div>
+            <div class="form-group">
+                <label class="form-label">Generated URL</label>
+                <textarea id="utm-result" class="form-textarea" readonly rows="3"></textarea>
+            </div>
+            <button class="btn btn-primary" onclick="copyUTM()" style="width: 100%;">Copy Link</button>
+        </div>
+
+        <div class="ad-banner-space">AdSense Banner Space</div>
+
+        <section class="seo-content">
+            <h2>What is a UTM Link Builder?</h2>
+            <p>UTM (Urchin Tracking Module) parameters are tags added to a URL to track the effectiveness of online marketing campaigns across traffic sources and publishing media. Our builder helps you create these links correctly every time.</p>
+            <h2>How to Use UTM Parameters</h2>
+            <p>Fill in the required fields like Source and URL. The tool will automatically append the parameters to your link. Use these links in your ads, emails, and social posts to see exactly where your traffic is coming from in Google Analytics.</p>
+            <h2>Features</h2>
+            <ul>
+                <li>Instant generation</li>
+                <li>Standardized parameter formatting</li>
+                <li>One-click copy</li>
+            </ul>
+            <h2>FAQs</h2>
+            <h3>What is UTM Source?</h3>
+            <p>Source identifies the platform where the traffic originates, like 'google' or 'facebook'.</p>
+            <h3>Are UTM links case-sensitive?</h3>
+            <p>Yes, 'Email' and 'email' will show up as different sources in your analytics.</p>
+            <h3>Can I use spaces in UTM tags?</h3>
+            <p>It's best to use underscores (_) or hyphens (-) instead of spaces to avoid encoding issues.</p>
+        </section>
+    </main>
+    <footer id="main-footer"></footer>
+    <script>
+        function buildUTM() {
+            const url = document.getElementById('utm-url').value;
+            const source = document.getElementById('utm-source').value;
+            const medium = document.getElementById('utm-medium').value;
+            const name = document.getElementById('utm-name').value;
+
+            if (!url || !source) {
+                document.getElementById('utm-result').value = '';
+                return;
+            }
+
+            let finalUrl = new URL(url);
+            finalUrl.searchParams.set('utm_source', source);
+            if (medium) finalUrl.searchParams.set('utm_medium', medium);
+            if (name) finalUrl.searchParams.set('utm_campaign', name);
+
+            document.getElementById('utm-result').value = finalUrl.toString();
+        }
+
+        function copyUTM() {
+            const result = document.getElementById('utm-result');
+            result.select();
+            document.execCommand('copy');
+            alert('Link copied to clipboard!');
+        }
+    </script>
+</body>
+</html>

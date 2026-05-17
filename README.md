@@ -1,6 +1,6 @@
-# [SmartGen: All-in-One Digital & Web Utility Platform 🚀](https://qr.genzfrontir.com)
+# [SmartGen: All-in-One Digital & Web Utility Platform 🚀](https://smartgentools.com)
 
-**🟢 Live Demo:** [qr.genzfrontir.com](https://qr.genzfrontir.com)  
+**🟢 Live Demo:** [smartgentools.com](https://smartgentools.com)  
 **Owner:** Sayad Md Bayezid Hosan ([www.sayadbayezid.com](https://www.sayadbayezid.com))
 <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Sayad_Md_Bayezid_Hosan_Portrait.jpg" alt="Sayad Md Bayezid Hosan" width="100%">
 

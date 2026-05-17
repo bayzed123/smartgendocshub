@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://qr.genzfrontir.com/sitemap.xml
+Sitemap: https://smartgentools.com/sitemap.xml

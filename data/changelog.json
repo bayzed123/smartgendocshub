@@ -1,5 +1,10 @@
 [
   {
+    "title": "chore: global domain migration to smartgentools.com and robots.txt update",
+    "date": "2026-05-17T16:10:54Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "Update CNAME",
     "date": "2026-05-17T16:01:29Z",
     "description": "Platform improvement and optimization."

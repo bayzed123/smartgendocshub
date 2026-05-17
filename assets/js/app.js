@@ -76,11 +76,11 @@ function injectFooter() {
                 <div class="footer-column">
                     <h4>Legal & Support</h4>
                     <ul class="footer-links">
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#contact">Contact Us</a></li>
-                        <li><a href="#privacy">Privacy Policy</a></li>
-                        <li><a href="#terms">Terms of Service</a></li>
-                        <li><a href="#disclaimer">Disclaimer</a></li>
+                        <li><a href="${prefix}about/">About Us</a></li>
+                        <li><a href="${prefix}contact/">Contact Us</a></li>
+                        <li><a href="${prefix}privacy/">Privacy Policy</a></li>
+                        <li><a href="${prefix}terms/">Terms of Service</a></li>
+                        <li><a href="${prefix}disclaimer/">Disclaimer</a></li>
                     </ul>
                 </div>
             </div>

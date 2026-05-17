@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - SmartGen</title>
+    <meta name="description" content="Get in touch with the SmartGen team for support, feedback, or inquiries.">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="../assets/js/app.js" defer></script>
+</head>
+<body>
+    <header id="main-header"></header>
+
+    <main class="container">
+        <section class="tool-container" style="margin-top: 2rem;">
+            <h1 style="margin-bottom: 1.5rem;">Contact Us</h1>
+            <p style="margin-bottom: 2rem; color: var(--text-secondary);">
+                Have questions, feedback, or need support? We'd love to hear from you. Fill out the form below or reach out directly via email.
+            </p>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-bottom: 2rem;">
+                <div>
+                    <h2 style="font-size: 1.2rem; margin-bottom: 1rem;">Direct Contact</h2>
+                    <div style="margin-bottom: 1.5rem;">
+                        <p style="font-weight: 600; margin-bottom: 0.25rem;">Official Email:</p>
+                        <a href="mailto:cwb.agency@outlook.com" style="color: var(--primary); text-decoration: none;">cwb.agency@outlook.com</a>
+                    </div>
+                    <div>
+                        <p style="font-weight: 600; margin-bottom: 0.25rem;">Developer Portfolio:</p>
+                        <a href="https://www.sayadbayezid.com" target="_blank" rel="noopener noreferrer" style="color: var(--primary); text-decoration: none;">www.sayadbayezid.com</a>
+                    </div>
+                </div>
+
+                <form action="https://formspree.io/f/xyzkvpro" method="POST" id="contact-form">
+                    <div class="form-group">
+                        <label class="form-label" for="name">Your Name</label>
+                        <input type="text" name="name" id="name" class="form-input" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="email">Email Address</label>
+                        <input type="email" name="email" id="email" class="form-input" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label" for="message">Message</label>
+                        <textarea name="message" id="message" class="form-textarea" rows="5" placeholder="How can we help you?" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer id="main-footer"></footer>
+</body>
+</html>

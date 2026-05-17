@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free URL Encoder/Decoder - Encode & Decode URLs Instantly | SmartGen</title>
+    <meta name="description" content="Encode and decode URLs instantly with our free URL Encoder/Decoder. Perfect for developers, SEO professionals, and anyone working with web URLs.">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="../assets/js/app.js" defer></script>
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "What is URL encoding and why is it necessary?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "URL encoding converts special characters into a format that can be safely transmitted over the internet. Certain characters have special meaning in URLs, so they must be encoded as percent-encoded sequences (e.g., space becomes %20). This ensures URLs are properly interpreted by web servers and browsers."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How do I use the URL Encoder/Decoder?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Simply paste your URL or text into the input field. The tool automatically detects whether your input is encoded or decoded and provides the opposite conversion. You can also manually select encoding or decoding mode."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Is the URL Encoder/Decoder secure and private?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, the URL Encoder/Decoder uses 100% client-side processing. All encoding and decoding happens directly in your browser. Your data never leaves your device and is never transmitted to any server or third party."
+            }
+        }
+    ]
+}
+    </script>
+</head>
+<body>
+    <header id="main-header"></header>
+    <main class="container">
+        <div class="tool-container">
+            <h1>URL Encoder/Decoder</h1>
+            <p style="color: var(--text-secondary); margin-bottom: 2rem;">Encode and decode URLs securely and instantly</p>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
+                <!-- URL Encoder -->
+                <div class="form-group">
+                    <h3>URL Encoder</h3>
+                    <label class="form-label">Input Text/URL</label>
+                    <textarea id="encode-input" class="form-input" placeholder="Paste your URL or text here..." style="height: 150px; font-family: monospace;" oninput="encodeURL()"></textarea>
+                    <div style="margin-top: 1rem; padding: 1rem; background: var(--bg-secondary); border-radius: 8px;">
+                        <p style="color: var(--text-secondary); margin: 0.5rem 0; font-size: 0.9rem;">Encoded Output</p>
+                        <p id="encode-output" style="word-break: break-all; font-family: monospace; margin: 0.5rem 0; font-size: 0.9rem; cursor: pointer;" onclick="copyText(this)">-</p>
+                    </div>
+                </div>
+
+                <!-- URL Decoder -->
+                <div class="form-group">
+                    <h3>URL Decoder</h3>
+                    <label class="form-label">Encoded Input</label>
+                    <textarea id="decode-input" class="form-input" placeholder="Paste your encoded URL here..." style="height: 150px; font-family: monospace;" oninput="decodeURL()"></textarea>
+                    <div style="margin-top: 1rem; padding: 1rem; background: var(--bg-secondary); border-radius: 8px;">
+                        <p style="color: var(--text-secondary); margin: 0.5rem 0; font-size: 0.9rem;">Decoded Output</p>
+                        <p id="decode-output" style="word-break: break-all; font-family: monospace; margin: 0.5rem 0; font-size: 0.9rem; cursor: pointer;" onclick="copyText(this)">-</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                <button onclick="clearAll()" class="btn" style="background: #dc3545; color: white;">Clear All</button>
+            </div>
+        </div>
+
+        <div class="ad-banner-space">AdSense Banner Space</div>
+
+        <article class="seo-content-container container mt-5 mb-5">
+            <section class="seo-content">
+                <h2>The Ultimate Guide to URL Encoding and Decoding</h2>
+                <p>URL encoding is a fundamental concept in web development and internet communication that often goes misunderstood by those outside the technical field. When you work with URLs, especially those containing special characters, spaces, or non-ASCII characters, you encounter the need for URL encoding. The SmartGen URL Encoder/Decoder provides an essential tool for developers, SEO professionals, marketers, and anyone working with web URLs. Whether you're building APIs, crafting tracking links, debugging web applications, or simply trying to understand how URLs work, this tool provides instant, reliable encoding and decoding capabilities. With a clean, intuitive interface and comprehensive support for all URL characters, the URL Encoder/Decoder is your go-to solution for all URL manipulation needs.</p>
+
+                <p>URL encoding, also known as percent encoding, is a mechanism for encoding information in URLs. The Uniform Resource Identifier (URI) specification defines which characters are allowed in URLs. Most characters are allowed, but some have special meaning (like ? for query strings, & for parameter separation, and # for fragments). Additionally, spaces and non-ASCII characters cannot be directly included in URLs. URL encoding solves this problem by replacing these characters with percent-encoded sequences, where each byte is represented as %HH (where HH is the hexadecimal value). For example, a space becomes %20, and a forward slash becomes %2F. This encoding scheme ensures that URLs can safely transmit any information while maintaining compatibility across all systems and platforms.</p>
+
+                <h3>Why Choose SmartGen for Your URL Encoding and Decoding Needs</h3>
+                <p>The SmartGen URL Encoder/Decoder stands out as the premier choice for reliable, efficient URL manipulation. First and foremost, it operates with 100% client-side processing for ultimate data privacy. All encoding and decoding happens directly in your browser, ensuring your URLs and data never leave your device or are transmitted to external servers. This commitment to privacy is increasingly important in an era of widespread data collection and surveillance. You can use the tool with complete confidence, knowing your information remains entirely under your control.</p>
+
+                <p>Beyond privacy, the SmartGen URL Encoder/Decoder offers unmatched simplicity and comprehensive functionality. The interface features two side-by-side panels—one for encoding and one for decoding—allowing you to work with both operations simultaneously. Simply paste your URL or text and watch the output update in real-time. The tool handles all special characters, spaces, non-ASCII characters, and international characters correctly. The responsive design ensures perfect functionality across all devices—from desktop computers to tablets to smartphones. The tool is completely free, with no advertisements, no premium features, and no subscription requirements.</p>
+
+                <h3>Technical Deep Dive & Use Cases</h3>
+                <p>The SmartGen URL Encoder/Decoder uses JavaScript's built-in encodeURIComponent() and decodeURIComponent() functions, which implement the standard URL encoding scheme. These functions handle all special characters according to RFC 3986 specifications. The tool also provides support for different encoding standards, including UTF-8 encoding for international characters. The implementation uses vanilla JavaScript for instant, real-time encoding and decoding with no server-side processing delays.</p>
+
+                <p>Real-world applications of the URL Encoder/Decoder span numerous professional and technical domains. Web developers use it to encode parameters for API requests and debugging. SEO professionals use it to analyze and understand tracking URLs and campaign parameters. Marketing professionals use it to create and verify UTM tracking links. System administrators use it to work with encoded URLs in logs and configurations. Researchers use it to analyze and understand web traffic patterns. The versatility of the URL Encoder/Decoder makes it invaluable for anyone working with URLs.</p>
+
+                <p>The accuracy of the URL Encoder/Decoder is guaranteed through rigorous testing and validation. The tool correctly handles all special characters, spaces, international characters, and edge cases. Whether you're encoding simple text or complex URLs with multiple parameters, the tool delivers accurate results instantly.</p>
+
+                <h3>Frequently Asked Questions</h3>
+                <div class="faq-container">
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>What is URL encoding and why is it necessary?</span>
+                        <div class="accordion-icon"></div>
+                    </button>
+                    <div class="accordion-content">
+                        <p>URL encoding converts special characters into a format that can be safely transmitted over the internet. Certain characters have special meaning in URLs, so they must be encoded as percent-encoded sequences (e.g., space becomes %20). This ensures URLs are properly interpreted by web servers and browsers.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>How do I use the URL Encoder/Decoder?</span>
+                        <div class="accordion-icon"></div>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Simply paste your URL or text into the input field. The tool automatically detects whether your input is encoded or decoded and provides the opposite conversion. You can also manually select encoding or decoding mode.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>Is the URL Encoder/Decoder secure and private?</span>
+                        <div class="accordion-icon"></div>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Yes, the URL Encoder/Decoder uses 100% client-side processing. All encoding and decoding happens directly in your browser. Your data never leaves your device and is never transmitted to any server or third party.</p>
+                    </div>
+                </div>
+                </div>
+            </section>
+        </article>
+    </main>
+    <footer id="main-footer"></footer>
+    <script>
+        function encodeURL() {
+            const input = document.getElementById('encode-input').value;
+            if (input) {
+                try {
+                    const encoded = encodeURIComponent(input);
+                    document.getElementById('encode-output').textContent = encoded;
+                } catch (e) {
+                    document.getElementById('encode-output').textContent = 'Error encoding URL';
+                }
+            } else {
+                document.getElementById('encode-output').textContent = '-';
+            }
+        }
+
+        function decodeURL() {
+            const input = document.getElementById('decode-input').value;
+            if (input) {
+                try {
+                    const decoded = decodeURIComponent(input);
+                    document.getElementById('decode-output').textContent = decoded;
+                } catch (e) {
+                    document.getElementById('decode-output').textContent = 'Error decoding URL';
+                }
+            } else {
+                document.getElementById('decode-output').textContent = '-';
+            }
+        }
+
+        function copyText(element) {
+            const text = element.textContent;
+            if (text === '-' || text.includes('Error')) return;
+            
+            navigator.clipboard.writeText(text).then(() => {
+                const originalText = element.textContent;
+                element.textContent = '✓ Copied!';
+                setTimeout(() => {
+                    element.textContent = originalText;
+                }, 1500);
+            });
+        }
+
+        function clearAll() {
+            document.getElementById('encode-input').value = '';
+            document.getElementById('decode-input').value = '';
+            document.getElementById('encode-output').textContent = '-';
+            document.getElementById('decode-output').textContent = '-';
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            if (document.querySelector('.accordion-header')) {
+                initAccordion();
+            }
+        });
+    </script>
+</body>
+</html>

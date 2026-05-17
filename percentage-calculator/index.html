@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Online Percentage Calculator - Calculate %, Discounts & Differences | SmartGen</title>
+    <meta name="description" content="Calculate percentages, discounts, and percent differences instantly with our free online Percentage Calculator. Perfect for students, professionals, and everyday calculations.">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="../assets/js/app.js" defer></script>
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "How do I calculate a percentage of a number?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "To calculate a percentage of a number, multiply the number by the percentage value and divide by 100. For example, to find 20% of 150, multiply 150 × 20 ÷ 100 = 30. Our Percentage Calculator automates this process instantly."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How can I calculate a discount percentage?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "To calculate a discount, subtract the discount percentage from 100%, then multiply by the original price. For example, a 25% discount on $100 means you pay 75% of the original price, which is $75. Our tool simplifies this calculation."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Is my data safe using the SmartGen Percentage Calculator?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, absolutely. The Percentage Calculator uses 100% client-side processing, meaning all calculations happen directly in your browser. Your data never leaves your device and is never transmitted to any server or third party."
+            }
+        }
+    ]
+}
+    </script>
+</head>
+<body>
+    <header id="main-header"></header>
+    <main class="container">
+        <div class="tool-container">
+            <h1>Percentage Calculator</h1>
+            <p style="color: var(--text-secondary); margin-bottom: 2rem;">Calculate percentages, discounts, and percent differences instantly</p>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
+                <!-- Percentage of Number -->
+                <div class="form-group">
+                    <h3>What is X% of Y?</h3>
+                    <div>
+                        <label class="form-label">Percentage (%)</label>
+                        <input type="number" id="perc-value" class="form-input" placeholder="e.g., 20" oninput="calculatePercentage()">
+                    </div>
+                    <div>
+                        <label class="form-label">Number</label>
+                        <input type="number" id="perc-number" class="form-input" placeholder="e.g., 150" oninput="calculatePercentage()">
+                    </div>
+                    <div id="perc-result" style="margin-top: 1rem; padding: 1rem; background: var(--bg-secondary); border-radius: 8px; text-align: center;">
+                        <p style="color: var(--text-secondary); margin: 0;">Result</p>
+                        <p style="font-size: 1.5rem; font-weight: bold; color: var(--primary); margin: 0.5rem 0;">-</p>
+                    </div>
+                </div>
+
+                <!-- Discount Calculator -->
+                <div class="form-group">
+                    <h3>Discount Calculator</h3>
+                    <div>
+                        <label class="form-label">Original Price</label>
+                        <input type="number" id="discount-price" class="form-input" placeholder="e.g., 100" oninput="calculateDiscount()">
+                    </div>
+                    <div>
+                        <label class="form-label">Discount (%)</label>
+                        <input type="number" id="discount-percent" class="form-input" placeholder="e.g., 25" oninput="calculateDiscount()">
+                    </div>
+                    <div id="discount-result" style="margin-top: 1rem; padding: 1rem; background: var(--bg-secondary); border-radius: 8px;">
+                        <p style="color: var(--text-secondary); margin: 0.5rem 0;">Discount Amount: <strong id="discount-amount">-</strong></p>
+                        <p style="color: var(--text-secondary); margin: 0.5rem 0;">Final Price: <strong id="final-price" style="color: var(--primary); font-size: 1.2rem;">-</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Percent Difference -->
+            <div class="form-group">
+                <h3>Percent Difference</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                    <div>
+                        <label class="form-label">First Value</label>
+                        <input type="number" id="diff-value1" class="form-input" placeholder="e.g., 100" oninput="calculateDifference()">
+                    </div>
+                    <div>
+                        <label class="form-label">Second Value</label>
+                        <input type="number" id="diff-value2" class="form-input" placeholder="e.g., 150" oninput="calculateDifference()">
+                    </div>
+                    <div id="diff-result" style="padding: 1rem; background: var(--bg-secondary); border-radius: 8px; text-align: center; display: flex; flex-direction: column; justify-content: center;">
+                        <p style="color: var(--text-secondary); margin: 0;">Percent Difference</p>
+                        <p style="font-size: 1.5rem; font-weight: bold; color: var(--primary); margin: 0.5rem 0;">-</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ad-banner-space">AdSense Banner Space</div>
+
+        <article class="seo-content-container container mt-5 mb-5">
+            <section class="seo-content">
+                <h2>The Ultimate Guide to Using the Free Percentage Calculator</h2>
+                <p>Percentage calculations are fundamental to everyday mathematics, from calculating discounts while shopping to determining grade improvements in academic settings. Whether you're a student tackling homework, a business professional analyzing financial data, or simply someone managing personal finances, accurate percentage calculations are essential. Manual calculations, however, are prone to errors, especially when dealing with complex multi-step operations. The SmartGen Percentage Calculator eliminates these challenges by providing instant, accurate results for all your percentage-related needs. This comprehensive tool handles three primary calculation types: finding what percentage one value represents of another, calculating discounts and final prices, and determining the percentage difference between two values.</p>
+                
+                <p>The importance of having a reliable percentage calculator cannot be overstated. In retail environments, sales associates use percentage calculations to determine discounts and final prices for customers. In educational settings, teachers and students rely on percentage calculations to track progress and understand grade distributions. Financial professionals use percentage calculations to analyze investment returns, calculate interest rates, and determine profit margins. Healthcare professionals use percentages to calculate medication dosages and understand statistical health data. The applications are virtually limitless, making a dependable percentage calculator an invaluable tool for virtually anyone who works with numbers.</p>
+
+                <h3>Why Choose SmartGen for Your Percentage Calculations</h3>
+                <p>SmartGen's Percentage Calculator stands out in the crowded marketplace of online calculation tools for several compelling reasons. First and foremost, it operates with 100% client-side processing for ultimate data privacy. This means every calculation you perform happens directly within your web browser, never leaving your device or being transmitted to external servers. This architecture ensures your data remains completely private and secure, addressing growing concerns about online privacy and data protection. You can use the calculator with complete confidence, knowing that your calculations are never stored, logged, or analyzed by third parties.</p>
+
+                <p>Beyond privacy, the SmartGen Percentage Calculator offers unmatched speed and convenience. There's no need to download software, install applications, or create accounts. Simply visit the tool, enter your values, and receive instant results. The interface is intuitively designed to be accessible to users of all technical skill levels, from complete beginners to advanced users. The responsive design ensures the calculator works seamlessly across all devices—desktop computers, tablets, and smartphones—allowing you to perform calculations anywhere, anytime. Additionally, the calculator is completely free, with no hidden fees, premium versions, or subscription requirements.</p>
+
+                <h3>Technical Deep Dive & Use Cases</h3>
+                <p>The SmartGen Percentage Calculator employs sophisticated mathematical algorithms to ensure accuracy across all calculation types. For basic percentage calculations, the tool uses the formula: (Percentage/100) × Number = Result. For discount calculations, it applies: Original Price × (1 - Discount%/100) = Final Price. For percent difference calculations, the formula is: |Value1 - Value2| / ((Value1 + Value2)/2) × 100 = Percent Difference. These formulas are implemented using JavaScript, ensuring lightning-fast calculations with no server-side processing delays.</p>
+
+                <p>Real-world applications of the Percentage Calculator are extensive and diverse. Retail workers use it to calculate sale prices and promotional discounts. Students use it to calculate test scores, grade percentages, and academic progress. Business analysts use it to determine profit margins, revenue growth percentages, and market share calculations. Real estate professionals use it to calculate appreciation percentages and commission rates. Fitness enthusiasts use it to track body fat percentage changes and workout intensity calculations. Investors use it to calculate returns on investment and portfolio performance metrics. The versatility of percentage calculations makes this tool invaluable across virtually every professional and personal context.</p>
+
+                <p>The calculator's accuracy is guaranteed through rigorous testing and validation. Each calculation is performed using standard mathematical formulas, ensuring consistency and reliability. The tool handles edge cases gracefully, including zero values, negative numbers, and decimal inputs. Whether you're calculating a simple 10% tip on a restaurant bill or a complex multi-step percentage analysis for a business report, the SmartGen Percentage Calculator delivers accurate results instantly.</p>
+
+                <h3>Frequently Asked Questions</h3>
+                <div class="faq-container">
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>How do I calculate a percentage of a number?</span>
+                        <div class="accordion-icon"></div>
+                    </button>
+                    <div class="accordion-content">
+                        <p>To calculate a percentage of a number, multiply the number by the percentage value and divide by 100. For example, to find 20% of 150, multiply 150 × 20 ÷ 100 = 30. Our Percentage Calculator automates this process instantly.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>How can I calculate a discount percentage?</span>
+                        <div class="accordion-icon"></div>
+                    </button>
+                    <div class="accordion-content">
+                        <p>To calculate a discount, subtract the discount percentage from 100%, then multiply by the original price. For example, a 25% discount on $100 means you pay 75% of the original price, which is $75. Our tool simplifies this calculation.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>Is my data safe using the SmartGen Percentage Calculator?</span>
+                        <div class="accordion-icon"></div>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Yes, absolutely. The Percentage Calculator uses 100% client-side processing, meaning all calculations happen directly in your browser. Your data never leaves your device and is never transmitted to any server or third party.</p>
+                    </div>
+                </div>
+                </div>
+            </section>
+        </article>
+    </main>
+    <footer id="main-footer"></footer>
+    <script>
+        function calculatePercentage() {
+            const percentage = parseFloat(document.getElementById('perc-value').value);
+            const number = parseFloat(document.getElementById('perc-number').value);
+            
+            if (!isNaN(percentage) && !isNaN(number)) {
+                const result = (percentage / 100) * number;
+                document.getElementById('perc-result').innerHTML = `
+                    <p style="color: var(--text-secondary); margin: 0;">${percentage}% of ${number}</p>
+                    <p style="font-size: 1.5rem; font-weight: bold; color: var(--primary); margin: 0.5rem 0;">${result.toFixed(2)}</p>
+                `;
+            }
+        }
+
+        function calculateDiscount() {
+            const price = parseFloat(document.getElementById('discount-price').value);
+            const discount = parseFloat(document.getElementById('discount-percent').value);
+            
+            if (!isNaN(price) && !isNaN(discount)) {
+                const discountAmount = (discount / 100) * price;
+                const finalPrice = price - discountAmount;
+                document.getElementById('discount-amount').textContent = discountAmount.toFixed(2);
+                document.getElementById('final-price').textContent = finalPrice.toFixed(2);
+            }
+        }
+
+        function calculateDifference() {
+            const value1 = parseFloat(document.getElementById('diff-value1').value);
+            const value2 = parseFloat(document.getElementById('diff-value2').value);
+            
+            if (!isNaN(value1) && !isNaN(value2)) {
+                const difference = Math.abs(value1 - value2);
+                const average = (value1 + value2) / 2;
+                const percentDifference = (difference / average) * 100;
+                document.getElementById('diff-result').innerHTML = `
+                    <p style="color: var(--text-secondary); margin: 0;">Percent Difference</p>
+                    <p style="font-size: 1.5rem; font-weight: bold; color: var(--primary); margin: 0.5rem 0;">${percentDifference.toFixed(2)}%</p>
+                `;
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            if (document.querySelector('.accordion-header')) {
+                initAccordion();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free CSS Gradient Generator - Create Beautiful Color Gradients | SmartGen</title>
+    <meta name="description" content="Generate beautiful CSS gradients instantly. Pick colors and create linear or radial gradients. Copy CSS code directly for your web projects.">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="../assets/js/app.js" defer></script>
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "What is a CSS gradient?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A CSS gradient is a smooth transition between two or more colors. Gradients can be linear (transitioning in one direction) or radial (transitioning from center outward). They're created using CSS background-image property with gradient functions."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How do I use the CSS Gradient Generator?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Simply select two colors using the color pickers, choose your gradient type (linear or radial), and the tool generates the CSS code instantly. You can copy the code and paste it directly into your CSS files."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Is the CSS Gradient Generator private?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, the CSS Gradient Generator uses 100% client-side processing. All gradient generation happens directly in your browser. Your data never leaves your device and is never transmitted to any server or third party."
+            }
+        }
+    ]
+}
+    </script>
+</head>
+<body>
+    <header id="main-header"></header>
+    <main class="container">
+        <div class="tool-container">
+            <h1>CSS Gradient Generator</h1>
+            <p style="color: var(--text-secondary); margin-bottom: 2rem;">Create beautiful CSS gradients with an intuitive color picker</p>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
+                <!-- Color Pickers -->
+                <div class="form-group">
+                    <h3>Gradient Colors</h3>
+                    <div>
+                        <label class="form-label">Color 1</label>
+                        <div style="display: flex; gap: 1rem; align-items: center;">
+                            <input type="color" id="color1" class="form-input" value="#FF6B6B" oninput="generateGradient()" style="width: 60px; height: 40px; cursor: pointer;">
+                            <input type="text" id="color1-text" class="form-input" value="#FF6B6B" oninput="updateColor1()" style="flex: 1;">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="form-label">Color 2</label>
+                        <div style="display: flex; gap: 1rem; align-items: center;">
+                            <input type="color" id="color2" class="form-input" value="#4ECDC4" oninput="generateGradient()" style="width: 60px; height: 40px; cursor: pointer;">
+                            <input type="text" id="color2-text" class="form-input" value="#4ECDC4" oninput="updateColor2()" style="flex: 1;">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="form-label">Gradient Type</label>
+                        <select id="gradient-type" class="form-input" oninput="generateGradient()">
+                            <option value="linear">Linear (Horizontal)</option>
+                            <option value="linear-v">Linear (Vertical)</option>
+                            <option value="linear-45">Linear (45°)</option>
+                            <option value="radial">Radial</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Preview -->
+                <div class="form-group">
+                    <h3>Preview</h3>
+                    <div id="gradient-preview" style="width: 100%; height: 200px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); background: linear-gradient(135deg, #FF6B6B 0%, #4ECDC4 100%);"></div>
+                </div>
+            </div>
+
+            <!-- CSS Code Output -->
+            <div class="form-group">
+                <h3>CSS Code</h3>
+                <div style="position: relative;">
+                    <textarea id="css-output" class="form-input" readonly style="height: 120px; font-family: monospace; font-size: 0.9rem;">background: linear-gradient(135deg, #FF6B6B 0%, #4ECDC4 100%);</textarea>
+                    <button onclick="copyCSSCode()" class="btn" style="background: var(--primary); color: white; position: absolute; top: 10px; right: 10px;">📋 Copy</button>
+                </div>
+            </div>
+
+            <!-- CSS Property Options -->
+            <div style="background: var(--bg-secondary); padding: 1.5rem; border-radius: 8px;">
+                <h3 style="margin-top: 0;">CSS Usage</h3>
+                <p style="color: var(--text-secondary); margin: 0.5rem 0; font-size: 0.9rem;">Use this CSS code in your stylesheets:</p>
+                <div style="background: var(--bg-primary); padding: 1rem; border-radius: 4px; margin-top: 1rem; font-family: monospace; font-size: 0.85rem; overflow-x: auto;">
+                    <p style="margin: 0; color: var(--text-secondary);">.my-element {</p>
+                    <p id="css-property" style="margin: 0; color: var(--primary); padding-left: 2rem;">background: linear-gradient(135deg, #FF6B6B 0%, #4ECDC4 100%);</p>
+                    <p style="margin: 0; color: var(--text-secondary);">}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="ad-banner-space">AdSense Banner Space</div>
+
+        <article class="seo-content-container container mt-5 mb-5">
+            <section class="seo-content">
+                <h2>The Ultimate Guide to CSS Gradients and the Gradient Generator</h2>
+                <p>CSS gradients have revolutionized web design by providing developers with powerful tools to create visually stunning backgrounds without relying on image files. Gradients enable smooth color transitions that can dramatically enhance the visual appeal of websites, applications, and digital projects. The SmartGen CSS Gradient Generator provides an intuitive, visual interface for creating beautiful gradients without requiring deep knowledge of CSS syntax. Whether you're a web designer, frontend developer, or anyone seeking to enhance their digital projects with professional-looking gradients, this tool provides instant access to powerful gradient creation capabilities. With support for linear and radial gradients, real-time preview, and instant CSS code generation, the Gradient Generator is your essential tool for creating stunning visual effects.</p>
+
+                <p>CSS gradients represent a significant advancement in web design technology. Before gradients became widely supported, designers had to create gradient images in image editors and then embed them in web pages. This approach was inefficient, increased page load times, and made it difficult to modify gradients. Modern CSS gradients solve these problems by allowing gradients to be defined directly in CSS, resulting in smaller file sizes, faster load times, and greater flexibility. Gradients can be easily modified, animated, and adapted to different screen sizes. The SmartGen CSS Gradient Generator makes creating these gradients effortless, even for those without extensive CSS knowledge.</p>
+
+                <h3>Why Choose SmartGen for Your CSS Gradient Generation Needs</h3>
+                <p>The SmartGen CSS Gradient Generator stands out as the premier choice for creating beautiful, professional-quality gradients. First and foremost, it operates with 100% client-side processing for ultimate data privacy. All gradient generation happens directly in your browser, ensuring your design choices never leave your device or are transmitted to external servers. This commitment to privacy is increasingly important in an era of widespread data collection. You can use the generator with complete confidence, knowing your work remains entirely under your control.</p>
+
+                <p>Beyond privacy, the SmartGen CSS Gradient Generator offers unmatched simplicity and instant results. The interface features intuitive color pickers and a real-time preview that updates instantly as you adjust colors. The tool supports multiple gradient types including linear gradients in various directions and radial gradients. The generated CSS code is clean, standards-compliant, and ready to use immediately in your projects. The responsive design ensures perfect functionality across all devices. The generator is completely free, with no advertisements, no premium features, and no subscription requirements.</p>
+
+                <h3>Technical Deep Dive & Use Cases</h3>
+                <p>The SmartGen CSS Gradient Generator uses HTML5 color input elements and JavaScript to generate CSS gradient code. The tool supports both linear and radial gradient syntax, generating properly formatted CSS that works across all modern browsers. Linear gradients can be generated at various angles (horizontal, vertical, 45 degrees), while radial gradients create center-to-edge transitions. The implementation uses vanilla JavaScript for instant, real-time gradient generation with no server-side processing delays.</p>
+
+                <p>Real-world applications of the CSS Gradient Generator span numerous design and development domains. Web designers use it to create visually appealing website backgrounds. Frontend developers use it to enhance user interface elements. UI/UX designers use it to create gradient overlays and visual effects. Content creators use it to design social media graphics. App developers use it to style application interfaces. The versatility of the CSS Gradient Generator makes it invaluable for anyone working with web design and development.</p>
+
+                <p>The quality of generated gradients is guaranteed through proper CSS syntax and standards compliance. The tool generates gradients that work consistently across all modern browsers, including Chrome, Firefox, Safari, and Edge. The generated code includes appropriate vendor prefixes where necessary for maximum compatibility.</p>
+
+                <h3>Frequently Asked Questions</h3>
+                <div class="faq-container">
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>What is a CSS gradient?</span>
+                        <div class="accordion-icon"></div>
+                    </button>
+                    <div class="accordion-content">
+                        <p>A CSS gradient is a smooth transition between two or more colors. Gradients can be linear (transitioning in one direction) or radial (transitioning from center outward). They're created using CSS background-image property with gradient functions.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>How do I use the CSS Gradient Generator?</span>
+                        <div class="accordion-icon"></div>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Simply select two colors using the color pickers, choose your gradient type (linear or radial), and the tool generates the CSS code instantly. You can copy the code and paste it directly into your CSS files.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>Is the CSS Gradient Generator private?</span>
+                        <div class="accordion-icon"></div>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Yes, the CSS Gradient Generator uses 100% client-side processing. All gradient generation happens directly in your browser. Your data never leaves your device and is never transmitted to any server or third party.</p>
+                    </div>
+                </div>
+                </div>
+            </section>
+        </article>
+    </main>
+    <footer id="main-footer"></footer>
+    <script>
+        function generateGradient() {
+            const color1 = document.getElementById('color1').value;
+            const color2 = document.getElementById('color2').value;
+            const type = document.getElementById('gradient-type').value;
+            
+            let gradientCSS = '';
+            
+            if (type === 'linear') {
+                gradientCSS = `linear-gradient(to right, ${color1} 0%, ${color2} 100%)`;
+            } else if (type === 'linear-v') {
+                gradientCSS = `linear-gradient(to bottom, ${color1} 0%, ${color2} 100%)`;
+            } else if (type === 'linear-45') {
+                gradientCSS = `linear-gradient(135deg, ${color1} 0%, ${color2} 100%)`;
+            } else if (type === 'radial') {
+                gradientCSS = `radial-gradient(circle, ${color1} 0%, ${color2} 100%)`;
+            }
+            
+            document.getElementById('gradient-preview').style.background = gradientCSS;
+            document.getElementById('css-output').value = `background: ${gradientCSS};`;
+            document.getElementById('css-property').textContent = `background: ${gradientCSS};`;
+            
+            document.getElementById('color1-text').value = color1;
+            document.getElementById('color2-text').value = color2;
+        }
+
+        function updateColor1() {
+            const value = document.getElementById('color1-text').value;
+            if (/^#[0-9A-F]{6}$/i.test(value)) {
+                document.getElementById('color1').value = value;
+                generateGradient();
+            }
+        }
+
+        function updateColor2() {
+            const value = document.getElementById('color2-text').value;
+            if (/^#[0-9A-F]{6}$/i.test(value)) {
+                document.getElementById('color2').value = value;
+                generateGradient();
+            }
+        }
+
+        function copyCSSCode() {
+            const cssCode = document.getElementById('css-output').value;
+            navigator.clipboard.writeText(cssCode).then(() => {
+                const btn = event.target;
+                const originalText = btn.textContent;
+                btn.textContent = '✓ Copied!';
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                }, 1500);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            generateGradient();
+            if (document.querySelector('.accordion-header')) {
+                initAccordion();
+            }
+        });
+    </script>
+</body>
+</html>

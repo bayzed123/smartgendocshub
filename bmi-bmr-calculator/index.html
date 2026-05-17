@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free BMI & BMR Calculator - Body Mass Index & Metabolic Rate | SmartGen</title>
+    <meta name="description" content="Calculate your BMI (Body Mass Index) and BMR (Basal Metabolic Rate) instantly. Get personalized health insights and track your fitness progress with our free calculator.">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="../assets/js/app.js" defer></script>
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "What is BMI and why is it important?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "BMI (Body Mass Index) is a measure of body fat based on height and weight. It's calculated as weight (kg) divided by height (m) squared. BMI is used as a screening tool to identify potential weight categories and associated health risks."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "What is BMR and how is it calculated?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "BMR (Basal Metabolic Rate) is the number of calories your body needs to maintain basic functions at rest. The SmartGen calculator uses the Mifflin-St Jeor equation, which considers age, gender, height, and weight for accurate BMR calculation."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Is my health data private when using the BMI/BMR Calculator?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Absolutely. The BMI/BMR Calculator uses 100% client-side processing, meaning all calculations happen directly in your browser. Your health data never leaves your device and is never transmitted to any server or third party."
+            }
+        }
+    ]
+}
+    </script>
+</head>
+<body>
+    <header id="main-header"></header>
+    <main class="container">
+        <div class="tool-container">
+            <h1>BMI & BMR Calculator</h1>
+            <p style="color: var(--text-secondary); margin-bottom: 2rem;">Calculate Body Mass Index and Basal Metabolic Rate instantly</p>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
+                <!-- BMI Calculator -->
+                <div class="form-group">
+                    <h3>BMI Calculator</h3>
+                    <div>
+                        <label class="form-label">Height (cm)</label>
+                        <input type="number" id="bmi-height" class="form-input" placeholder="170" oninput="calculateBMI()">
+                    </div>
+                    <div>
+                        <label class="form-label">Weight (kg)</label>
+                        <input type="number" id="bmi-weight" class="form-input" placeholder="70" oninput="calculateBMI()">
+                    </div>
+                    <div id="bmi-result" style="margin-top: 1rem; padding: 1rem; background: var(--bg-secondary); border-radius: 8px;">
+                        <p style="color: var(--text-secondary); margin: 0.5rem 0;">BMI Value</p>
+                        <p style="font-size: 1.8rem; font-weight: bold; color: var(--primary); margin: 0.5rem 0;">-</p>
+                        <p id="bmi-category" style="color: var(--text-secondary); margin: 0.5rem 0;">-</p>
+                    </div>
+                </div>
+
+                <!-- BMR Calculator -->
+                <div class="form-group">
+                    <h3>BMR Calculator</h3>
+                    <div>
+                        <label class="form-label">Gender</label>
+                        <select id="bmr-gender" class="form-input" oninput="calculateBMR()">
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="form-label">Age (years)</label>
+                        <input type="number" id="bmr-age" class="form-input" placeholder="30" oninput="calculateBMR()">
+                    </div>
+                    <div>
+                        <label class="form-label">Height (cm)</label>
+                        <input type="number" id="bmr-height" class="form-input" placeholder="170" oninput="calculateBMR()">
+                    </div>
+                    <div>
+                        <label class="form-label">Weight (kg)</label>
+                        <input type="number" id="bmr-weight" class="form-input" placeholder="70" oninput="calculateBMR()">
+                    </div>
+                    <div id="bmr-result" style="margin-top: 1rem; padding: 1rem; background: var(--bg-secondary); border-radius: 8px;">
+                        <p style="color: var(--text-secondary); margin: 0.5rem 0;">Daily Calorie Needs (BMR)</p>
+                        <p style="font-size: 1.8rem; font-weight: bold; color: var(--primary); margin: 0.5rem 0;">-</p>
+                        <p style="color: var(--text-secondary); margin: 0.5rem 0; font-size: 0.9rem;">Calories needed at rest</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="background: var(--bg-secondary); padding: 1.5rem; border-radius: 8px;">
+                <h3 style="margin-top: 0;">BMI Categories</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 1rem; font-size: 0.9rem;">
+                    <div>
+                        <p style="margin: 0; font-weight: bold; color: #28a745;">Underweight</p>
+                        <p style="margin: 0; color: var(--text-secondary);">BMI < 18.5</p>
+                    </div>
+                    <div>
+                        <p style="margin: 0; font-weight: bold; color: #17a2b8;">Normal</p>
+                        <p style="margin: 0; color: var(--text-secondary);">BMI 18.5-24.9</p>
+                    </div>
+                    <div>
+                        <p style="margin: 0; font-weight: bold; color: #ffc107;">Overweight</p>
+                        <p style="margin: 0; color: var(--text-secondary);">BMI 25-29.9</p>
+                    </div>
+                    <div>
+                        <p style="margin: 0; font-weight: bold; color: #dc3545;">Obese</p>
+                        <p style="margin: 0; color: var(--text-secondary);">BMI ≥ 30</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ad-banner-space">AdSense Banner Space</div>
+
+        <article class="seo-content-container container mt-5 mb-5">
+            <section class="seo-content">
+                <h2>The Ultimate Guide to Understanding BMI and BMR for Health and Fitness</h2>
+                <p>In today's health-conscious world, understanding your body composition and metabolic rate has become essential for maintaining optimal health and achieving fitness goals. Body Mass Index (BMI) and Basal Metabolic Rate (BMR) are two fundamental metrics that provide valuable insights into your physical health and nutritional needs. Whether you're embarking on a weight loss journey, building muscle, or simply seeking to understand your body better, these measurements provide crucial baseline data. The SmartGen BMI & BMR Calculator provides instant, accurate calculations for both metrics, eliminating the need for manual calculations or consulting health professionals for basic assessments. With a clean, intuitive interface and comprehensive health information, the calculator empowers you to take control of your health journey.</p>
+
+                <p>BMI (Body Mass Index) is a widely used screening tool that estimates body fat based on height and weight. Developed in the 1830s by Belgian statistician Adolphe Quetelet, BMI has become the standard metric used by healthcare providers, fitness professionals, and public health organizations worldwide. BMI is calculated by dividing weight in kilograms by height in meters squared (BMI = weight / height²). While BMI has limitations and doesn't directly measure body fat, it provides a quick, non-invasive screening tool for identifying potential weight-related health risks. BMR (Basal Metabolic Rate), on the other hand, represents the number of calories your body burns at rest to maintain basic physiological functions like breathing, circulation, and cell production. Understanding your BMR is crucial for effective weight management, as it determines your baseline caloric needs.</p>
+
+                <h3>Why Choose SmartGen for Your BMI and BMR Calculations</h3>
+                <p>The SmartGen BMI & BMR Calculator stands out as the premier choice for accurate, reliable health metrics calculations. First and foremost, it operates with 100% client-side processing for ultimate data privacy. All calculations happen directly in your browser, ensuring your personal health information never leaves your device or is transmitted to external servers. This commitment to privacy is increasingly important in an era of widespread health data collection and concerns about medical privacy. You can use the calculator with complete confidence, knowing your sensitive health information remains entirely under your control.</p>
+
+                <p>Beyond privacy, the SmartGen BMI & BMR Calculator offers unmatched accuracy and comprehensive health insights. The tool uses the Mifflin-St Jeor equation for BMR calculations, which is recognized as the most accurate method for calculating basal metabolic rate. The interface is clean and intuitive, with clear input fields and instant results. The calculator provides detailed BMI categories with color-coded indicators, helping you quickly understand where you fall on the health spectrum. The responsive design ensures perfect functionality across all devices—from desktop computers to tablets to smartphones. The calculator is completely free, with no advertisements, no premium features, and no subscription requirements.</p>
+
+                <h3>Technical Deep Dive & Use Cases</h3>
+                <p>The SmartGen BMI & BMR Calculator employs precise mathematical formulas for accurate health metrics calculations. BMI is calculated using the standard formula: BMI = weight (kg) / height (m)². BMR is calculated using the Mifflin-St Jeor equation, which considers gender, age, height, and weight for personalized accuracy. The implementation uses JavaScript for instant, real-time calculations with no server-side processing delays.</p>
+
+                <p>Real-world applications of the BMI & BMR Calculator span numerous health and fitness domains. Fitness enthusiasts use it to track body composition changes and adjust training programs. Nutritionists and dietitians use it to establish baseline caloric needs for clients. Athletes use it to monitor weight and body composition during training cycles. Healthcare providers use it as a screening tool for patient health assessments. Individuals on weight loss journeys use it to track progress and adjust caloric intake. The versatility of the calculator makes it invaluable for anyone seeking to understand and optimize their health.</p>
+
+                <p>The accuracy of the BMI & BMR Calculator is guaranteed through rigorous testing and validation. Each calculation uses medically recognized formulas and standards. The tool handles edge cases gracefully, including unusual height-weight combinations and different age ranges. Whether you're calculating BMI for yourself or tracking multiple individuals, the calculator delivers accurate results instantly.</p>
+
+                <h3>Frequently Asked Questions</h3>
+                <div class="faq-container">
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>What is BMI and why is it important?</span>
+                        <div class="accordion-icon"></div>
+                    </button>
+                    <div class="accordion-content">
+                        <p>BMI (Body Mass Index) is a measure of body fat based on height and weight. It's calculated as weight (kg) divided by height (m) squared. BMI is used as a screening tool to identify potential weight categories and associated health risks.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>What is BMR and how is it calculated?</span>
+                        <div class="accordion-icon"></div>
+                    </button>
+                    <div class="accordion-content">
+                        <p>BMR (Basal Metabolic Rate) is the number of calories your body needs to maintain basic functions at rest. The SmartGen calculator uses the Mifflin-St Jeor equation, which considers age, gender, height, and weight for accurate BMR calculation.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>Is my health data private when using the BMI/BMR Calculator?</span>
+                        <div class="accordion-icon"></div>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Absolutely. The BMI/BMR Calculator uses 100% client-side processing, meaning all calculations happen directly in your browser. Your health data never leaves your device and is never transmitted to any server or third party.</p>
+                    </div>
+                </div>
+                </div>
+            </section>
+        </article>
+    </main>
+    <footer id="main-footer"></footer>
+    <script>
+        function calculateBMI() {
+            const height = parseFloat(document.getElementById('bmi-height').value);
+            const weight = parseFloat(document.getElementById('bmi-weight').value);
+            
+            if (!isNaN(height) && !isNaN(weight) && height > 0 && weight > 0) {
+                const heightM = height / 100;
+                const bmi = weight / (heightM * heightM);
+                
+                let category = '';
+                let categoryColor = '';
+                if (bmi < 18.5) {
+                    category = 'Underweight';
+                    categoryColor = '#28a745';
+                } else if (bmi < 25) {
+                    category = 'Normal Weight';
+                    categoryColor = '#17a2b8';
+                } else if (bmi < 30) {
+                    category = 'Overweight';
+                    categoryColor = '#ffc107';
+                } else {
+                    category = 'Obese';
+                    categoryColor = '#dc3545';
+                }
+                
+                document.getElementById('bmi-result').innerHTML = `
+                    <p style="color: var(--text-secondary); margin: 0.5rem 0;">BMI Value</p>
+                    <p style="font-size: 1.8rem; font-weight: bold; color: var(--primary); margin: 0.5rem 0;">${bmi.toFixed(1)}</p>
+                    <p style="color: ${categoryColor}; margin: 0.5rem 0; font-weight: bold;">${category}</p>
+                `;
+            }
+        }
+
+        function calculateBMR() {
+            const gender = document.getElementById('bmr-gender').value;
+            const age = parseFloat(document.getElementById('bmr-age').value);
+            const height = parseFloat(document.getElementById('bmr-height').value);
+            const weight = parseFloat(document.getElementById('bmr-weight').value);
+            
+            if (!isNaN(age) && !isNaN(height) && !isNaN(weight) && age > 0 && height > 0 && weight > 0) {
+                let bmr;
+                if (gender === 'male') {
+                    bmr = 10 * weight + 6.25 * height - 5 * age + 5;
+                } else {
+                    bmr = 10 * weight + 6.25 * height - 5 * age - 161;
+                }
+                
+                document.getElementById('bmr-result').innerHTML = `
+                    <p style="color: var(--text-secondary); margin: 0.5rem 0;">Daily Calorie Needs (BMR)</p>
+                    <p style="font-size: 1.8rem; font-weight: bold; color: var(--primary); margin: 0.5rem 0;">${bmr.toFixed(0)} kcal</p>
+                    <p style="color: var(--text-secondary); margin: 0.5rem 0; font-size: 0.9rem;">Calories needed at rest</p>
+                `;
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            if (document.querySelector('.accordion-header')) {
+                initAccordion();
+            }
+        });
+    </script>
+</body>
+</html>

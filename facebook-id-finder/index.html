@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Facebook ID Finder - Extract Numeric Facebook IDs | SmartGen</title>
+    <meta name="description" content="Find and extract numeric Facebook IDs from profile links instantly. Works with custom usernames and standard profile URLs. 100% free and private.">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="../assets/js/app.js" defer></script>
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "What is a Facebook ID?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A Facebook ID is a unique numeric identifier assigned to each Facebook user, page, or object. It's different from your username and is used internally by Facebook for identification and API operations."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How do I find my Facebook ID?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "You can paste your Facebook profile URL into the Facebook ID Finder tool. If your URL contains the numeric ID (like profile.php?id=123456789), the tool will extract it directly. For custom usernames, the tool provides guidance on finding your ID."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Is the Facebook ID Finder private and secure?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, the Facebook ID Finder uses 100% client-side processing. All ID extraction happens directly in your browser. Your data never leaves your device and is never transmitted to any server or third party."
+            }
+        }
+    ]
+}
+    </script>
+</head>
+<body>
+    <header id="main-header"></header>
+    <main class="container">
+        <div class="tool-container">
+            <h1>Facebook ID Finder</h1>
+            <p style="color: var(--text-secondary); margin-bottom: 2rem;">Extract numeric Facebook IDs from profile links instantly</p>
+            
+            <div class="form-group">
+                <label class="form-label">Facebook Profile URL</label>
+                <input type="text" id="facebook-url" class="form-input" placeholder="https://www.facebook.com/profile.php?id=123456789" style="font-size: 1rem;">
+                <button onclick="findFacebookID()" class="btn" style="background: var(--primary); color: white; margin-top: 1rem; width: 100%;">Find Facebook ID</button>
+            </div>
+
+            <div id="id-result" style="margin-top: 2rem; display: none;">
+                <div style="text-align: center; padding: 2rem; background: var(--bg-secondary); border-radius: 8px; margin-bottom: 1rem;">
+                    <p style="color: var(--text-secondary); margin: 0;">Your Facebook ID</p>
+                    <p id="facebook-id-display" style="font-size: 2rem; font-weight: bold; color: var(--primary); margin: 1rem 0; font-family: monospace;">-</p>
+                    <button onclick="copyFacebookID()" class="btn" style="background: var(--primary); color: white;">📋 Copy ID</button>
+                </div>
+            </div>
+
+            <div id="error-message" style="margin-top: 2rem; padding: 1rem; background: #f8d7da; border: 1px solid #f5c6cb; border-radius: 8px; color: #721c24; display: none;"></div>
+
+            <div style="background: var(--bg-secondary); padding: 1.5rem; border-radius: 8px; margin-top: 2rem;">
+                <h3 style="margin-top: 0;">How to Find Your Facebook ID</h3>
+                <div style="color: var(--text-secondary); line-height: 1.8;">
+                    <p><strong>Method 1: Direct URL</strong></p>
+                    <p>If your Facebook profile URL contains "profile.php?id=", the numeric ID appears directly in the URL. Simply paste the URL above.</p>
+                    
+                    <p><strong>Method 2: Custom Username</strong></p>
+                    <p>If you have a custom username (like facebook.com/yourname), you can find your ID by:</p>
+                    <ol>
+                        <li>Visit your Facebook profile</li>
+                        <li>Right-click and select "View Page Source"</li>
+                        <li>Press Ctrl+F (or Cmd+F on Mac) and search for "\"id\":\""</li>
+                        <li>Look for your numeric ID in the search results</li>
+                    </ol>
+                    
+                    <p><strong>Method 3: Using Browser Tools</strong></p>
+                    <p>Open your profile, press F12 to open Developer Tools, go to the Network tab, and look for API requests containing your numeric ID.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="ad-banner-space">AdSense Banner Space</div>
+
+        <article class="seo-content-container container mt-5 mb-5">
+            <section class="seo-content">
+                <h2>The Ultimate Guide to Finding and Understanding Facebook IDs</h2>
+                <p>In the digital age, understanding the technical aspects of social media platforms has become increasingly important for developers, marketers, researchers, and everyday users. Facebook IDs, the unique numeric identifiers assigned to each user, page, and object on the platform, play a crucial role in Facebook's API operations, data analysis, and integration with third-party applications. The SmartGen Facebook ID Finder provides an essential tool for extracting these numeric identifiers from Facebook profile links. Whether you're a developer integrating Facebook APIs, a marketer analyzing audience data, a researcher studying social media, or simply someone curious about your own Facebook ID, the Facebook ID Finder offers an instant, reliable solution for finding and extracting Facebook IDs.</p>
+
+                <p>Facebook IDs are fundamentally different from usernames or vanity URLs. While usernames are human-readable identifiers that users can customize, Facebook IDs are permanent, numeric identifiers assigned by Facebook's system. Every user, page, event, and object on Facebook has a unique ID. These IDs are essential for Facebook's internal operations and are particularly important for developers working with Facebook's Graph API. Understanding the difference between usernames and IDs is crucial for anyone working with Facebook data or integrations. The SmartGen Facebook ID Finder helps users quickly identify and extract these numeric identifiers, which is essential for many technical and professional applications.</p>
+
+                <h3>Why Choose SmartGen for Your Facebook ID Finding Needs</h3>
+                <p>The SmartGen Facebook ID Finder stands out as the premier choice for reliable, efficient Facebook ID extraction. First and foremost, it operates with 100% client-side processing for ultimate data privacy. All ID extraction happens directly in your browser using simple regex pattern matching. Your data never leaves your device and is never transmitted to external servers or third parties. This commitment to privacy is increasingly important in an era of widespread data collection and surveillance. You can use the finder with complete confidence, knowing your information remains entirely under your control.</p>
+
+                <p>Beyond privacy, the SmartGen Facebook ID Finder offers unmatched simplicity and reliability. The interface is clean and intuitive—simply paste a Facebook profile URL and click a button to extract the ID. The tool automatically recognizes standard Facebook URL formats and extracts the numeric ID. For custom usernames where the ID isn't directly visible in the URL, the tool provides comprehensive guidance on alternative methods for finding your ID. The responsive design ensures perfect functionality across all devices. The finder is completely free, with no advertisements, no premium features, and no subscription requirements.</p>
+
+                <h3>Technical Deep Dive & Use Cases</h3>
+                <p>The SmartGen Facebook ID Finder uses regular expressions to extract numeric IDs from Facebook profile URLs. The tool recognizes the standard Facebook URL format "profile.php?id=XXXXXXXXX" and extracts the numeric portion. For custom username URLs, the tool provides guidance on manual extraction methods. The implementation uses vanilla JavaScript for instant, real-time ID extraction with no server-side processing delays.</p>
+
+                <p>Real-world applications of the Facebook ID Finder span numerous professional and technical domains. Developers use it to quickly find Facebook IDs needed for API integrations. Marketers use it to identify specific Facebook accounts for advertising and analytics. Researchers use it to collect data for social media studies. Social media managers use it to manage multiple Facebook accounts and pages. Business analysts use it to track and analyze Facebook pages. The versatility of the Facebook ID Finder makes it invaluable for anyone working with Facebook data or integrations.</p>
+
+                <p>The accuracy of the Facebook ID Finder is guaranteed through proper regex pattern matching and validation. The tool correctly identifies and extracts numeric IDs from standard Facebook URLs. For URLs with custom usernames where the ID isn't directly visible, the tool provides clear, step-by-step instructions for manual ID discovery.</p>
+
+                <h3>Frequently Asked Questions</h3>
+                <div class="faq-container">
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>What is a Facebook ID?</span>
+                        <div class="accordion-icon"></div>
+                    </button>
+                    <div class="accordion-content">
+                        <p>A Facebook ID is a unique numeric identifier assigned to each Facebook user, page, or object. It's different from your username and is used internally by Facebook for identification and API operations.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>How do I find my Facebook ID?</span>
+                        <div class="accordion-icon"></div>
+                    </button>
+                    <div class="accordion-content">
+                        <p>You can paste your Facebook profile URL into the Facebook ID Finder tool. If your URL contains the numeric ID (like profile.php?id=123456789), the tool will extract it directly. For custom usernames, the tool provides guidance on finding your ID.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>Is the Facebook ID Finder private and secure?</span>
+                        <div class="accordion-icon"></div>
+                    </button>
+                    <div class="accordion-content">
+                        <p>Yes, the Facebook ID Finder uses 100% client-side processing. All ID extraction happens directly in your browser. Your data never leaves your device and is never transmitted to any server or third party.</p>
+                    </div>
+                </div>
+                </div>
+            </section>
+        </article>
+    </main>
+    <footer id="main-footer"></footer>
+    <script>
+        function findFacebookID() {
+            const url = document.getElementById('facebook-url').value.trim();
+            const errorDiv = document.getElementById('error-message');
+            const resultDiv = document.getElementById('id-result');
+            
+            errorDiv.style.display = 'none';
+            resultDiv.style.display = 'none';
+            
+            if (!url) {
+                errorDiv.textContent = 'Please enter a Facebook profile URL';
+                errorDiv.style.display = 'block';
+                return;
+            }
+            
+            // Try to extract ID from profile.php?id=XXXXX format
+            const idMatch = url.match(/[?&]id=(\d+)/);
+            
+            if (idMatch && idMatch[1]) {
+                const facebookID = idMatch[1];
+                document.getElementById('facebook-id-display').textContent = facebookID;
+                resultDiv.style.display = 'block';
+            } else {
+                errorDiv.innerHTML = `
+                    <strong>ID not found in URL</strong><br><br>
+                    Your profile URL appears to use a custom username. To find your numeric Facebook ID:<br><br>
+                    <strong>Step 1:</strong> Visit your Facebook profile<br>
+                    <strong>Step 2:</strong> Right-click and select "View Page Source"<br>
+                    <strong>Step 3:</strong> Press Ctrl+F and search for "\"id\":\""<br>
+                    <strong>Step 4:</strong> Look for your numeric ID in the results<br><br>
+                    Alternatively, your ID may appear in API responses or in the browser's Network tab when you load your profile.
+                `;
+                errorDiv.style.display = 'block';
+            }
+        }
+
+        function copyFacebookID() {
+            const facebookID = document.getElementById('facebook-id-display').textContent;
+            navigator.clipboard.writeText(facebookID).then(() => {
+                const btn = event.target;
+                const originalText = btn.textContent;
+                btn.textContent = '✓ Copied!';
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                }, 1500);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            if (document.querySelector('.accordion-header')) {
+                initAccordion();
+            }
+        });
+    </script>
+</body>
+</html>

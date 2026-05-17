@@ -3,44 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free Online Schema Generator - Fast & Secure | SmartGen</title>
-    <meta name="description" content="Create accurate JSON-LD schema markup with our free Schema Generator. Enhance SEO, rich snippets, and structured data effortlessly.">
+    <link rel="canonical" href="https://smartgentools.com/schema-generator/">
+    <title>Free JSON-LD Schema Generator | Structured Data | SmartGen</title>
+    <meta name="description" content="Generate JSON-LD schema markup for your website. Improve search visibility and rich snippets with proper structured data.">
     <link rel="stylesheet" href="../assets/css/style.css">
     <script src="../assets/js/app.js" defer></script>
 
     
     <script type="application/ld+json">
 {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-        {
-            "@type": "Question",
-            "name": "What types of schema markup can I create with the Schema Generator?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Our Schema Generator supports a wide range of schema types, including Article, Product, Event, Organization, Local Business, FAQ, and Review. This versatility allows users to create structured data tailored to various content needs, improving the visibility and relevance in search engine results."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Is my data saved or shared when using the Schema Generator on SmartGen?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "No, the Schema Generator processes all data 100% on the client side, which means your input never leaves your browser. This ensures complete privacy and security, giving users peace of mind that their data is not stored, shared, or transmitted to any external servers."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "How do I integrate the generated schema markup into my website?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Once you've created your schema markup using the tool, you can copy the generated JSON-LD code and insert it directly into the <head> section of your website's HTML or within a script tag before the closing </body> tag. This integration helps search engines better understand your content, enhancing SEO and enabling rich snippets."
-            }
-        }
-    ]
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Free JSON-LD Schema Generator | Structured Data",
+  "description": "Generate JSON-LD schema markup for your website. Improve search visibility and rich snippets with proper structured data.",
+  "url": "https://smartgentools.com/schema-generator/",
+  "applicationCategory": "Utility",
+  "operatingSystem": "All",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "creator": {
+    "@type": "Organization",
+    "name": "SmartGen",
+    "url": "https://smartgentools.com/"
+  }
 }
     </script>
+    <meta property="og:title" content="Schema Generator - SmartGen">
+    <meta property="og:description" content="Create JSON-LD schema markup for better search engine understanding.">
+    <meta property="og:url" content="https://smartgentools.com/schema-generator/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://smartgentools.com/assets/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Schema Generator - SmartGen">
+    <meta name="twitter:description" content="Create JSON-LD schema markup for better search engine understanding.">
+    <meta name="twitter:image" content="https://smartgentools.com/assets/og-image.png">
 </head>
 <body>
     <header id="main-header"></header>
@@ -131,15 +130,26 @@
                 "logo": logo
             };
 
-            document.getElementById('sch-result').value = `<script type="application/ld+json">\n${JSON.stringify(schema, null, 2)}\n<\/script>`;
-        }
-
-        function copySchema() {
-            const result = document.getElementById('sch-result');
-            result.select();
-            document.execCommand('copy');
-            alert('Schema markup copied!');
-        }
+            document.getElementById('sch-result').value = `<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Free JSON-LD Schema Generator | Structured Data",
+  "description": "Generate JSON-LD schema markup for your website. Improve search visibility and rich snippets with proper structured data.",
+  "url": "https://smartgentools.com/schema-generator/",
+  "applicationCategory": "Utility",
+  "operatingSystem": "All",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "creator": {
+    "@type": "Organization",
+    "name": "SmartGen",
+    "url": "https://smartgentools.com/"
+  }
+}
     </script>
 </body>
 </html>

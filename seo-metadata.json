@@ -1,0 +1,334 @@
+{
+  "tools": {
+    "qr-generator": {
+      "title": "Free Advanced QR Code Generator | SmartGen",
+      "description": "Create custom QR codes for URLs, WiFi networks, and more. Fast, free, and 100% client-side QR generator with instant download.",
+      "keywords": "QR code generator, QR code maker, free QR code, WiFi QR code, URL QR code",
+      "ogTitle": "Advanced QR Code Generator - SmartGen",
+      "ogDescription": "Generate custom QR codes instantly. Perfect for URLs, WiFi, contacts, and more.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "Utility",
+      "features": ["Custom QR codes", "WiFi QR generation", "URL encoding", "Instant download", "No registration required"]
+    },
+    "utm-builder": {
+      "title": "Free UTM Link Builder | Campaign Tracking | SmartGen",
+      "description": "Generate UTM tracking links for your marketing campaigns. Monitor source, medium, and campaign performance with ease.",
+      "keywords": "UTM builder, UTM link generator, campaign tracking, Google Analytics, marketing links",
+      "ogTitle": "UTM Link Builder - SmartGen",
+      "ogDescription": "Create tracking links for your marketing campaigns instantly.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "Utility",
+      "features": ["UTM parameter generation", "Campaign tracking", "Google Analytics integration", "Bulk URL generation"]
+    },
+    "whatsapp-link": {
+      "title": "Free WhatsApp Link Generator | Direct Chat Links | SmartGen",
+      "description": "Create direct WhatsApp chat links instantly. No phone number storage, 100% free, and works on all devices.",
+      "keywords": "WhatsApp link generator, WhatsApp direct message, WhatsApp URL, chat link",
+      "ogTitle": "WhatsApp Link Generator - SmartGen",
+      "ogDescription": "Generate direct WhatsApp chat links for your business or personal use.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "Utility",
+      "features": ["Direct chat links", "No registration", "Mobile friendly", "Instant generation"]
+    },
+    "mailto-generator": {
+      "title": "Free Mailto Link Generator | Email Links | SmartGen",
+      "description": "Generate professional mailto links with subject and body. Perfect for contact forms and email links on websites.",
+      "keywords": "mailto generator, email link generator, contact link, email subject generator",
+      "ogTitle": "Mailto Link Generator - SmartGen",
+      "ogDescription": "Create professional email links with subject and message body.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "Utility",
+      "features": ["Email link generation", "Subject line support", "Message body support", "HTML code export"]
+    },
+    "meta-tag-generator": {
+      "title": "Free Meta Tag Generator | SEO Meta Tags | SmartGen",
+      "description": "Generate SEO-optimized meta tags for your website. Improve click-through rates and search engine rankings instantly.",
+      "keywords": "meta tag generator, SEO meta tags, meta description, meta keywords, SERP optimization",
+      "ogTitle": "Meta Tag Generator - SmartGen",
+      "ogDescription": "Create high-CTR meta tags for better SEO and search visibility.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "Utility",
+      "features": ["Meta title generation", "Meta description creation", "Open Graph tags", "Twitter cards"]
+    },
+    "robots-txt-generator": {
+      "title": "Free Robots.txt Generator | SEO Tool | SmartGen",
+      "description": "Generate robots.txt files to control search engine crawler access. Optimize your site's crawl budget and SEO performance.",
+      "keywords": "robots.txt generator, SEO robots.txt, crawler control, search engine optimization",
+      "ogTitle": "Robots.txt Generator - SmartGen",
+      "ogDescription": "Create robots.txt files to manage search engine crawlers and improve SEO.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "Utility",
+      "features": ["Robots.txt generation", "Crawler rules", "Sitemap specification", "User-agent control"]
+    },
+    "keyword-density-checker": {
+      "title": "Free Keyword Density Checker | SEO Analysis | SmartGen",
+      "description": "Analyze keyword frequency and density in your content. Optimize for SEO and ensure proper keyword distribution.",
+      "keywords": "keyword density checker, keyword analysis, SEO checker, content analysis, keyword frequency",
+      "ogTitle": "Keyword Density Checker - SmartGen",
+      "ogDescription": "Check keyword density and frequency in your content for SEO optimization.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "Utility",
+      "features": ["Keyword density analysis", "Frequency distribution", "Stop word filtering", "Export results"]
+    },
+    "schema-generator": {
+      "title": "Free JSON-LD Schema Generator | Structured Data | SmartGen",
+      "description": "Generate JSON-LD schema markup for your website. Improve search visibility and rich snippets with proper structured data.",
+      "keywords": "schema generator, JSON-LD, structured data, schema.org, rich snippets",
+      "ogTitle": "Schema Generator - SmartGen",
+      "ogDescription": "Create JSON-LD schema markup for better search engine understanding.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "Utility",
+      "features": ["Schema generation", "JSON-LD markup", "Rich snippets", "Multiple schema types"]
+    },
+    "word-counter": {
+      "title": "Free Word Counter Tool | Character & Reading Time | SmartGen",
+      "description": "Count words, characters, sentences, and paragraphs instantly. Estimate reading time and optimize content length.",
+      "keywords": "word counter, character counter, word count tool, reading time calculator",
+      "ogTitle": "Word Counter - SmartGen",
+      "ogDescription": "Count words, characters, and estimate reading time for your content.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "Utility",
+      "features": ["Word counting", "Character counting", "Reading time estimation", "Paragraph analysis"]
+    },
+    "text-case-converter": {
+      "title": "Free Text Case Converter | Change Text Format | SmartGen",
+      "description": "Convert text to uppercase, lowercase, title case, and more. Perfect for formatting content and social media posts.",
+      "keywords": "text case converter, uppercase converter, lowercase converter, title case, text formatter",
+      "ogTitle": "Text Case Converter - SmartGen",
+      "ogDescription": "Convert text between different cases instantly.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "Utility",
+      "features": ["Case conversion", "Multiple formats", "Instant preview", "Copy to clipboard"]
+    },
+    "hashtag-generator": {
+      "title": "Free Hashtag Generator | Social Media Hashtags | SmartGen",
+      "description": "Generate trending hashtags for social media. Boost your posts on Instagram, Twitter, TikTok, and more.",
+      "keywords": "hashtag generator, social media hashtags, trending hashtags, Instagram hashtags",
+      "ogTitle": "Hashtag Generator - SmartGen",
+      "ogDescription": "Generate trending hashtags for your social media posts.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "Utility",
+      "features": ["Hashtag generation", "Trending tags", "Social media optimization", "Bulk generation"]
+    },
+    "lorem-ipsum-generator": {
+      "title": "Free Lorem Ipsum Generator | Placeholder Text | SmartGen",
+      "description": "Generate placeholder text for designs and mockups. Customize paragraphs, words, and sentences instantly.",
+      "keywords": "lorem ipsum generator, placeholder text, dummy text, design filler",
+      "ogTitle": "Lorem Ipsum Generator - SmartGen",
+      "ogDescription": "Generate placeholder text for your designs and projects.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "Utility",
+      "features": ["Lorem ipsum generation", "Custom length", "Paragraph generation", "Copy to clipboard"]
+    },
+    "password-generator": {
+      "title": "Free Secure Password Generator | Strong Passwords | SmartGen",
+      "description": "Generate strong, random passwords instantly. Customize length and character types for maximum security.",
+      "keywords": "password generator, secure password, random password, strong password generator",
+      "ogTitle": "Secure Password Generator - SmartGen",
+      "ogDescription": "Create strong, random passwords for your accounts.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "Utility",
+      "features": ["Password generation", "Customizable length", "Character options", "Copy to clipboard"]
+    },
+    "age-calculator": {
+      "title": "Free Age Calculator | Calculate Age & Date Difference | SmartGen",
+      "description": "Calculate exact age and date differences instantly. Perfect for finding age, anniversaries, and time intervals.",
+      "keywords": "age calculator, date calculator, age finder, date difference calculator",
+      "ogTitle": "Age Calculator - SmartGen",
+      "ogDescription": "Calculate your exact age and date differences instantly.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "Utility",
+      "features": ["Age calculation", "Date difference", "Anniversary calculator", "Instant results"]
+    },
+    "image-to-base64": {
+      "title": "Free Image to Base64 Converter | Encode Images | SmartGen",
+      "description": "Convert images to Base64 strings instantly. Perfect for embedding images in CSS, HTML, and data URIs.",
+      "keywords": "image to base64, base64 encoder, image converter, data URI",
+      "ogTitle": "Image to Base64 Converter - SmartGen",
+      "ogDescription": "Convert images to Base64 encoding for web development.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "Utility",
+      "features": ["Image encoding", "Base64 conversion", "Data URI generation", "Copy to clipboard"]
+    },
+    "picture-url-generator": {
+      "title": "Free Picture URL Generator | Image Hosting | SmartGen",
+      "description": "Upload images and get direct URLs instantly. Perfect for embedding images in websites and documents.",
+      "keywords": "picture URL generator, image hosting, image URL, direct image link",
+      "ogTitle": "Picture URL Generator - SmartGen",
+      "ogDescription": "Upload images and get direct URLs for embedding.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "Utility",
+      "features": ["Image upload", "URL generation", "Direct linking", "Instant hosting"]
+    },
+    "cpm-roi-calculator": {
+      "title": "Free CPM & ROI Calculator | Marketing Metrics | SmartGen",
+      "description": "Calculate Cost Per Mille (CPM) and Return on Investment (ROI). Essential for digital marketing and advertising analysis.",
+      "keywords": "CPM calculator, ROI calculator, cost per mille, return on investment, marketing calculator",
+      "ogTitle": "CPM & ROI Calculator - SmartGen",
+      "ogDescription": "Calculate CPM and ROI for your marketing campaigns.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "Utility",
+      "features": ["CPM calculation", "ROI analysis", "Marketing metrics", "Instant results"]
+    },
+    "color-palette-extractor": {
+      "title": "Free Color Palette Extractor | Extract Colors from Images | SmartGen",
+      "description": "Extract dominant colors from images as HEX and RGB values. Perfect for design inspiration and color matching.",
+      "keywords": "color palette extractor, color picker, image color analysis, hex color extractor",
+      "ogTitle": "Color Palette Extractor - SmartGen",
+      "ogDescription": "Extract color palettes from images instantly.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "Utility",
+      "features": ["Color extraction", "HEX values", "RGB values", "Palette generation"]
+    },
+    "blog-title-generator": {
+      "title": "Free Blog Title Generator | SEO Headlines | SmartGen",
+      "description": "Generate SEO-friendly blog titles and headlines instantly. Increase click-through rates with compelling titles.",
+      "keywords": "blog title generator, headline generator, SEO title, content title generator",
+      "ogTitle": "Blog Title Generator - SmartGen",
+      "ogDescription": "Generate SEO-optimized blog titles and headlines.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "Utility",
+      "features": ["Title generation", "SEO optimization", "Headline creation", "Bulk generation"]
+    },
+    "emi-calculator": {
+      "title": "Free EMI Calculator | Loan & Installment Calculator | SmartGen",
+      "description": "Calculate monthly EMI, total interest, and loan details instantly. Perfect for loans, mortgages, and financial planning.",
+      "keywords": "EMI calculator, loan calculator, installment calculator, mortgage calculator",
+      "ogTitle": "EMI Calculator - SmartGen",
+      "ogDescription": "Calculate loan EMI and total interest instantly.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "Utility",
+      "features": ["EMI calculation", "Interest calculation", "Loan analysis", "Amortization schedule"]
+    },
+    "serp-preview-tool": {
+      "title": "Free SERP Preview Tool | Google Search Preview | SmartGen",
+      "description": "Preview how your page appears in Google search results. Optimize meta titles and descriptions for better CTR.",
+      "keywords": "SERP preview, Google search preview, meta title preview, search snippet",
+      "ogTitle": "SERP Preview Tool - SmartGen",
+      "ogDescription": "Preview your page in Google search results.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "Utility",
+      "features": ["SERP preview", "Meta tag preview", "CTR optimization", "Real-time preview"]
+    },
+    "image-compressor": {
+      "title": "Free Image Compressor | Reduce Image Size | SmartGen",
+      "description": "Compress images locally without uploading. Reduce file size while maintaining quality for faster websites.",
+      "keywords": "image compressor, image optimizer, compress image, reduce file size",
+      "ogTitle": "Image Compressor - SmartGen",
+      "ogDescription": "Compress images locally to reduce file size.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "Utility",
+      "features": ["Image compression", "Local processing", "Quality control", "Batch compression"]
+    },
+    "percentage-calculator": {
+      "title": "Free Percentage Calculator | Calculate Percentages & Discounts | SmartGen",
+      "description": "Calculate percentages, discounts, and percent differences instantly. Perfect for math, shopping, and finance.",
+      "keywords": "percentage calculator, discount calculator, percent calculator, math calculator",
+      "ogTitle": "Percentage Calculator - SmartGen",
+      "ogDescription": "Calculate percentages and discounts instantly.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "Utility",
+      "features": ["Percentage calculation", "Discount calculator", "Percent difference", "Instant results"]
+    },
+    "pomodoro-timer": {
+      "title": "Free Pomodoro Timer | Focus Timer & Productivity Tool | SmartGen",
+      "description": "25/5 Pomodoro timer for focused work sessions. Boost productivity with scientifically-proven time management.",
+      "keywords": "pomodoro timer, focus timer, productivity timer, work timer, break timer",
+      "ogTitle": "Pomodoro Timer - SmartGen",
+      "ogDescription": "Boost your productivity with a Pomodoro timer.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "Utility",
+      "features": ["Pomodoro timer", "Focus sessions", "Break timer", "Productivity tracking"]
+    },
+    "secure-notepad": {
+      "title": "Free Secure Notepad | Private Notes with Auto-Save | SmartGen",
+      "description": "Auto-save notes to browser storage with complete privacy. No server uploads, 100% secure and private.",
+      "keywords": "secure notepad, private notes, notepad, note taking, secure storage",
+      "ogTitle": "Secure Notepad - SmartGen",
+      "ogDescription": "Take private notes with auto-save and browser storage.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "Utility",
+      "features": ["Auto-save notes", "Browser storage", "Privacy protection", "Instant access"]
+    },
+    "fancy-font-generator": {
+      "title": "Free Fancy Font Generator | Unicode Text Styles | SmartGen",
+      "description": "Convert text to cool Unicode styles and fonts. Perfect for social media, gaming, and creative writing.",
+      "keywords": "fancy font generator, unicode fonts, text styles, cool fonts, font converter",
+      "ogTitle": "Fancy Font Generator - SmartGen",
+      "ogDescription": "Generate cool Unicode fonts and text styles.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "Utility",
+      "features": ["Font generation", "Unicode styles", "Text conversion", "Copy to clipboard"]
+    },
+    "unit-converter": {
+      "title": "Free Unit Converter | Length, Weight & Temperature | SmartGen",
+      "description": "Convert between units of length, weight, and temperature instantly. Essential for science, cooking, and travel.",
+      "keywords": "unit converter, length converter, weight converter, temperature converter",
+      "ogTitle": "Unit Converter - SmartGen",
+      "ogDescription": "Convert between different units instantly.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "Utility",
+      "features": ["Unit conversion", "Multiple categories", "Instant results", "Accurate calculations"]
+    },
+    "youtube-thumbnail-downloader": {
+      "title": "Free YouTube Thumbnail Downloader | Download HD Thumbnails | SmartGen",
+      "description": "Download HD thumbnails from any YouTube video instantly. Perfect for content creators and video analysis.",
+      "keywords": "YouTube thumbnail downloader, thumbnail extractor, video thumbnail, HD download",
+      "ogTitle": "YouTube Thumbnail Downloader - SmartGen",
+      "ogDescription": "Download HD thumbnails from YouTube videos.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "Utility",
+      "features": ["Thumbnail download", "HD quality", "Instant extraction", "Multiple formats"]
+    },
+    "bmi-bmr-calculator": {
+      "title": "Free BMI & BMR Calculator | Health & Fitness | SmartGen",
+      "description": "Calculate Body Mass Index (BMI) and Basal Metabolic Rate (BMR) instantly. Essential for fitness and health tracking.",
+      "keywords": "BMI calculator, BMR calculator, body mass index, metabolic rate, fitness calculator",
+      "ogTitle": "BMI & BMR Calculator - SmartGen",
+      "ogDescription": "Calculate BMI and BMR for health and fitness tracking.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "Utility",
+      "features": ["BMI calculation", "BMR calculation", "Health metrics", "Instant results"]
+    },
+    "url-encoder-decoder": {
+      "title": "Free URL Encoder/Decoder | Encode & Decode URLs | SmartGen",
+      "description": "Encode and decode URLs securely and instantly. Perfect for web development and data processing.",
+      "keywords": "URL encoder, URL decoder, encode URL, decode URL, URL encoding",
+      "ogTitle": "URL Encoder/Decoder - SmartGen",
+      "ogDescription": "Encode and decode URLs instantly.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "Utility",
+      "features": ["URL encoding", "URL decoding", "Instant conversion", "Copy to clipboard"]
+    },
+    "css-gradient-generator": {
+      "title": "Free CSS Gradient Generator | Create Beautiful Gradients | SmartGen",
+      "description": "Create beautiful CSS gradients with color pickers. Perfect for web design and styling.",
+      "keywords": "CSS gradient generator, gradient maker, color gradient, CSS generator",
+      "ogTitle": "CSS Gradient Generator - SmartGen",
+      "ogDescription": "Create beautiful CSS gradients for your website.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "Utility",
+      "features": ["Gradient generation", "Color picker", "CSS export", "Preview"]
+    },
+    "random-choice-picker": {
+      "title": "Free Random Choice Picker | Decision Maker | SmartGen",
+      "description": "Make random decisions from a list of choices instantly. Perfect for games, decisions, and random selection.",
+      "keywords": "random choice picker, random selector, decision maker, random generator",
+      "ogTitle": "Random Choice Picker - SmartGen",
+      "ogDescription": "Make random decisions from your choices.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "Utility",
+      "features": ["Random selection", "Choice picker", "Decision making", "Instant results"]
+    },
+    "facebook-id-finder": {
+      "title": "Free Facebook ID Finder | Extract Facebook IDs | SmartGen",
+      "description": "Extract numeric Facebook IDs from profile links instantly. Perfect for developers and marketers.",
+      "keywords": "Facebook ID finder, Facebook ID extractor, numeric ID, profile ID",
+      "ogTitle": "Facebook ID Finder - SmartGen",
+      "ogDescription": "Extract Facebook IDs from profile links.",
+      "ogImage": "https://smartgentools.com/assets/og-image.png",
+      "applicationCategory": "Utility",
+      "features": ["ID extraction", "Profile analysis", "Instant results", "Copy to clipboard"]
+    }
+  }
+}

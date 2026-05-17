@@ -55,6 +55,35 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-btn:hover {
+    background-color: var(--card-bg);
+}
+
+.mobile-only {
+    display: none;
 }
 
 .logo {
@@ -88,11 +117,54 @@ nav a {
     color: var(--text-secondary);
     text-decoration: none;
     font-weight: 500;
-    transition: color 0.3s;
+    transition: all 0.3s;
 }
 
 nav a:hover {
     color: var(--primary);
+}
+
+@media (max-width: 768px) {
+    .mobile-only {
+        display: flex;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--background);
+        flex-direction: column;
+        padding: 1rem 20px;
+        gap: 0;
+        border-bottom: 1px solid var(--border);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+    }
+
+    nav.show-mobile-menu {
+        display: flex;
+    }
+
+    nav a {
+        width: 100%;
+        padding: 1rem 0;
+        border-bottom: 1px solid var(--border);
+    }
+
+    nav a:last-child {
+        border-bottom: none;
+    }
+
+    .header-content {
+        padding: 0.5rem 0;
+    }
+
+    .logo {
+        font-size: 1.25rem;
+    }
 }
 
 /* Grid Layout */

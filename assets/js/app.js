@@ -8,7 +8,6 @@ function injectNavbar() {
     const header = document.getElementById('main-header');
     if (!header) return;
 
-    const isRoot = window.location.pathname === '/' || window.location.pathname.endsWith('index.html') && !window.location.pathname.includes('/');
     const prefix = window.location.pathname.split('/').length > 2 ? '../' : './';
 
     header.innerHTML = `
@@ -18,17 +17,36 @@ function injectNavbar() {
                     <div class="logo-icon">⚡</div>
                     SmartGen
                 </a>
-                <nav>
+                <div class="header-actions">
+                    <button id="theme-toggle" class="icon-btn" title="Toggle Theme">🌓</button>
+                    <button id="mobile-menu-toggle" class="icon-btn mobile-only" title="Toggle Menu">☰</button>
+                </div>
+                <nav id="nav-links">
                     <a href="${prefix}">Home</a>
                     <a href="${prefix}#tools">Tools</a>
                     <a href="${prefix}updates/">Updates</a>
-                    <button id="theme-toggle" style="background:none; border:none; cursor:pointer; font-size:1.2rem;">🌓</button>
                 </nav>
             </div>
         </div>
     `;
 
     document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+    
+    const menuToggle = document.getElementById('mobile-menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+    
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('show-mobile-menu');
+        menuToggle.innerText = navLinks.classList.contains('show-mobile-menu') ? '✕' : '☰';
+    });
+
+    // Close menu when clicking a link
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('show-mobile-menu');
+            menuToggle.innerText = '☰';
+        });
+    });
 }
 
 function injectFooter() {

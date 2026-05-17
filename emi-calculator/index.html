@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Loan & EMI Calculator - Calculate Monthly Payments | SmartGen</title>
+    <meta name="description" content="Use our free Loan & EMI Calculator to estimate your monthly installments, total interest, and total repayment amount. 100% client-side, fast, and secure.">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="../assets/js/app.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How is the EMI calculated in this tool?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The Equated Monthly Installment (EMI) is calculated using the standard formula: EMI = [P x R x (1+R)^N]/[(1+R)^N-1], where P is the Principal loan amount, R is the monthly interest rate, and N is the number of monthly installments."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is my financial data safe with SmartGen?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, our Loan & EMI Calculator processes all calculations 100% client-side in your browser. No data is sent to our servers, ensuring your financial privacy and security."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I use this for different types of loans?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Absolutely! This versatile tool can be used to calculate EMIs for home loans, car loans, personal loans, or any other type of reducing balance loan."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .result-box {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: rgba(37, 99, 235, 0.05);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+        .result-item {
+            text-align: center;
+        }
+        .result-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+        .result-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+    <header id="main-header"></header>
+    <main class="container">
+        <div class="tool-container">
+            <h1>Loan & EMI Calculator</h1>
+            <p>Plan your finances by calculating monthly installments and total interest instantly.</p>
+            
+            <div class="form-group">
+                <label class="form-label">Loan Amount ($)</label>
+                <input type="number" id="loan-amount" class="form-input" placeholder="e.g. 50000" value="10000" oninput="calculateEMI()">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Interest Rate (% Per Annum)</label>
+                <input type="number" id="interest-rate" class="form-input" placeholder="e.g. 8.5" value="7.5" step="0.1" oninput="calculateEMI()">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Loan Tenure (Years)</label>
+                <input type="number" id="loan-tenure" class="form-input" placeholder="e.g. 5" value="5" oninput="calculateEMI()">
+            </div>
+
+            <div class="result-box">
+                <div class="result-item">
+                    <div class="result-label">Monthly EMI</div>
+                    <div id="emi-value" class="result-value">$0.00</div>
+                </div>
+                <div class="result-item">
+                    <div class="result-label">Total Interest</div>
+                    <div id="total-interest" class="result-value">$0.00</div>
+                </div>
+                <div class="result-item">
+                    <div class="result-label">Total Payment</div>
+                    <div id="total-payment" class="result-value">$0.00</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ad-banner-space">AdSense Banner Space</div>
+
+        <article class="seo-content-container container mt-5 mb-5">
+            <section class="seo-content">
+                <h2>The Ultimate Guide to Using Our Loan & EMI Calculator</h2>
+                <p>Navigating the world of personal finance can be complex, especially when it comes to understanding the long-term implications of borrowing. Whether you are planning to purchase a new home, buy a car, or take out a personal loan for a major life event, knowing exactly how much you will pay each month is crucial for effective budgeting. Our <strong>Loan & EMI Calculator</strong> is designed to provide you with instant, accurate, and transparent financial insights. By entering just three key variables—the principal amount, the annual interest rate, and the loan tenure—you can demystify your debt and take control of your financial future.</p>
+                <p>Equated Monthly Installments (EMIs) are a standard way of repaying loans where a fixed amount is paid to the lender every month. This amount includes both the principal component and the interest component. In the initial years of the loan, a larger portion of the EMI goes toward paying off the interest, while in the later years, the focus shifts toward the principal. Our tool helps you visualize this entire process, allowing you to see not just your monthly commitment, but also the total cost of borrowing over the life of the loan. This is essential for comparing different loan offers from various banks and financial institutions, ensuring you get the best deal possible.</p>
+
+                <h3>Why Choose SmartGen's EMI Calculator?</h3>
+                <p>At SmartGen, we believe in the power of privacy and speed. Most online financial tools require you to submit your data to a server, which can raise concerns about data security and lead to unwanted marketing calls. Our tool is different because it emphasizes <strong>100% Client-Side Processing</strong>. This means that every calculation happens right inside your web browser. Your financial figures never leave your device, providing you with a secure environment to explore various "what-if" scenarios without any external interference. Furthermore, our interface is optimized for speed, delivering results instantly as you type, making it the most efficient way to plan your loans.</p>
+
+                <h3>Key Features & Advanced Capabilities</h3>
+                <ul>
+                    <li><strong>Real-Time Calculations:</strong> See your EMI, total interest, and total repayment amount update instantly as you adjust the input values.</li>
+                    <li><strong>High Precision Results:</strong> We use advanced mathematical algorithms to ensure that every cent is accounted for, providing bank-grade accuracy.</li>
+                    <li><strong>Universal Loan Support:</strong> Whether it's a home loan, car loan, education loan, or personal loan, our calculator handles them all with ease.</li>
+                    <li><strong>Privacy First:</strong> No data is uploaded, stored, or shared. Your financial planning remains entirely private to you.</li>
+                    <li><strong>User-Friendly Interface:</strong> Designed with simplicity in mind, our tool is accessible to everyone, regardless of their financial expertise.</li>
+                    <li><strong>Mobile Optimized:</strong> Plan your finances on the go. Our responsive design ensures a seamless experience across desktops, tablets, and smartphones.</li>
+                </ul>
+
+                <h3>Technical Deep Dive: How EMI Works</h3>
+                <p>The mathematical foundation of an EMI calculation is based on the reducing balance method. The formula used is: <code>EMI = [P x R x (1+R)^N]/[(1+R)^N-1]</code>. Here, <strong>P</strong> stands for the Principal amount, <strong>R</strong> is the monthly interest rate (annual rate divided by 12 and then by 100), and <strong>N</strong> is the total number of months. Understanding this formula is key to understanding how interest accumulates. For example, even a small 0.5% difference in interest rates can lead to significant savings in total interest over a 20-year home loan. By using our calculator, you can easily see the impact of interest rates and tenure on your total financial burden, helping you make smarter borrowing decisions.</p>
+
+                <h3>Best Practices for Loan Management</h3>
+                <p>When using an EMI calculator, it is wise to follow a few best practices. First, always aim for a shorter tenure if your budget allows, as this significantly reduces the total interest paid. Second, keep your total EMIs (including existing ones) below 40% of your monthly take-home pay to maintain financial stability. Third, use our tool to compare 'Reducing Balance' vs 'Flat Rate' loans; most modern loans are reducing balance, which is generally more beneficial for the borrower. Finally, always account for processing fees and other hidden charges that banks might apply, as these are not part of the basic EMI calculation but affect the total cost of the loan.</p>
+
+                <h3>Interactive FAQ Accordion</h3>
+                <div class="faq-container">
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>How is the EMI calculated in this tool?</span>
+                            <div class="accordion-icon"></div>
+                        </button>
+                        <div class="accordion-content">
+                            <p>The Equated Monthly Installment (EMI) is calculated using the standard formula: EMI = [P x R x (1+R)^N]/[(1+R)^N-1], where P is the Principal loan amount, R is the monthly interest rate, and N is the number of monthly installments. Our tool automates this complex calculation to give you instant results.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>Is my financial data safe with SmartGen?</span>
+                            <div class="accordion-icon"></div>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Yes, our Loan & EMI Calculator processes all calculations 100% client-side in your browser. No data is sent to our servers, ensuring your financial privacy and security. You can even use the tool offline once the page is loaded.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>Can I use this for different types of loans?</span>
+                            <div class="accordion-icon"></div>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Absolutely! This versatile tool can be used to calculate EMIs for home loans, car loans, personal loans, or any other type of reducing balance loan. Simply input the specific terms of your loan to see the results.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+    <footer id="main-footer"></footer>
+
+    <script>
+        function calculateEMI() {
+            const loanAmount = parseFloat(document.getElementById('loan-amount').value);
+            const interestRate = parseFloat(document.getElementById('interest-rate').value);
+            const loanTenure = parseFloat(document.getElementById('loan-tenure').value);
+
+            if (loanAmount > 0 && interestRate > 0 && loanTenure > 0) {
+                const monthlyRate = (interestRate / 100) / 12;
+                const totalMonths = loanTenure * 12;
+                
+                const emi = (loanAmount * monthlyRate * Math.pow(1 + monthlyRate, totalMonths)) / (Math.pow(1 + monthlyRate, totalMonths) - 1);
+                const totalPayment = emi * totalMonths;
+                const totalInterest = totalPayment - loanAmount;
+
+                document.getElementById('emi-value').innerText = '$' + emi.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+                document.getElementById('total-interest').innerText = '$' + totalInterest.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+                document.getElementById('total-payment').innerText = '$' + totalPayment.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+            } else {
+                document.getElementById('emi-value').innerText = '$0.00';
+                document.getElementById('total-interest').innerText = '$0.00';
+                document.getElementById('total-payment').innerText = '$0.00';
+            }
+        }
+
+        // Initial calculation
+        window.addEventListener('load', calculateEMI);
+    </script>
+</body>
+</html>

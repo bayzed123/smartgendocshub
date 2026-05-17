@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client-Side Image Compressor - Reduce Image Size Without Uploading | SmartGen</title>
+    <meta name="description" content="Compress your images locally in the browser with our free online tool. Reduce file size (KB/MB) while maintaining quality. 100% private and secure.">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="../assets/js/app.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How does client-side image compression work?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Our tool uses the HTML5 Canvas API to redraw your image at a lower quality setting or smaller dimensions, all within your browser. This means your image is never uploaded to any server."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is my privacy protected?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Absolutely. Since the compression happens 100% locally on your device, your private photos and documents are never seen by us or stored on our servers."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Which image formats are supported?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The tool supports common web formats including JPEG, PNG, and WebP. Note that PNG compression primarily works by converting to JPEG or reducing dimensions."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .compressor-container {
+            border: 2px dashed var(--border);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin: 2rem 0;
+            transition: border-color 0.3s;
+        }
+        .compressor-container.dragover {
+            border-color: var(--primary);
+            background: rgba(37, 99, 235, 0.05);
+        }
+        .preview-area {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .preview-box img {
+            max-width: 100%;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+        .stats {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+        .controls {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: var(--card-bg);
+            border-radius: 12px;
+        }
+        #download-link {
+            display: none;
+            margin-top: 1rem;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header id="main-header"></header>
+    <main class="container">
+        <div class="tool-container">
+            <h1>Client-Side Image Compressor</h1>
+            <p>Reduce image file size instantly without compromising your privacy. No uploads required.</p>
+            
+            <div id="drop-zone" class="compressor-container">
+                <p>Drag & Drop image here or</p>
+                <input type="file" id="image-input" accept="image/*" style="display: none;">
+                <button class="btn btn-primary" onclick="document.getElementById('image-input').click()">Browse Files</button>
+            </div>
+
+            <div class="controls" id="compression-controls" style="display: none;">
+                <div class="form-group">
+                    <label class="form-label">Quality: <span id="quality-val">80</span>%</label>
+                    <input type="range" id="quality-range" min="1" max="100" value="80" style="width: 100%;" oninput="updateQualityLabel(); compressImage();">
+                </div>
+                <div class="preview-area">
+                    <div class="preview-box">
+                        <div class="form-label">Original</div>
+                        <img id="original-preview">
+                        <div id="original-stats" class="stats"></div>
+                    </div>
+                    <div class="preview-box">
+                        <div class="form-label">Compressed</div>
+                        <img id="compressed-preview">
+                        <div id="compressed-stats" class="stats"></div>
+                    </div>
+                </div>
+                <a id="download-link" class="btn btn-primary" style="text-align: center; text-decoration: none;">Download Compressed Image</a>
+            </div>
+        </div>
+
+        <div class="ad-banner-space">AdSense Banner Space</div>
+
+        <article class="seo-content-container container mt-5 mb-5">
+            <section class="seo-content">
+                <h2>The Ultimate Guide to Client-Side Image Compression</h2>
+                <p>In the modern web, image size is a critical factor for both user experience and SEO. Large, unoptimized images can slow down page load times, increase bounce rates, and negatively impact your search engine rankings. However, many users are hesitant to use online compression tools because they require uploading sensitive or private photos to a third-party server. Our <strong>Client-Side Image Compressor</strong> solves this problem by bringing the power of image optimization directly to your browser. By leveraging the HTML5 Canvas API, we allow you to shrink your images locally, ensuring that your data never leaves your device while you achieve the perfect balance between file size and visual quality.</p>
+                <p>Image compression works by removing redundant data or by using lossy algorithms to reduce the detail in areas that the human eye is less likely to notice. For JPEGs, this involves adjusting the quality setting, while for PNGs, it often involves converting to a more efficient format or reducing the color palette. Our tool focuses on <strong>Lossy Compression</strong>, which offers the most significant reductions in file size. Whether you are a web developer looking to optimize assets for a site, a marketer preparing social media posts, or a casual user trying to save space on your phone, this tool provides a secure and instant way to manage your image files.</p>
+
+                <h3>Why Choose SmartGen's Image Compressor?</h3>
+                <p>The standout feature of our tool is its commitment to <strong>100% Client-Side Processing</strong>. Traditional online compressors act as a middleman: you upload a file, their server processes it, and you download it back. This process is slow, consumes data, and poses a privacy risk. With SmartGen, your browser does all the work. This means the compression is nearly instantaneous, works offline once the page is loaded, and provides absolute privacy. You can compress personal documents, private photos, or confidential business graphics with the peace of mind that no one else will ever see them. It's the fastest and most secure way to optimize images on the web today.</p>
+
+                <h3>Key Features & Advanced Capabilities</h3>
+                <ul>
+                    <li><strong>Instant Local Compression:</strong> No waiting for uploads or downloads. The processing happens in real-time on your computer.</li>
+                    <li><strong>Privacy Guaranteed:</strong> Your images are never sent to a server. Your privacy is our top priority.</li>
+                    <li><strong>Live Preview:</strong> Compare the original and compressed versions side-by-side to ensure the quality meets your standards.</li>
+                    <li><strong>Adjustable Quality Slider:</strong> Fine-tune the compression level to get the exact file size you need.</li>
+                    <li><strong>Automatic Format Handling:</strong> Supports JPEG, PNG, and WebP, automatically optimizing for the best results.</li>
+                    <li><strong>Drag-and-Drop Interface:</strong> A seamless, modern UI that makes optimizing multiple images a breeze.</li>
+                </ul>
+
+                <h3>Technical Deep Dive: The Power of HTML5 Canvas</h3>
+                <p>Our <strong>Online Image Shrinker</strong> utilizes the <code>drawImage</code> and <code>toDataURL</code> methods of the HTML5 Canvas element. When you select an image, we load it into an invisible canvas. We then re-render that image onto the canvas at the specified quality setting. The browser's internal engine handles the complex math of the compression algorithm. For example, when you set the quality to 80%, the browser applies a JPEG compression filter that discards minor color variations to save space. This technical approach allows us to provide a high-performance tool without the need for expensive server-side processing, passing those speed and security benefits directly to you.</p>
+
+                <h3>Best Practices for Image Optimization</h3>
+                <p>To get the most out of our compressor, follow these expert tips. First, always aim for a file size below 100KB for web images to ensure fast loading. Second, use the preview feature to check for "artifacts" (blurry or blocky areas) that can appear at very low quality settings. Third, remember that JPEG is best for photographs, while PNG is better for images with text or transparent backgrounds. Fourth, if you are using images for a website, consider compressing them here first and then converting them to WebP for even better performance. Finally, always keep a backup of your original high-resolution images, as lossy compression permanently removes some data to achieve its small size.</p>
+
+                <h3>Interactive FAQ Accordion</h3>
+                <div class="faq-container">
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>How does client-side image compression work?</span>
+                            <div class="accordion-icon"></div>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Our tool uses the HTML5 Canvas API to redraw your image at a lower quality setting or smaller dimensions, all within your browser. This means your image is never uploaded to any server. The 'compression' is actually the browser's own image rendering engine working to save the file more efficiently.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>Is my privacy protected?</span>
+                            <div class="accordion-icon"></div>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Absolutely. Since the compression happens 100% locally on your device, your private photos and documents are never seen by us or stored on our servers. This tool is completely 'serverless' in its operation, making it one of the most private ways to handle images online.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>Which image formats are supported?</span>
+                            <div class="accordion-icon"></div>
+                        </button>
+                        <div class="accordion-content">
+                            <p>The tool supports common web formats including JPEG, PNG, and WebP. Note that while you can upload a PNG, the output is typically a JPEG to ensure maximum file size reduction. This is ideal for most web use cases where transparency is not required.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+    <footer id="main-footer"></footer>
+
+    <script>
+        const dropZone = document.getElementById('drop-zone');
+        const imageInput = document.getElementById('image-input');
+        const qualityRange = document.getElementById('quality-range');
+        const qualityVal = document.getElementById('quality-val');
+        const controls = document.getElementById('compression-controls');
+        const downloadLink = document.getElementById('download-link');
+        
+        let originalImage = null;
+
+        function updateQualityLabel() {
+            qualityVal.innerText = qualityRange.value;
+        }
+
+        dropZone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            dropZone.classList.add('dragover');
+        });
+
+        dropZone.addEventListener('dragleave', () => {
+            dropZone.classList.remove('dragover');
+        });
+
+        dropZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            dropZone.classList.remove('dragover');
+            const file = e.dataTransfer.files[0];
+            if (file && file.type.startsWith('image/')) {
+                handleImage(file);
+            }
+        });
+
+        imageInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file) handleImage(file);
+        });
+
+        function handleImage(file) {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                originalImage = new Image();
+                originalImage.onload = () => {
+                    document.getElementById('original-preview').src = e.target.result;
+                    document.getElementById('original-stats').innerText = `Size: ${(file.size / 1024).toFixed(2)} KB`;
+                    controls.style.display = 'block';
+                    compressImage();
+                };
+                originalImage.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+
+        function compressImage() {
+            if (!originalImage) return;
+
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            
+            canvas.width = originalImage.width;
+            canvas.height = originalImage.height;
+            
+            ctx.drawImage(originalImage, 0, 0);
+            
+            const quality = qualityRange.value / 100;
+            const compressedDataUrl = canvas.toDataURL('image/jpeg', quality);
+            
+            document.getElementById('compressed-preview').src = compressedDataUrl;
+            
+            // Calculate size from base64
+            const head = 'data:image/jpeg;base64,';
+            const size = Math.round((compressedDataUrl.length - head.length) * 3 / 4);
+            document.getElementById('compressed-stats').innerText = `Size: ${(size / 1024).toFixed(2)} KB`;
+            
+            downloadLink.href = compressedDataUrl;
+            downloadLink.download = 'smartgen-compressed.jpg';
+            downloadLink.style.display = 'block';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google SERP Snippet Preview Tool - Optimize Your Search Result | SmartGen</title>
+    <meta name="description" content="Preview how your website's title and meta description will appear in Google Search results. Optimize for CTR with our live SERP snippet preview tool.">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="../assets/js/app.js" defer></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Why is SERP preview important for SEO?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "A SERP preview helps you visualize how your page appears to users in search results. Optimizing your title and description for clarity and length can significantly improve your Click-Through Rate (CTR)."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the ideal length for a meta description?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "While Google doesn't have a strict character limit, it's best to keep meta descriptions between 150-160 characters to avoid truncation in search results."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is this tool free to use?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, the SmartGen SERP Preview Tool is 100% free and processes all data locally in your browser for maximum privacy."
+                }
+            }
+        ]
+    }
+    </script>
+    <style>
+        .serp-preview-card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #dfe1e5;
+            font-family: arial, sans-serif;
+            margin-top: 2rem;
+            max-width: 600px;
+        }
+        .serp-url {
+            color: #202124;
+            font-size: 14px;
+            margin-bottom: 4px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .serp-title {
+            color: #1a0dab;
+            font-size: 20px;
+            line-height: 1.3;
+            margin-bottom: 3px;
+            cursor: pointer;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .serp-title:hover {
+            text-decoration: underline;
+        }
+        .serp-description {
+            color: #4d5156;
+            font-size: 14px;
+            line-height: 1.58;
+            word-wrap: break-word;
+        }
+        .counter-text {
+            font-size: 0.85rem;
+            margin-top: 0.25rem;
+            text-align: right;
+            color: var(--text-secondary);
+        }
+        .warning {
+            color: var(--error);
+        }
+        [data-theme="dark"] .serp-preview-card {
+            background: #202124;
+            border-color: #3c4043;
+        }
+        [data-theme="dark"] .serp-url { color: #bdc1c6; }
+        [data-theme="dark"] .serp-title { color: #8ab4f8; }
+        [data-theme="dark"] .serp-description { color: #bdc1c6; }
+    </style>
+</head>
+<body>
+    <header id="main-header"></header>
+    <main class="container">
+        <div class="tool-container">
+            <h1>Google SERP Snippet Preview</h1>
+            <p>Optimize your website's appearance in Google search results for higher click-through rates.</p>
+            
+            <div class="form-group">
+                <label class="form-label">Page Title</label>
+                <input type="text" id="page-title" class="form-input" placeholder="Enter page title" value="SmartGen - All-in-One Digital & Web Utility Platform" oninput="updatePreview()">
+                <div id="title-counter" class="counter-text">0 characters</div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Page URL</label>
+                <input type="text" id="page-url" class="form-input" placeholder="https://example.com/page" value="https://smartgen.example.com" oninput="updatePreview()">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Meta Description</label>
+                <textarea id="meta-description" class="form-textarea" rows="4" placeholder="Enter meta description" oninput="updatePreview()">SmartGen provides free online tools like QR generators, SEO tools, and text utilities. All-in-one platform for developers and creators.</textarea>
+                <div id="desc-counter" class="counter-text">0 characters</div>
+            </div>
+
+            <div class="serp-preview-card">
+                <div id="preview-url" class="serp-url">https://smartgen.example.com</div>
+                <div id="preview-title" class="serp-title">SmartGen - All-in-One Digital & Web Utility Platform</div>
+                <div id="preview-description" class="serp-description">SmartGen provides free online tools like QR generators, SEO tools, and text utilities. All-in-one platform for developers and creators.</div>
+            </div>
+        </div>
+
+        <div class="ad-banner-space">AdSense Banner Space</div>
+
+        <article class="seo-content-container container mt-5 mb-5">
+            <section class="seo-content">
+                <h2>The Ultimate Guide to Google SERP Snippet Optimization</h2>
+                <p>In the highly competitive landscape of Search Engine Optimization (SEO), your website's appearance on the Search Engine Results Page (SERP) is the first point of contact with potential visitors. Even if you rank at the top of Google, a poorly crafted title or a truncated description can drive users to click on your competitors instead. Our <strong>Google SERP Snippet Preview Tool</strong> is designed to help you visualize and refine how your pages appear in search results, ensuring that every character works toward capturing the user's attention and increasing your Click-Through Rate (CTR).</p>
+                <p>The snippet consists of three primary elements: the Title Tag, the URL (often shown as breadcrumbs), and the Meta Description. Google uses these elements to understand the content of your page and present it to users. However, Google has specific pixel limits for these elements. If your title is too long, it gets cut off with an ellipsis (...), which can hide your most important keywords or your brand name. Similarly, an overly long meta description might lose its call-to-action. Our tool provides a real-time visual simulation of these limits, allowing you to tweak your copy until it is perfectly optimized for both search engines and human readers.</p>
+
+                <h3>Why Choose SmartGen's SERP Preview Tool?</h3>
+                <p>Most SEO tools require you to log in or upload your data to their servers. SmartGen takes a different approach by offering a <strong>100% Client-Side Processing</strong> experience. Your proposed titles, URLs, and descriptions never leave your browser. This is particularly important for SEO agencies and professionals working on sensitive, unreleased content or confidential marketing strategies. Beyond privacy, our tool is built for speed and accuracy, mimicking Google's current desktop layout to give you the most realistic preview possible. It's a lightweight, secure, and instant solution for all your snippet optimization needs.</p>
+
+                <h3>Key Features & Advanced Capabilities</h3>
+                <ul>
+                    <li><strong>Live Visual Preview:</strong> See exactly how your changes will look in Google's desktop search results as you type.</li>
+                    <li><strong>Real-Time Character Counters:</strong> Track the length of your title and description to stay within the optimal limits (approx. 60 chars for titles, 160 for descriptions).</li>
+                    <li><strong>Truncation Warnings:</strong> Our tool visually indicates where your text might be cut off by Google, helping you prioritize your most important information.</li>
+                    <li><strong>URL Breadcrumb Simulation:</strong> Visualize how your URL structure appears to users, which can influence their perception of your site's hierarchy.</li>
+                    <li><strong>Dark Mode Support:</strong> Preview how your snippet looks for users who use Google in dark mode, ensuring readability across all themes.</li>
+                    <li><strong>Zero Data Transmission:</strong> Complete privacy for your SEO strategies with local browser execution.</li>
+                </ul>
+
+                <h3>Technical Deep Dive: Understanding Pixel Width vs. Character Count</h3>
+                <p>While character counts are a great rule of thumb, Google actually measures snippets in pixels. For example, a capital 'W' takes up more space than a lowercase 'i'. Most modern SEO experts recommend keeping titles under 580 pixels and descriptions under 920 pixels. Our tool accounts for these variations by providing a visual box that mimics Google's actual display container. By using an <strong>Interactive SERP Preview</strong>, you can ensure that your most important LSI (Latent Semantic Indexing) keywords are visible and that your "Click-Magnet" phrases are not lost. This technical precision is what separates a standard meta tag generator from a professional-grade optimization tool.</p>
+
+                <h3>Best Practices for High-CTR Snippets</h3>
+                <p>To maximize the effectiveness of your snippets, follow these industry-proven best practices. First, include your primary keyword near the beginning of the title tag. Second, write a compelling meta description that acts as an "ad" for your page, including a clear call-to-action (CTA) like "Learn more," "Shop now," or "Get a free quote." Third, use your URL structure to reinforce the topic of the page. Fourth, avoid "keyword stuffing"—your snippet should sound natural and helpful to the user. Finally, use our tool to test different variations of your copy to see which one looks the most professional and inviting in the simulated search result.</p>
+
+                <h3>Interactive FAQ Accordion</h3>
+                <div class="faq-container">
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>Why is SERP preview important for SEO?</span>
+                            <div class="accordion-icon"></div>
+                        </button>
+                        <div class="accordion-content">
+                            <p>A SERP preview helps you visualize how your page appears to users in search results. Optimizing your title and description for clarity and length can significantly improve your Click-Through Rate (CTR), which is a key signal for search engine rankings. It allows you to catch errors and truncation before you publish your content.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>What is the ideal length for a meta description?</span>
+                            <div class="accordion-icon"></div>
+                        </button>
+                        <div class="accordion-content">
+                            <p>While Google doesn't have a strict character limit, it's best to keep meta descriptions between 150-160 characters to avoid truncation in search results. For mobile users, this limit is even shorter (around 120 characters). Our tool helps you find the "sweet spot" that works for both desktop and mobile views.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>Is this tool free to use?</span>
+                            <div class="accordion-icon"></div>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Yes, the SmartGen SERP Preview Tool is 100% free and processes all data locally in your browser for maximum privacy. We do not store your SEO data or use it for any purpose. It is a dedicated utility for the SEO community.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+    <footer id="main-footer"></footer>
+
+    <script>
+        function updatePreview() {
+            const title = document.getElementById('page-title').value;
+            const url = document.getElementById('page-url').value;
+            const desc = document.getElementById('meta-description').value;
+
+            document.getElementById('preview-title').innerText = title || 'Enter page title';
+            document.getElementById('preview-url').innerText = url || 'https://example.com/page';
+            document.getElementById('preview-description').innerText = desc || 'Enter meta description';
+
+            const titleCount = title.length;
+            const descCount = desc.length;
+
+            const titleCounter = document.getElementById('title-counter');
+            titleCounter.innerText = `${titleCount} characters`;
+            if (titleCount > 60) titleCounter.classList.add('warning');
+            else titleCounter.classList.remove('warning');
+
+            const descCounter = document.getElementById('desc-counter');
+            descCounter.innerText = `${descCount} characters`;
+            if (descCount > 160) descCounter.classList.add('warning');
+            else descCounter.classList.remove('warning');
+        }
+
+        // Initial preview
+        window.addEventListener('load', updatePreview);
+    </script>
+</body>
+</html>

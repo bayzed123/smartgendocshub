@@ -69,6 +69,7 @@ function injectFooter() {
                         <li><a href="${prefix}picture-url-generator/">Picture URL Generator</a></li>
                         <li><a href="${prefix}utm-builder/">UTM Campaign Builder</a></li>
                         <li><a href="${prefix}meta-tag-generator/">SEO Meta Tag Generator</a></li>
+                        <li><a href="${prefix}emi-calculator/">Loan & EMI Calculator</a></li>
                     </ul>
                 </div>
 

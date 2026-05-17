@@ -1,5 +1,10 @@
 [
   {
+    "title": "fix: implement responsive mobile navbar with hamburger menu",
+    "date": "2026-05-17T12:05:11Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "feat: add 4 new client-side tools (EMI Calculator, SERP Preview, Password Gen, Image Compressor) with Skyscraper SEO",
     "date": "2026-05-17T11:51:43Z",
     "description": "Platform improvement and optimization."

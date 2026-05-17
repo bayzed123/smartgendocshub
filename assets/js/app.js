@@ -88,7 +88,7 @@ function injectFooter() {
             <!-- Footer Bottom Bar -->
             <div class="footer-bottom">
                 <div class="footer-bottom-left">
-                    <p>&copy; 2026 SmartGen. All Rights Reserved. Developed by <a href="https://syedbayzed.com" target="_blank" rel="noopener noreferrer" class="developer-link">Sayad Md Bayezid Hosan</a></p>
+                    <p>&copy; 2026 SmartGen. All Rights Reserved. Developed by <a href="https://sayadbayezid.com" target="_blank" rel="noopener noreferrer" class="developer-link">Sayad Md Bayezid Hosan</a></p>
                 </div>
                 <div class="footer-social-icons">
                     <a href="https://github.com/bayzed123" target="_blank" rel="noopener noreferrer" class="social-icon" title="GitHub">

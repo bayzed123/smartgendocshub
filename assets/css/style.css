@@ -1056,3 +1056,135 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
+/* New Navigation Dropdown Styles */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-trigger {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--background);
+    min-width: 240px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    z-index: 1001;
+    padding: 1rem;
+    margin-top: 10px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-category {
+    margin-bottom: 1rem;
+}
+
+.dropdown-category:last-child {
+    margin-bottom: 0;
+}
+
+.dropdown-category h4 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.05em;
+}
+
+.dropdown-item {
+    display: block;
+    padding: 0.5rem 0;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+}
+
+.dropdown-item:hover {
+    color: var(--primary);
+}
+
+/* Categorized Grid Styles */
+.category-section {
+    margin-bottom: 4rem;
+}
+
+.category-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--border);
+}
+
+.category-header h2 {
+    font-size: 1.75rem;
+    margin: 0;
+}
+
+.category-icon {
+    font-size: 2rem;
+}
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Mobile Dropdown Adjustments */
+@media (max-width: 768px) {
+    .dropdown-content {
+        position: static;
+        transform: none;
+        display: none;
+        box-shadow: none;
+        border: none;
+        padding: 0 0 0 1.5rem;
+        margin-top: 0;
+        width: 100%;
+    }
+
+    .dropdown.active .dropdown-content {
+        display: block;
+    }
+
+    .dropdown-trigger::after {
+        content: '▼';
+        font-size: 0.7rem;
+        transition: transform 0.3s;
+    }
+
+    .dropdown.active .dropdown-trigger::after {
+        transform: rotate(180deg);
+    }
+    
+    .dropdown-category h4 {
+        margin-top: 1rem;
+    }
+}
+
+/* Tool Card Hover Enhancement */
+.tool-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tool-card:hover {
+    border-color: var(--primary);
+    background: var(--background);
+}

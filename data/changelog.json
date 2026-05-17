@@ -1,5 +1,10 @@
 [
   {
+    "title": "feat: add legal and support pages (About, Contact, Privacy, Terms, Disclaimer) and update footer links",
+    "date": "2026-05-17T11:07:42Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "Update app.js",
     "date": "2026-05-17T10:09:12Z",
     "description": "Platform improvement and optimization."

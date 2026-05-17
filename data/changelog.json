@@ -1,5 +1,10 @@
 [
   {
+    "title": "docs: update README.md with linked tools list",
+    "date": "2026-05-17T20:22:20Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "feat: inject Google AdSense auto-ads code into all HTML pages",
     "date": "2026-05-17T20:18:37Z",
     "description": "Platform improvement and optimization."

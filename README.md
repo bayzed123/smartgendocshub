@@ -6,6 +6,46 @@
 
 ![SmartGen Logo](https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/smartgen-logo.png) SmartGen is a comprehensive, client-side web utility platform designed to provide developers, marketers, and everyday users with a suite of fast, secure, and 100% free tools. From QR code generation to advanced SEO utilities and text manipulation, SmartGen aims to be your go-to resource for essential digital tasks, all accessible directly in your browser without any server-side processing.
 
+## 🛠️ All Available Tools
+
+Explore our full suite of free web utilities:
+
+| Tool Name | Description |
+| :--- | :--- |
+| [**Age Calculator**](https://smartgentools.com/age-calculator/) | Professional Age Calculator tool for fast results. |
+| [**Blog Title Generator**](https://smartgentools.com/blog-title-generator/) | Professional Blog Title Generator tool for fast results. |
+| [**BMI & BMR Calculator**](https://smartgentools.com/bmi-bmr-calculator/) | Professional BMI & BMR Calculator tool for fast results. |
+| [**Color Palette Extractor**](https://smartgentools.com/color-palette-extractor/) | Professional Color Palette Extractor tool for fast results. |
+| [**CPM & ROI Calculator**](https://smartgentools.com/cpm-roi-calculator/) | Professional CPM & ROI Calculator tool for fast results. |
+| [**Css Gradient Generator**](https://smartgentools.com/css-gradient-generator/) | Professional Css Gradient Generator tool for fast results. |
+| [**EMI Calculator**](https://smartgentools.com/emi-calculator/) | Professional EMI Calculator tool for fast results. |
+| [**Facebook Id Finder**](https://smartgentools.com/facebook-id-finder/) | Professional Facebook Id Finder tool for fast results. |
+| [**Fancy Font Generator**](https://smartgentools.com/fancy-font-generator/) | Professional Fancy Font Generator tool for fast results. |
+| [**Hashtag Generator**](https://smartgentools.com/hashtag-generator/) | Professional Hashtag Generator tool for fast results. |
+| [**Image Compressor**](https://smartgentools.com/image-compressor/) | Professional Image Compressor tool for fast results. |
+| [**Image To Base64**](https://smartgentools.com/image-to-base64/) | Professional Image To Base64 tool for fast results. |
+| [**Keyword Density Checker**](https://smartgentools.com/keyword-density-checker/) | Professional Keyword Density Checker tool for fast results. |
+| [**Lorem Ipsum Generator**](https://smartgentools.com/lorem-ipsum-generator/) | Professional Lorem Ipsum Generator tool for fast results. |
+| [**Mailto Generator**](https://smartgentools.com/mailto-generator/) | Professional Mailto Generator tool for fast results. |
+| [**Meta Tag Generator**](https://smartgentools.com/meta-tag-generator/) | Professional Meta Tag Generator tool for fast results. |
+| [**Password Generator**](https://smartgentools.com/password-generator/) | Professional Password Generator tool for fast results. |
+| [**Percentage Calculator**](https://smartgentools.com/percentage-calculator/) | Professional Percentage Calculator tool for fast results. |
+| [**Picture Url Generator**](https://smartgentools.com/picture-url-generator/) | Professional Picture Url Generator tool for fast results. |
+| [**Pomodoro Timer**](https://smartgentools.com/pomodoro-timer/) | Professional Pomodoro Timer tool for fast results. |
+| [**QR Generator**](https://smartgentools.com/qr-generator/) | Professional QR Generator tool for fast results. |
+| [**Random Choice Picker**](https://smartgentools.com/random-choice-picker/) | Professional Random Choice Picker tool for fast results. |
+| [**Robots Txt Generator**](https://smartgentools.com/robots-txt-generator/) | Professional Robots Txt Generator tool for fast results. |
+| [**Schema Generator**](https://smartgentools.com/schema-generator/) | Professional Schema Generator tool for fast results. |
+| [**Secure Notepad**](https://smartgentools.com/secure-notepad/) | Professional Secure Notepad tool for fast results. |
+| [**SERP Preview Tool**](https://smartgentools.com/serp-preview-tool/) | Professional SERP Preview Tool tool for fast results. |
+| [**Text Case Converter**](https://smartgentools.com/text-case-converter/) | Professional Text Case Converter tool for fast results. |
+| [**Unit Converter**](https://smartgentools.com/unit-converter/) | Professional Unit Converter tool for fast results. |
+| [**Url Encoder Decoder**](https://smartgentools.com/url-encoder-decoder/) | Professional Url Encoder Decoder tool for fast results. |
+| [**UTM Builder**](https://smartgentools.com/utm-builder/) | Professional UTM Builder tool for fast results. |
+| [**Whatsapp Link**](https://smartgentools.com/whatsapp-link/) | Professional Whatsapp Link tool for fast results. |
+| [**Word Counter**](https://smartgentools.com/word-counter/) | Professional Word Counter tool for fast results. |
+| [**Youtube Thumbnail Downloader**](https://smartgentools.com/youtube-thumbnail-downloader/) | Professional Youtube Thumbnail Downloader tool for fast results. |
+
 ## ✨ Features
 
 SmartGen offers a diverse range of tools, categorized for easy navigation:

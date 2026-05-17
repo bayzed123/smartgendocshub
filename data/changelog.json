@@ -1,5 +1,10 @@
 [
   {
+    "title": "fix: critical SEO update - remove fake reviews and update production URL in schema",
+    "date": "2026-05-17T13:31:37Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "Update robots.txt",
     "date": "2026-05-17T13:20:29Z",
     "description": "Platform improvement and optimization."

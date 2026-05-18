@@ -1,5 +1,10 @@
 [
   {
+    "title": "Fix: Replace contact form with custom Google Form integration",
+    "date": "2026-05-18T15:13:08Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "Fix FAQ accordion: add initAccordion to app.js and add FAQ section to index.html",
     "date": "2026-05-18T14:22:57Z",
     "description": "Platform improvement and optimization."

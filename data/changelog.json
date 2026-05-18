@@ -1,5 +1,10 @@
 [
   {
+    "title": "CRITICAL FIX: Routing, Positioning, and UI overhaul for Related Tools section",
+    "date": "2026-05-18T19:36:29Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "docs: comprehensive rewrite of README.md and WIKI.md with all tools, branding, and sponsorship info",
     "date": "2026-05-18T19:17:45Z",
     "description": "Platform improvement and optimization."

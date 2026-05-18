@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-982HBP86V8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-982HBP86V8');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://smartgentools.com/ip-address-lookup/">
+    <title>Free IP Address Lookup - Find Your Public IP and Network Info</title>
+    <meta name="description" content="Instantly find your public IP address and basic network information. Free, fast, and secure IP lookup tool for developers and users.">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="../assets/js/app.js" defer></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "IP Address Lookup",
+      "description": "Instantly find your public IP address and basic network information.",
+      "url": "https://smartgentools.com/ip-address-lookup/",
+      "applicationCategory": "Utility",
+      "operatingSystem": "All",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "creator": {
+        "@type": "Organization",
+        "name": "SmartGen",
+        "url": "https://smartgentools.com/"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is my public IP address?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Your public IP address is the unique identifier assigned to your internet connection by your Internet Service Provider (ISP)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does this IP lookup tool work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The tool uses a secure API to fetch the public IP address that your browser is currently using to access the internet."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my IP address information private?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we do not store your IP address. The information is fetched and displayed only to you in your browser."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <meta property="og:title" content="Free IP Address Lookup - Find Your Public IP and Network Info">
+    <meta property="og:description" content="Instantly find your public IP address and basic network information. Free, fast, and secure IP lookup tool for developers and users.">
+    <meta property="og:url" content="https://smartgentools.com/ip-address-lookup/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://smartgentools.com/assets/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free IP Address Lookup - Find Your Public IP and Network Info">
+    <meta name="twitter:description" content="Instantly find your public IP address and basic network information. Free, fast, and secure IP lookup tool for developers and users.">
+    <meta name="twitter:image" content="https://smartgentools.com/assets/og-image.png">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9789336661158068" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header id="main-header"></header>
+    <main class="container">
+        <div class="tool-container">
+            <h1>IP Address Lookup</h1>
+            <p style="text-align: center; margin-bottom: 2rem; color: var(--text-secondary);">Your current public IP address and network details.</p>
+            
+            <div id="loading-ip" style="text-align: center; padding: 2rem;">
+                <div class="logo-icon" style="animation: spin 2s linear infinite; margin: 0 auto 1rem;">⚡</div>
+                <p>Fetching your IP information...</p>
+            </div>
+
+            <div id="ip-result-card" style="display: none; background: #f8fafc; border: 1px solid var(--border); border-radius: 12px; padding: 2rem; text-align: center;">
+                <div style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 0.5rem;">Your Public IP Address</div>
+                <div id="public-ip" style="font-size: 2.5rem; font-weight: 700; color: var(--primary); margin-bottom: 1.5rem; word-break: break-all;">...</div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; text-align: left; margin-top: 1rem; border-top: 1px solid var(--border); padding-top: 1.5rem;">
+                    <div>
+                        <div style="font-size: 0.8rem; color: var(--text-secondary);">Location</div>
+                        <div id="ip-location" style="font-weight: 600;">...</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 0.8rem; color: var(--text-secondary);">ISP / Organization</div>
+                        <div id="ip-isp" style="font-weight: 600;">...</div>
+                    </div>
+                </div>
+                
+                <button class="btn btn-primary" onclick="copyIP()" style="margin-top: 2rem; width: 100%; background: var(--success);">Copy IP Address</button>
+            </div>
+            
+            <div id="error-ip" style="display: none; color: #991b1b; background: #fee2e2; padding: 1rem; border-radius: 8px; margin-top: 1rem; text-align: center; border: 1px solid #fecaca;">
+                Failed to fetch IP information. Please check your internet connection or disable ad-blockers.
+            </div>
+        </div>
+
+        <div class="ad-banner-space">AdSense Banner Space</div>
+
+        <article class="seo-content-container container mt-5 mb-5">
+            <section class="seo-content">
+                <h2>What is an IP Address?</h2>
+                <p>An IP (Internet Protocol) address is a unique numerical label assigned to each device connected to a computer network that uses the Internet Protocol for communication. Think of it like a mailing address for your computer. It serves two main functions: host or network interface identification and location addressing. Your public IP address is the one visible to the websites you visit and is assigned to your router by your Internet Service Provider (ISP).</p>
+                
+                <h3>Why Check Your IP Address?</h3>
+                <p>Checking your IP address can be useful for several reasons. Developers often need to know their public IP for configuring server access or debugging network issues. It can also help you verify if your VPN or proxy is working correctly by showing a different location or ISP than your actual one. Additionally, knowing your IP can help you troubleshoot connectivity problems with your ISP or online services.</p>
+
+                <h3>Key Features of Our IP Lookup Tool</h3>
+                <ul>
+                    <li><strong>Instant Detection:</strong> Automatically finds your IP as soon as the page loads.</li>
+                    <li><strong>Detailed Info:</strong> Shows your ISP and approximate geographic location.</li>
+                    <li><strong>Secure & Private:</strong> We do not log or store your IP address. The lookup is performed in real-time.</li>
+                    <li><strong>Free to Use:</strong> No subscription or account required to check your network info.</li>
+                </ul>
+
+                <h3>Frequently Asked Questions</h3>
+                <div class="faq-container">
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>What is my public IP address?</span>
+                            <div class="accordion-icon"></div>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Your public IP address is the unique address that identifies you on the global internet. It is shared by all devices on your local network (like your phone, laptop, and smart TV) when they communicate with external websites.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>How does this IP lookup tool work?</span>
+                            <div class="accordion-icon"></div>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Our tool makes a secure request to a third-party IP detection service (like ipify or ip-api). This service sees the IP address making the request and sends it back to your browser, which then displays it on this page.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>Is my IP address information private?</span>
+                            <div class="accordion-icon"></div>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Yes. While your IP address is visible to every website you visit, our tool does not record or store this information. The data is fetched only when you visit the page and is cleared as soon as you close the tab.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+    <footer id="main-footer"></footer>
+
+    <style>
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    </style>
+
+    <script>
+        async function fetchIP() {
+            const loading = document.getElementById('loading-ip');
+            const result = document.getElementById('ip-result-card');
+            const error = document.getElementById('error-ip');
+            
+            try {
+                // Using ip-api.com for more detailed info (free for non-commercial use)
+                const response = await fetch('https://ipapi.co/json/');
+                if (!response.ok) throw new Error('Network response was not ok');
+                
+                const data = await response.json();
+                
+                document.getElementById('public-ip').innerText = data.ip;
+                document.getElementById('ip-location').innerText = `${data.city}, ${data.region}, ${data.country_name}`;
+                document.getElementById('ip-isp').innerText = data.org || data.asn;
+                
+                loading.style.display = 'none';
+                result.style.display = 'block';
+            } catch (e) {
+                console.error('IP Fetch Error:', e);
+                // Fallback to simple ipify if ipapi fails
+                try {
+                    const response = await fetch('https://api.ipify.org?format=json');
+                    const data = await response.json();
+                    document.getElementById('public-ip').innerText = data.ip;
+                    document.getElementById('ip-location').innerText = 'Location info unavailable';
+                    document.getElementById('ip-isp').innerText = 'ISP info unavailable';
+                    loading.style.display = 'none';
+                    result.style.display = 'block';
+                } catch (e2) {
+                    loading.style.display = 'none';
+                    error.style.display = 'block';
+                }
+            }
+        }
+
+        function copyIP() {
+            const ip = document.getElementById('public-ip').innerText;
+            const tempInput = document.createElement('input');
+            tempInput.value = ip;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempInput);
+            alert('IP Address copied to clipboard!');
+        }
+
+        window.onload = fetchIP;
+    </script>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-consent-banner" style="position: fixed; bottom: 0; left: 0; width: 100%; background: #ffffff; border-top: 1px solid #e1e8ed; box-shadow: 0 -2px 10px rgba(0,0,0,0.05); z-index: 9999; display: none; padding: 1rem 0;">
+        <div class="container" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;">
+            <div style="flex: 1; min-width: 280px;">
+                <p style="margin: 0; font-size: 0.9rem; color: #4a5568; line-height: 1.5;">
+                    We use cookies to improve your experience, analyze site traffic, and serve personalized ads. By continuing to use our site, you consent to our <a href="/privacy/" style="color: #3182ce; text-decoration: underline;">Privacy Policy</a>.
+                </p>
+            </div>
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <a href="/privacy/" style="font-size: 0.9rem; color: #718096; text-decoration: none; font-weight: 500;">Learn More</a>
+                <button id="accept-cookies" style="background: #3182ce; color: #ffffff; border: none; padding: 0.6rem 1.5rem; border-radius: 6px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: background 0.2s;">Accept</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        (function() {
+            const banner = document.getElementById('cookie-consent-banner');
+            const acceptBtn = document.getElementById('accept-cookies');
+            if (!localStorage.getItem('cookie-consent-accepted')) {
+                banner.style.display = 'block';
+            }
+            acceptBtn.addEventListener('click', function() {
+                localStorage.setItem('cookie-consent-accepted', 'true');
+                banner.style.display = 'none';
+            });
+        })();
+    </script>
+</body>
+</html>

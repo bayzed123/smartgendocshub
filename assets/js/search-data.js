@@ -296,6 +296,78 @@ const TOOLS_INDEX = [
         description: 'Extract numeric Facebook IDs from profile links.',
         url: './facebook-id-finder/',
         icon: '👤'
+    },
+    {
+        id: 'privacy-policy-generator',
+        title: 'Privacy Policy Generator',
+        category: 'Marketing & Social Media',
+        keywords: ['privacy', 'policy', 'generator', 'legal', 'compliance'],
+        description: 'Generate professional privacy policies for your site.',
+        url: './privacy-policy-generator/',
+        icon: '📜'
+    },
+    {
+        id: 'terms-conditions-generator',
+        title: 'Terms & Conditions Generator',
+        category: 'Marketing & Social Media',
+        keywords: ['terms', 'conditions', 'tos', 'legal', 'agreement'],
+        description: 'Create custom terms of service agreements instantly.',
+        url: './terms-conditions-generator/',
+        icon: '⚖️'
+    },
+    {
+        id: 'disclaimer-generator',
+        title: 'Disclaimer Generator',
+        category: 'Marketing & Social Media',
+        keywords: ['disclaimer', 'generator', 'legal', 'protection'],
+        description: 'Generate legal disclaimers to protect your business.',
+        url: './disclaimer-generator/',
+        icon: '⚠️'
+    },
+    {
+        id: 'uuid-generator',
+        title: 'UUID / GUID Generator',
+        category: 'Developer & Technical',
+        keywords: ['uuid', 'guid', 'generator', 'random', 'id'],
+        description: 'Generate random version 4 UUIDs instantly.',
+        url: './uuid-generator/',
+        icon: '🆔'
+    },
+    {
+        id: 'json-formatter-validator',
+        title: 'JSON Formatter & Validator',
+        category: 'Developer & Technical',
+        keywords: ['json', 'formatter', 'validator', 'beautify', 'fix'],
+        description: 'Format, beautify, and validate JSON code.',
+        url: './json-formatter-validator/',
+        icon: 'JSON'
+    },
+    {
+        id: 'base64-to-image',
+        title: 'Base64 to Image Decoder',
+        category: 'Developer & Technical',
+        keywords: ['base64', 'image', 'decoder', 'convert', 'decode'],
+        description: 'Decode Base64 strings back into image files.',
+        url: './base64-to-image/',
+        icon: '🖼️'
+    },
+    {
+        id: 'hash-generator',
+        title: 'MD5/SHA Hash Generator',
+        category: 'Developer & Technical',
+        keywords: ['hash', 'md5', 'sha1', 'sha256', 'generator', 'secure'],
+        description: 'Generate MD5, SHA-1, and SHA-256 hashes.',
+        url: './hash-generator/',
+        icon: '🔒'
+    },
+    {
+        id: 'ip-address-lookup',
+        title: 'IP Address Lookup',
+        category: 'Developer & Technical',
+        keywords: ['ip', 'address', 'lookup', 'my ip', 'network'],
+        description: 'Find your public IP and network information.',
+        url: './ip-address-lookup/',
+        icon: '🌐'
     }
 ];
 

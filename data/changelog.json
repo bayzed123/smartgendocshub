@@ -1,5 +1,10 @@
 [
   {
+    "title": "UI Update: Add comprehensive categorized quick links to global footer with responsive styling",
+    "date": "2026-05-18T20:34:35Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "Fix: Load search-data.js before related-tools.js to fix blank Related Tools section",
     "date": "2026-05-18T20:21:42Z",
     "description": "Platform improvement and optimization."

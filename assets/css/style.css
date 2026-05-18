@@ -1570,3 +1570,28 @@ html {
 #search-results::-webkit-scrollbar-thumb:hover {
     background: var(--text-muted);
 }
+
+/* Related Tools Section */
+.related-tools-section {
+    margin: 4rem 0;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+}
+
+.related-tools-title {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: var(--text-primary);
+}
+
+@media (max-width: 768px) {
+    .related-tools-section {
+        margin: 2.5rem 0;
+    }
+    
+    .related-tools-title {
+        font-size: 1.4rem;
+        margin-bottom: 1.5rem;
+    }
+}

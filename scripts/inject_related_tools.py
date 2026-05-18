@@ -21,25 +21,21 @@ SKIP_DIRS = {
 
 def inject_script_tag(html_content):
     """Inject the related-tools.js script tag in the <head>."""
-    # Since all tools are in subfolders, the path is always ../assets/js/related-tools.js
-    script_tag = '    <script src="../assets/js/related-tools.js" defer></script>\n'
+    # Since all tools are in subfolders, the paths are relative
+    search_data_script = '    <script src="../assets/js/search-data.js" defer></script>\n'
+    related_tools_script = '    <script src="../assets/js/related-tools.js" defer></script>\n'
     
     # Find the closing </head> tag
     head_close_pattern = r'(</head>)'
     
-    # Check if the script is already present
-    if 'related-tools.js' in html_content:
-        return html_content
+    # Check if the scripts are already present
+    if 'search-data.js' not in html_content:
+        html_content = re.sub(head_close_pattern, search_data_script + r'\1', html_content, count=1)
     
-    # Insert before </head>
-    modified_content = re.sub(
-        head_close_pattern,
-        script_tag + r'\1',
-        html_content,
-        count=1
-    )
+    if 'related-tools.js' not in html_content:
+        html_content = re.sub(head_close_pattern, related_tools_script + r'\1', html_content, count=1)
     
-    return modified_content
+    return html_content
 
 def inject_placeholder(html_content):
     """Inject the placeholder <div> before the FAQ section."""

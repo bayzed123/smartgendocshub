@@ -107,7 +107,7 @@ function injectFooter() {
                 </div>
                 <div class="footer-quick-links-grid">
                     <div class="footer-column">
-                        <h4>Developer Tools</h4>
+                        <h4 class="footer-accordion-trigger">Developer Tools <span class="accordion-icon"></span></h4>
                         <ul class="footer-links">
                             <li><a href="/qr-generator/">QR Code Generator</a></li>
                             <li><a href="/html-code-preview/">Live HTML Previewer</a></li>
@@ -123,7 +123,7 @@ function injectFooter() {
                         </ul>
                     </div>
                     <div class="footer-column">
-                        <h4>SEO & Marketing</h4>
+                        <h4 class="footer-accordion-trigger">SEO & Marketing <span class="accordion-icon"></span></h4>
                         <ul class="footer-links">
                             <li><a href="/blog-title-generator/">Blog Title Generator</a></li>
                             <li><a href="/utm-builder/">Build UTM Links</a></li>
@@ -139,7 +139,7 @@ function injectFooter() {
                         </ul>
                     </div>
                     <div class="footer-column">
-                        <h4>Daily Utilities</h4>
+                        <h4 class="footer-accordion-trigger">Daily Utilities <span class="accordion-icon"></span></h4>
                         <ul class="footer-links">
                             <li><a href="/age-calculator/">Age Calculator</a></li>
                             <li><a href="/bmi-bmr-calculator/">BMI & BMR Calculator</a></li>
@@ -161,7 +161,7 @@ function injectFooter() {
                         </ul>
                     </div>
                     <div class="footer-column">
-                        <h4>Legal Info Generation</h4>
+                        <h4 class="footer-accordion-trigger">Legal Info Generation <span class="accordion-icon"></span></h4>
                         <ul class="footer-links">
                             <li><a href="/privacy-policy-generator/">Privacy Policy Generator</a></li>
                             <li><a href="/terms-conditions-generator/">Terms & Conditions Generator</a></li>
@@ -169,7 +169,7 @@ function injectFooter() {
                         </ul>
                     </div>
                     <div class="footer-column">
-                        <h4>Legal & Info</h4>
+                        <h4 class="footer-accordion-trigger">Legal & Info <span class="accordion-icon"></span></h4>
                         <ul class="footer-links">
                             <li><a href="/about/">About Us</a></li>
                             <li><a href="/contact/">Contact Us</a></li>
@@ -192,6 +192,32 @@ function injectFooter() {
             </div>
         </div>
     `;
+
+    // Add footer accordion logic for mobile
+    initFooterAccordion();
+}
+
+function initFooterAccordion() {
+    const triggers = document.querySelectorAll('.footer-accordion-trigger');
+    
+    triggers.forEach(trigger => {
+        trigger.addEventListener('click', () => {
+            if (window.innerWidth < 768) {
+                const column = trigger.parentElement;
+                const isActive = column.classList.contains('active');
+                
+                // Close all other footer accordion items
+                document.querySelectorAll('.footer-column').forEach(otherCol => {
+                    if (otherCol !== column) {
+                        otherCol.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current item
+                column.classList.toggle('active');
+            }
+        });
+    });
 }
 
 function initAccordion() {

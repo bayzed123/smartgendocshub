@@ -1,5 +1,10 @@
 [
   {
+    "title": "fix: resolve Related Tools rendering issue by injecting missing search-data.js dependency and adding required CSS",
+    "date": "2026-05-18T19:03:26Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "Implement dynamic Related Tools engine across all tool pages",
     "date": "2026-05-18T18:45:18Z",
     "description": "Platform improvement and optimization."

@@ -109,57 +109,74 @@ function injectFooter() {
                     <div class="footer-column">
                         <h4>Developer Tools</h4>
                         <ul class="footer-links">
-                            <li><a href="/qr-generator/">QR Generator</a></li>
-                            <li><a href="/html-code-preview/">HTML Preview</a></li>
-                            <li><a href="/json-formatter-validator/">JSON Formatter</a></li>
-                            <li><a href="/uuid-generator/">UUID Generator</a></li>
-                            <li><a href="/ip-address-lookup/">IP Lookup</a></li>
+                            <li><a href="/qr-generator/">QR Code Generator</a></li>
+                            <li><a href="/html-code-preview/">Live HTML Previewer</a></li>
+                            <li><a href="/json-formatter-validator/">JSON Formatter & Validator</a></li>
+                            <li><a href="/uuid-generator/">UUID / GUID Generator</a></li>
+                            <li><a href="/ip-address-lookup/">IP Address Lookup</a></li>
                             <li><a href="/url-encoder-decoder/">URL Encoder/Decoder</a></li>
-                            <li><a href="/hash-generator/">Hash Generator</a></li>
+                            <li><a href="/hash-generator/">MD5/SHA Hash Generator</a></li>
+                            <li><a href="/image-to-base64/">Image to Base64</a></li>
+                            <li><a href="/base64-to-image/">Base64 to Image Decoder</a></li>
+                            <li><a href="/css-gradient-generator/">CSS Gradient Generator</a></li>
+                            <li><a href="/random-choice-picker/">Random Choice Picker</a></li>
                         </ul>
                     </div>
                     <div class="footer-column">
                         <h4>SEO & Marketing</h4>
                         <ul class="footer-links">
-                            <li><a href="/blog-title-generator/">Blog Title Gen</a></li>
-                            <li><a href="/utm-builder/">UTM Builder</a></li>
-                            <li><a href="/keyword-density-checker/">Keyword Density</a></li>
-                            <li><a href="/robots-txt-generator/">Robots.txt Gen</a></li>
-                            <li><a href="/serp-preview-tool/">SERP Preview</a></li>
-                            <li><a href="/schema-generator/">Schema Gen</a></li>
-                            <li><a href="/meta-tag-generator/">Meta Tag Gen</a></li>
-                            <li><a href="/youtube-thumbnail-downloader/">YT Thumbnail</a></li>
-                            <li><a href="/whatsapp-link/">WhatsApp Link</a></li>
-                            <li><a href="/hashtag-generator/">Hashtag Gen</a></li>
+                            <li><a href="/blog-title-generator/">Blog Title Generator</a></li>
+                            <li><a href="/utm-builder/">Build UTM Links</a></li>
+                            <li><a href="/keyword-density-checker/">Keyword Density Checker</a></li>
+                            <li><a href="/robots-txt-generator/">Robots.txt Generator</a></li>
+                            <li><a href="/serp-preview-tool/">SERP Preview Tool</a></li>
+                            <li><a href="/schema-generator/">Schema Generator</a></li>
+                            <li><a href="/meta-tag-generator/">Meta Tag Generator</a></li>
+                            <li><a href="/youtube-thumbnail-downloader/">YouTube Thumbnail Downloader</a></li>
+                            <li><a href="/whatsapp-link/">WhatsApp Link Creator</a></li>
+                            <li><a href="/hashtag-generator/">Hashtag Generator</a></li>
+                            <li><a href="/mailto-generator/">Mailto Link Generator</a></li>
                         </ul>
                     </div>
                     <div class="footer-column">
                         <h4>Daily Utilities</h4>
                         <ul class="footer-links">
                             <li><a href="/age-calculator/">Age Calculator</a></li>
-                            <li><a href="/bmi-bmr-calculator/">BMI/BMR Calc</a></li>
+                            <li><a href="/bmi-bmr-calculator/">BMI & BMR Calculator</a></li>
                             <li><a href="/emi-calculator/">EMI Calculator</a></li>
-                            <li><a href="/percentage-calculator/">Percentage Calc</a></li>
+                            <li><a href="/percentage-calculator/">Percentage Calculator</a></li>
                             <li><a href="/pomodoro-timer/">Pomodoro Timer</a></li>
                             <li><a href="/secure-notepad/">Secure Notepad</a></li>
                             <li><a href="/unit-converter/">Unit Converter</a></li>
                             <li><a href="/image-compressor/">Image Compressor</a></li>
-                            <li><a href="/picture-url-generator/">Picture URL</a></li>
-                            <li><a href="/fancy-font-generator/">Fancy Font</a></li>
-                            <li><a href="/word-counter/">Word Counter</a></li>
-                            <li><a href="/text-case-converter/">Text Case</a></li>
+                            <li><a href="/picture-url-generator/">Picture URL Generator</a></li>
+                            <li><a href="/fancy-font-generator/">Fancy Font Generator</a></li>
+                            <li><a href="/word-counter/">Word Counter Tool</a></li>
+                            <li><a href="/text-case-converter/">Text Case Converter</a></li>
+                            <li><a href="/password-generator/">Password Generator</a></li>
+                            <li><a href="/cpm-roi-calculator/">CPM & ROI Calculator</a></li>
+                            <li><a href="/color-palette-extractor/">Color Palette Extractor</a></li>
+                            <li><a href="/lorem-ipsum-generator/">Lorem Ipsum Generator</a></li>
+                            <li><a href="/facebook-id-finder/">Facebook ID Finder</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Legal Info Generation</h4>
+                        <ul class="footer-links">
+                            <li><a href="/privacy-policy-generator/">Privacy Policy Generator</a></li>
+                            <li><a href="/terms-conditions-generator/">Terms & Conditions Generator</a></li>
+                            <li><a href="/disclaimer-generator/">Disclaimer Generator</a></li>
                         </ul>
                     </div>
                     <div class="footer-column">
                         <h4>Legal & Info</h4>
                         <ul class="footer-links">
-                            <li><a href="/privacy-policy-generator/">Privacy Gen</a></li>
-                            <li><a href="/terms-conditions-generator/">Terms Gen</a></li>
-                            <li><a href="/disclaimer-generator/">Disclaimer Gen</a></li>
                             <li><a href="/about/">About Us</a></li>
                             <li><a href="/contact/">Contact Us</a></li>
                             <li><a href="/privacy/">Privacy Policy</a></li>
                             <li><a href="/terms/">Terms of Service</a></li>
+                            <li><a href="/disclaimer/">Disclaimer</a></li>
+                            <li><a href="/updates/">Updates & Changelog</a></li>
                         </ul>
                     </div>
                 </div>

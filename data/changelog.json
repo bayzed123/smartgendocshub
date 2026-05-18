@@ -1,5 +1,10 @@
 [
   {
+    "title": "Fix FAQ accordion: add initAccordion to app.js and add FAQ section to index.html",
+    "date": "2026-05-18T14:22:57Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "Add Google Tag Manager and Analytics (G-982HBP86V8) to all HTML files",
     "date": "2026-05-18T13:59:00Z",
     "description": "Platform improvement and optimization."

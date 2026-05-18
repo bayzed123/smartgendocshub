@@ -1,5 +1,10 @@
 [
   {
+    "title": "Fix: Correct website URL in Cookie Policy page",
+    "date": "2026-05-18T21:25:14Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "Fix: Add Cookie Policy to footer and generate compliance page",
     "date": "2026-05-18T21:16:38Z",
     "description": "Platform improvement and optimization."

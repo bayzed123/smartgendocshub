@@ -1,5 +1,10 @@
 [
   {
+    "title": "Fix: Load search-data.js before related-tools.js to fix blank Related Tools section",
+    "date": "2026-05-18T20:21:42Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "CRITICAL FIX: Routing, Positioning, and UI overhaul for Related Tools section",
     "date": "2026-05-18T19:36:29Z",
     "description": "Platform improvement and optimization."

@@ -1,5 +1,10 @@
 [
   {
+    "title": "docs: comprehensive rewrite of README.md and WIKI.md with all tools, branding, and sponsorship info",
+    "date": "2026-05-18T19:17:45Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "fix: resolve Related Tools rendering issue by injecting missing search-data.js dependency and adding required CSS",
     "date": "2026-05-18T19:03:26Z",
     "description": "Platform improvement and optimization."

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-982HBP86V8"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-982HBP86V8');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://smartgentools.com/html-code-preview/">
+    <title>Live HTML/CSS/JS Previewer - Real-Time Code Editor</title>
+    <meta name="description" content="Free online Live HTML/CSS/JS Previewer. Write code and see the output in real-time. Perfect for web developers to test snippets instantly.">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <script src="../assets/js/app.js" defer></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Live HTML/CSS/JS Previewer",
+      "description": "Free online Live HTML/CSS/JS Previewer. Write code and see the output in real-time.",
+      "url": "https://smartgentools.com/html-code-preview/",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "All",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "creator": {
+        "@type": "Organization",
+        "name": "SmartGen",
+        "url": "https://smartgentools.com/"
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the Live HTML Previewer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Live HTML Previewer is a real-time code editor that allows you to write HTML, CSS, and JavaScript and see the rendered output instantly in a split-screen view."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my code saved on your servers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No, all processing happens locally in your browser. Your code is never sent to our servers, ensuring complete privacy and security."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use external libraries like Bootstrap or Tailwind?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, you can include external CSS or JS libraries using <link> or <script> tags within the HTML editor section."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <meta property="og:title" content="Live HTML/CSS/JS Previewer - Real-Time Code Editor">
+    <meta property="og:description" content="Free online Live HTML/CSS/JS Previewer. Write code and see the output in real-time.">
+    <meta property="og:url" content="https://smartgentools.com/html-code-preview/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://smartgentools.com/assets/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Live HTML/CSS/JS Previewer - Real-Time Code Editor">
+    <meta name="twitter:description" content="Free online Live HTML/CSS/JS Previewer. Write code and see the output in real-time.">
+    <meta name="twitter:image" content="https://smartgentools.com/assets/og-image.png">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9789336661158068" crossorigin="anonymous"></script>
+    
+    <style>
+        .editor-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        @media (min-width: 992px) {
+            .editor-container {
+                flex-direction: row;
+                height: 600px;
+            }
+            .editor-section, .preview-section {
+                flex: 1;
+                height: 100%;
+            }
+        }
+        .editor-section {
+            display: flex;
+            flex-direction: column;
+            background: #1e1e1e;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+        .editor-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 1rem;
+            background: #2d2d2d;
+            color: #e0e0e0;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        .editor-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+        .editor-btn {
+            padding: 0.4rem 0.8rem;
+            font-size: 0.8rem;
+            border-radius: 4px;
+            cursor: pointer;
+            border: none;
+            transition: all 0.2s;
+        }
+        .btn-clear { background: #444; color: #fff; }
+        .btn-clear:hover { background: #555; }
+        .btn-copy { background: var(--primary); color: #fff; }
+        .btn-copy:hover { opacity: 0.9; }
+
+        #code-editor {
+            flex: 1;
+            width: 100%;
+            background: #1e1e1e;
+            color: #d4d4d4;
+            border: none;
+            padding: 1rem;
+            font-family: 'Fira Code', 'Consolas', monospace;
+            font-size: 14px;
+            line-height: 1.5;
+            resize: none;
+            outline: none;
+        }
+        .preview-section {
+            display: flex;
+            flex-direction: column;
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .preview-header {
+            padding: 0.75rem 1rem;
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        #preview-iframe {
+            flex: 1;
+            width: 100%;
+            border: none;
+            background: #fff;
+        }
+        .related-tools-section {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+        .related-tools-title {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    
+    <header id="main-header"></header>
+    <main class="container">
+        <div class="tool-container">
+            <h1>Live HTML/CSS/JS Previewer</h1>
+            <p style="color: var(--text-secondary); margin-bottom: 2rem;">Write your code on the left and see the live result on the right instantly.</p>
+            
+            <div class="editor-container">
+                <!-- Editor Section -->
+                <div class="editor-section">
+                    <div class="editor-header">
+                        <span>Code Editor</span>
+                        <div class="editor-actions">
+                            <button class="editor-btn btn-clear" onclick="clearCode()">Clear</button>
+                            <button class="editor-btn btn-copy" onclick="copyCode()">Copy Code</button>
+                        </div>
+                    </div>
+                    <textarea id="code-editor" spellcheck="false" placeholder="Type your HTML/CSS/JS here..."><!DOCTYPE html>
+<html>
+<head>
+<style>
+  body { font-family: sans-serif; text-align: center; padding-top: 50px; }
+  h1 { color: #4f46e5; }
+  .btn { background: #4f46e5; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; }
+</style>
+</head>
+<body>
+  <h1>Hello SmartGen!</h1>
+  <p>Edit this code to see live changes.</p>
+  <button class="btn" onclick="alert('It works!')">Click Me</button>
+</body>
+</html></textarea>
+                </div>
+
+                <!-- Preview Section -->
+                <div class="preview-section">
+                    <div class="preview-header">Live Preview</div>
+                    <iframe id="preview-iframe"></iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="ad-banner-space">AdSense Banner Space</div>
+
+        <!-- Related Tools Section -->
+        <section class="related-tools-section">
+            <h2 class="related-tools-title">Related Tools You Might Like</h2>
+            <div class="tool-grid">
+                <a href="../css-gradient-generator/" class="tool-card">
+                    <div class="tool-icon">🎨</div>
+                    <h3>CSS Gradient Generator</h3>
+                    <p>Create beautiful CSS gradients with color pickers.</p>
+                </a>
+                <a href="../meta-tag-generator/" class="tool-card">
+                    <div class="tool-icon">🏷️</div>
+                    <h3>Meta Tag Generator</h3>
+                    <p>Boost your SEO with perfect meta tags.</p>
+                </a>
+                <a href="../color-palette-extractor/" class="tool-card">
+                    <div class="tool-icon">🎨</div>
+                    <h3>Color Palette Extractor</h3>
+                    <p>Extract dominant colors from images as HEX and RGB.</p>
+                </a>
+                <a href="../schema-generator/" class="tool-card">
+                    <div class="tool-icon">📜</div>
+                    <h3>Schema Generator</h3>
+                    <p>Generate JSON-LD schema markup for SEO.</p>
+                </a>
+            </div>
+        </section>
+
+        <article class="seo-content-container container mt-5 mb-5">
+            <section class="seo-content">
+                <h2>Master Web Development with Our Live HTML Previewer</h2>
+                <p>The SmartGen Live HTML/CSS/JS Previewer is an essential tool for web developers, designers, and students. It provides a seamless, real-time environment to experiment with web technologies without the need for complex local setups or external hosting. By offering an instant feedback loop, this tool accelerates the learning process and streamlines the debugging of small code snippets. Whether you're testing a new CSS layout, practicing JavaScript logic, or drafting a quick HTML structure, our previewer ensures you see the results immediately as you type.</p>
+
+                <p>In today's fast-paced development world, efficiency is key. Traditional workflows often involve switching between a text editor and a browser, refreshing the page constantly. Our integrated editor and preview window eliminate this friction. The split-screen interface allows you to maintain focus on your code while observing the visual impact of every character you change. This real-time interaction is particularly beneficial for fine-tuning styles and animations where visual precision is paramount.</p>
+
+                <h3>Why Use Our Real-Time Code Editor?</h3>
+                <p>Privacy and speed are at the core of SmartGen tools. Unlike many other online editors, our Live HTML Previewer operates entirely on the client side. This means your code never leaves your browser and is never stored on our servers. You can work on sensitive snippets or proprietary logic with the peace of mind that your data remains private. Furthermore, because there's no server-side processing, the rendering is lightning-fast, providing a truly "live" experience even on slower internet connections.</p>
+
+                <p>The editor is designed to be lightweight yet powerful. It supports full HTML5, CSS3, and modern JavaScript. You can even link to external frameworks like Tailwind CSS, Bootstrap, or Font Awesome directly within the editor to test how they interact with your custom code. This versatility makes it a perfect sandbox for prototyping UI components, testing responsive designs, or creating interactive demonstrations.</p>
+
+                <h3>Frequently Asked Questions</h3>
+                <div class="faq-container">
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>What is the Live HTML Previewer?</span>
+                            <div class="accordion-icon"></div>
+                        </button>
+                        <div class="accordion-content">
+                            <p>The Live HTML Previewer is a real-time code editor that allows you to write HTML, CSS, and JavaScript and see the rendered output instantly in a split-screen view.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>Is my code saved on your servers?</span>
+                            <div class="accordion-icon"></div>
+                        </button>
+                        <div class="accordion-content">
+                            <p>No, all processing happens locally in your browser. Your code is never sent to our servers, ensuring complete privacy and security.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>Can I use external libraries like Bootstrap or Tailwind?</span>
+                            <div class="accordion-icon"></div>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Yes, you can include external CSS or JS libraries using &lt;link&gt; or &lt;script&gt; tags within the HTML editor section.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer id="main-footer"></footer>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-consent" style="position: fixed; bottom: 0; left: 0; right: 0; background: #1e293b; color: white; padding: 1rem; z-index: 9999; display: none;">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+            <p style="margin: 0; font-size: 0.9rem;">We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies. <a href="../privacy/" style="color: var(--primary); text-decoration: underline;">Learn more</a></p>
+            <button id="accept-cookies" class="btn" style="background: var(--primary); color: white; border: none; padding: 0.5rem 1.5rem; border-radius: 4px; cursor: pointer;">Accept</button>
+        </div>
+    </div>
+
+    <script>
+        const editor = document.getElementById('code-editor');
+        const preview = document.getElementById('preview-iframe');
+
+        function updatePreview() {
+            const content = editor.value;
+            const iframeDoc = preview.contentDocument || preview.contentWindow.document;
+            iframeDoc.open();
+            iframeDoc.write(content);
+            iframeDoc.close();
+        }
+
+        function clearCode() {
+            if (confirm('Are you sure you want to clear all code?')) {
+                editor.value = '';
+                updatePreview();
+            }
+        }
+
+        function copyCode() {
+            editor.select();
+            document.execCommand('copy');
+            const btn = document.querySelector('.btn-copy');
+            const originalText = btn.innerText;
+            btn.innerText = '✅ Copied!';
+            setTimeout(() => {
+                btn.innerText = originalText;
+            }, 2000);
+        }
+
+        editor.addEventListener('input', updatePreview);
+        window.addEventListener('load', updatePreview);
+
+        // Cookie Consent Logic
+        window.addEventListener('load', () => {
+            if (!localStorage.getItem('cookiesAccepted')) {
+                document.getElementById('cookie-consent').style.display = 'block';
+            }
+        });
+
+        document.getElementById('accept-cookies').addEventListener('click', () => {
+            localStorage.setItem('cookiesAccepted', 'true');
+            document.getElementById('cookie-consent').style.display = 'none';
+        });
+    </script>
+</body>
+</html>

@@ -368,6 +368,15 @@ const TOOLS_INDEX = [
         description: 'Find your public IP and network information.',
         url: './ip-address-lookup/',
         icon: '🌐'
+    },
+    {
+        id: 'html-code-preview',
+        title: 'Live HTML Previewer',
+        category: 'Developer & Technical',
+        keywords: ['html', 'css', 'js', 'preview', 'editor', 'live', 'code'],
+        description: 'Write HTML/CSS/JS and see live results instantly.',
+        url: './html-code-preview/',
+        icon: '💻'
     }
 ];
 

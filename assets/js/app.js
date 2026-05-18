@@ -95,47 +95,73 @@ function injectFooter() {
     const footer = document.getElementById('main-footer');
     if (!footer) return;
 
-    const prefix = window.location.pathname.split('/').length > 2 ? '../' : './';
-
     footer.innerHTML = `
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <div class="footer-brand">
-                        <div class="footer-logo">
-                            <div class="logo-icon" style="width: 40px; height: 40px; font-size: 1.5rem;">⚡</div>
-                            <h3>SmartGen</h3>
-                        </div>
-                        <p class="footer-description">Fast, secure, and 100% free client-side web utilities for developers, marketers, and everyday users.</p>
+            <div class="footer-top">
+                <div class="footer-brand-section">
+                    <div class="footer-logo">
+                        <div class="logo-icon" style="width: 40px; height: 40px; font-size: 1.5rem;">⚡</div>
+                        <h3>SmartGen</h3>
                     </div>
+                    <p class="footer-description">Fast, secure, and 100% free client-side web utilities for developers, marketers, and everyday users.</p>
                 </div>
-                <div class="footer-column">
-                    <h4>Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="${prefix}">Home</a></li>
-                        <li><a href="${prefix}#all-tools">All Tools</a></li>
-                        <li><a href="${prefix}updates/">Updates</a></li>
-                        <li><a href="${prefix}about/">About Us</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>Top Tools</h4>
-                    <ul class="footer-links">
-                        <li><a href="${prefix}qr-generator/">QR Generator</a></li>
-                        <li><a href="${prefix}picture-url-generator/">Picture URL</a></li>
-                        <li><a href="${prefix}utm-builder/">UTM Builder</a></li>
-                        <li><a href="${prefix}meta-tag-generator/">Meta Tags</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>Legal & Privacy</h4>
-                    <ul class="footer-links">
-                        <li><a href="${prefix}privacy/">Privacy Policy</a></li>
-                        <li><a href="${prefix}terms/">Terms of Service</a></li>
-                        <li><a href="${prefix}privacy/#cookies">Cookie Policy</a></li>
-                        <li><a href="${prefix}disclaimer/">Disclaimer</a></li>
-                        <li><a href="${prefix}contact/">Contact Us</a></li>
-                    </ul>
+                <div class="footer-quick-links-grid">
+                    <div class="footer-column">
+                        <h4>Developer Tools</h4>
+                        <ul class="footer-links">
+                            <li><a href="/qr-generator/">QR Generator</a></li>
+                            <li><a href="/html-code-preview/">HTML Preview</a></li>
+                            <li><a href="/json-formatter-validator/">JSON Formatter</a></li>
+                            <li><a href="/uuid-generator/">UUID Generator</a></li>
+                            <li><a href="/ip-address-lookup/">IP Lookup</a></li>
+                            <li><a href="/url-encoder-decoder/">URL Encoder/Decoder</a></li>
+                            <li><a href="/hash-generator/">Hash Generator</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>SEO & Marketing</h4>
+                        <ul class="footer-links">
+                            <li><a href="/blog-title-generator/">Blog Title Gen</a></li>
+                            <li><a href="/utm-builder/">UTM Builder</a></li>
+                            <li><a href="/keyword-density-checker/">Keyword Density</a></li>
+                            <li><a href="/robots-txt-generator/">Robots.txt Gen</a></li>
+                            <li><a href="/serp-preview-tool/">SERP Preview</a></li>
+                            <li><a href="/schema-generator/">Schema Gen</a></li>
+                            <li><a href="/meta-tag-generator/">Meta Tag Gen</a></li>
+                            <li><a href="/youtube-thumbnail-downloader/">YT Thumbnail</a></li>
+                            <li><a href="/whatsapp-link/">WhatsApp Link</a></li>
+                            <li><a href="/hashtag-generator/">Hashtag Gen</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Daily Utilities</h4>
+                        <ul class="footer-links">
+                            <li><a href="/age-calculator/">Age Calculator</a></li>
+                            <li><a href="/bmi-bmr-calculator/">BMI/BMR Calc</a></li>
+                            <li><a href="/emi-calculator/">EMI Calculator</a></li>
+                            <li><a href="/percentage-calculator/">Percentage Calc</a></li>
+                            <li><a href="/pomodoro-timer/">Pomodoro Timer</a></li>
+                            <li><a href="/secure-notepad/">Secure Notepad</a></li>
+                            <li><a href="/unit-converter/">Unit Converter</a></li>
+                            <li><a href="/image-compressor/">Image Compressor</a></li>
+                            <li><a href="/picture-url-generator/">Picture URL</a></li>
+                            <li><a href="/fancy-font-generator/">Fancy Font</a></li>
+                            <li><a href="/word-counter/">Word Counter</a></li>
+                            <li><a href="/text-case-converter/">Text Case</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Legal & Info</h4>
+                        <ul class="footer-links">
+                            <li><a href="/privacy-policy-generator/">Privacy Gen</a></li>
+                            <li><a href="/terms-conditions-generator/">Terms Gen</a></li>
+                            <li><a href="/disclaimer-generator/">Disclaimer Gen</a></li>
+                            <li><a href="/about/">About Us</a></li>
+                            <li><a href="/contact/">Contact Us</a></li>
+                            <li><a href="/privacy/">Privacy Policy</a></li>
+                            <li><a href="/terms/">Terms of Service</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">

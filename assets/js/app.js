@@ -57,38 +57,127 @@ function injectNavbar() {
                 </nav>
             </div>
         </div>
+
+        <!-- Mobile Sidebar Drawer -->
+        <aside id="mobile-sidebar" class="mobile-sidebar">
+            <div class="sidebar-header">
+                <a href="${prefix}" class="sidebar-logo">
+                    <div class="sidebar-logo-icon">⚡</div>
+                    SmartGen
+                </a>
+                <button id="sidebar-close" class="sidebar-close-btn" title="Close Menu">✕</button>
+            </div>
+
+            <nav class="sidebar-nav">
+                <!-- Home -->
+                <div class="sidebar-section">
+                    <a href="${prefix}" class="sidebar-link sidebar-home">🏠 Home</a>
+                </div>
+
+                <!-- Developer Tools -->
+                <div class="sidebar-section">
+                    <h3 class="sidebar-section-title">🧑‍💻 Developer Tools</h3>
+                    <ul class="sidebar-menu">
+                        <li><a href="${prefix}qr-generator/">QR Code Generator</a></li>
+                        <li><a href="${prefix}json-formatter-validator/">JSON Formatter</a></li>
+                        <li><a href="${prefix}uuid-generator/">UUID Generator</a></li>
+                        <li><a href="${prefix}css-gradient-generator/">CSS Gradient Generator</a></li>
+                    </ul>
+                    <a href="${prefix}#all-tools" class="sidebar-view-all">View All →</a>
+                </div>
+
+                <!-- SEO & Marketing -->
+                <div class="sidebar-section">
+                    <h3 class="sidebar-section-title">📈 SEO & Marketing</h3>
+                    <ul class="sidebar-menu">
+                        <li><a href="${prefix}meta-tag-generator/">Meta Tag Generator</a></li>
+                        <li><a href="${prefix}utm-builder/">Build UTM Links</a></li>
+                        <li><a href="${prefix}serp-preview-tool/">SERP Preview Tool</a></li>
+                        <li><a href="${prefix}blog-title-generator/">Blog Title Generator</a></li>
+                    </ul>
+                    <a href="${prefix}#all-tools" class="sidebar-view-all">View All →</a>
+                </div>
+
+                <!-- Daily Utilities -->
+                <div class="sidebar-section">
+                    <h3 class="sidebar-section-title">🛠 Daily Utilities</h3>
+                    <ul class="sidebar-menu">
+                        <li><a href="${prefix}image-compressor/">Image Compressor</a></li>
+                        <li><a href="${prefix}password-generator/">Password Generator</a></li>
+                        <li><a href="${prefix}pomodoro-timer/">Pomodoro Timer</a></li>
+                        <li><a href="${prefix}word-counter/">Word Counter Tool</a></li>
+                    </ul>
+                    <a href="${prefix}#all-tools" class="sidebar-view-all">View All →</a>
+                </div>
+
+                <!-- Legal Tools -->
+                <div class="sidebar-section">
+                    <h3 class="sidebar-section-title">⚖️ Legal Tools</h3>
+                    <ul class="sidebar-menu">
+                        <li><a href="${prefix}privacy-policy-generator/">Privacy Policy Generator</a></li>
+                        <li><a href="${prefix}terms-conditions-generator/">Terms & Conditions Generator</a></li>
+                    </ul>
+                </div>
+
+                <!-- Divider -->
+                <div class="sidebar-divider"></div>
+
+                <!-- Footer Links -->
+                <div class="sidebar-section sidebar-footer-links">
+                    <a href="${prefix}about/" class="sidebar-footer-link">📄 About Us</a>
+                    <a href="${prefix}contact/" class="sidebar-footer-link">📩 Contact Us</a>
+                    <a href="${prefix}privacy/" class="sidebar-footer-link">🔒 Privacy Policy</a>
+                    <a href="${prefix}terms/" class="sidebar-footer-link">📜 Terms of Service</a>
+                    <a href="${prefix}cookies/" class="sidebar-footer-link">🍪 Cookie Policy</a>
+                    <a href="${prefix}updates/" class="sidebar-footer-link">📝 Updates & Changelog</a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Sidebar Overlay -->
+        <div id="sidebar-overlay" class="sidebar-overlay"></div>
     `;
 
     document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
     
     const menuToggle = document.getElementById('mobile-menu-toggle');
-    const navLinks = document.getElementById('nav-links');
-    const toolsDropdown = document.getElementById('tools-dropdown');
+    const sidebar = document.getElementById('mobile-sidebar');
+    const sidebarClose = document.getElementById('sidebar-close');
+    const sidebarOverlay = document.getElementById('sidebar-overlay');
     
+    // Toggle sidebar
     menuToggle.addEventListener('click', () => {
-        navLinks.classList.toggle('show-mobile-menu');
-        menuToggle.innerText = navLinks.classList.contains('show-mobile-menu') ? '✕' : '☰';
+        sidebar.classList.add('active');
+        sidebarOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
     });
 
-    // Mobile dropdown toggle
-    if (window.innerWidth <= 768) {
+    // Close sidebar
+    const closeSidebar = () => {
+        sidebar.classList.remove('active');
+        sidebarOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+    };
+
+    sidebarClose.addEventListener('click', closeSidebar);
+    sidebarOverlay.addEventListener('click', closeSidebar);
+
+    // Close sidebar when clicking a link
+    sidebar.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            closeSidebar();
+        });
+    });
+
+    // Desktop dropdown toggle
+    const toolsDropdown = document.getElementById('tools-dropdown');
+    if (window.innerWidth > 768) {
         const dropdownTrigger = toolsDropdown.querySelector('.dropdown-trigger');
         dropdownTrigger.addEventListener('click', (e) => {
-            if (window.innerWidth <= 768) {
-                e.preventDefault();
-                toolsDropdown.classList.toggle('active');
-            }
+            e.preventDefault();
+            toolsDropdown.classList.toggle('active');
         });
     }
-
-    // Close menu when clicking a link (except dropdown trigger on mobile)
-    navLinks.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', (e) => {
-            if (link.classList.contains('dropdown-trigger') && window.innerWidth <= 768) return;
-            navLinks.classList.remove('show-mobile-menu');
-            menuToggle.innerText = '☰';
-        });
-    });
 }
 
 function injectFooter() {

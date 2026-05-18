@@ -1,5 +1,10 @@
 [
   {
+    "title": "Fix: Mobile sidebar blank issue by injecting navigation links",
+    "date": "2026-05-18T21:51:41Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "UI: Implement premium SaaS mobile sidebar navigation",
     "date": "2026-05-18T21:46:13Z",
     "description": "Platform improvement and optimization."

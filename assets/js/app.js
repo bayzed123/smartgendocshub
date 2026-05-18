@@ -68,70 +68,33 @@ function injectNavbar() {
                 <button id="sidebar-close" class="sidebar-close-btn" title="Close Menu">✕</button>
             </div>
 
-            <nav class="sidebar-nav">
-                <!-- Home -->
-                <div class="sidebar-section">
-                    <a href="${prefix}" class="sidebar-link sidebar-home">🏠 Home</a>
-                </div>
+            <div class="sidebar-nav-links" style="display: flex; flex-direction: column; padding: 20px; overflow-y: auto;">
+                <a href="${prefix}" class="nav-item" style="color: var(--text-primary); padding: 10px 0; text-decoration: none; font-weight: 600; font-size: 1rem;">🏠 Home</a>
+                <hr style="margin: 15px 0; border: 0; border-top: 1px solid var(--border-color, #e5e7eb);">
+                
+                <div class="nav-category" style="font-weight: 700; color: var(--text-secondary, #6b7280); margin-top: 10px; font-size: 0.85rem; text-transform: uppercase;">🧑‍💻 Developer Tools</div>
+                <a href="${prefix}qr-generator/" class="nav-item" style="color: var(--text-primary); padding: 10px 15px; text-decoration: none; display: block;">• QR Generator</a>
+                <a href="${prefix}json-formatter-validator/" class="nav-item" style="color: var(--text-primary); padding: 10px 15px; text-decoration: none; display: block;">• JSON Formatter</a>
+                <a href="${prefix}uuid-generator/" class="nav-item" style="color: var(--text-primary); padding: 10px 15px; text-decoration: none; display: block;">• UUID Generator</a>
+                <a href="${prefix}#all-tools" class="nav-item" style="color: #2563EB; padding: 10px 15px; text-decoration: none; font-weight: 600; display: block;">View All →</a>
 
-                <!-- Developer Tools -->
-                <div class="sidebar-section">
-                    <h3 class="sidebar-section-title">🧑‍💻 Developer Tools</h3>
-                    <ul class="sidebar-menu">
-                        <li><a href="${prefix}qr-generator/">QR Code Generator</a></li>
-                        <li><a href="${prefix}json-formatter-validator/">JSON Formatter</a></li>
-                        <li><a href="${prefix}uuid-generator/">UUID Generator</a></li>
-                        <li><a href="${prefix}css-gradient-generator/">CSS Gradient Generator</a></li>
-                    </ul>
-                    <a href="${prefix}#all-tools" class="sidebar-view-all">View All →</a>
-                </div>
+                <div class="nav-category" style="font-weight: 700; color: var(--text-secondary, #6b7280); margin-top: 15px; font-size: 0.85rem; text-transform: uppercase;">📈 SEO & Marketing</div>
+                <a href="${prefix}meta-tag-generator/" class="nav-item" style="color: var(--text-primary); padding: 10px 15px; text-decoration: none; display: block;">• Meta Tags</a>
+                <a href="${prefix}utm-builder/" class="nav-item" style="color: var(--text-primary); padding: 10px 15px; text-decoration: none; display: block;">• UTM Builder</a>
+                <a href="${prefix}serp-preview-tool/" class="nav-item" style="color: var(--text-primary); padding: 10px 15px; text-decoration: none; display: block;">• SERP Preview</a>
+                <a href="${prefix}#all-tools" class="nav-item" style="color: #2563EB; padding: 10px 15px; text-decoration: none; font-weight: 600; display: block;">View All →</a>
 
-                <!-- SEO & Marketing -->
-                <div class="sidebar-section">
-                    <h3 class="sidebar-section-title">📈 SEO & Marketing</h3>
-                    <ul class="sidebar-menu">
-                        <li><a href="${prefix}meta-tag-generator/">Meta Tag Generator</a></li>
-                        <li><a href="${prefix}utm-builder/">Build UTM Links</a></li>
-                        <li><a href="${prefix}serp-preview-tool/">SERP Preview Tool</a></li>
-                        <li><a href="${prefix}blog-title-generator/">Blog Title Generator</a></li>
-                    </ul>
-                    <a href="${prefix}#all-tools" class="sidebar-view-all">View All →</a>
-                </div>
+                <div class="nav-category" style="font-weight: 700; color: var(--text-secondary, #6b7280); margin-top: 15px; font-size: 0.85rem; text-transform: uppercase;">🛠 Daily Utilities</div>
+                <a href="${prefix}image-compressor/" class="nav-item" style="color: var(--text-primary); padding: 10px 15px; text-decoration: none; display: block;">• Image Compressor</a>
+                <a href="${prefix}password-generator/" class="nav-item" style="color: var(--text-primary); padding: 10px 15px; text-decoration: none; display: block;">• Password Gen</a>
+                <a href="${prefix}word-counter/" class="nav-item" style="color: var(--text-primary); padding: 10px 15px; text-decoration: none; display: block;">• Word Counter</a>
+                <a href="${prefix}#all-tools" class="nav-item" style="color: #2563EB; padding: 10px 15px; text-decoration: none; font-weight: 600; display: block;">View All →</a>
 
-                <!-- Daily Utilities -->
-                <div class="sidebar-section">
-                    <h3 class="sidebar-section-title">🛠 Daily Utilities</h3>
-                    <ul class="sidebar-menu">
-                        <li><a href="${prefix}image-compressor/">Image Compressor</a></li>
-                        <li><a href="${prefix}password-generator/">Password Generator</a></li>
-                        <li><a href="${prefix}pomodoro-timer/">Pomodoro Timer</a></li>
-                        <li><a href="${prefix}word-counter/">Word Counter Tool</a></li>
-                    </ul>
-                    <a href="${prefix}#all-tools" class="sidebar-view-all">View All →</a>
-                </div>
-
-                <!-- Legal Tools -->
-                <div class="sidebar-section">
-                    <h3 class="sidebar-section-title">⚖️ Legal Tools</h3>
-                    <ul class="sidebar-menu">
-                        <li><a href="${prefix}privacy-policy-generator/">Privacy Policy Generator</a></li>
-                        <li><a href="${prefix}terms-conditions-generator/">Terms & Conditions Generator</a></li>
-                    </ul>
-                </div>
-
-                <!-- Divider -->
-                <div class="sidebar-divider"></div>
-
-                <!-- Footer Links -->
-                <div class="sidebar-section sidebar-footer-links">
-                    <a href="${prefix}about/" class="sidebar-footer-link">📄 About Us</a>
-                    <a href="${prefix}contact/" class="sidebar-footer-link">📩 Contact Us</a>
-                    <a href="${prefix}privacy/" class="sidebar-footer-link">🔒 Privacy Policy</a>
-                    <a href="${prefix}terms/" class="sidebar-footer-link">📜 Terms of Service</a>
-                    <a href="${prefix}cookies/" class="sidebar-footer-link">🍪 Cookie Policy</a>
-                    <a href="${prefix}updates/" class="sidebar-footer-link">📝 Updates & Changelog</a>
-                </div>
-            </nav>
+                <hr style="margin: 15px 0; border: 0; border-top: 1px solid var(--border-color, #e5e7eb);">
+                <a href="${prefix}about/" class="nav-item" style="color: var(--text-primary); padding: 10px 0; text-decoration: none; display: block; font-weight: 500;">📄 About Us</a>
+                <a href="${prefix}contact/" class="nav-item" style="color: var(--text-primary); padding: 10px 0; text-decoration: none; display: block; font-weight: 500;">📩 Contact Us</a>
+                <a href="${prefix}privacy/" class="nav-item" style="color: var(--text-primary); padding: 10px 0; text-decoration: none; display: block; font-weight: 500;">🔒 Privacy Policy</a>
+            </div>
         </aside>
 
         <!-- Sidebar Overlay -->

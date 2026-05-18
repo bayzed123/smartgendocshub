@@ -2,49 +2,10 @@
 
 **🟢 Live Demo:** [smartgentools.com](https://smartgentools.com)  
 **Owner:** Sayad Md Bayezid Hosan ([www.sayadbayezid.com](https://www.sayadbayezid.com))
-<img src="https://commons.wikimedia.org/wiki/Special:FilePath/Sayad_Md_Bayezid_Hosan_Portrait.jpg" alt="Sayad Md Bayezid Hosan" width="100%">
+
+![Sayad Md Bayezid Hosan Portrait](https://commons.wikimedia.org/wiki/Special:FilePath/Sayad_Md_Bayezid_Hosan_Portrait.jpg)
 
 ![SmartGen Logo](https://raw.githubusercontent.com/bayzed123/SmartGenQR.oi/main/assets/images/smartgen-logo.png) SmartGen is a comprehensive, client-side web utility platform designed to provide developers, marketers, and everyday users with a suite of fast, secure, and 100% free tools. From QR code generation to advanced SEO utilities and text manipulation, SmartGen aims to be your go-to resource for essential digital tasks, all accessible directly in your browser without any server-side processing.
-
-## 🛠️ All Available Tools
-
-Explore our full suite of free web utilities:
-
-| Tool Name | Description |
-| :--- | :--- |
-| [**Age Calculator**](https://smartgentools.com/age-calculator/) | Professional Age Calculator tool for fast results. |
-| [**Blog Title Generator**](https://smartgentools.com/blog-title-generator/) | Professional Blog Title Generator tool for fast results. |
-| [**BMI & BMR Calculator**](https://smartgentools.com/bmi-bmr-calculator/) | Professional BMI & BMR Calculator tool for fast results. |
-| [**Color Palette Extractor**](https://smartgentools.com/color-palette-extractor/) | Professional Color Palette Extractor tool for fast results. |
-| [**CPM & ROI Calculator**](https://smartgentools.com/cpm-roi-calculator/) | Professional CPM & ROI Calculator tool for fast results. |
-| [**Css Gradient Generator**](https://smartgentools.com/css-gradient-generator/) | Professional Css Gradient Generator tool for fast results. |
-| [**EMI Calculator**](https://smartgentools.com/emi-calculator/) | Professional EMI Calculator tool for fast results. |
-| [**Facebook Id Finder**](https://smartgentools.com/facebook-id-finder/) | Professional Facebook Id Finder tool for fast results. |
-| [**Fancy Font Generator**](https://smartgentools.com/fancy-font-generator/) | Professional Fancy Font Generator tool for fast results. |
-| [**Hashtag Generator**](https://smartgentools.com/hashtag-generator/) | Professional Hashtag Generator tool for fast results. |
-| [**Image Compressor**](https://smartgentools.com/image-compressor/) | Professional Image Compressor tool for fast results. |
-| [**Image To Base64**](https://smartgentools.com/image-to-base64/) | Professional Image To Base64 tool for fast results. |
-| [**Keyword Density Checker**](https://smartgentools.com/keyword-density-checker/) | Professional Keyword Density Checker tool for fast results. |
-| [**Lorem Ipsum Generator**](https://smartgentools.com/lorem-ipsum-generator/) | Professional Lorem Ipsum Generator tool for fast results. |
-| [**Mailto Generator**](https://smartgentools.com/mailto-generator/) | Professional Mailto Generator tool for fast results. |
-| [**Meta Tag Generator**](https://smartgentools.com/meta-tag-generator/) | Professional Meta Tag Generator tool for fast results. |
-| [**Password Generator**](https://smartgentools.com/password-generator/) | Professional Password Generator tool for fast results. |
-| [**Percentage Calculator**](https://smartgentools.com/percentage-calculator/) | Professional Percentage Calculator tool for fast results. |
-| [**Picture Url Generator**](https://smartgentools.com/picture-url-generator/) | Professional Picture Url Generator tool for fast results. |
-| [**Pomodoro Timer**](https://smartgentools.com/pomodoro-timer/) | Professional Pomodoro Timer tool for fast results. |
-| [**QR Generator**](https://smartgentools.com/qr-generator/) | Professional QR Generator tool for fast results. |
-| [**Random Choice Picker**](https://smartgentools.com/random-choice-picker/) | Professional Random Choice Picker tool for fast results. |
-| [**Robots Txt Generator**](https://smartgentools.com/robots-txt-generator/) | Professional Robots Txt Generator tool for fast results. |
-| [**Schema Generator**](https://smartgentools.com/schema-generator/) | Professional Schema Generator tool for fast results. |
-| [**Secure Notepad**](https://smartgentools.com/secure-notepad/) | Professional Secure Notepad tool for fast results. |
-| [**SERP Preview Tool**](https://smartgentools.com/serp-preview-tool/) | Professional SERP Preview Tool tool for fast results. |
-| [**Text Case Converter**](https://smartgentools.com/text-case-converter/) | Professional Text Case Converter tool for fast results. |
-| [**Unit Converter**](https://smartgentools.com/unit-converter/) | Professional Unit Converter tool for fast results. |
-| [**Url Encoder Decoder**](https://smartgentools.com/url-encoder-decoder/) | Professional Url Encoder Decoder tool for fast results. |
-| [**UTM Builder**](https://smartgentools.com/utm-builder/) | Professional UTM Builder tool for fast results. |
-| [**Whatsapp Link**](https://smartgentools.com/whatsapp-link/) | Professional Whatsapp Link tool for fast results. |
-| [**Word Counter**](https://smartgentools.com/word-counter/) | Professional Word Counter tool for fast results. |
-| [**Youtube Thumbnail Downloader**](https://smartgentools.com/youtube-thumbnail-downloader/) | Professional Youtube Thumbnail Downloader tool for fast results. |
 
 ## ✨ Features
 
@@ -77,10 +38,72 @@ SmartGen offers a diverse range of tools, categorized for easy navigation:
 - **Color Palette Extractor**: Extract dominant colors from images as HEX and RGB values.
 
 ### ⭐ User Experience Enhancements
+- **Dynamic Related Tools Engine**: Enhances user retention and navigation by recommending related tools on each tool page.
 - **Premium Testimonials & Review Section**: A dynamic, 3-track CSS marquee showcasing user reviews, with LocalStorage persistence for user-submitted feedback.
 - **SEO-Friendly Footer**: A comprehensive 4-column footer with quick links, top tools, legal information, and social media integration.
 - **Dark/Light Mode Toggle**: Seamless switching between dark and light themes for enhanced user comfort.
 - **Interactive FAQ Accordions**: Engaging and SEO-optimized FAQ sections on relevant pages.
+
+## 🛠️ All Available Tools
+
+Explore our full suite of free web utilities:
+
+### Developer & Technical
+| Icon | Tool Name | Description |
+| :--- | :--- | :--- |
+| 🖼️ | [**Base64 to Image Decoder**](https://smartgentools.com/base64-to-image/) | Decode Base64 strings back into image files. |
+| 🎨 | [**CSS Gradient Generator**](https://smartgentools.com/css-gradient-generator/) | Create beautiful CSS gradients with color pickers. |
+| 🔒 | [**MD5/SHA Hash Generator**](https://smartgentools.com/hash-generator/) | Generate MD5, SHA-1, and SHA-256 hashes. |
+| 💻 | [**Live HTML Previewer**](https://smartgentools.com/html-code-preview/) | Write HTML/CSS/JS and see live results instantly. |
+| 🌐 | [**IP Address Lookup**](https://smartgentools.com/ip-address-lookup/) | Find your public IP and network information. |
+| JSON | [**JSON Formatter & Validator**](https://smartgentools.com/json-formatter-validator/) | Format, beautify, and validate JSON code. |
+| 🏷️ | [**Meta Tag Generator**](https://smartgentools.com/meta-tag-generator/) | Boost your SEO with perfect meta tags. |
+| 📸 | [**Picture URL Generator**](https://smartgentools.com/picture-url-generator/) | Upload images and get direct live links instantly. |
+| 📱 | [**QR Code Generator**](https://smartgentools.com/qr-generator/) | Create custom QR codes for URLs, WiFi, and more. |
+| 🎲 | [**Random Choice Picker**](https://smartgentools.com/random-choice-picker/) | Make random decisions from a list of choices. |
+| 🤖 | [**Robots.txt Generator**](https://smartgentools.com/robots-txt-generator/) | Create robots.txt files for search engines. |
+| 📜 | [**Schema Generator**](https://smartgentools.com/schema-generator/) | Generate JSON-LD schema markup for SEO. |
+| 🔐 | [**URL Encoder-Decoder**](https://smartgentools.com/url-encoder-decoder/) | Encode and decode URLs securely and instantly. |
+| 🆔 | [**UUID / GUID Generator**](https://smartgentools.com/uuid-generator/) | Generate random version 4 UUIDs instantly. |
+
+### Marketing & Social Media
+| Icon | Tool Name | Description |
+| :--- | :--- | :--- |
+| ✍️ | [**Blog Title Generator**](https://smartgentools.com/blog-title-generator/) | Generate SEO-friendly blog titles and headlines. |
+| ⚠️ | [**Disclaimer Generator**](https://smartgentools.com/disclaimer-generator/) | Generate legal disclaimers to protect your business. |
+| 👤 | [**Facebook ID Finder**](https://smartgentools.com/facebook-id-finder/) | Extract numeric Facebook IDs from profile links. |
+| #️⃣ | [**Hashtag Generator**](https://smartgentools.com/hashtag-generator/) | Generate trending social media hashtags. |
+| 📧 | [**Mailto Generator**](https://smartgentools.com/mailto-generator/) | Generate professional email links with ease. |
+| 📜 | [**Privacy Policy Generator**](https://smartgentools.com/privacy-policy-generator/) | Generate professional privacy policies for your site. |
+| ⚖️ | [**Terms & Conditions Generator**](https://smartgentools.com/terms-conditions-generator/) | Create custom terms of service agreements instantly. |
+| 🔗 | [**UTM Link Builder**](https://smartgentools.com/utm-builder/) | Generate tracking links for your marketing campaigns. |
+| 💬 | [**WhatsApp Link**](https://smartgentools.com/whatsapp-link/) | Create direct chat links for WhatsApp. |
+| 🎬 | [**YouTube Thumbnail Downloader**](https://smartgentools.com/youtube-thumbnail-downloader/) | Download HD thumbnails from any YouTube video. |
+
+### SEO & Content
+| Icon | Tool Name | Description |
+| :--- | :--- | :--- |
+| 📊 | [**Keyword Density Checker**](https://smartgentools.com/keyword-density-checker/) | Analyze keyword frequency in your content. |
+| 🖋️ | [**Lorem Ipsum Generator**](https://smartgentools.com/lorem-ipsum-generator/) | Generate placeholder text for designs. |
+| 🔍 | [**SERP Preview Tool**](https://smartgentools.com/serp-preview-tool/) | Preview how your page appears in Google search. |
+| 🔠 | [**Text Case Converter**](https://smartgentools.com/text-case-converter/) | Convert text to UPPER, lower, or Title Case. |
+| 📝 | [**Word Counter**](https://smartgentools.com/word-counter/) | Count words, characters, and reading time. |
+
+### Daily Utilities & Calculators
+| Icon | Tool Name | Description |
+| :--- | :--- | :--- |
+| 📅 | [**Age Calculator**](https://smartgentools.com/age-calculator/) | Calculate exact age and date differences. |
+| ⚖️ | [**BMI BMR Calculator**](https://smartgentools.com/bmi-bmr-calculator/) | Calculate Body Mass Index and metabolic rate. |
+| 💰 | [**CPM ROI Calculator**](https://smartgentools.com/cpm-roi-calculator/) | Calculate Cost Per Mille and Return on Investment. |
+| 🎨 | [**Color Palette Extractor**](https://smartgentools.com/color-palette-extractor/) | Extract dominant colors from images as HEX and RGB. |
+| 🏦 | [**EMI Calculator**](https://smartgentools.com/emi-calculator/) | Calculate monthly installments and total interest. |
+| ✨ | [**Fancy Font Generator**](https://smartgentools.com/fancy-font-generator/) | Convert text to cool Unicode styles and fonts. |
+| 📉 | [**Image Compressor**](https://smartgentools.com/image-compressor/) | Reduce image size locally without uploading. |
+| 🔒 | [**Password Generator**](https://smartgentools.com/password-generator/) | Create secure, random passwords instantly. |
+| % | [**Percentage Calculator**](https://smartgentools.com/percentage-calculator/) | Calculate percentages, discounts, and differences. |
+| ⏱️ | [**Pomodoro Timer**](https://smartgentools.com/pomodoro-timer/) | 25/5 focus timer with start, pause, and reset. |
+| 📔 | [**Secure Notepad**](https://smartgentools.com/secure-notepad/) | Auto-save notes to browser storage with privacy. |
+| 📏 | [**Unit Converter**](https://smartgentools.com/unit-converter/) | Convert length, weight, and temperature instantly. |
 
 ## 💻 Technologies Used
 
@@ -95,7 +118,7 @@ To get a copy of SmartGen up and running on your local machine for development a
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/bayzed123/SmartGenQR.oi.git](https://github.com/bayzed123/SmartGenQR.oi.git)
+    git clone https://github.com/bayzed123/SmartGenQR.oi.git
     cd SmartGenQR.oi
     ```
 
@@ -126,18 +149,18 @@ If you find this utility platform helpful, consider supporting its development. 
   </a>
 </div>
 
-* **PayPal:** [@connectwithbayezid](https://www.paypal.me/connectwithbayezid)
-* **Payoneer:** `cwb.agency@outlook.com`
-
----
+*   **PayPal:** [@connectwithbayezid](https://www.paypal.me/connectwithbayezid)
+*   **Payoneer:** `cwb.agency@outlook.com`
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License with additional terms. See the [LICENSE](LICENSE) file for details.
 
-## 🗓️ Upcoming Updates (For Next AI Agent)
+**Copyright (c) 2026 Sayad Md Bayezid Hosan**
 
-This section outlines the next planned enhancements for the SmartGen platform. The next AI agent working on this project should refer to these items for future development:
+## 🗓️ Upcoming Updates
+
+This section outlines the next planned enhancements for the SmartGen platform:
 
 1.  **Enhance Tool Pages with SEO Content**: Integrate more detailed SEO-friendly descriptions and usage guides for each individual tool page to improve their search engine visibility.
 2.  **Implement a Global Search Functionality**: Add a search bar to the navigation or a dedicated search page to allow users to quickly find specific tools.
@@ -145,8 +168,7 @@ This section outlines the next planned enhancements for the SmartGen platform. T
 4.  **Improve Accessibility**: Conduct an accessibility audit and implement improvements to ensure all tools are usable by individuals with disabilities.
 5.  **Expand Toolset**: Introduce new, highly requested tools based on user feedback and market trends.
 
-**⚠️ AI AGENT INSTRUCTIONS (MASTER RULE):**
-1. **Architecture:** 100% Static HTML/CSS/JS. No Backend. Hosted on GitHub Pages.
-2. **Hub & Spoke:** `index.html` at the root is the Hub. Every tool lives in its own dedicated folder.
-3. **Dynamic UI:** Navbar and Footer are injected dynamically via `/assets/js/app.js`.
-4. **1-Page SEO Rule:** EVERY tool's `index.html` MUST have: Top (Functional UI) -> Middle (`<div class="ad-banner-space"></div>`) -> Bottom (1200+ high Traffic Keyword , words SEO content with H2, H3, and 3 FAQs). Do not use Lorem Ipsum.
+---
+
+*Developed with passion by [Sayad Md Bayezid Hosan](https://sayadbayezid.com)*
+*Connect with Bayezid: [www.ConnectWithBayezid.it.com](https://www.ConnectWithBayezid.it.com) | [www.GenZFrontir.com](https://www.GenZFrontir.com)*

@@ -1595,3 +1595,90 @@ html {
         margin-bottom: 1.5rem;
     }
 }
+
+/* Related Tools Ultra-Compact Styling */
+#dynamic-related-tools {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.related-title {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+    border-left: 4px solid var(--primary);
+    padding-left: 10px;
+}
+
+.related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 15px;
+}
+
+#dynamic-related-tools .tool-card.compact {
+    padding: 12px;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    gap: 12px;
+    border-radius: 12px;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    transition: all 0.2s ease;
+}
+
+#dynamic-related-tools .tool-card.compact:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border-color: var(--primary);
+}
+
+#dynamic-related-tools .tool-card.compact .tool-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+    min-width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(37, 99, 235, 0.1);
+    border-radius: 8px;
+}
+
+#dynamic-related-tools .tool-card.compact .tool-info h3 {
+    font-size: 0.95rem;
+    margin-bottom: 2px;
+}
+
+#dynamic-related-tools .tool-card.compact .tool-info p {
+    font-size: 0.75rem;
+    margin-bottom: 0;
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Mobile 2-column Grid Force */
+@media (max-width: 768px) {
+    .related-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+    
+    #dynamic-related-tools .tool-card.compact {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+    }
+    
+    #dynamic-related-tools .tool-card.compact .tool-icon {
+        margin-bottom: 5px;
+    }
+    
+    #dynamic-related-tools .tool-card.compact .tool-info p {
+        display: none; /* Hide description on mobile for extreme compact */
+    }
+}

@@ -128,10 +128,11 @@ function injectFooter() {
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h4>Legal</h4>
+                    <h4>Legal & Privacy</h4>
                     <ul class="footer-links">
                         <li><a href="${prefix}privacy/">Privacy Policy</a></li>
                         <li><a href="${prefix}terms/">Terms of Service</a></li>
+                        <li><a href="${prefix}privacy/#cookies">Cookie Policy</a></li>
                         <li><a href="${prefix}disclaimer/">Disclaimer</a></li>
                         <li><a href="${prefix}contact/">Contact Us</a></li>
                     </ul>

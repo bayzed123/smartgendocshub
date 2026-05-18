@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     injectNavbar();
     injectFooter();
     initTheme();
+    initAccordion();
 });
 
 function injectNavbar() {
@@ -147,6 +148,27 @@ function injectFooter() {
             </div>
         </div>
     `;
+}
+
+function initAccordion() {
+    const accordionHeaders = document.querySelectorAll('.accordion-header');
+    
+    accordionHeaders.forEach(header => {
+        header.addEventListener('click', () => {
+            const item = header.parentElement;
+            const isActive = item.classList.contains('active');
+            
+            // Close all other accordion items
+            document.querySelectorAll('.accordion-item').forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.classList.remove('active');
+                }
+            });
+            
+            // Toggle current item
+            item.classList.toggle('active');
+        });
+    });
 }
 
 function initTheme() {

@@ -1,5 +1,10 @@
 [
   {
+    "title": "Fix: Add Cookie Policy to footer and generate compliance page",
+    "date": "2026-05-18T21:16:38Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "UI/UX Enhancement: Implement collapsible accordion footer for mobile viewports",
     "date": "2026-05-18T20:55:41Z",
     "description": "Platform improvement and optimization."

@@ -877,3 +877,12 @@ footer {
         display: none !important;
     }
 }
+
+
+/* ===== FAQ ACCORDION UI FIX ===== */
+.faq-container { display: flex; flex-direction: column; gap: 15px; width: 100%; max-width: 800px; margin: 0 auto; }
+.accordion-item { background: var(--surface, #ffffff); border: 1px solid var(--border-color, #e5e7eb); border-radius: 8px; overflow: hidden; }
+button.accordion-header { width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 18px 20px; background: transparent; border: none; cursor: pointer; text-align: left; font-size: 1.05rem; font-weight: 600; color: var(--text-primary, #111827); border-radius: 0; box-shadow: none; min-height: 60px; }
+button.accordion-header:hover { background: var(--hover, #f8fafc); }
+.accordion-content { display: none; padding: 0 20px 20px; color: var(--text-secondary, #4b5563); line-height: 1.6; border-top: 1px solid var(--border-color, #e5e7eb); margin-top: 10px; }
+.accordion-item.active .accordion-content { display: block; }

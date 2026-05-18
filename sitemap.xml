@@ -246,4 +246,52 @@
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
+    <url>
+        <loc>https://smartgentools.com/privacy-policy-generator/</loc>
+        <lastmod>2026-05-19</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://smartgentools.com/terms-conditions-generator/</loc>
+        <lastmod>2026-05-19</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://smartgentools.com/disclaimer-generator/</loc>
+        <lastmod>2026-05-19</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://smartgentools.com/uuid-generator/</loc>
+        <lastmod>2026-05-19</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://smartgentools.com/json-formatter-validator/</loc>
+        <lastmod>2026-05-19</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://smartgentools.com/base64-to-image/</loc>
+        <lastmod>2026-05-19</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://smartgentools.com/hash-generator/</loc>
+        <lastmod>2026-05-19</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://smartgentools.com/ip-address-lookup/</loc>
+        <lastmod>2026-05-19</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
 </urlset>

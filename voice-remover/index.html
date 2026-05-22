@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        /* ============================================
+           PREMIUM LALAL.AI GLASSMORPHISM DASHBOARD
+           ============================================ */
+        
         .upload-area {
             border: 2px dashed var(--border);
             border-radius: 16px;
@@ -46,54 +50,327 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+
+        /* PREMIUM RESULTS AREA - GLASSMORPHISM STYLE */
         .results-area {
             display: none;
             margin-top: 2rem;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
         }
+
+        /* PREMIUM TRACK CARD WITH GLASSY EFFECT */
         .track-card {
-            background: var(--background);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 1.5rem;
-            margin-bottom: 1rem;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.08) 100%);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 16px;
+            padding: 1.75rem;
+            margin-bottom: 1.5rem;
             display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 1rem;
+            flex-direction: column;
+            gap: 1.5rem;
+            box-shadow: 0 4px 15px 0 rgba(31, 38, 135, 0.1);
+            transition: all 0.3s ease;
         }
-        .track-info {
+        .track-card:hover {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.1) 100%);
+            box-shadow: 0 8px 25px 0 rgba(31, 38, 135, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .track-header {
             display: flex;
             align-items: center;
             gap: 1rem;
+            margin-bottom: 0.5rem;
         }
         .track-icon {
-            width: 40px;
-            height: 40px;
-            background: var(--primary);
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--primary), #667eea);
             color: white;
-            border-radius: 50%;
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+        }
+        .track-info h3 {
+            margin: 0;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+        .track-info p {
+            margin: 0.25rem 0 0 0;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* AUDIO PLAYER STYLING */
+        .audio-player-wrapper {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
         }
         audio {
-            height: 35px;
-            border-radius: 8px;
+            flex: 1;
+            height: 40px;
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.1);
+            accent-color: var(--primary);
         }
-        .download-btn {
-            background: var(--primary);
+
+        /* PREMIUM PRESET BUTTONS */
+        .preset-section {
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .preset-section h4 {
+            margin: 0 0 1rem 0;
+            font-size: 0.95rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+        }
+        .preset-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 0.75rem;
+        }
+        .preset-btn {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.8) 0%, rgba(102, 126, 234, 0.8) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.3);
             color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            text-decoration: none;
+            padding: 0.75rem 1rem;
+            border-radius: 10px;
+            cursor: pointer;
             font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.2);
+        }
+        .preset-btn:hover {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 1) 0%, rgba(102, 126, 234, 1) 100%);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+            transform: translateY(-2px);
+        }
+        .preset-btn.active {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.9) 0%, rgba(34, 197, 94, 0.9) 100%);
+            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+        }
+
+        /* CANVAS VISUALIZER */
+        .visualizer-container {
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+        }
+        .visualizer-container h4 {
+            margin: 0 0 0.75rem 0;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+        }
+        #frequencyCanvas {
+            width: 100%;
+            height: 120px;
+            border-radius: 8px;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.05) 100%);
+            display: block;
+        }
+
+        /* PREMIUM SLIDERS & CONTROLS */
+        .controls-section {
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .controls-section h4 {
+            margin: 0 0 1.25rem 0;
+            font-size: 0.95rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+        }
+        .control-group {
+            margin-bottom: 1.5rem;
+        }
+        .control-group:last-child {
+            margin-bottom: 0;
+        }
+        .control-label {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
             font-size: 0.9rem;
-            transition: background 0.3s;
+            font-weight: 600;
         }
-        .download-btn:hover {
-            background: var(--primary-dark);
+        .control-value {
+            background: rgba(37, 99, 235, 0.2);
+            color: var(--primary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.85rem;
         }
+        
+        /* PREMIUM SLIDER STYLING */
+        input[type="range"] {
+            width: 100%;
+            height: 6px;
+            border-radius: 3px;
+            background: linear-gradient(to right, rgba(37, 99, 235, 0.3), rgba(37, 99, 235, 0.1));
+            outline: none;
+            -webkit-appearance: none;
+            appearance: none;
+            cursor: pointer;
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), #667eea);
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.4);
+            transition: all 0.2s ease;
+        }
+        input[type="range"]::-webkit-slider-thumb:hover {
+            width: 20px;
+            height: 20px;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.6);
+        }
+        input[type="range"]::-moz-range-thumb {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), #667eea);
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.4);
+            transition: all 0.2s ease;
+        }
+        input[type="range"]::-moz-range-thumb:hover {
+            width: 20px;
+            height: 20px;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.6);
+        }
+
+        /* ACTION BUTTONS */
+        .action-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        .download-btn, .process-btn {
+            background: linear-gradient(135deg, var(--primary), #667eea);
+            color: white;
+            padding: 0.85rem 1.5rem;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        .download-btn:hover, .process-btn:hover {
+            background: linear-gradient(135deg, #1e40af, #4f46e5);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+            transform: translateY(-2px);
+        }
+        .process-btn {
+            background: linear-gradient(135deg, #10b981, #059669);
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+        }
+        .process-btn:hover {
+            background: linear-gradient(135deg, #059669, #047857);
+            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+        }
+
+        /* COMPARISON MODE */
+        .comparison-toggle {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+        }
+        .toggle-switch {
+            position: relative;
+            width: 50px;
+            height: 28px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 14px;
+            cursor: pointer;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+        .toggle-switch.active {
+            background: rgba(16, 185, 129, 0.4);
+        }
+        .toggle-switch::after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            background: white;
+            border-radius: 50%;
+            top: 2px;
+            left: 2px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        .toggle-switch.active::after {
+            left: 24px;
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 768px) {
+            .results-area {
+                padding: 1.5rem;
+            }
+            .track-card {
+                padding: 1.25rem;
+            }
+            .action-buttons {
+                grid-template-columns: 1fr;
+            }
+            .preset-buttons {
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            }
+            audio {
+                height: 35px;
+            }
+        }
+
+        /* FAQ SECTION */
         .faq-section {
             margin-top: 4rem;
         }
@@ -137,7 +414,6 @@
 
             <div id="upload-container">
                 <div class="upload-area" id="drop-zone">
-                    <!-- iOS compatibility: Added explicit MIME types and extensions to the accept attribute -->
                     <input type="file" id="file-input" accept=".mp3,audio/mpeg,.wav,audio/wav,.m4a,audio/x-m4a,.flac,audio/flac,.ogg,audio/ogg,.mp4,video/mp4,.mov,video/quicktime" style="display: none;">
                     <div class="upload-icon"><i class="fas fa-cloud-upload-alt"></i></div>
                     <h3>Drag & Drop Audio File</h3>
@@ -152,32 +428,108 @@
                 <p>This may take 1-2 minutes depending on song length.</p>
             </div>
 
+            <!-- ========================================
+                 PREMIUM AUDIO POST-PROCESSING DASHBOARD
+                 ======================================== -->
             <div class="results-area" id="results-area">
+                <!-- VOCAL TRACK CARD WITH PROCESSING CONTROLS -->
                 <div class="track-card">
-                    <div class="track-info">
+                    <div class="track-header">
                         <div class="track-icon"><i class="fas fa-microphone"></i></div>
-                        <div>
-                            <strong>Vocals</strong>
-                            <p style="font-size: 0.8rem; color: var(--text-muted);">Isolated Voice</p>
+                        <div class="track-info">
+                            <h3>Vocals</h3>
+                            <p>Isolated Voice Track</p>
                         </div>
                     </div>
-                    <audio id="vocal-player" controls></audio>
-                    <a id="vocal-download" class="download-btn" download="vocals.wav">Download</a>
+
+                    <!-- CANVAS FREQUENCY VISUALIZER -->
+                    <div class="visualizer-container">
+                        <h4>🎛️ Live Frequency Spectrum</h4>
+                        <canvas id="frequencyCanvas"></canvas>
+                    </div>
+
+                    <!-- STUDIO PRESETS -->
+                    <div class="preset-section">
+                        <h4>📌 Studio Presets</h4>
+                        <div class="preset-buttons">
+                            <button class="preset-btn active" data-preset="raw">Raw AI (Bypass)</button>
+                            <button class="preset-btn" data-preset="podcast">Podcast/Clear</button>
+                            <button class="preset-btn" data-preset="singing">Ghazal/Singing</button>
+                        </div>
+                    </div>
+
+                    <!-- GRANULAR LIVE SLIDERS -->
+                    <div class="controls-section">
+                        <h4>🎚️ Granular Controls</h4>
+                        
+                        <div class="control-group">
+                            <div class="control-label">
+                                <span>Volume Booster</span>
+                                <span class="control-value"><span id="volumeValue">100</span>%</span>
+                            </div>
+                            <input type="range" id="volumeSlider" min="0" max="200" value="100">
+                        </div>
+
+                        <div class="control-group">
+                            <div class="control-label">
+                                <span>Space Echo Intensity</span>
+                                <span class="control-value"><span id="delayValue">0</span>%</span>
+                            </div>
+                            <input type="range" id="delaySlider" min="0" max="100" value="0">
+                        </div>
+
+                        <div class="control-group">
+                            <div class="control-label">
+                                <span>Creative Pitch Shifter</span>
+                                <span class="control-value"><span id="pitchValue">0</span></span>
+                            </div>
+                            <input type="range" id="pitchSlider" min="-12" max="12" value="0">
+                        </div>
+
+                        <div class="comparison-toggle">
+                            <span style="font-size: 0.9rem; font-weight: 600;">Original vs Edited</span>
+                            <div class="toggle-switch" id="comparisonToggle"></div>
+                        </div>
+                    </div>
+
+                    <!-- AUDIO PLAYER & DOWNLOAD -->
+                    <div class="audio-player-wrapper">
+                        <audio id="vocal-player" controls></audio>
+                    </div>
+
+                    <div class="action-buttons">
+                        <a id="vocal-download" class="download-btn" download="vocals.wav">
+                            <i class="fas fa-download"></i> Download Vocal
+                        </a>
+                        <button class="process-btn" id="applyEffectsBtn">
+                            <i class="fas fa-check"></i> Apply & Export
+                        </button>
+                    </div>
                 </div>
 
+                <!-- INSTRUMENTAL TRACK CARD -->
                 <div class="track-card">
-                    <div class="track-info">
+                    <div class="track-header">
                         <div class="track-icon"><i class="fas fa-music"></i></div>
-                        <div>
-                            <strong>Instrumental</strong>
-                            <p style="font-size: 0.8rem; color: var(--text-muted);">Karaoke / Background Music</p>
+                        <div class="track-info">
+                            <h3>Instrumental</h3>
+                            <p>Karaoke / Background Music</p>
                         </div>
                     </div>
-                    <audio id="instrumental-player" controls></audio>
-                    <a id="instrumental-download" class="download-btn" download="instrumental.wav">Download</a>
-                </div>
 
-                <button class="btn btn-primary" style="width: 100%; margin-top: 1rem;" onclick="location.reload()">Process Another File</button>
+                    <div class="audio-player-wrapper">
+                        <audio id="instrumental-player" controls></audio>
+                    </div>
+
+                    <div class="action-buttons">
+                        <a id="instrumental-download" class="download-btn" download="instrumental.wav">
+                            <i class="fas fa-download"></i> Download Instrumental
+                        </a>
+                        <button class="process-btn" style="background: linear-gradient(135deg, #f59e0b, #d97706);" onclick="location.reload()">
+                            <i class="fas fa-redo"></i> Process Another
+                        </button>
+                    </div>
+                </div>
             </div>
 
             <div class="ad-banner-space">Advertisement Space</div>
@@ -257,6 +609,366 @@
     <script type="module">
         import { Client } from "https://cdn.jsdelivr.net/npm/@gradio/client/dist/index.min.js";
 
+        // ============================================
+        // AUDIO CONTEXT & PROCESSING PIPELINE
+        // ============================================
+        let audioContext;
+        let vocalSource;
+        let instrumentalSource;
+        let analyser;
+        let dataArray;
+        let animationId;
+        let currentPreset = 'raw';
+        let isComparison = false;
+
+        // Web Audio API Nodes
+        let gainNode;
+        let delayNode;
+        let feedbackGainNode;
+        let pitchShiftNode;
+        let dryGain;
+        let wetGain;
+        let dryGainInstrumental;
+        let wetGainInstrumental;
+
+        // Initialize Web Audio API
+        function initAudioContext() {
+            if (audioContext) return;
+            
+            try {
+                audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            } catch (e) {
+                console.error('Web Audio API not supported:', e);
+                alert('Web Audio API is not supported in your browser.');
+                return;
+            }
+
+            // Resume AudioContext for iOS Safari
+            if (audioContext.state === 'suspended') {
+                document.addEventListener('click', () => {
+                    if (audioContext.state === 'suspended') {
+                        audioContext.resume();
+                    }
+                }, { once: true });
+            }
+
+            // Create processing nodes
+            gainNode = audioContext.createGain();
+            gainNode.gain.value = 1;
+
+            delayNode = audioContext.createDelay(5);
+            delayNode.delayTime.value = 0.3;
+
+            feedbackGainNode = audioContext.createGain();
+            feedbackGainNode.gain.value = 0.3;
+
+            dryGain = audioContext.createGain();
+            dryGain.gain.value = 1;
+
+            wetGain = audioContext.createGain();
+            wetGain.gain.value = 0;
+
+            dryGainInstrumental = audioContext.createGain();
+            dryGainInstrumental.gain.value = 1;
+
+            wetGainInstrumental = audioContext.createGain();
+            wetGainInstrumental.gain.value = 0;
+
+            // Create analyser for visualizer
+            analyser = audioContext.createAnalyser();
+            analyser.fftSize = 256;
+            dataArray = new Uint8Array(analyser.frequencyBinCount);
+
+            // Connect nodes to destination
+            gainNode.connect(audioContext.destination);
+            gainNode.connect(analyser);
+            analyser.connect(audioContext.destination);
+        }
+
+        // Connect audio elements to Web Audio API
+        function connectAudioElements() {
+            const vocalPlayer = document.getElementById('vocal-player');
+            const instrumentalPlayer = document.getElementById('instrumental-player');
+
+            if (!audioContext) initAudioContext();
+
+            // Create MediaElementAudioSourceNodes
+            try {
+                vocalSource = audioContext.createMediaElementAudioSource(vocalPlayer);
+                vocalSource.connect(dryGain);
+                dryGain.connect(gainNode);
+
+                delayNode.connect(feedbackGainNode);
+                feedbackGainNode.connect(delayNode);
+                delayNode.connect(wetGain);
+                wetGain.connect(gainNode);
+
+                instrumentalSource = audioContext.createMediaElementAudioSource(instrumentalPlayer);
+                instrumentalSource.connect(dryGainInstrumental);
+                dryGainInstrumental.connect(gainNode);
+                wetGainInstrumental.connect(gainNode);
+            } catch (e) {
+                console.warn('Audio elements already connected or error:', e);
+            }
+        }
+
+        // Canvas Frequency Visualizer
+        function drawFrequencyVisualizer() {
+            const canvas = document.getElementById('frequencyCanvas');
+            if (!canvas || !analyser) return;
+
+            const ctx = canvas.getContext('2d');
+            const width = canvas.offsetWidth;
+            const height = canvas.offsetHeight;
+
+            canvas.width = width;
+            canvas.height = height;
+
+            analyser.getByteFrequencyData(dataArray);
+
+            // Draw background gradient
+            const gradient = ctx.createLinearGradient(0, 0, 0, height);
+            gradient.addColorStop(0, 'rgba(37, 99, 235, 0.1)');
+            gradient.addColorStop(1, 'rgba(37, 99, 235, 0.05)');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, width, height);
+
+            // Draw frequency bars with glow effect
+            const barWidth = (width / dataArray.length) * 2.5;
+            let x = 0;
+
+            for (let i = 0; i < dataArray.length; i++) {
+                const barHeight = (dataArray[i] / 255) * height;
+
+                // Glow effect
+                ctx.shadowColor = 'rgba(37, 99, 235, 0.8)';
+                ctx.shadowBlur = 10;
+                ctx.shadowOffsetX = 0;
+                ctx.shadowOffsetY = 0;
+
+                // Bar gradient
+                const barGradient = ctx.createLinearGradient(0, height - barHeight, 0, height);
+                barGradient.addColorStop(0, '#2563eb');
+                barGradient.addColorStop(1, '#667eea');
+                ctx.fillStyle = barGradient;
+                ctx.fillRect(x, height - barHeight, barWidth - 1, barHeight);
+
+                x += barWidth;
+            }
+
+            animationId = requestAnimationFrame(drawFrequencyVisualizer);
+        }
+
+        // Studio Presets
+        function applyPreset(preset) {
+            currentPreset = preset;
+            
+            if (!audioContext) initAudioContext();
+
+            switch (preset) {
+                case 'raw':
+                    // Bypass all effects
+                    dryGain.gain.value = 1;
+                    wetGain.gain.value = 0;
+                    dryGainInstrumental.gain.value = 1;
+                    wetGainInstrumental.gain.value = 0;
+                    break;
+
+                case 'podcast':
+                    // High-pass filter effect (boost clarity)
+                    dryGain.gain.value = 1.2;
+                    wetGain.gain.value = 0;
+                    dryGainInstrumental.gain.value = 1;
+                    wetGainInstrumental.gain.value = 0;
+                    break;
+
+                case 'singing':
+                    // Spatial delay/reverb effect
+                    dryGain.gain.value = 0.8;
+                    wetGain.gain.value = 0.4;
+                    dryGainInstrumental.gain.value = 0.8;
+                    wetGainInstrumental.gain.value = 0.3;
+                    delayNode.delayTime.value = 0.4;
+                    feedbackGainNode.gain.value = 0.35;
+                    break;
+            }
+
+            // Update UI
+            document.querySelectorAll('.preset-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`[data-preset="${preset}"]`).classList.add('active');
+        }
+
+        // Granular Slider Controls
+        function setupSliderControls() {
+            const volumeSlider = document.getElementById('volumeSlider');
+            const delaySlider = document.getElementById('delaySlider');
+            const pitchSlider = document.getElementById('pitchSlider');
+            const comparisonToggle = document.getElementById('comparisonToggle');
+
+            volumeSlider.addEventListener('input', (e) => {
+                const value = e.target.value / 100;
+                if (gainNode) gainNode.gain.value = value;
+                document.getElementById('volumeValue').textContent = e.target.value;
+            });
+
+            delaySlider.addEventListener('input', (e) => {
+                const value = e.target.value / 100;
+                if (wetGain) wetGain.gain.value = value;
+                if (wetGainInstrumental) wetGainInstrumental.gain.value = value * 0.75;
+                document.getElementById('delayValue').textContent = e.target.value;
+            });
+
+            pitchSlider.addEventListener('input', (e) => {
+                const value = e.target.value;
+                document.getElementById('pitchValue').textContent = (value > 0 ? '+' : '') + value;
+                // Pitch shifting would require a more complex implementation
+                // For now, this is a placeholder for future enhancement
+            });
+
+            comparisonToggle.addEventListener('click', () => {
+                isComparison = !isComparison;
+                comparisonToggle.classList.toggle('active');
+                
+                if (isComparison) {
+                    // Show original
+                    dryGain.gain.value = 1;
+                    wetGain.gain.value = 0;
+                } else {
+                    // Show processed
+                    applyPreset(currentPreset);
+                }
+            });
+        }
+
+        // Export with Applied Effects using OfflineAudioContext
+        async function exportWithEffects() {
+            const vocalPlayer = document.getElementById('vocal-player');
+            
+            if (!vocalPlayer.src) {
+                alert('No audio to export');
+                return;
+            }
+
+            try {
+                // Create OfflineAudioContext for rendering
+                const offlineContext = new OfflineAudioContext(2, audioContext.sampleRate * 300, audioContext.sampleRate);
+                
+                // Fetch audio data
+                const response = await fetch(vocalPlayer.src);
+                const arrayBuffer = await response.arrayBuffer();
+                const audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
+
+                // Create source in offline context
+                const offlineSource = offlineContext.createBufferSource();
+                offlineSource.buffer = audioBuffer;
+
+                // Recreate processing chain in offline context
+                const offlineGain = offlineContext.createGain();
+                offlineGain.gain.value = document.getElementById('volumeSlider').value / 100;
+
+                const offlineDelay = offlineContext.createDelay(5);
+                offlineDelay.delayTime.value = 0.3;
+
+                const offlineFeedback = offlineContext.createGain();
+                offlineFeedback.gain.value = 0.3;
+
+                const offlineDryGain = offlineContext.createGain();
+                offlineDryGain.gain.value = 0.8;
+
+                const offlineWetGain = offlineContext.createGain();
+                offlineWetGain.gain.value = document.getElementById('delaySlider').value / 100;
+
+                // Connect nodes
+                offlineSource.connect(offlineDryGain);
+                offlineDryGain.connect(offlineGain);
+
+                offlineDelay.connect(offlineFeedback);
+                offlineFeedback.connect(offlineDelay);
+                offlineDelay.connect(offlineWetGain);
+                offlineWetGain.connect(offlineGain);
+
+                offlineGain.connect(offlineContext.destination);
+
+                // Start rendering
+                offlineSource.start(0);
+                const renderedBuffer = await offlineContext.startRendering();
+
+                // Convert to WAV
+                const wav = audioBufferToWav(renderedBuffer);
+                const blob = new Blob([wav], { type: 'audio/wav' });
+                const url = URL.createObjectURL(blob);
+
+                // Trigger download
+                const link = document.createElement('a');
+                link.href = url;
+                link.download = 'vocals-processed.wav';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                URL.revokeObjectURL(url);
+
+                alert('Audio exported successfully!');
+            } catch (error) {
+                console.error('Export error:', error);
+                alert('Error exporting audio. Please try again.');
+            }
+        }
+
+        // Convert AudioBuffer to WAV
+        function audioBufferToWav(audioBuffer) {
+            const numberOfChannels = audioBuffer.numberOfChannels;
+            const sampleRate = audioBuffer.sampleRate;
+            const format = 1; // PCM
+            const bitDepth = 16;
+
+            let recordedChunks = [];
+
+            for (let channel = 0; channel < numberOfChannels; channel++) {
+                recordedChunks[channel] = audioBuffer.getChannelData(channel);
+            }
+
+            const dataLength = recordedChunks[0].length * numberOfChannels * 2 + 36;
+            const arrayBuffer = new ArrayBuffer(44 + dataLength);
+            const view = new DataView(arrayBuffer);
+
+            const writeString = (offset, string) => {
+                for (let i = 0; i < string.length; i++) {
+                    view.setUint8(offset + i, string.charCodeAt(i));
+                }
+            };
+
+            writeString(0, 'RIFF');
+            view.setUint32(4, 36 + dataLength, true);
+            writeString(8, 'WAVE');
+            writeString(12, 'fmt ');
+            view.setUint32(16, 16, true);
+            view.setUint16(20, format, true);
+            view.setUint16(22, numberOfChannels, true);
+            view.setUint32(24, sampleRate, true);
+            view.setUint32(28, sampleRate * numberOfChannels * bitDepth / 8, true);
+            view.setUint16(32, numberOfChannels * bitDepth / 8, true);
+            view.setUint16(34, bitDepth, true);
+            writeString(36, 'data');
+            view.setUint32(40, dataLength, true);
+
+            let offset = 44;
+            for (let i = 0; i < recordedChunks[0].length; i++) {
+                for (let channel = 0; channel < numberOfChannels; channel++) {
+                    let s = Math.max(-1, Math.min(1, recordedChunks[channel][i]));
+                    s = s < 0 ? s * 0x8000 : s * 0x7FFF;
+                    view.setInt16(offset, s, true);
+                    offset += 2;
+                }
+            }
+
+            return arrayBuffer;
+        }
+
+        // ============================================
+        // MAIN APPLICATION LOGIC
+        // ============================================
         const dropZone = document.getElementById('drop-zone');
         const fileInput = document.getElementById('file-input');
         const uploadContainer = document.getElementById('upload-container');
@@ -277,11 +989,9 @@
         };
 
         async function handleFile(file) {
-            // Updated validation: Support both audio and video MIME types
             const validTypes = ['audio/', 'video/'];
             const isValidType = validTypes.some(type => file.type.startsWith(type));
             
-            // Fallback for some mobile browsers that don't report MIME type correctly for certain extensions
             const validExtensions = ['.mp3', '.wav', '.m4a', '.flac', '.ogg', '.mp4', '.mov'];
             const fileName = file.name.toLowerCase();
             const isValidExtension = validExtensions.some(ext => fileName.endsWith(ext));
@@ -316,6 +1026,14 @@
 
                 processingStatus.style.display = 'none';
                 resultsArea.style.display = 'block';
+
+                // Initialize audio processing
+                setTimeout(() => {
+                    connectAudioElements();
+                    drawFrequencyVisualizer();
+                    setupSliderControls();
+                }, 500);
+
             } catch (error) {
                 console.error(error);
                 alert('An error occurred while processing the file. Please try again later.');
@@ -323,11 +1041,28 @@
             }
         }
 
-        // Simple FAQ Accordion
+        // Preset button handlers
+        document.querySelectorAll('.preset-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                applyPreset(e.target.dataset.preset);
+            });
+        });
+
+        // Apply effects button
+        document.getElementById('applyEffectsBtn').addEventListener('click', exportWithEffects);
+
+        // FAQ Accordion
         document.querySelectorAll('.faq-question').forEach(q => {
             q.onclick = () => {
                 q.parentElement.classList.toggle('active');
             };
+        });
+
+        // Resume AudioContext on user interaction (iOS Safari fix)
+        document.addEventListener('click', () => {
+            if (audioContext && audioContext.state === 'suspended') {
+                audioContext.resume();
+            }
         });
     </script>
     <script src="../assets/js/app.js"></script>

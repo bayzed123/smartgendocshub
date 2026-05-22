@@ -369,16 +369,25 @@ const TOOLS_INDEX = [
         url: './ip-address-lookup/',
         icon: '🌐'
     },
-    {
-        id: 'html-code-preview',
-        title: 'Live HTML Previewer',
-        category: 'Developer & Technical',
-        keywords: ['html', 'css', 'js', 'preview', 'editor', 'live', 'code'],
-        description: 'Write HTML/CSS/JS and see live results instantly.',
-        url: './html-code-preview/',
-        icon: '💻'
-    }
-];
+	    {
+	        id: 'html-code-preview',
+	        title: 'Live HTML Previewer',
+	        category: 'Developer & Technical',
+	        keywords: ['html', 'css', 'js', 'preview', 'editor', 'live', 'code'],
+	        description: 'Write HTML/CSS/JS and see live results instantly.',
+	        url: './html-code-preview/',
+	        icon: '💻'
+	    },
+	    {
+	        id: 'voice-remover',
+	        title: 'AI Vocal Remover',
+	        category: 'Daily Utilities & Calculators',
+	        keywords: ['vocal', 'remover', 'voice', 'music', 'splitter', 'stems', 'ai', 'karaoke'],
+	        description: 'Separate vocals and music with 100% free AI.',
+	        url: './voice-remover/',
+	        icon: '🎤'
+	    }
+	];
 
 // Search function
 function searchTools(query) {

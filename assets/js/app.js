@@ -46,6 +46,7 @@ function injectNavbar() {
                             </div>
                             <div class="dropdown-category">
                                 <h4>⚙️ Utilities</h4>
+                                <a href="${prefix}voice-remover/" class="dropdown-item">🎤 Voice Remover (AI)</a>
                                 <a href="${prefix}age-calculator/" class="dropdown-item">Age Calculator</a>
                                 <a href="${prefix}image-compressor/" class="dropdown-item">Image Compressor</a>
                             </div>
@@ -85,6 +86,7 @@ function injectNavbar() {
                 <a href="${prefix}#all-tools" class="nav-item" style="color: #2563EB; padding: 10px 15px; text-decoration: none; font-weight: 600; display: block;">View All →</a>
 
                 <div class="nav-category" style="font-weight: 700; color: var(--text-secondary, #6b7280); margin-top: 15px; font-size: 0.85rem; text-transform: uppercase;">🛠 Daily Utilities</div>
+                <a href="${prefix}voice-remover/" class="nav-item" style="color: var(--text-primary); padding: 10px 15px; text-decoration: none; display: block;">• 🎤 Voice Remover (AI)</a>
                 <a href="${prefix}image-compressor/" class="nav-item" style="color: var(--text-primary); padding: 10px 15px; text-decoration: none; display: block;">• Image Compressor</a>
                 <a href="${prefix}password-generator/" class="nav-item" style="color: var(--text-primary); padding: 10px 15px; text-decoration: none; display: block;">• Password Gen</a>
                 <a href="${prefix}word-counter/" class="nav-item" style="color: var(--text-primary); padding: 10px 15px; text-decoration: none; display: block;">• Word Counter</a>

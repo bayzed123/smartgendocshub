@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Vocal Remover & Audio Stem Splitter | 100% Free | SmartGen</title>
+    <meta name="description" content="Free AI-powered vocal remover and audio stem splitter. Separate voice from music instantly with high-quality Demucs v4 AI. No signup, 100% free.">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .upload-area {
+            border: 2px dashed var(--border);
+            border-radius: 16px;
+            padding: 3rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            background: var(--background);
+            margin-bottom: 2rem;
+        }
+        .upload-area:hover, .upload-area.dragover {
+            border-color: var(--primary);
+            background: rgba(37, 99, 235, 0.05);
+        }
+        .upload-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        .processing-status {
+            display: none;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        .loader {
+            width: 48px;
+            height: 48px;
+            border: 5px solid var(--border);
+            border-bottom-color: var(--primary);
+            border-radius: 50%;
+            display: inline-block;
+            box-sizing: border-box;
+            animation: rotation 1s linear infinite;
+        }
+        @keyframes rotation {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .results-area {
+            display: none;
+            margin-top: 2rem;
+        }
+        .track-card {
+            background: var(--background);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .track-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .track-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        audio {
+            height: 35px;
+            border-radius: 8px;
+        }
+        .download-btn {
+            background: var(--primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+        }
+        .download-btn:hover {
+            background: var(--primary-dark);
+        }
+        .faq-section {
+            margin-top: 4rem;
+        }
+        .faq-item {
+            margin-bottom: 1rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .faq-question {
+            padding: 1rem 1.5rem;
+            background: var(--card-bg);
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-answer {
+            padding: 1.5rem;
+            display: none;
+            border-top: 1px solid var(--border);
+        }
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body>
+    <header id="main-header"></header>
+
+    <main class="container">
+        <div class="tool-container">
+            <div class="tool-header" style="text-align: center; margin-bottom: 2rem;">
+                <h1>🎤 AI Vocal Remover</h1>
+                <p>Separate vocals and instruments from any song with 100% free AI.</p>
+            </div>
+
+            <div id="upload-container">
+                <div class="upload-area" id="drop-zone">
+                    <input type="file" id="file-input" accept="audio/*" style="display: none;">
+                    <div class="upload-icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                    <h3>Drag & Drop Audio File</h3>
+                    <p>or click to browse (MP3, WAV, M4A)</p>
+                    <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 10px;">Max file size: 10MB</p>
+                </div>
+            </div>
+
+            <div class="processing-status" id="processing-status">
+                <div class="loader"></div>
+                <h3 style="margin-top: 1rem;">Splitting Audio Stems...</h3>
+                <p>This may take 1-2 minutes depending on song length.</p>
+            </div>
+
+            <div class="results-area" id="results-area">
+                <div class="track-card">
+                    <div class="track-info">
+                        <div class="track-icon"><i class="fas fa-microphone"></i></div>
+                        <div>
+                            <strong>Vocals</strong>
+                            <p style="font-size: 0.8rem; color: var(--text-muted);">Isolated Voice</p>
+                        </div>
+                    </div>
+                    <audio id="vocal-player" controls></audio>
+                    <a id="vocal-download" class="download-btn" download="vocals.wav">Download</a>
+                </div>
+
+                <div class="track-card">
+                    <div class="track-info">
+                        <div class="track-icon"><i class="fas fa-music"></i></div>
+                        <div>
+                            <strong>Instrumental</strong>
+                            <p style="font-size: 0.8rem; color: var(--text-muted);">Karaoke / Background Music</p>
+                        </div>
+                    </div>
+                    <audio id="instrumental-player" controls></audio>
+                    <a id="instrumental-download" class="download-btn" download="instrumental.wav">Download</a>
+                </div>
+
+                <button class="btn btn-primary" style="width: 100%; margin-top: 1rem;" onclick="location.reload()">Process Another File</button>
+            </div>
+
+            <div class="ad-banner-space">Advertisement Space</div>
+
+            <div class="seo-content">
+                <h2>The Ultimate Free AI Vocal Remover</h2>
+                <p>SmartGen's AI Vocal Remover uses state-of-the-art <strong>Demucs v4</strong> deep learning models to provide the cleanest audio separation available on the web. Whether you are a singer looking for a karaoke track, a DJ needing a clean acapella, or a music producer sampling stems, our tool delivers professional results in seconds.</p>
+                
+                <h3>How it Works</h3>
+                <p>Our system analyzes the waveform of your uploaded audio and identifies the unique frequency signatures of human voices versus musical instruments. Using artificial intelligence, it "unmixes" the track, creating two high-fidelity layers that you can listen to and download independently.</p>
+
+                <div class="faq-section">
+                    <h2>Frequently Asked Questions</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Is this really 100% free? <i class="fas fa-chevron-down"></i></div>
+                        <div class="faq-answer">
+                            Yes! Unlike other services that charge per song or require a monthly subscription, SmartGen's AI Vocal Remover is completely free. There are no hidden fees, no signup requirements, and no limits on how many files you can process.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">Is my data private? <i class="fas fa-chevron-down"></i></div>
+                        <div class="faq-answer">
+                            Absolutely. We process your audio using secure cloud-side AI and do not store your original or processed files on our servers permanently. Your privacy and data security are our top priorities.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">What file formats are supported? <i class="fas fa-chevron-down"></i></div>
+                        <div class="faq-answer">
+                            We support all major audio formats including MP3, WAV, M4A, and FLAC. For the best results, we recommend uploading high-quality WAV files, though our AI is highly effective at cleaning up compressed MP3 tracks as well.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer id="main-footer"></footer>
+
+    <script type="module">
+        import { Client } from "https://cdn.jsdelivr.net/npm/@gradio/client/dist/index.min.js";
+
+        const dropZone = document.getElementById('drop-zone');
+        const fileInput = document.getElementById('file-input');
+        const uploadContainer = document.getElementById('upload-container');
+        const processingStatus = document.getElementById('processing-status');
+        const resultsArea = document.getElementById('results-area');
+
+        // Drag & Drop Handlers
+        dropZone.onclick = () => fileInput.click();
+        dropZone.ondragover = (e) => { e.preventDefault(); dropZone.classList.add('dragover'); };
+        dropZone.ondragleave = () => dropZone.classList.remove('dragover');
+        dropZone.ondrop = (e) => {
+            e.preventDefault();
+            dropZone.classList.remove('dragover');
+            if (e.dataTransfer.files.length) handleFile(e.dataTransfer.files[0]);
+        };
+        fileInput.onchange = (e) => {
+            if (e.target.files.length) handleFile(e.target.files[0]);
+        };
+
+        async function handleFile(file) {
+            if (!file.type.startsWith('audio/')) {
+                alert('Please upload a valid audio file.');
+                return;
+            }
+
+            if (file.size > 10 * 1024 * 1024) {
+                alert('File size too large. Please upload a file under 10MB.');
+                return;
+            }
+
+            uploadContainer.style.display = 'none';
+            processingStatus.style.display = 'block';
+
+            try {
+                const client = await Client.connect("abidlabs/music-separation");
+                const result = await client.predict("/predict", { 
+                    audio: file, 
+                });
+
+                const vocalUrl = result.data[0].url;
+                const instrumentalUrl = result.data[1].url;
+
+                document.getElementById('vocal-player').src = vocalUrl;
+                document.getElementById('vocal-download').href = vocalUrl;
+                
+                document.getElementById('instrumental-player').src = instrumentalUrl;
+                document.getElementById('instrumental-download').href = instrumentalUrl;
+
+                processingStatus.style.display = 'none';
+                resultsArea.style.display = 'block';
+            } catch (error) {
+                console.error(error);
+                alert('An error occurred while processing the audio. Please try again later.');
+                location.reload();
+            }
+        }
+
+        // Simple FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.onclick = () => {
+                q.parentElement.classList.toggle('active');
+            };
+        });
+    </script>
+    <script src="../assets/js/app.js"></script>
+</body>
+</html>

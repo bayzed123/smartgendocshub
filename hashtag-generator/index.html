@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-982HBP86V8"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-982HBP86V8');
-</script>
+    
 
     <meta charset="UTF-8">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com">
+    <link rel="preconnect" href="https://fundingchoicesmessages.google.com">
+    <link rel="preload" href="../assets/css/style.css" as="style" onload="this.rel='stylesheet'">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
     <link rel="canonical" href="https://smartgentools.com/hashtag-generator/">
     <title>Hashtag Generator - Boost Social Media Reach</title>
     <meta name="description" content="Generate trending hashtags for social media posts. Increase visibility and engagement on platforms like Instagram, Twitter, and TikTok, ...">
@@ -50,7 +51,7 @@
     <meta name="twitter:title" content="Hashtag Generator - Boost Social Media Reach">
     <meta name="twitter:description" content="Generate trending hashtags for social media posts. Increase visibility and engagement on platforms like Instagram, Twitter, and TikTok, ...">
     <meta name="twitter:image" content="https://smartgentools.com/assets/og-image.png">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9789336661158068" crossorigin="anonymous"></script>
+    
     
     <script src="../assets/js/search-data.js" defer></script>
     <script src="../assets/js/related-tools.js" defer></script>
@@ -155,12 +156,12 @@
     <div class="container" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;">
         <div style="flex: 1; min-width: 280px;">
             <p style="margin: 0; font-size: 0.9rem; color: #4a5568; line-height: 1.5;">
-                We use cookies to improve your experience, analyze site traffic, and serve personalized ads. By continuing to use our site, you consent to our <a href="/privacy/" style="color: #3182ce; text-decoration: underline;">Privacy Policy</a>.
+                We use cookies to improve your experience, analyze site traffic, and serve personalized ads. By continuing to use our site, you consent to our <a href="/privacy/" style="color: #0052cc; text-decoration: underline;">Privacy Policy</a>.
             </p>
         </div>
         <div style="display: flex; align-items: center; gap: 1rem;">
-            <a href="/privacy/" style="font-size: 0.9rem; color: #718096; text-decoration: none; font-weight: 500;">Learn More</a>
-            <button id="accept-cookies" style="background: #3182ce; color: #ffffff; border: none; padding: 0.6rem 1.5rem; border-radius: 6px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: background 0.2s;">Accept</button>
+            <a href="/privacy/" style="font-size: 0.9rem; color: #0052cc; text-decoration: none; font-weight: 500;">Learn More About Our Privacy Policy</a>
+            <button id="accept-cookies" style="background: #0052cc; color: #ffffff; border: none; padding: 0.6rem 1.5rem; border-radius: 6px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: background 0.2s;">Accept</button>
         </div>
     </div>
 </div>
@@ -180,5 +181,51 @@
     })();
 </script>
 
+<script>
+    // Lazy load Google Analytics on user interaction
+    (function() {
+        let gtag_loaded = false;
+        function loadGoogleAnalytics() {
+            if (gtag_loaded) return;
+            gtag_loaded = true;
+            
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-982HBP86V8');
+            
+            const script = document.createElement('script');
+            script.async = true;
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-982HBP86V8';
+            document.head.appendChild(script);
+        }
+        
+        // Trigger on first user interaction
+        ['touchstart', 'scroll', 'mousemove', 'click'].forEach(event => {
+            document.addEventListener(event, loadGoogleAnalytics, { once: true });
+        });
+    })();
+</script>
+<script>
+    // Lazy load Google AdSense on user interaction
+    (function() {
+        let adsense_loaded = false;
+        function loadAdSense() {
+            if (adsense_loaded) return;
+            adsense_loaded = true;
+            
+            const script = document.createElement('script');
+            script.async = true;
+            script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9789336661158068';
+            script.crossOrigin = 'anonymous';
+            document.head.appendChild(script);
+        }
+        
+        // Trigger on first user interaction
+        ['touchstart', 'scroll', 'mousemove', 'click'].forEach(event => {
+            document.addEventListener(event, loadAdSense, { once: true });
+        });
+    })();
+</script>
 </body>
 </html>

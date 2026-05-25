@@ -146,7 +146,7 @@ We welcome contributions to SmartGen! If you have suggestions for new tools, imp
 3.  Commit your changes (`git commit -m 'Add some AmazingFeature'`).
 4.  Push to the branch (`git push origin feature/AmazingFeature`).
 5.  Open a Pull Request.
-
+[![Auto Changelog Status](https://github.com/bayzed123/SmartGenQR.oi/actions/workflows/auto-changelog.yml/badge.svg)](https://github.com/bayzed123/SmartGenQR.oi/actions/workflows/auto-changelog.yml)
 ## 💖 Support the Project
 
 If you find this utility platform helpful, consider supporting its development. Your appreciation keeps the project alive and free for everyone!

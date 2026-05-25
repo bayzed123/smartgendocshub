@@ -1,5 +1,10 @@
 [
   {
+    "title": "docs: add upcoming tools roadmap to README⁠",
+    "date": "2026-05-25T12:17:59Z",
+    "description": "Added a new \"Upcoming Features & Tools (Roadmap)\" section to the README.md file using GitHub task lists. This outlines planned utilities for SEO, web development, and content optimization, providing visitors with clear visibility into the project's future development pipeline.⁠"
+  },
+  {
     "title": "Update sitemap.xml",
     "date": "2026-05-25T04:36:24Z",
     "description": "Platform improvement and optimization."

@@ -13,6 +13,11 @@ on:
 
   workflow_dispatch:
 
+# Prevent multiple workflow conflicts
+concurrency:
+  group: sitemap-update
+  cancel-in-progress: false
+
 jobs:
   update-sitemap:
     runs-on: ubuntu-latest
@@ -29,7 +34,7 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Generate and Update Sitemap
+      - name: Generate Clean Sitemap
         run: |
           python << 'EOF'
           import os
@@ -43,31 +48,18 @@ jobs:
 
           ET.register_namespace('', NAMESPACE)
 
-          # Create sitemap.xml if it does not exist
-          if not os.path.exists(SITEMAP_FILE):
-              root = ET.Element(f'{{{NAMESPACE}}}urlset')
-              tree = ET.ElementTree(root)
-              tree.write(SITEMAP_FILE, encoding='utf-8', xml_declaration=True)
+          # Create URLSET root
+          urlset = ET.Element(f'{{{NAMESPACE}}}urlset')
 
-          # Parse existing sitemap
-          tree = ET.parse(SITEMAP_FILE)
-          root = tree.getroot()
+          # Store URLs uniquely
+          unique_urls = {}
 
-          # Extract existing URLs to prevent duplicates
-          existing_urls = set()
+          current_date = datetime.utcnow().strftime('%Y-%m-%d')
 
-          for url in root.findall(f'{{{NAMESPACE}}}url'):
-              loc = url.find(f'{{{NAMESPACE}}}loc')
-
-              if loc is not None and loc.text:
-                  existing_urls.add(loc.text.strip())
-
-          discovered_urls = []
-
-          # Scan repository for HTML files
+          # Scan repository
           for current_root, dirs, files in os.walk('.'):
 
-              # Ignore hidden directories such as .github, .git, etc.
+              # Ignore hidden directories
               dirs[:] = [
                   d for d in dirs
                   if not d.startswith('.')
@@ -75,11 +67,11 @@ jobs:
 
               for file in files:
 
-                  # Process only .html files
+                  # Process only HTML files
                   if not file.endswith('.html'):
                       continue
 
-                  # Explicitly ignore 404.html
+                  # Ignore 404.html
                   if file == '404.html':
                       continue
 
@@ -89,32 +81,59 @@ jobs:
                   relative_path = os.path.relpath(full_path, '.')
                   relative_path = relative_path.replace('\\', '/')
 
-                  # Map root index.html to homepage URL
+                  # -----------------------------
+                  # CLEAN URL NORMALIZATION
+                  # -----------------------------
+
+                  # Homepage
                   if relative_path == 'index.html':
-                      url = f'{BASE_URL}/'
+                      clean_url = f'{BASE_URL}/'
+                      priority = '1.0'
+                      changefreq = 'weekly'
 
+                  # Convert folder/index.html → /folder/
+                  elif relative_path.endswith('/index.html'):
+
+                      folder_path = relative_path[:-11]
+
+                      clean_url = f'{BASE_URL}/{folder_path}/'
+                      priority = '0.8'
+                      changefreq = 'weekly'
+
+                  # Normal HTML pages
                   else:
-                      url = f'{BASE_URL}/{relative_path}'
 
-                  # Skip duplicates already present in sitemap
-                  if url in existing_urls:
+                      html_path = relative_path[:-5]
+
+                      clean_url = f'{BASE_URL}/{html_path}/'
+                      priority = '0.8'
+                      changefreq = 'weekly'
+
+                  # -----------------------------
+                  # STRICT DUPLICATE PREVENTION
+                  # -----------------------------
+
+                  normalized_url = clean_url.strip().rstrip('/') + '/'
+
+                  # Skip if already exists
+                  if normalized_url in unique_urls:
                       continue
 
-                  discovered_urls.append(url)
+                  unique_urls[normalized_url] = {
+                      'loc': normalized_url,
+                      'lastmod': current_date,
+                      'changefreq': changefreq,
+                      'priority': priority
+                  }
 
-          # Exit gracefully if no new URLs are found
-          if not discovered_urls:
-              print('No new URLs found. Sitemap is already up to date.')
-              exit(0)
+          # Sort URLs alphabetically
+          sorted_urls = sorted(unique_urls.values(), key=lambda x: x['loc'])
 
-          # Current date for <lastmod>
-          current_date = datetime.utcnow().strftime('%Y-%m-%d')
-
-          # Add new URLs to sitemap
-          for url in sorted(discovered_urls):
+          # Create XML entries
+          for item in sorted_urls:
 
               url_element = ET.SubElement(
-                  root,
+                  urlset,
                   f'{{{NAMESPACE}}}url'
               )
 
@@ -122,19 +141,29 @@ jobs:
                   url_element,
                   f'{{{NAMESPACE}}}loc'
               )
-
-              loc_element.text = url
+              loc_element.text = item['loc']
 
               lastmod_element = ET.SubElement(
                   url_element,
                   f'{{{NAMESPACE}}}lastmod'
               )
+              lastmod_element.text = item['lastmod']
 
-              lastmod_element.text = current_date
+              changefreq_element = ET.SubElement(
+                  url_element,
+                  f'{{{NAMESPACE}}}changefreq'
+              )
+              changefreq_element.text = item['changefreq']
 
-          # Generate pretty XML output
+              priority_element = ET.SubElement(
+                  url_element,
+                  f'{{{NAMESPACE}}}priority'
+              )
+              priority_element.text = item['priority']
+
+          # Generate pretty XML
           raw_xml = ET.tostring(
-              root,
+              urlset,
               encoding='utf-8'
           )
 
@@ -145,17 +174,28 @@ jobs:
               encoding='utf-8'
           )
 
-          # Remove blank lines from pretty XML
+          # Remove blank lines
           pretty_xml_clean = b'\n'.join(
               line for line in pretty_xml.splitlines()
               if line.strip()
           )
 
-          # Save updated sitemap.xml
+          # Read old sitemap if exists
+          old_content = b''
+          if os.path.exists(SITEMAP_FILE):
+              with open(SITEMAP_FILE, 'rb') as old_file:
+                  old_content = old_file.read()
+
+          # Skip writing if no changes
+          if old_content == pretty_xml_clean:
+              print('Sitemap already clean and up to date.')
+              exit(0)
+
+          # Save sitemap.xml
           with open(SITEMAP_FILE, 'wb') as sitemap_file:
               sitemap_file.write(pretty_xml_clean)
 
-          print(f'Added {len(discovered_urls)} new URL(s) to sitemap.xml')
+          print(f'Sitemap generated successfully with {len(sorted_urls)} unique URLs.')
           EOF
 
       - name: Commit and Push Changes
@@ -165,8 +205,17 @@ jobs:
 
           git add sitemap.xml
 
-          # Commit only if sitemap.xml has changed
-          git diff --quiet && git diff --staged --quiet || (
-            git commit -m "chore: auto-update sitemap.xml [skip ci]" &&
-            git push
-          )
+          # Exit if no changes detected
+          if git diff --cached --quiet; then
+            echo "No sitemap changes detected."
+            exit 0
+          fi
+
+          # Commit changes
+          git commit -m "chore: auto-update sitemap.xml [skip ci]"
+
+          # Pull latest changes safely
+          git pull --rebase origin main
+
+          # Push sitemap update
+          git push origin main

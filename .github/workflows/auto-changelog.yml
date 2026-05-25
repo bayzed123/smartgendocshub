@@ -25,6 +25,7 @@ jobs:
           echo "TITLE=$(git log -1 --pretty=%s)" >> $GITHUB_OUTPUT
           echo "DATE=$(date -u +'%Y-%m-%dT%H:%M:%SZ')" >> $GITHUB_OUTPUT
           echo "DESC=$(git log -1 --pretty=%b | tr -d '\n' | sed 's/"/\\"/g')" >> $GITHUB_OUTPUT
+          echo "HASH=$(git log -1 --pretty=%h)" >> $GITHUB_OUTPUT
 
       - name: Update changelog.json
         run: |
@@ -32,12 +33,13 @@ jobs:
           # Create file if it doesn't exist
           if [ ! -f "$FILE" ]; then echo "[]" > "$FILE"; fi
           
-          # Prepare new entry
+          # Prepare new entry with commit hash included
           NEW_ENTRY=$(jq -n \
             --arg title "${{ steps.commit_info.outputs.TITLE }}" \
             --arg date "${{ steps.commit_info.outputs.DATE }}" \
             --arg desc "${{ steps.commit_info.outputs.DESC }}" \
-            '{title: $title, date: $date, description: (if $desc == "" then "Platform improvement and optimization." else $desc end)}')
+            --arg hash "${{ steps.commit_info.outputs.HASH }}" \
+            '{title: $title, date: $date, commit_hash: $hash, description: (if $desc == "" then "Platform improvement and optimization." else $desc end)}')
           
           # Append to top of array
           jq ". = [$NEW_ENTRY] + ." "$FILE" > temp.json && mv temp.json "$FILE"

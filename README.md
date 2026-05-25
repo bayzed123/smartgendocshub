@@ -1,4 +1,4 @@
-# [SmartGen: All-in-One Digital & Web Utility Platform 🚀](https://smartgentools.com)
+## [SmartGen: All-in-One Digital & Web Utility Platform 🚀](https://smartgentools.com)
 
 **🟢 Live Demo:** [smartgentools.com](https://smartgentools.com)  
 **Owner:** Sayad Md Bayezid Hosan ([www.sayadbayezid.com](https://www.sayadbayezid.com))
@@ -52,61 +52,61 @@ Explore our full suite of free web utilities:
 ### Developer & Technical
 | Icon | Tool Name | Description |
 | :--- | :--- | :--- |
-| 🖼️ | [**Base64 to Image Decoder**](https://smartgentools.com/base64-to-image/) | Decode Base64 strings back into image files. |
-| 🎨 | [**CSS Gradient Generator**](https://smartgentools.com/css-gradient-generator/) | Create beautiful CSS gradients with color pickers. |
-| 🔒 | [**MD5/SHA Hash Generator**](https://smartgentools.com/hash-generator/) | Generate MD5, SHA-1, and SHA-256 hashes. |
-| 💻 | [**Live HTML Previewer**](https://smartgentools.com/html-code-preview/) | Write HTML/CSS/JS and see live results instantly. |
-| 🌐 | [**IP Address Lookup**](https://smartgentools.com/ip-address-lookup/) | Find your public IP and network information. |
-| JSON | [**JSON Formatter & Validator**](https://smartgentools.com/json-formatter-validator/) | Format, beautify, and validate JSON code. |
-| 🏷️ | [**Meta Tag Generator**](https://smartgentools.com/meta-tag-generator/) | Boost your SEO with perfect meta tags. |
-| 📸 | [**Picture URL Generator**](https://smartgentools.com/picture-url-generator/) | Upload images and get direct live links instantly. |
-| 📱 | [**QR Code Generator**](https://smartgentools.com/qr-generator/) | Create custom QR codes for URLs, WiFi, and more. |
-| 🎲 | [**Random Choice Picker**](https://smartgentools.com/random-choice-picker/) | Make random decisions from a list of choices. |
-| 🤖 | [**Robots.txt Generator**](https://smartgentools.com/robots-txt-generator/) | Create robots.txt files for search engines. |
-| 📜 | [**Schema Generator**](https://smartgentools.com/schema-generator/) | Generate JSON-LD schema markup for SEO. |
-| 🔐 | [**URL Encoder-Decoder**](https://smartgentools.com/url-encoder-decoder/) | Encode and decode URLs securely and instantly. |
-| 🆔 | [**UUID / GUID Generator**](https://smartgentools.com/uuid-generator/) | Generate random version 4 UUIDs instantly. |
+| 🖼️ | [**1. Base64 to Image Decoder**](https://smartgentools.com/base64-to-image/) | Decode Base64 strings back into image files. |
+| 🎨 | [**2. CSS Gradient Generator**](https://smartgentools.com/css-gradient-generator/) | Create beautiful CSS gradients with color pickers. |
+| 🔒 | [**3. MD5/SHA Hash Generator**](https://smartgentools.com/hash-generator/) | Generate MD5, SHA-1, and SHA-256 hashes. |
+| 💻 | [**4. Live HTML Previewer**](https://smartgentools.com/html-code-preview/) | Write HTML/CSS/JS and see live results instantly. |
+| 🌐 | [**5. IP Address Lookup**](https://smartgentools.com/ip-address-lookup/) | Find your public IP and network information. |
+| JSON | [**6. JSON Formatter & Validator**](https://smartgentools.com/json-formatter-validator/) | Format, beautify, and validate JSON code. |
+| 🏷️ | [**7. Meta Tag Generator**](https://smartgentools.com/meta-tag-generator/) | Boost your SEO with perfect meta tags. |
+| 📸 | [**8. Picture URL Generator**](https://smartgentools.com/picture-url-generator/) | Upload images and get direct live links instantly. |
+| 📱 | [**9. QR Code Generator**](https://smartgentools.com/qr-generator/) | Create custom QR codes for URLs, WiFi, and more. |
+| 🎲 | [**10. Random Choice Picker**](https://smartgentools.com/random-choice-picker/) | Make random decisions from a list of choices. |
+| 🤖 | [**11. Robots.txt Generator**](https://smartgentools.com/robots-txt-generator/) | Create robots.txt files for search engines. |
+| 📜 | [**12. Schema Generator**](https://smartgentools.com/schema-generator/) | Generate JSON-LD schema markup for SEO. |
+| 🔐 | [**13. URL Encoder-Decoder**](https://smartgentools.com/url-encoder-decoder/) | Encode and decode URLs securely and instantly. |
+| 🆔 | [**14. UUID / GUID Generator**](https://smartgentools.com/uuid-generator/) | Generate random version 4 UUIDs instantly. |
 
 ### Marketing & Social Media
 | Icon | Tool Name | Description |
 | :--- | :--- | :--- |
-| ✍️ | [**Blog Title Generator**](https://smartgentools.com/blog-title-generator/) | Generate SEO-friendly blog titles and headlines. |
-| ⚠️ | [**Disclaimer Generator**](https://smartgentools.com/disclaimer-generator/) | Generate legal disclaimers to protect your business. |
-| 👤 | [**Facebook ID Finder**](https://smartgentools.com/facebook-id-finder/) | Extract numeric Facebook IDs from profile links. |
-| #️⃣ | [**Hashtag Generator**](https://smartgentools.com/hashtag-generator/) | Generate trending social media hashtags. |
-| 📧 | [**Mailto Generator**](https://smartgentools.com/mailto-generator/) | Generate professional email links with ease. |
-| 📜 | [**Privacy Policy Generator**](https://smartgentools.com/privacy-policy-generator/) | Generate professional privacy policies for your site. |
-| ⚖️ | [**Terms & Conditions Generator**](https://smartgentools.com/terms-conditions-generator/) | Create custom terms of service agreements instantly. |
-| 🔗 | [**UTM Link Builder**](https://smartgentools.com/utm-builder/) | Generate tracking links for your marketing campaigns. |
-| 💬 | [**WhatsApp Link**](https://smartgentools.com/whatsapp-link/) | Create direct chat links for WhatsApp. |
-| 🎬 | [**YouTube Thumbnail Downloader**](https://smartgentools.com/youtube-thumbnail-downloader/) | Download HD thumbnails from any YouTube video. |
+| ✍️ | [**15. Blog Title Generator**](https://smartgentools.com/blog-title-generator/) | Generate SEO-friendly blog titles and headlines. |
+| ⚠️ | [**16. Disclaimer Generator**](https://smartgentools.com/disclaimer-generator/) | Generate legal disclaimers to protect your business. |
+| 👤 | [**17. Facebook ID Finder**](https://smartgentools.com/facebook-id-finder/) | Extract numeric Facebook IDs from profile links. |
+| #️⃣ | [**18. Hashtag Generator**](https://smartgentools.com/hashtag-generator/) | Generate trending social media hashtags. |
+| 📧 | [**19. Mailto Generator**](https://smartgentools.com/mailto-generator/) | Generate professional email links with ease. |
+| 📜 | [**20. Privacy Policy Generator**](https://smartgentools.com/privacy-policy-generator/) | Generate professional privacy policies for your site. |
+| ⚖️ | [**21. Terms & Conditions Generator**](https://smartgentools.com/terms-conditions-generator/) | Create custom terms of service agreements instantly. |
+| 🔗 | [**22. UTM Link Builder**](https://smartgentools.com/utm-builder/) | Generate tracking links for your marketing campaigns. |
+| 💬 | [**23. WhatsApp Link**](https://smartgentools.com/whatsapp-link/) | Create direct chat links for WhatsApp. |
+| 🎬 | [**24. YouTube Thumbnail Downloader**](https://smartgentools.com/youtube-thumbnail-downloader/) | Download HD thumbnails from any YouTube video. |
 
 ### SEO & Content
 | Icon | Tool Name | Description |
 | :--- | :--- | :--- |
-| 📊 | [**Keyword Density Checker**](https://smartgentools.com/keyword-density-checker/) | Analyze keyword frequency in your content. |
-| 🖋️ | [**Lorem Ipsum Generator**](https://smartgentools.com/lorem-ipsum-generator/) | Generate placeholder text for designs. |
-| 🔍 | [**SERP Preview Tool**](https://smartgentools.com/serp-preview-tool/) | Preview how your page appears in Google search. |
-| 🔠 | [**Text Case Converter**](https://smartgentools.com/text-case-converter/) | Convert text to UPPER, lower, or Title Case. |
-| 📝 | [**Word Counter**](https://smartgentools.com/word-counter/) | Count words, characters, and reading time. |
+| 📊 | [**25. Keyword Density Checker**](https://smartgentools.com/keyword-density-checker/) | Analyze keyword frequency in your content. |
+| 🖋️ | [**26. Lorem Ipsum Generator**](https://smartgentools.com/lorem-ipsum-generator/) | Generate placeholder text for designs. |
+| 🔍 | [**27. SERP Preview Tool**](https://smartgentools.com/serp-preview-tool/) | Preview how your page appears in Google search. |
+| 🔠 | [**28. Text Case Converter**](https://smartgentools.com/text-case-converter/) | Convert text to UPPER, lower, or Title Case. |
+| 📝 | [**29. Word Counter**](https://smartgentools.com/word-counter/) | Count words, characters, and reading time. |
 
 ### Daily Utilities & Calculators
 | Icon | Tool Name | Description |
 | :--- | :--- | :--- |
-| 🎤 | [**AI Vocal Remover**](https://smartgentools.com/voice-remover/) | Isolate vocals and instrumentals from any audio file. |
-| 📅 | [**Age Calculator**](https://smartgentools.com/age-calculator/) | Calculate exact age and date differences. |
-| ⚖️ | [**BMI BMR Calculator**](https://smartgentools.com/bmi-bmr-calculator/) | Calculate Body Mass Index and metabolic rate. |
-| 💰 | [**CPM ROI Calculator**](https://smartgentools.com/cpm-roi-calculator/) | Calculate Cost Per Mille and Return on Investment. |
-| 🎨 | [**Color Palette Extractor**](https://smartgentools.com/color-palette-extractor/) | Extract dominant colors from images as HEX and RGB. |
-| 🏦 | [**EMI Calculator**](https://smartgentools.com/emi-calculator/) | Calculate monthly installments and total interest. |
-| ✨ | [**Fancy Font Generator**](https://smartgentools.com/fancy-font-generator/) | Convert text to cool Unicode styles and fonts. |
-| 📉 | [**Image Compressor**](https://smartgentools.com/image-compressor/) | Reduce image size locally without uploading. |
-| 🖼️ | [**Image to Base64 Converter**](https://smartgentools.com/image-to-base64/) | Convert images into Base64 strings for embedding. |
-| 🔒 | [**Password Generator**](https://smartgentools.com/password-generator/) | Create secure, random passwords instantly. |
-| % | [**Percentage Calculator**](https://smartgentools.com/percentage-calculator/) | Calculate percentages, discounts, and differences. |
-| ⏱️ | [**Pomodoro Timer**](https://smartgentools.com/pomodoro-timer/) | 25/5 focus timer with start, pause, and reset. |
-| 📔 | [**Secure Notepad**](https://smartgentools.com/secure-notepad/) | Auto-save notes to browser storage with privacy. |
-| 📏 | [**Unit Converter**](https://smartgentools.com/unit-converter/) | Convert length, weight, and temperature instantly. |
+| 🎤 | [**30. AI Vocal Remover**](https://smartgentools.com/voice-remover/) | Isolate vocals and instrumentals from any audio file. |
+| 📅 | [**31. Age Calculator**](https://smartgentools.com/age-calculator/) | Calculate exact age and date differences. |
+| ⚖️ | [**32. BMI BMR Calculator**](https://smartgentools.com/bmi-bmr-calculator/) | Calculate Body Mass Index and metabolic rate. |
+| 💰 | [**33. CPM ROI Calculator**](https://smartgentools.com/cpm-roi-calculator/) | Calculate Cost Per Mille and Return on Investment. |
+| 🎨 | [**34. Color Palette Extractor**](https://smartgentools.com/color-palette-extractor/) | Extract dominant colors from images as HEX and RGB. |
+| 🏦 | [**35. EMI Calculator**](https://smartgentools.com/emi-calculator/) | Calculate monthly installments and total interest. |
+| ✨ | [**36. Fancy Font Generator**](https://smartgentools.com/fancy-font-generator/) | Convert text to cool Unicode styles and fonts. |
+| 📉 | [**37. Image Compressor**](https://smartgentools.com/image-compressor/) | Reduce image size locally without uploading. |
+| 🖼️ | [**38. Image to Base64 Converter**](https://smartgentools.com/image-to-base64/) | Convert images into Base64 strings for embedding. |
+| 🔒 | [**39. Password Generator**](https://smartgentools.com/password-generator/) | Create secure, random passwords instantly. |
+| % | [**40. Percentage Calculator**](https://smartgentools.com/percentage-calculator/) | Calculate percentages, discounts, and differences. |
+| ⏱️ | [**41. Pomodoro Timer**](https://smartgentools.com/pomodoro-timer/) | 25/5 focus timer with start, pause, and reset. |
+| 📔 | [**42. Secure Notepad**](https://smartgentools.com/secure-notepad/) | Auto-save notes to browser storage with privacy. |
+| 📏 | [**43. Unit Converter**](https://smartgentools.com/unit-converter/) | Convert length, weight, and temperature instantly. |
 
 ### 📂 Platform & Legal Pages
 - [**About Us**](https://smartgentools.com/about/)

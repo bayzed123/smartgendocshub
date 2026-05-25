@@ -4,6 +4,13 @@
 **Owner:** Sayad Md Bayezid Hosan ([www.sayadbayezid.com](https://www.sayadbayezid.com))
 
 <!-- START_LINK_CHECKER -->
+
+### ⚠️ Link Status Report
+
+| Broken URL | Error Code |
+|---|---|
+| https://smartgentools.com/data/ | 404 |
+
 <!-- END_LINK_CHECKER -->
 
 ![Sayad Md Bayezid Hosan Portrait](https://commons.wikimedia.org/wiki/Special:FilePath/Sayad_Md_Bayezid_Hosan_Portrait.jpg)SmartGen is a comprehensive, client-side web utility platform designed to provide developers, marketers, and everyday users with a suite of fast, secure, and 100% free tools. From QR code generation to advanced SEO utilities and text manipulation, SmartGen aims to be your go-to resource for essential digital tasks, all accessible directly in your browser without any server-side processing.

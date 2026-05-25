@@ -12,6 +12,7 @@
 SmartGen offers a diverse range of tools, categorized for easy navigation:
 
 ### 🚀 Core Utilities
+- **AI Vocal Remover**: Isolate vocals and instrumentals from any audio file instantly.
 - **QR Code Generator**: Create custom QR codes for URLs, WiFi, text, and more.
 - **Picture URL Generator**: Upload images and get direct, shareable links instantly.
 - **UTM Campaign Builder**: Generate tracking links for marketing campaigns with ease.
@@ -92,6 +93,7 @@ Explore our full suite of free web utilities:
 ### Daily Utilities & Calculators
 | Icon | Tool Name | Description |
 | :--- | :--- | :--- |
+| 🎤 | [**AI Vocal Remover**](https://smartgentools.com/voice-remover/) | Isolate vocals and instrumentals from any audio file. |
 | 📅 | [**Age Calculator**](https://smartgentools.com/age-calculator/) | Calculate exact age and date differences. |
 | ⚖️ | [**BMI BMR Calculator**](https://smartgentools.com/bmi-bmr-calculator/) | Calculate Body Mass Index and metabolic rate. |
 | 💰 | [**CPM ROI Calculator**](https://smartgentools.com/cpm-roi-calculator/) | Calculate Cost Per Mille and Return on Investment. |
@@ -99,11 +101,22 @@ Explore our full suite of free web utilities:
 | 🏦 | [**EMI Calculator**](https://smartgentools.com/emi-calculator/) | Calculate monthly installments and total interest. |
 | ✨ | [**Fancy Font Generator**](https://smartgentools.com/fancy-font-generator/) | Convert text to cool Unicode styles and fonts. |
 | 📉 | [**Image Compressor**](https://smartgentools.com/image-compressor/) | Reduce image size locally without uploading. |
+| 🖼️ | [**Image to Base64 Converter**](https://smartgentools.com/image-to-base64/) | Convert images into Base64 strings for embedding. |
 | 🔒 | [**Password Generator**](https://smartgentools.com/password-generator/) | Create secure, random passwords instantly. |
 | % | [**Percentage Calculator**](https://smartgentools.com/percentage-calculator/) | Calculate percentages, discounts, and differences. |
 | ⏱️ | [**Pomodoro Timer**](https://smartgentools.com/pomodoro-timer/) | 25/5 focus timer with start, pause, and reset. |
 | 📔 | [**Secure Notepad**](https://smartgentools.com/secure-notepad/) | Auto-save notes to browser storage with privacy. |
 | 📏 | [**Unit Converter**](https://smartgentools.com/unit-converter/) | Convert length, weight, and temperature instantly. |
+
+### 📂 Platform & Legal Pages
+- [**About Us**](https://smartgentools.com/about/)
+- [**Updates & Changelog**](https://smartgentools.com/updates/)
+- [**Contact Support**](https://smartgentools.com/contact/)
+- [**Privacy Policy**](https://smartgentools.com/privacy/)
+- [**Terms of Service**](https://smartgentools.com/terms/)
+- [**Disclaimer**](https://smartgentools.com/disclaimer/)
+- [**Cookie Policy**](https://smartgentools.com/cookies/)
+- [**Data Request**](https://smartgentools.com/data/)
 
 ## 💻 Technologies Used
 
@@ -111,7 +124,6 @@ Explore our full suite of free web utilities:
 - **CSS3**: For modern styling, responsive design, and advanced animations (e.g., CSS Marquee).
 - **JavaScript (ES6+)**: For interactive elements, dynamic content generation, LocalStorage management, and API integrations.
 - **JSON-LD**: For structured data markup to enhance SEO.
-
 ## ⚙️ Setup and Local Development
 
 To get a copy of SmartGen up and running on your local machine for development and testing purposes, follow these simple steps:

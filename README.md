@@ -175,8 +175,26 @@ If you find this utility platform helpful, consider supporting its development. 
 This project is licensed under the MIT License with additional terms. See the [LICENSE](LICENSE) file for details.
 
 **Copyright (c) 2026 Sayad Md Bayezid Hosan**
+## 🚀 Upcoming Features & Tools (Roadmap)
 
-## 🗓️ Upcoming Updates
+We are constantly expanding the **SmartGen** ecosystem to provide more value to digital marketers, developers, and everyday users. Here is a sneak peek at what is currently in the development pipeline:
+
+### 📈 SEO & Social Media Utilities
+- [ ] **Open Graph (OG) Tag Previewer:** Live preview how your links will appear when shared on Facebook, Twitter, and LinkedIn.
+- [ ] **Social Media Bio Link Page:** Generate a simple, centralized landing page for all your social media links.
+- [ ] **UTM Campaign URL Shortener:** A lightweight link shortener integrated directly with our UTM builder.
+
+### 💻 Developer & Web Tools
+- [ ] **CSS & JavaScript Minifier:** Compress your source code to enhance website loading speeds.
+- [ ] **SVG to PNG/WEBP Converter:** Seamlessly convert vector graphics for web optimization.
+- [ ] **Live Markdown Editor:** A real-time text editor with a GitHub-flavored markdown preview.
+
+### 🤖 AI & Content Optimization
+- [ ] **AI Prompt Optimizer:** Enhance and structure simple text prompts for tools like ChatGPT and Midjourney.
+- [ ] **Readability & Grammar Analyzer:** Evaluate the clarity, tone, and grammar of your professional copy.
+
+*Got an idea for a tool? Feel free to open an issue and let us know what you'd like to see next!*
+## 🗓️ Upcoming Enhancement Updates
 
 This section outlines the next planned enhancements for the SmartGen platform:
 

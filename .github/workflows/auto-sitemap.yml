@@ -1,0 +1,172 @@
+name: Auto Sitemap Generator
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '**/*.html'
+
+  schedule:
+    # Runs every 12 hours
+    - cron: '0 */12 * * *'
+
+  workflow_dispatch:
+
+jobs:
+  update-sitemap:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Generate and Update Sitemap
+        run: |
+          python << 'EOF'
+          import os
+          from datetime import datetime
+          import xml.etree.ElementTree as ET
+          from xml.dom import minidom
+
+          BASE_URL = "https://smartgentools.com"
+          SITEMAP_FILE = "sitemap.xml"
+          NAMESPACE = "http://www.sitemaps.org/schemas/sitemap/0.9"
+
+          ET.register_namespace('', NAMESPACE)
+
+          # Create sitemap.xml if it does not exist
+          if not os.path.exists(SITEMAP_FILE):
+              root = ET.Element(f'{{{NAMESPACE}}}urlset')
+              tree = ET.ElementTree(root)
+              tree.write(SITEMAP_FILE, encoding='utf-8', xml_declaration=True)
+
+          # Parse existing sitemap
+          tree = ET.parse(SITEMAP_FILE)
+          root = tree.getroot()
+
+          # Extract existing URLs to prevent duplicates
+          existing_urls = set()
+
+          for url in root.findall(f'{{{NAMESPACE}}}url'):
+              loc = url.find(f'{{{NAMESPACE}}}loc')
+
+              if loc is not None and loc.text:
+                  existing_urls.add(loc.text.strip())
+
+          discovered_urls = []
+
+          # Scan repository for HTML files
+          for current_root, dirs, files in os.walk('.'):
+
+              # Ignore hidden directories such as .github, .git, etc.
+              dirs[:] = [
+                  d for d in dirs
+                  if not d.startswith('.')
+              ]
+
+              for file in files:
+
+                  # Process only .html files
+                  if not file.endswith('.html'):
+                      continue
+
+                  # Explicitly ignore 404.html
+                  if file == '404.html':
+                      continue
+
+                  full_path = os.path.join(current_root, file)
+
+                  # Normalize path
+                  relative_path = os.path.relpath(full_path, '.')
+                  relative_path = relative_path.replace('\\', '/')
+
+                  # Map root index.html to homepage URL
+                  if relative_path == 'index.html':
+                      url = f'{BASE_URL}/'
+
+                  else:
+                      url = f'{BASE_URL}/{relative_path}'
+
+                  # Skip duplicates already present in sitemap
+                  if url in existing_urls:
+                      continue
+
+                  discovered_urls.append(url)
+
+          # Exit gracefully if no new URLs are found
+          if not discovered_urls:
+              print('No new URLs found. Sitemap is already up to date.')
+              exit(0)
+
+          # Current date for <lastmod>
+          current_date = datetime.utcnow().strftime('%Y-%m-%d')
+
+          # Add new URLs to sitemap
+          for url in sorted(discovered_urls):
+
+              url_element = ET.SubElement(
+                  root,
+                  f'{{{NAMESPACE}}}url'
+              )
+
+              loc_element = ET.SubElement(
+                  url_element,
+                  f'{{{NAMESPACE}}}loc'
+              )
+
+              loc_element.text = url
+
+              lastmod_element = ET.SubElement(
+                  url_element,
+                  f'{{{NAMESPACE}}}lastmod'
+              )
+
+              lastmod_element.text = current_date
+
+          # Generate pretty XML output
+          raw_xml = ET.tostring(
+              root,
+              encoding='utf-8'
+          )
+
+          parsed_xml = minidom.parseString(raw_xml)
+
+          pretty_xml = parsed_xml.toprettyxml(
+              indent='  ',
+              encoding='utf-8'
+          )
+
+          # Remove blank lines from pretty XML
+          pretty_xml_clean = b'\n'.join(
+              line for line in pretty_xml.splitlines()
+              if line.strip()
+          )
+
+          # Save updated sitemap.xml
+          with open(SITEMAP_FILE, 'wb') as sitemap_file:
+              sitemap_file.write(pretty_xml_clean)
+
+          print(f'Added {len(discovered_urls)} new URL(s) to sitemap.xml')
+          EOF
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "GitHub Action Bot"
+          git config --global user.email "action@github.com"
+
+          git add sitemap.xml
+
+          # Commit only if sitemap.xml has changed
+          git diff --quiet && git diff --staged --quiet || (
+            git commit -m "chore: auto-update sitemap.xml [skip ci]" &&
+            git push
+          )

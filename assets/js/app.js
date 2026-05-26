@@ -77,6 +77,7 @@ function injectNavbar() {
                 <a href="${prefix}qr-generator/" class="nav-item" style="color: var(--text-primary); padding: 10px 15px; text-decoration: none; display: block;">• QR Generator</a>
                 <a href="${prefix}json-formatter-validator/" class="nav-item" style="color: var(--text-primary); padding: 10px 15px; text-decoration: none; display: block;">• JSON Formatter</a>
                 <a href="${prefix}uuid-generator/" class="nav-item" style="color: var(--text-primary); padding: 10px 15px; text-decoration: none; display: block;">• UUID Generator</a>
+                <a href="${prefix}text-to-changelog-json-generator/" class="nav-item" style="color: var(--text-primary); padding: 10px 15px; text-decoration: none; display: block;">• Text to Changelog JSON Generator</a>
                 <a href="${prefix}#all-tools" class="nav-item" style="color: #2563EB; padding: 10px 15px; text-decoration: none; font-weight: 600; display: block;">View All →</a>
 
                 <div class="nav-category" style="font-weight: 700; color: var(--text-secondary, #6b7280); margin-top: 15px; font-size: 0.85rem; text-transform: uppercase;">📈 SEO & Marketing</div>
@@ -174,6 +175,7 @@ function injectFooter() {
                             <li><a href="/base64-to-image/">Base64 to Image Decoder</a></li>
                             <li><a href="/css-gradient-generator/">CSS Gradient Generator</a></li>
                             <li><a href="/random-choice-picker/">Random Choice Picker</a></li>
+                            <li><a href="/text-to-changelog-json-generator/">Text to Changelog JSON Generator</a></li>
                         </ul>
                     </div>
                     <div class="footer-column">

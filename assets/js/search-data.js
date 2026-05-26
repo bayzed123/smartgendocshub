@@ -343,6 +343,15 @@ const TOOLS_INDEX = [
         icon: 'JSON'
     },
     {
+        id: 'text-to-changelog-json-generator',
+        title: 'Text to Changelog JSON Generator',
+        category: 'Developer & Technical',
+        keywords: ['json', 'changelog', 'text to json', 'generator', 'update', 'release notes', 'developer'],
+        description: 'Convert text into structured JSON for changelogs.',
+        url: './text-to-changelog-json-generator/',
+        icon: '📝'
+    },
+    {
         id: 'base64-to-image',
         title: 'Base64 to Image Decoder',
         category: 'Developer & Technical',

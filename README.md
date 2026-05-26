@@ -66,7 +66,7 @@ SmartGen offers a diverse range of tools, categorized for easy navigation:
 [![Random Choice](https://img.shields.io/badge/Random_Choice-00599C?style=for-the-badge)](https://smartgentools.com/random-choice-picker/)
 [![Robots.txt Gen](https://img.shields.io/badge/Robots.txt_Gen-00599C?style=for-the-badge)](https://smartgentools.com/robots-txt-generator/)
 [![Schema Generator](https://img.shields.io/badge/Schema_Generator-00599C?style=for-the-badge)](https://smartgentools.com/schema-generator/)
-[!https://www.geeksforgeeks.org/nlp/encoder-decoder-models/(https://img.shields.io/badge/URL_Encoder_Decoder-00599C?style=for-the-badge)](https://smartgentools.com/url-encoder-decoder/)
+[! URL Encoder/Decoder](https://www.geeksforgeeks.org/nlp/encoder-decoder-models/(https://img.shields.io/badge/URL_Encoder_Decoder-00599C?style=for-the-badge)](https://smartgentools.com/url-encoder-decoder/)(https://img.shields.io/badge/URL_Encoder_Decoder-00599C?style=for-the-badge)](https://smartgentools.com/url-encoder-decoder/)
 [![UUID Generator](https://img.shields.io/badge/UUID_Generator-00599C?style=for-the-badge)](https://smartgentools.com/uuid-generator/)
 
 ### 📈 Marketing & Social Media

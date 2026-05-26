@@ -12,11 +12,70 @@
 <!-- END_LINK_CHECKER -->
 
 ![Sayad Md Bayezid Hosan Portrait](https://commons.wikimedia.org/wiki/Special:FilePath/Sayad_Md_Bayezid_Hosan_Portrait.jpg)SmartGen is a comprehensive, client-side web utility platform designed to provide developers, marketers, and everyday users with a suite of fast, secure, and 100% free tools. From QR code generation to advanced SEO utilities and text manipulation, SmartGen aims to be your go-to resource for essential digital tasks, all accessible directly in your browser without any server-side processing.
-
 ## ✨ Features
 
 SmartGen offers a diverse range of tools, categorized for easy navigation:
+## 🛠️ SmartGen Quick Links
 
+### 💻 Developer & Technical
+[![Base64 to Image](https://img.shields.io/badge/Base64_to_Image-00599C?style=for-the-badge&logo=github&logoColor=white)](https://smartgentools.com/base64-to-image/)
+[![CSS Gradient](https://img.shields.io/badge/CSS_Gradient-00599C?style=for-the-badge&logo=github&logoColor=white)](https://smartgentools.com/css-gradient-generator/)
+[![MD5 SHA Hash](https://img.shields.io/badge/MD5_SHA_Hash-00599C?style=for-the-badge&logo=github&logoColor=white)](https://smartgentools.com/hash-generator/)
+[![Live HTML Preview](https://img.shields.io/badge/Live_HTML_Preview-00599C?style=for-the-badge&logo=github&logoColor=white)](https://smartgentools.com/html-code-preview/)
+[![IP Address Lookup](https://img.shields.io/badge/IP_Address_Lookup-00599C?style=for-the-badge&logo=github&logoColor=white)](https://smartgentools.com/ip-address-lookup/)
+[![JSON Formatter](https://img.shields.io/badge/JSON_Formatter-00599C?style=for-the-badge&logo=github&logoColor=white)](https://smartgentools.com/json-formatter-validator/)
+[![Meta Tag Gen](https://img.shields.io/badge/Meta_Tag_Gen-00599C?style=for-the-badge&logo=github&logoColor=white)](https://smartgentools.com/meta-tag-generator/)
+[![Picture URL Gen](https://img.shields.io/badge/Picture_URL_Gen-00599C?style=for-the-badge&logo=github&logoColor=white)](https://smartgentools.com/picture-url-generator/)
+[![QR Generator](https://img.shields.io/badge/QR_Generator-00599C?style=for-the-badge&logo=github&logoColor=white)](https://smartgentools.com/qr-generator/)
+[![Random Choice](https://img.shields.io/badge/Random_Choice-00599C?style=for-the-badge&logo=github&logoColor=white)](https://smartgentools.com/random-choice-picker/)
+[![Robots.txt Gen](https://img.shields.io/badge/Robots.txt_Gen-00599C?style=for-the-badge&logo=github&logoColor=white)](https://smartgentools.com/robots-txt-generator/)
+[![Schema Generator](https://img.shields.io/badge/Schema_Generator-00599C?style=for-the-badge&logo=github&logoColor=white)](https://smartgentools.com/schema-generator/)
+[!https://www.geeksforgeeks.org/nlp/encoder-decoder-models/(https://img.shields.io/badge/URL_Encoder_Decoder-00599C?style=for-the-badge&logo=github&logoColor=white)](https://smartgentools.com/url-encoder-decoder/)
+[![UUID Generator](https://img.shields.io/badge/UUID_Generator-00599C?style=for-the-badge&logo=github&logoColor=white)](https://smartgentools.com/uuid-generator/)
+
+### 📈 Marketing & Social Media
+[![Blog Title Gen](https://img.shields.io/badge/Blog_Title_Gen-FF5722?style=for-the-badge&logo=meta&logoColor=white)](https://smartgentools.com/blog-title-generator/)
+[![Disclaimer Gen](https://img.shields.io/badge/Disclaimer_Gen-FF5722?style=for-the-badge&logo=meta&logoColor=white)](https://smartgentools.com/disclaimer-generator/)
+[![Facebook ID Finder](https://img.shields.io/badge/Facebook_ID_Finder-FF5722?style=for-the-badge&logo=facebook&logoColor=white)](https://smartgentools.com/facebook-id-finder/)
+[![Hashtag Generator](https://img.shields.io/badge/Hashtag_Generator-FF5722?style=for-the-badge&logo=meta&logoColor=white)](https://smartgentools.com/hashtag-generator/)
+[![Mailto Generator](https://img.shields.io/badge/Mailto_Generator-FF5722?style=for-the-badge&logo=gmail&logoColor=white)](https://smartgentools.com/mailto-generator/)
+[![Privacy Policy](https://img.shields.io/badge/Privacy_Policy-FF5722?style=for-the-badge&logo=meta&logoColor=white)](https://smartgentools.com/privacy-policy-generator/)
+[![Terms and Conditions](https://img.shields.io/badge/Terms_and_Conditions-FF5722?style=for-the-badge&logo=meta&logoColor=white)](https://smartgentools.com/terms-conditions-generator/)
+[![UTM Builder](https://img.shields.io/badge/UTM_Builder-FF5722?style=for-the-badge&logo=meta&logoColor=white)](https://smartgentools.com/utm-builder/)
+[![WhatsApp Link](https://img.shields.io/badge/WhatsApp_Link-FF5722?style=for-the-badge&logo=whatsapp&logoColor=white)](https://smartgentools.com/whatsapp-link/)
+[![YT Thumb Downloader](https://img.shields.io/badge/YT_Thumb_Downloader-FF5722?style=for-the-badge&logo=youtube&logoColor=white)](https://smartgentools.com/youtube-thumbnail-downloader/)
+
+### 🔍 SEO & Content
+[![Keyword Density](https://img.shields.io/badge/Keyword_Density-4CAF50?style=for-the-badge&logo=google&logoColor=white)](https://smartgentools.com/keyword-density-checker/)
+[![Lorem Ipsum](https://img.shields.io/badge/Lorem_Ipsum-4CAF50?style=for-the-badge&logo=google&logoColor=white)](https://smartgentools.com/lorem-ipsum-generator/)
+[![SERP Preview](https://img.shields.io/badge/SERP_Preview-4CAF50?style=for-the-badge&logo=google&logoColor=white)](https://smartgentools.com/serp-preview-tool/)
+[![Text Case](https://img.shields.io/badge/Text_Case-4CAF50?style=for-the-badge&logo=google&logoColor=white)](https://smartgentools.com/text-case-converter/)
+[![Word Counter](https://img.shields.io/badge/Word_Counter-4CAF50?style=for-the-badge&logo=google&logoColor=white)](https://smartgentools.com/word-counter/)
+
+### 🧮 Daily Utilities & Calculators
+[![AI Vocal Remover](https://img.shields.io/badge/AI_Vocal_Remover-9C27B0?style=for-the-badge&logo=android&logoColor=white)](https://smartgentools.com/voice-remover/)
+[![Age Calculator](https://img.shields.io/badge/Age_Calculator-9C27B0?style=for-the-badge&logo=android&logoColor=white)](https://smartgentools.com/age-calculator/)
+[![BMI BMR](https://img.shields.io/badge/BMI_BMR-9C27B0?style=for-the-badge&logo=android&logoColor=white)](https://smartgentools.com/bmi-bmr-calculator/)
+[![CPM ROI](https://img.shields.io/badge/CPM_ROI-9C27B0?style=for-the-badge&logo=android&logoColor=white)](https://smartgentools.com/cpm-roi-calculator/)
+[![Color Palette](https://img.shields.io/badge/Color_Palette-9C27B0?style=for-the-badge&logo=android&logoColor=white)](https://smartgentools.com/color-palette-extractor/)
+[![EMI Calculator](https://img.shields.io/badge/EMI_Calculator-9C27B0?style=for-the-badge&logo=android&logoColor=white)](https://smartgentools.com/emi-calculator/)
+[![Fancy Font](https://img.shields.io/badge/Fancy_Font-9C27B0?style=for-the-badge&logo=android&logoColor=white)](https://smartgentools.com/fancy-font-generator/)
+[![Image Compressor](https://img.shields.io/badge/Image_Compressor-9C27B0?style=for-the-badge&logo=android&logoColor=white)](https://smartgentools.com/image-compressor/)
+[![Image to Base64](https://img.shields.io/badge/Image_to_Base64-9C27B0?style=for-the-badge&logo=android&logoColor=white)](https://smartgentools.com/image-to-base64/)
+[![Password Gen](https://img.shields.io/badge/Password_Gen-9C27B0?style=for-the-badge&logo=android&logoColor=white)](https://smartgentools.com/password-generator/)
+[![Percentage Calc](https://img.shields.io/badge/Percentage_Calc-9C27B0?style=for-the-badge&logo=android&logoColor=white)](https://smartgentools.com/percentage-calculator/)
+[![Pomodoro Timer](https://img.shields.io/badge/Pomodoro_Timer-9C27B0?style=for-the-badge&logo=android&logoColor=white)](https://smartgentools.com/pomodoro-timer/)
+[![Secure Notepad](https://img.shields.io/badge/Secure_Notepad-9C27B0?style=for-the-badge&logo=android&logoColor=white)](https://smartgentools.com/secure-notepad/)
+[![Unit Converter](https://img.shields.io/badge/Unit_Converter-9C27B0?style=for-the-badge&logo=android&logoColor=white)](https://smartgentools.com/unit-converter/)
+
+### 📂 Platform & Legal Pages
+[![About Us](https://img.shields.io/badge/About_Us-424242?style=for-the-badge&logo=readthedocs&logoColor=white)](https://smartgentools.com/about/)
+[![Updates](https://img.shields.io/badge/Updates-424242?style=for-the-badge&logo=readthedocs&logoColor=white)](https://smartgentools.com/updates/)
+[![Contact](https://img.shields.io/badge/Contact-424242?style=for-the-badge&logo=readthedocs&logoColor=white)](https://smartgentools.com/contact/)
+[![Privacy](https://img.shields.io/badge/Privacy-424242?style=for-the-badge&logo=readthedocs&logoColor=white)](https://smartgentools.com/privacy/)
+[![Terms](https://img.shields.io/badge/Terms-424242?style=for-the-badge&logo=readthedocs&logoColor=white)](https://smartgentools.com/terms/)
+[![Disclaimer](https://img.shields.io/badge/Disclaimer-424242?style=for-the-badge&logo=readthedocs&logoColor=white)](https://smartgentools.com/disclaimer/)
+[![Cookies](https://img.shields.io/badge/Cookies-424242?style=for-the-badge&logo=readthedocs&logoColor=white)](https://smartgentools.com/cookies/)
 ### 🚀 Core Utilities
 - **AI Vocal Remover**: Isolate vocals and instrumentals from any audio file instantly.
 - **QR Code Generator**: Create custom QR codes for URLs, WiFi, text, and more.
@@ -51,67 +110,7 @@ SmartGen offers a diverse range of tools, categorized for easy navigation:
 - **Dark/Light Mode Toggle**: Seamless switching between dark and light themes for enhanced user comfort.
 - **Interactive FAQ Accordions**: Engaging and SEO-optimized FAQ sections on relevant pages.
 
-## 🛠️ SmartGen Quick Links
 
-### 💻 Developer & Technical
-[![Base64 to Image](https://img.shields.io/badge/Base64_to_Image-00599C?style=for-the-badge)](https://smartgentools.com/base64-to-image/)
-[![CSS Gradient](https://img.shields.io/badge/CSS_Gradient-00599C?style=for-the-badge)](https://smartgentools.com/css-gradient-generator/)
-[![MD5 SHA Hash](https://img.shields.io/badge/MD5_SHA_Hash-00599C?style=for-the-badge)](https://smartgentools.com/hash-generator/)
-[![Live HTML Preview](https://img.shields.io/badge/Live_HTML_Preview-00599C?style=for-the-badge)](https://smartgentools.com/html-code-preview/)
-[![IP Address Lookup](https://img.shields.io/badge/IP_Address_Lookup-00599C?style=for-the-badge)](https://smartgentools.com/ip-address-lookup/)
-[![JSON Formatter](https://img.shields.io/badge/JSON_Formatter-00599C?style=for-the-badge)](https://smartgentools.com/json-formatter-validator/)
-[![Meta Tag Gen](https://img.shields.io/badge/Meta_Tag_Gen-00599C?style=for-the-badge)](https://smartgentools.com/meta-tag-generator/)
-[![Picture URL Gen](https://img.shields.io/badge/Picture_URL_Gen-00599C?style=for-the-badge)](https://smartgentools.com/picture-url-generator/)
-[![QR Generator](https://img.shields.io/badge/QR_Generator-00599C?style=for-the-badge)](https://smartgentools.com/qr-generator/)
-[![Random Choice](https://img.shields.io/badge/Random_Choice-00599C?style=for-the-badge)](https://smartgentools.com/random-choice-picker/)
-[![Robots.txt Gen](https://img.shields.io/badge/Robots.txt_Gen-00599C?style=for-the-badge)](https://smartgentools.com/robots-txt-generator/)
-[![Schema Generator](https://img.shields.io/badge/Schema_Generator-00599C?style=for-the-badge)](https://smartgentools.com/schema-generator/)
-[! URL Encoder/Decoder](https://www.geeksforgeeks.org/nlp/encoder-decoder-models/(https://img.shields.io/badge/URL_Encoder_Decoder-00599C?style=for-the-badge)](https://smartgentools.com/url-encoder-decoder/)(https://img.shields.io/badge/URL_Encoder_Decoder-00599C?style=for-the-badge)](https://smartgentools.com/url-encoder-decoder/)
-[![UUID Generator](https://img.shields.io/badge/UUID_Generator-00599C?style=for-the-badge)](https://smartgentools.com/uuid-generator/)
-
-### 📈 Marketing & Social Media
-[![Blog Title Gen](https://img.shields.io/badge/Blog_Title_Gen-FF5722?style=for-the-badge)](https://smartgentools.com/blog-title-generator/)
-[![Disclaimer Gen](https://img.shields.io/badge/Disclaimer_Gen-FF5722?style=for-the-badge)](https://smartgentools.com/disclaimer-generator/)
-[![Facebook ID Finder](https://img.shields.io/badge/Facebook_ID_Finder-FF5722?style=for-the-badge)](https://smartgentools.com/facebook-id-finder/)
-[![Hashtag Generator](https://img.shields.io/badge/Hashtag_Generator-FF5722?style=for-the-badge)](https://smartgentools.com/hashtag-generator/)
-[![Mailto Generator](https://img.shields.io/badge/Mailto_Generator-FF5722?style=for-the-badge)](https://smartgentools.com/mailto-generator/)
-[![Privacy Policy](https://img.shields.io/badge/Privacy_Policy-FF5722?style=for-the-badge)](https://smartgentools.com/privacy-policy-generator/)
-[![Terms and Conditions](https://img.shields.io/badge/Terms_and_Conditions-FF5722?style=for-the-badge)](https://smartgentools.com/terms-conditions-generator/)
-[![UTM Builder](https://img.shields.io/badge/UTM_Builder-FF5722?style=for-the-badge)](https://smartgentools.com/utm-builder/)
-[![WhatsApp Link](https://img.shields.io/badge/WhatsApp_Link-FF5722?style=for-the-badge)](https://smartgentools.com/whatsapp-link/)
-[![YT Thumb Downloader](https://img.shields.io/badge/YT_Thumb_Downloader-FF5722?style=for-the-badge)](https://smartgentools.com/youtube-thumbnail-downloader/)
-
-### 🔍 SEO & Content
-[![Keyword Density](https://img.shields.io/badge/Keyword_Density-4CAF50?style=for-the-badge)](https://smartgentools.com/keyword-density-checker/)
-[![Lorem Ipsum](https://img.shields.io/badge/Lorem_Ipsum-4CAF50?style=for-the-badge)](https://smartgentools.com/lorem-ipsum-generator/)
-[![SERP Preview](https://img.shields.io/badge/SERP_Preview-4CAF50?style=for-the-badge)](https://smartgentools.com/serp-preview-tool/)
-[![Text Case](https://img.shields.io/badge/Text_Case-4CAF50?style=for-the-badge)](https://smartgentools.com/text-case-converter/)
-[![Word Counter](https://img.shields.io/badge/Word_Counter-4CAF50?style=for-the-badge)](https://smartgentools.com/word-counter/)
-
-### 🧮 Daily Utilities & Calculators
-[![AI Vocal Remover](https://img.shields.io/badge/AI_Vocal_Remover-9C27B0?style=for-the-badge)](https://smartgentools.com/voice-remover/)
-[![Age Calculator](https://img.shields.io/badge/Age_Calculator-9C27B0?style=for-the-badge)](https://smartgentools.com/age-calculator/)
-[![BMI BMR](https://img.shields.io/badge/BMI_BMR-9C27B0?style=for-the-badge)](https://smartgentools.com/bmi-bmr-calculator/)
-[![CPM ROI](https://img.shields.io/badge/CPM_ROI-9C27B0?style=for-the-badge)](https://smartgentools.com/cpm-roi-calculator/)
-[![Color Palette](https://img.shields.io/badge/Color_Palette-9C27B0?style=for-the-badge)](https://smartgentools.com/color-palette-extractor/)
-[![EMI Calculator](https://img.shields.io/badge/EMI_Calculator-9C27B0?style=for-the-badge)](https://smartgentools.com/emi-calculator/)
-[![Fancy Font](https://img.shields.io/badge/Fancy_Font-9C27B0?style=for-the-badge)](https://smartgentools.com/fancy-font-generator/)
-[![Image Compressor](https://img.shields.io/badge/Image_Compressor-9C27B0?style=for-the-badge)](https://smartgentools.com/image-compressor/)
-[![Image to Base64](https://img.shields.io/badge/Image_to_Base64-9C27B0?style=for-the-badge)](https://smartgentools.com/image-to-base64/)
-[![Password Gen](https://img.shields.io/badge/Password_Gen-9C27B0?style=for-the-badge)](https://smartgentools.com/password-generator/)
-[![Percentage Calc](https://img.shields.io/badge/Percentage_Calc-9C27B0?style=for-the-badge)](https://smartgentools.com/percentage-calculator/)
-[![Pomodoro Timer](https://img.shields.io/badge/Pomodoro_Timer-9C27B0?style=for-the-badge)](https://smartgentools.com/pomodoro-timer/)
-[![Secure Notepad](https://img.shields.io/badge/Secure_Notepad-9C27B0?style=for-the-badge)](https://smartgentools.com/secure-notepad/)
-[![Unit Converter](https://img.shields.io/badge/Unit_Converter-9C27B0?style=for-the-badge)](https://smartgentools.com/unit-converter/)
-
-### 📂 Platform & Legal Pages
-[![About Us](https://img.shields.io/badge/About_Us-424242?style=for-the-badge)](https://smartgentools.com/about/)
-[![Updates](https://img.shields.io/badge/Updates-424242?style=for-the-badge)](https://smartgentools.com/updates/)
-[![Contact](https://img.shields.io/badge/Contact-424242?style=for-the-badge)](https://smartgentools.com/contact/)
-[![Privacy](https://img.shields.io/badge/Privacy-424242?style=for-the-badge)](https://smartgentools.com/privacy/)
-[![Terms](https://img.shields.io/badge/Terms-424242?style=for-the-badge)](https://smartgentools.com/terms/)
-[![Disclaimer](https://img.shields.io/badge/Disclaimer-424242?style=for-the-badge)](https://smartgentools.com/disclaimer/)
-[![Cookies](https://img.shields.io/badge/Cookies-424242?style=for-the-badge)](https://smartgentools.com/cookies/)
 
 ## 💻 Technologies Used
 

@@ -51,78 +51,67 @@ SmartGen offers a diverse range of tools, categorized for easy navigation:
 - **Dark/Light Mode Toggle**: Seamless switching between dark and light themes for enhanced user comfort.
 - **Interactive FAQ Accordions**: Engaging and SEO-optimized FAQ sections on relevant pages.
 
-## 🛠️ All Available Tools
+## 🛠️ SmartGen Quick Links
 
-Explore our full suite of free web utilities:
+### 💻 Developer & Technical
+[![Base64 to Image](https://img.shields.io/badge/Base64_to_Image-00599C?style=for-the-badge)](https://smartgentools.com/base64-to-image/)
+[![CSS Gradient](https://img.shields.io/badge/CSS_Gradient-00599C?style=for-the-badge)](https://smartgentools.com/css-gradient-generator/)
+[![MD5 SHA Hash](https://img.shields.io/badge/MD5_SHA_Hash-00599C?style=for-the-badge)](https://smartgentools.com/hash-generator/)
+[![Live HTML Preview](https://img.shields.io/badge/Live_HTML_Preview-00599C?style=for-the-badge)](https://smartgentools.com/html-code-preview/)
+[![IP Address Lookup](https://img.shields.io/badge/IP_Address_Lookup-00599C?style=for-the-badge)](https://smartgentools.com/ip-address-lookup/)
+[![JSON Formatter](https://img.shields.io/badge/JSON_Formatter-00599C?style=for-the-badge)](https://smartgentools.com/json-formatter-validator/)
+[![Meta Tag Gen](https://img.shields.io/badge/Meta_Tag_Gen-00599C?style=for-the-badge)](https://smartgentools.com/meta-tag-generator/)
+[![Picture URL Gen](https://img.shields.io/badge/Picture_URL_Gen-00599C?style=for-the-badge)](https://smartgentools.com/picture-url-generator/)
+[![QR Generator](https://img.shields.io/badge/QR_Generator-00599C?style=for-the-badge)](https://smartgentools.com/qr-generator/)
+[![Random Choice](https://img.shields.io/badge/Random_Choice-00599C?style=for-the-badge)](https://smartgentools.com/random-choice-picker/)
+[![Robots.txt Gen](https://img.shields.io/badge/Robots.txt_Gen-00599C?style=for-the-badge)](https://smartgentools.com/robots-txt-generator/)
+[![Schema Generator](https://img.shields.io/badge/Schema_Generator-00599C?style=for-the-badge)](https://smartgentools.com/schema-generator/)
+[!https://www.geeksforgeeks.org/nlp/encoder-decoder-models/(https://img.shields.io/badge/URL_Encoder_Decoder-00599C?style=for-the-badge)](https://smartgentools.com/url-encoder-decoder/)
+[![UUID Generator](https://img.shields.io/badge/UUID_Generator-00599C?style=for-the-badge)](https://smartgentools.com/uuid-generator/)
 
-### Developer & Technical
-| Icon | Tool Name | Description |
-| :--- | :--- | :--- |
-| 🖼️ | [**1. Base64 to Image Decoder**](https://smartgentools.com/base64-to-image/) | Decode Base64 strings back into image files. |
-| 🎨 | [**2. CSS Gradient Generator**](https://smartgentools.com/css-gradient-generator/) | Create beautiful CSS gradients with color pickers. |
-| 🔒 | [**3. MD5/SHA Hash Generator**](https://smartgentools.com/hash-generator/) | Generate MD5, SHA-1, and SHA-256 hashes. |
-| 💻 | [**4. Live HTML Previewer**](https://smartgentools.com/html-code-preview/) | Write HTML/CSS/JS and see live results instantly. |
-| 🌐 | [**5. IP Address Lookup**](https://smartgentools.com/ip-address-lookup/) | Find your public IP and network information. |
-| JSON | [**6. JSON Formatter & Validator**](https://smartgentools.com/json-formatter-validator/) | Format, beautify, and validate JSON code. |
-| 🏷️ | [**7. Meta Tag Generator**](https://smartgentools.com/meta-tag-generator/) | Boost your SEO with perfect meta tags. |
-| 📸 | [**8. Picture URL Generator**](https://smartgentools.com/picture-url-generator/) | Upload images and get direct live links instantly. |
-| 📱 | [**9. QR Code Generator**](https://smartgentools.com/qr-generator/) | Create custom QR codes for URLs, WiFi, and more. |
-| 🎲 | [**10. Random Choice Picker**](https://smartgentools.com/random-choice-picker/) | Make random decisions from a list of choices. |
-| 🤖 | [**11. Robots.txt Generator**](https://smartgentools.com/robots-txt-generator/) | Create robots.txt files for search engines. |
-| 📜 | [**12. Schema Generator**](https://smartgentools.com/schema-generator/) | Generate JSON-LD schema markup for SEO. |
-| 🔐 | [**13. URL Encoder-Decoder**](https://smartgentools.com/url-encoder-decoder/) | Encode and decode URLs securely and instantly. |
-| 🆔 | [**14. UUID / GUID Generator**](https://smartgentools.com/uuid-generator/) | Generate random version 4 UUIDs instantly. |
+### 📈 Marketing & Social Media
+[![Blog Title Gen](https://img.shields.io/badge/Blog_Title_Gen-FF5722?style=for-the-badge)](https://smartgentools.com/blog-title-generator/)
+[![Disclaimer Gen](https://img.shields.io/badge/Disclaimer_Gen-FF5722?style=for-the-badge)](https://smartgentools.com/disclaimer-generator/)
+[![Facebook ID Finder](https://img.shields.io/badge/Facebook_ID_Finder-FF5722?style=for-the-badge)](https://smartgentools.com/facebook-id-finder/)
+[![Hashtag Generator](https://img.shields.io/badge/Hashtag_Generator-FF5722?style=for-the-badge)](https://smartgentools.com/hashtag-generator/)
+[![Mailto Generator](https://img.shields.io/badge/Mailto_Generator-FF5722?style=for-the-badge)](https://smartgentools.com/mailto-generator/)
+[![Privacy Policy](https://img.shields.io/badge/Privacy_Policy-FF5722?style=for-the-badge)](https://smartgentools.com/privacy-policy-generator/)
+[![Terms and Conditions](https://img.shields.io/badge/Terms_and_Conditions-FF5722?style=for-the-badge)](https://smartgentools.com/terms-conditions-generator/)
+[![UTM Builder](https://img.shields.io/badge/UTM_Builder-FF5722?style=for-the-badge)](https://smartgentools.com/utm-builder/)
+[![WhatsApp Link](https://img.shields.io/badge/WhatsApp_Link-FF5722?style=for-the-badge)](https://smartgentools.com/whatsapp-link/)
+[![YT Thumb Downloader](https://img.shields.io/badge/YT_Thumb_Downloader-FF5722?style=for-the-badge)](https://smartgentools.com/youtube-thumbnail-downloader/)
 
-### Marketing & Social Media
-| Icon | Tool Name | Description |
-| :--- | :--- | :--- |
-| ✍️ | [**15. Blog Title Generator**](https://smartgentools.com/blog-title-generator/) | Generate SEO-friendly blog titles and headlines. |
-| ⚠️ | [**16. Disclaimer Generator**](https://smartgentools.com/disclaimer-generator/) | Generate legal disclaimers to protect your business. |
-| 👤 | [**17. Facebook ID Finder**](https://smartgentools.com/facebook-id-finder/) | Extract numeric Facebook IDs from profile links. |
-| #️⃣ | [**18. Hashtag Generator**](https://smartgentools.com/hashtag-generator/) | Generate trending social media hashtags. |
-| 📧 | [**19. Mailto Generator**](https://smartgentools.com/mailto-generator/) | Generate professional email links with ease. |
-| 📜 | [**20. Privacy Policy Generator**](https://smartgentools.com/privacy-policy-generator/) | Generate professional privacy policies for your site. |
-| ⚖️ | [**21. Terms & Conditions Generator**](https://smartgentools.com/terms-conditions-generator/) | Create custom terms of service agreements instantly. |
-| 🔗 | [**22. UTM Link Builder**](https://smartgentools.com/utm-builder/) | Generate tracking links for your marketing campaigns. |
-| 💬 | [**23. WhatsApp Link**](https://smartgentools.com/whatsapp-link/) | Create direct chat links for WhatsApp. |
-| 🎬 | [**24. YouTube Thumbnail Downloader**](https://smartgentools.com/youtube-thumbnail-downloader/) | Download HD thumbnails from any YouTube video. |
+### 🔍 SEO & Content
+[![Keyword Density](https://img.shields.io/badge/Keyword_Density-4CAF50?style=for-the-badge)](https://smartgentools.com/keyword-density-checker/)
+[![Lorem Ipsum](https://img.shields.io/badge/Lorem_Ipsum-4CAF50?style=for-the-badge)](https://smartgentools.com/lorem-ipsum-generator/)
+[![SERP Preview](https://img.shields.io/badge/SERP_Preview-4CAF50?style=for-the-badge)](https://smartgentools.com/serp-preview-tool/)
+[![Text Case](https://img.shields.io/badge/Text_Case-4CAF50?style=for-the-badge)](https://smartgentools.com/text-case-converter/)
+[![Word Counter](https://img.shields.io/badge/Word_Counter-4CAF50?style=for-the-badge)](https://smartgentools.com/word-counter/)
 
-### SEO & Content
-| Icon | Tool Name | Description |
-| :--- | :--- | :--- |
-| 📊 | [**25. Keyword Density Checker**](https://smartgentools.com/keyword-density-checker/) | Analyze keyword frequency in your content. |
-| 🖋️ | [**26. Lorem Ipsum Generator**](https://smartgentools.com/lorem-ipsum-generator/) | Generate placeholder text for designs. |
-| 🔍 | [**27. SERP Preview Tool**](https://smartgentools.com/serp-preview-tool/) | Preview how your page appears in Google search. |
-| 🔠 | [**28. Text Case Converter**](https://smartgentools.com/text-case-converter/) | Convert text to UPPER, lower, or Title Case. |
-| 📝 | [**29. Word Counter**](https://smartgentools.com/word-counter/) | Count words, characters, and reading time. |
-
-### Daily Utilities & Calculators
-| Icon | Tool Name | Description |
-| :--- | :--- | :--- |
-| 🎤 | [**30. AI Vocal Remover**](https://smartgentools.com/voice-remover/) | Isolate vocals and instrumentals from any audio file. |
-| 📅 | [**31. Age Calculator**](https://smartgentools.com/age-calculator/) | Calculate exact age and date differences. |
-| ⚖️ | [**32. BMI BMR Calculator**](https://smartgentools.com/bmi-bmr-calculator/) | Calculate Body Mass Index and metabolic rate. |
-| 💰 | [**33. CPM ROI Calculator**](https://smartgentools.com/cpm-roi-calculator/) | Calculate Cost Per Mille and Return on Investment. |
-| 🎨 | [**34. Color Palette Extractor**](https://smartgentools.com/color-palette-extractor/) | Extract dominant colors from images as HEX and RGB. |
-| 🏦 | [**35. EMI Calculator**](https://smartgentools.com/emi-calculator/) | Calculate monthly installments and total interest. |
-| ✨ | [**36. Fancy Font Generator**](https://smartgentools.com/fancy-font-generator/) | Convert text to cool Unicode styles and fonts. |
-| 📉 | [**37. Image Compressor**](https://smartgentools.com/image-compressor/) | Reduce image size locally without uploading. |
-| 🖼️ | [**38. Image to Base64 Converter**](https://smartgentools.com/image-to-base64/) | Convert images into Base64 strings for embedding. |
-| 🔒 | [**39. Password Generator**](https://smartgentools.com/password-generator/) | Create secure, random passwords instantly. |
-| % | [**40. Percentage Calculator**](https://smartgentools.com/percentage-calculator/) | Calculate percentages, discounts, and differences. |
-| ⏱️ | [**41. Pomodoro Timer**](https://smartgentools.com/pomodoro-timer/) | 25/5 focus timer with start, pause, and reset. |
-| 📔 | [**42. Secure Notepad**](https://smartgentools.com/secure-notepad/) | Auto-save notes to browser storage with privacy. |
-| 📏 | [**43. Unit Converter**](https://smartgentools.com/unit-converter/) | Convert length, weight, and temperature instantly. |
+### 🧮 Daily Utilities & Calculators
+[![AI Vocal Remover](https://img.shields.io/badge/AI_Vocal_Remover-9C27B0?style=for-the-badge)](https://smartgentools.com/voice-remover/)
+[![Age Calculator](https://img.shields.io/badge/Age_Calculator-9C27B0?style=for-the-badge)](https://smartgentools.com/age-calculator/)
+[![BMI BMR](https://img.shields.io/badge/BMI_BMR-9C27B0?style=for-the-badge)](https://smartgentools.com/bmi-bmr-calculator/)
+[![CPM ROI](https://img.shields.io/badge/CPM_ROI-9C27B0?style=for-the-badge)](https://smartgentools.com/cpm-roi-calculator/)
+[![Color Palette](https://img.shields.io/badge/Color_Palette-9C27B0?style=for-the-badge)](https://smartgentools.com/color-palette-extractor/)
+[![EMI Calculator](https://img.shields.io/badge/EMI_Calculator-9C27B0?style=for-the-badge)](https://smartgentools.com/emi-calculator/)
+[![Fancy Font](https://img.shields.io/badge/Fancy_Font-9C27B0?style=for-the-badge)](https://smartgentools.com/fancy-font-generator/)
+[![Image Compressor](https://img.shields.io/badge/Image_Compressor-9C27B0?style=for-the-badge)](https://smartgentools.com/image-compressor/)
+[![Image to Base64](https://img.shields.io/badge/Image_to_Base64-9C27B0?style=for-the-badge)](https://smartgentools.com/image-to-base64/)
+[![Password Gen](https://img.shields.io/badge/Password_Gen-9C27B0?style=for-the-badge)](https://smartgentools.com/password-generator/)
+[![Percentage Calc](https://img.shields.io/badge/Percentage_Calc-9C27B0?style=for-the-badge)](https://smartgentools.com/percentage-calculator/)
+[![Pomodoro Timer](https://img.shields.io/badge/Pomodoro_Timer-9C27B0?style=for-the-badge)](https://smartgentools.com/pomodoro-timer/)
+[![Secure Notepad](https://img.shields.io/badge/Secure_Notepad-9C27B0?style=for-the-badge)](https://smartgentools.com/secure-notepad/)
+[![Unit Converter](https://img.shields.io/badge/Unit_Converter-9C27B0?style=for-the-badge)](https://smartgentools.com/unit-converter/)
 
 ### 📂 Platform & Legal Pages
-- [**About Us**](https://smartgentools.com/about/)
-- [**Updates & Changelog**](https://smartgentools.com/updates/)
-- [**Contact Support**](https://smartgentools.com/contact/)
-- [**Privacy Policy**](https://smartgentools.com/privacy/)
-- [**Terms of Service**](https://smartgentools.com/terms/)
-- [**Disclaimer**](https://smartgentools.com/disclaimer/)
-- [**Cookie Policy**](https://smartgentools.com/cookies/)
-- [**Data Request**](https://smartgentools.com/data/)
+[![About Us](https://img.shields.io/badge/About_Us-424242?style=for-the-badge)](https://smartgentools.com/about/)
+[![Updates](https://img.shields.io/badge/Updates-424242?style=for-the-badge)](https://smartgentools.com/updates/)
+[![Contact](https://img.shields.io/badge/Contact-424242?style=for-the-badge)](https://smartgentools.com/contact/)
+[![Privacy](https://img.shields.io/badge/Privacy-424242?style=for-the-badge)](https://smartgentools.com/privacy/)
+[![Terms](https://img.shields.io/badge/Terms-424242?style=for-the-badge)](https://smartgentools.com/terms/)
+[![Disclaimer](https://img.shields.io/badge/Disclaimer-424242?style=for-the-badge)](https://smartgentools.com/disclaimer/)
+[![Cookies](https://img.shields.io/badge/Cookies-424242?style=for-the-badge)](https://smartgentools.com/cookies/)
 
 ## 💻 Technologies Used
 

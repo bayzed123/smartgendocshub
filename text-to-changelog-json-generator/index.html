@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text to Changelog JSON Generator - SmartGen</title>
+    <meta name="description" content="Easily convert your update notes into a structured JSON format for changelogs. Free, fast, and secure client-side tool for developers.">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        :root {
+            --primary-blue: #0052cc;
+            --light-gray: #f4f5f7;
+            --border-color: #dfe1e6;
+            --text-main: #172b4d;
+            --success-green: #36b37e;
+        }
+
+        .tool-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        .tool-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .tool-header h1 {
+            color: var(--primary-blue);
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tool-header p {
+            color: #6b778c;
+            font-size: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.2s;
+            box-sizing: border-box;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+        }
+
+        textarea.form-input {
+            min-height: 200px;
+            resize: vertical;
+            font-family: inherit;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .btn {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: opacity 0.2s, transform 0.1s;
+            font-size: 1rem;
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-blue);
+            color: white;
+            flex: 1;
+        }
+
+        .btn-success {
+            background-color: var(--success-green);
+            color: white;
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        .output-container {
+            margin-top: 2rem;
+            display: none;
+        }
+
+        .output-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        pre {
+            background: var(--light-gray);
+            padding: 1.5rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            border: 1px solid var(--border-color);
+            margin: 0;
+        }
+
+        code {
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            font-size: 0.9rem;
+            color: #24292e;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+
+        .copy-toast {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--text-main);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            display: none;
+            animation: fadeInOut 2s ease-in-out;
+            z-index: 1000;
+        }
+
+        @keyframes fadeInOut {
+            0% { opacity: 0; transform: translateY(10px); }
+            15% { opacity: 1; transform: translateY(0); }
+            85% { opacity: 1; transform: translateY(0); }
+            100% { opacity: 0; transform: translateY(-10px); }
+        }
+
+        @media (max-width: 600px) {
+            .tool-container {
+                margin: 1rem;
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="main-header"></header>
+    
+    <main class="container">
+        <div class="tool-container">
+            <div class="tool-header">
+                <h1>Text to Changelog JSON Generator</h1>
+                <p>Convert your release notes into structured JSON instantly.</p>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="update-title">Update Title</label>
+                <input type="text" id="update-title" class="form-input" placeholder="e.g. Version 2.1.0 - Performance Boost">
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="update-content">Description Content</label>
+                <textarea id="update-content" class="form-input" placeholder="Enter your changelog details here...
+- Fixed login bug
+- Improved dashboard speed
+- Added dark mode support"></textarea>
+            </div>
+
+            <div class="btn-group">
+                <button class="btn btn-primary" onclick="generateJSON()">Generate JSON</button>
+            </div>
+
+            <div id="output-area" class="output-container">
+                <div class="output-header">
+                    <label class="form-label">Generated JSON</label>
+                </div>
+                <pre><code id="json-output"></code></pre>
+                <button class="btn btn-success" onclick="copyToClipboard()">Copy to Clipboard</button>
+            </div>
+        </div>
+
+        <div id="copy-toast" class="copy-toast">Copied to clipboard!</div>
+    </main>
+
+    <footer id="main-footer"></footer>
+
+    <script src="../assets/js/app.js" defer></script>
+    <script>
+        function generateJSON() {
+            const title = document.getElementById('update-title').value.trim();
+            const content = document.getElementById('update-content').value;
+            const outputArea = document.getElementById('output-area');
+            const jsonOutput = document.getElementById('json-output');
+
+            if (!title || !content.trim()) {
+                alert('Please fill in both the title and the content.');
+                return;
+            }
+
+            const changelogObj = {
+                title: title,
+                date: new Date().toISOString(),
+                description: content.replace(/\r\n/g, '\n')
+            };
+
+            jsonOutput.textContent = JSON.stringify(changelogObj, null, 2);
+            outputArea.style.display = 'block';
+            outputArea.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function copyToClipboard() {
+            const jsonCode = document.getElementById('json-output').textContent;
+            const toast = document.getElementById('copy-toast');
+
+            navigator.clipboard.writeText(jsonCode).then(() => {
+                toast.style.display = 'block';
+                setTimeout(() => {
+                    toast.style.display = 'none';
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+                // Fallback for older browsers
+                const textArea = document.createElement("textarea");
+                textArea.value = jsonCode;
+                document.body.appendChild(textArea);
+                textArea.select();
+                try {
+                    document.execCommand('copy');
+                    toast.style.display = 'block';
+                    setTimeout(() => {
+                        toast.style.display = 'none';
+                    }, 2000);
+                } catch (err) {
+                    alert('Unable to copy to clipboard');
+                }
+                document.body.removeChild(textArea);
+            });
+        }
+    </script>
+</body>
+</html>

@@ -19,26 +19,68 @@
     <script src="../assets/js/app.js" defer></script>
 
     <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Text to Changelog JSON Generator",
-  "description": "Discover SmartGen's free changelog JSON generator. Easily convert text to JSON for developers, automate dynamic changelog formatting, and ensure consistent release notes with auto ISO date generation.",
-  "url": "https://smartgentools.com/text-to-changelog-json-generator/",
-  "applicationCategory": "DeveloperApplication",
-  "operatingSystem": "All",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "creator": {
-    "@type": "Organization",
-    "name": "SmartGen",
-    "url": "https://smartgentools.com/"
-  }
-}
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Text to Changelog JSON Generator",
+      "description": "Discover SmartGen's free changelog JSON generator. Easily convert text to JSON for developers, automate dynamic changelog formatting, and ensure consistent release notes with auto ISO date generation.",
+      "url": "https://smartgentools.com/text-to-changelog-json-generator/",
+      "applicationCategory": "DeveloperApplication",
+      "operatingSystem": "All",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "creator": {
+        "@type": "Organization",
+        "name": "SmartGen",
+        "url": "https://smartgentools.com/"
+      }
+    }
     </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is a Changelog JSON Generator and why is it important?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A Changelog JSON Generator is a tool that automatically converts plain text release notes into a structured JSON format. It is important because JSON allows for programmatic access, making it easy to display updates dynamically on websites and apps while ensuring a consistent format."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does this tool handle line breaks in my release notes?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our generator intelligently maps all physical line breaks in your text and automatically escapes them into valid \\n characters within the JSON structure. This ensures your formatting remains perfectly intact when parsed by your application."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my sensitive release data safe when using this tool?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, absolutely. The SmartGen Changelog JSON Generator operates 100% locally within your browser. None of the text or data you paste into the tool is ever transmitted to or stored on our servers, ensuring total privacy."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What date format is used in the generated JSON?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "To ensure global compatibility and chronological accuracy, the tool automatically generates the current timestamp in strict ISO 8601 format at the exact moment you generate the JSON."
+          }
+        }
+      ]
+    }
+    </script>
+
     <meta property="og:title" content="Free Changelog JSON Generator: Automate Release Notes">
     <meta property="og:description" content="Discover SmartGen's free changelog JSON generator. Easily convert text to JSON for developers, automate dynamic changelog formatting, and ensure consistent release notes with auto ISO date generation.">
     <meta property="og:url" content="https://smartgentools.com/text-to-changelog-json-generator/">
@@ -152,7 +194,50 @@
                 <p>The era of manual, error-prone changelog management is over. SmartGen's <strong>free changelog JSON generator</strong> empowers you to create perfectly structured, machine-readable release notes with unparalleled ease and accuracy. By transforming your plain text into dynamic JSON, complete with <strong>auto ISO date JSON generator</strong> capabilities and intelligent line break handling, you can significantly boost your productivity and enhance your communication strategy.</p>
 
                 <p>Stop wasting time on tedious formatting and start focusing on what truly matters: delivering exceptional products and keeping your users informed. While you're here, don't forget to explore other powerful tools on the SmartGen platform. SmartGen is your one-stop shop for all your digital utility needs.</p>
-            </section>
+
+                <h3>Frequently Asked Questions</h3>
+                <div class="faq-container">
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>What is a Changelog JSON Generator and why is it important?</span>
+                            <div class="accordion-icon"></div>
+                        </button>
+                        <div class="accordion-content">
+                            <p>A Changelog JSON Generator is a tool that automatically converts plain text release notes into a structured JSON format. It is important because JSON allows for programmatic access, making it easy to display updates dynamically on websites and apps while ensuring a consistent format.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>How does this tool handle line breaks in my release notes?</span>
+                            <div class="accordion-icon"></div>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Our generator intelligently maps all physical line breaks in your text and automatically escapes them into valid <code>\n</code> characters within the JSON structure. This ensures your formatting remains perfectly intact when parsed by your application.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>Is my sensitive release data safe when using this tool?</span>
+                            <div class="accordion-icon"></div>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Yes, absolutely. The SmartGen Changelog JSON Generator operates 100% locally within your browser. None of the text or data you paste into the tool is ever transmitted to or stored on our servers, ensuring total privacy.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <span>What date format is used in the generated JSON?</span>
+                            <div class="accordion-icon"></div>
+                        </button>
+                        <div class="accordion-content">
+                            <p>To ensure global compatibility and chronological accuracy, the tool automatically generates the current timestamp in strict ISO 8601 format (e.g., 2026-05-27T14:30:00.000Z) at the exact moment you generate the JSON.</p>
+                        </div>
+                    </div>
+                </div>
+                </section>
         </article>
     </main>
     

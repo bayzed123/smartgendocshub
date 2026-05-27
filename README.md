@@ -32,7 +32,7 @@ SmartGen offers a diverse range of tools, categorized for easy navigation:
 [![Schema Generator](https://img.shields.io/badge/Schema_Generator-00599C?style=for-the-badge&logo=github&logoColor=white)](https://smartgentools.com/schema-generator/)
 [![URL Encoder Decoder](https://img.shields.io/badge/URL_Encoder_Decoder-00599C?style=for-the-badge&logo=github&logoColor=white)](https://smartgentools.com/url-encoder-decoder/)
 [![UUID Generator](https://img.shields.io/badge/UUID_Generator-00599C?style=for-the-badge&logo=github&logoColor=white)](https://smartgentools.com/uuid-generator/)
-
+[![Text to Changelog JSON Generator](https://img.shields.io/badge/Text_to_Changelog_JSON_Generator-00599C?style=for-the-badge&logo=github&logoColor=white)](https://smartgentools.com/text-to-changelog-json-generator/)
 ---
 
 ### 📈 Marketing & Social Media

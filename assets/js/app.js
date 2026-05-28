@@ -9,12 +9,11 @@ function injectNavbar() {
     const header = document.getElementById('main-header');
     if (!header) return;
 
-    const prefix = window.location.pathname.split('/').length > 2 ? '../' : './';
-
+    // Absolute paths (/) are used to prevent routing errors like 'blog/blog/'
     header.innerHTML = `
         <div class="container">
             <div class="header-content">
-                <a href="${prefix}" class="logo">
+                <a href="/" class="logo">
                     <div class="logo-icon">⚡</div>
                     SmartGen
                 </a>
@@ -23,47 +22,46 @@ function injectNavbar() {
                     <button id="mobile-menu-toggle" class="icon-btn mobile-only" title="Toggle Menu">☰</button>
                 </div>
                 <nav id="nav-links">
-                    <a href="${prefix}">Home</a>
-                    <a href="${prefix}blog/">Blog</a>
+                    <a href="/">Home</a>
+                    <a href="/blog/">Blog</a>
                     <div class="dropdown" id="tools-dropdown">
-                        <a href="${prefix}#all-tools" class="dropdown-trigger">Tools</a>
+                        <a href="/#all-tools" class="dropdown-trigger">Tools</a>
                         <div class="dropdown-content">
                             <div class="dropdown-category">
                                 <h4>📈 Marketing</h4>
-                                <a href="${prefix}utm-builder/" class="dropdown-item">UTM Builder</a>
-                                <a href="${prefix}whatsapp-link/" class="dropdown-item">WhatsApp Link</a>
-                                <a href="${prefix}blog-title-generator/" class="dropdown-item">Blog Title</a>
+                                <a href="/utm-builder/" class="dropdown-item">UTM Builder</a>
+                                <a href="/whatsapp-link/" class="dropdown-item">WhatsApp Link</a>
+                                <a href="/blog-title-generator/" class="dropdown-item">Blog Title</a>
                             </div>
                             <div class="dropdown-category">
                                 <h4>💻 Developer</h4>
-                                <a href="${prefix}qr-generator/" class="dropdown-item">QR Generator</a>
-                                <a href="${prefix}meta-tag-generator/" class="dropdown-item">Meta Tags</a>
-                                <a href="${prefix}css-gradient-generator/" class="dropdown-item">CSS Gradient</a>
+                                <a href="/qr-generator/" class="dropdown-item">QR Generator</a>
+                                <a href="/meta-tag-generator/" class="dropdown-item">Meta Tags</a>
+                                <a href="/css-gradient-generator/" class="dropdown-item">CSS Gradient</a>
                             </div>
                             <div class="dropdown-category">
                                 <h4>🔍 SEO</h4>
-                                <a href="${prefix}keyword-density-checker/" class="dropdown-item">Keyword Density</a>
-                                <a href="${prefix}serp-preview-tool/" class="dropdown-item">SERP Preview</a>
+                                <a href="/keyword-density-checker/" class="dropdown-item">Keyword Density</a>
+                                <a href="/serp-preview-tool/" class="dropdown-item">SERP Preview</a>
                             </div>
                             <div class="dropdown-category">
                                 <h4>⚙️ Utilities</h4>
-                                <a href="${prefix}voice-remover/" class="dropdown-item">🎤 Voice Remover (AI)</a>
-                                <a href="${prefix}age-calculator/" class="dropdown-item">Age Calculator</a>
-                                <a href="${prefix}image-compressor/" class="dropdown-item">Image Compressor</a>
+                                <a href="/voice-remover/" class="dropdown-item">🎤 Voice Remover (AI)</a>
+                                <a href="/age-calculator/" class="dropdown-item">Age Calculator</a>
+                                <a href="/image-compressor/" class="dropdown-item">Image Compressor</a>
                             </div>
                         </div>
                     </div>
-                    <a href="${prefix}#all-tools">Top Tools</a>
-                    <a href="${prefix}contact/">Request a Tool</a>
-                    <a href="${prefix}about/">About</a>
+                    <a href="/#all-tools">Top Tools</a>
+                    <a href="/contact/">Request a Tool</a>
+                    <a href="/about/">About</a>
                 </nav>
             </div>
         </div>
 
-        <!-- Mobile Sidebar Drawer -->
         <aside id="mobile-sidebar" class="mobile-sidebar">
             <div class="sidebar-header">
-                <a href="${prefix}" class="sidebar-logo">
+                <a href="/" class="sidebar-logo">
                     <div class="sidebar-logo-icon">⚡</div>
                     SmartGen
                 </a>
@@ -71,38 +69,37 @@ function injectNavbar() {
             </div>
 
             <div class="sidebar-nav-links" style="display: flex; flex-direction: column; padding: 20px; overflow-y: auto;">
-                <a href="${prefix}" class="nav-item" style="color: var(--text-primary); padding: 10px 0; text-decoration: none; font-weight: 600; font-size: 1rem;">🏠 Home</a>
-                <a href="${prefix}blog/" class="nav-item" style="color: var(--text-primary); padding: 10px 0; text-decoration: none; font-weight: 600; font-size: 1rem;">📝 Blog</a>
+                <a href="/" class="nav-item" style="color: var(--text-primary); padding: 10px 0; text-decoration: none; font-weight: 600; font-size: 1rem;">🏠 Home</a>
+                <a href="/blog/" class="nav-item" style="color: var(--text-primary); padding: 10px 0; text-decoration: none; font-weight: 600; font-size: 1rem;">📝 Blog</a>
                 <hr style="margin: 15px 0; border: 0; border-top: 1px solid var(--border-color, #e5e7eb);">
                 
                 <div class="nav-category" style="font-weight: 700; color: var(--text-secondary, #6b7280); margin-top: 10px; font-size: 0.85rem; text-transform: uppercase;">🧑‍💻 Developer Tools</div>
-                <a href="${prefix}qr-generator/" class="nav-item" style="color: var(--text-primary); padding: 10px 15px; text-decoration: none; display: block;">• QR Generator</a>
-                <a href="${prefix}json-formatter-validator/" class="nav-item" style="color: var(--text-primary); padding: 10px 15px; text-decoration: none; display: block;">• JSON Formatter</a>
-                <a href="${prefix}uuid-generator/" class="nav-item" style="color: var(--text-primary); padding: 10px 15px; text-decoration: none; display: block;">• UUID Generator</a>
-                <a href="${prefix}text-to-changelog-json-generator/" class="nav-item" style="color: var(--text-primary); padding: 10px 15px; text-decoration: none; display: block;">• Text to Changelog JSON Generator</a>
-                <a href="${prefix}#all-tools" class="nav-item" style="color: #2563EB; padding: 10px 15px; text-decoration: none; font-weight: 600; display: block;">View All →</a>
+                <a href="/qr-generator/" class="nav-item" style="color: var(--text-primary); padding: 10px 15px; text-decoration: none; display: block;">• QR Generator</a>
+                <a href="/json-formatter-validator/" class="nav-item" style="color: var(--text-primary); padding: 10px 15px; text-decoration: none; display: block;">• JSON Formatter</a>
+                <a href="/uuid-generator/" class="nav-item" style="color: var(--text-primary); padding: 10px 15px; text-decoration: none; display: block;">• UUID Generator</a>
+                <a href="/text-to-changelog-json-generator/" class="nav-item" style="color: var(--text-primary); padding: 10px 15px; text-decoration: none; display: block;">• Text to Changelog JSON Generator</a>
+                <a href="/#all-tools" class="nav-item" style="color: #2563EB; padding: 10px 15px; text-decoration: none; font-weight: 600; display: block;">View All →</a>
 
                 <div class="nav-category" style="font-weight: 700; color: var(--text-secondary, #6b7280); margin-top: 15px; font-size: 0.85rem; text-transform: uppercase;">📈 SEO & Marketing</div>
-                <a href="${prefix}meta-tag-generator/" class="nav-item" style="color: var(--text-primary); padding: 10px 15px; text-decoration: none; display: block;">• Meta Tags</a>
-                <a href="${prefix}utm-builder/" class="nav-item" style="color: var(--text-primary); padding: 10px 15px; text-decoration: none; display: block;">• UTM Builder</a>
-                <a href="${prefix}serp-preview-tool/" class="nav-item" style="color: var(--text-primary); padding: 10px 15px; text-decoration: none; display: block;">• SERP Preview</a>
-                <a href="${prefix}#all-tools" class="nav-item" style="color: #2563EB; padding: 10px 15px; text-decoration: none; font-weight: 600; display: block;">View All →</a>
+                <a href="/meta-tag-generator/" class="nav-item" style="color: var(--text-primary); padding: 10px 15px; text-decoration: none; display: block;">• Meta Tags</a>
+                <a href="/utm-builder/" class="nav-item" style="color: var(--text-primary); padding: 10px 15px; text-decoration: none; display: block;">• UTM Builder</a>
+                <a href="/serp-preview-tool/" class="nav-item" style="color: var(--text-primary); padding: 10px 15px; text-decoration: none; display: block;">• SERP Preview</a>
+                <a href="/#all-tools" class="nav-item" style="color: #2563EB; padding: 10px 15px; text-decoration: none; font-weight: 600; display: block;">View All →</a>
 
                 <div class="nav-category" style="font-weight: 700; color: var(--text-secondary, #6b7280); margin-top: 15px; font-size: 0.85rem; text-transform: uppercase;">🛠 Daily Utilities</div>
-                <a href="${prefix}voice-remover/" class="nav-item" style="color: var(--text-primary); padding: 10px 15px; text-decoration: none; display: block;">• 🎤 Voice Remover (AI)</a>
-                <a href="${prefix}image-compressor/" class="nav-item" style="color: var(--text-primary); padding: 10px 15px; text-decoration: none; display: block;">• Image Compressor</a>
-                <a href="${prefix}password-generator/" class="nav-item" style="color: var(--text-primary); padding: 10px 15px; text-decoration: none; display: block;">• Password Gen</a>
-                <a href="${prefix}word-counter/" class="nav-item" style="color: var(--text-primary); padding: 10px 15px; text-decoration: none; display: block;">• Word Counter</a>
-                <a href="${prefix}#all-tools" class="nav-item" style="color: #2563EB; padding: 10px 15px; text-decoration: none; font-weight: 600; display: block;">View All →</a>
+                <a href="/voice-remover/" class="nav-item" style="color: var(--text-primary); padding: 10px 15px; text-decoration: none; display: block;">• 🎤 Voice Remover (AI)</a>
+                <a href="/image-compressor/" class="nav-item" style="color: var(--text-primary); padding: 10px 15px; text-decoration: none; display: block;">• Image Compressor</a>
+                <a href="/password-generator/" class="nav-item" style="color: var(--text-primary); padding: 10px 15px; text-decoration: none; display: block;">• Password Gen</a>
+                <a href="/word-counter/" class="nav-item" style="color: var(--text-primary); padding: 10px 15px; text-decoration: none; display: block;">• Word Counter</a>
+                <a href="/#all-tools" class="nav-item" style="color: #2563EB; padding: 10px 15px; text-decoration: none; font-weight: 600; display: block;">View All →</a>
 
                 <hr style="margin: 15px 0; border: 0; border-top: 1px solid var(--border-color, #e5e7eb);">
-                <a href="${prefix}about/" class="nav-item" style="color: var(--text-primary); padding: 10px 0; text-decoration: none; display: block; font-weight: 500;">📄 About Us</a>
-                <a href="${prefix}contact/" class="nav-item" style="color: var(--text-primary); padding: 10px 0; text-decoration: none; display: block; font-weight: 500;">📩 Contact Us</a>
-                <a href="${prefix}privacy/" class="nav-item" style="color: var(--text-primary); padding: 10px 0; text-decoration: none; display: block; font-weight: 500;">🔒 Privacy Policy</a>
+                <a href="/about/" class="nav-item" style="color: var(--text-primary); padding: 10px 0; text-decoration: none; display: block; font-weight: 500;">📄 About Us</a>
+                <a href="/contact/" class="nav-item" style="color: var(--text-primary); padding: 10px 0; text-decoration: none; display: block; font-weight: 500;">📩 Contact Us</a>
+                <a href="/privacy/" class="nav-item" style="color: var(--text-primary); padding: 10px 0; text-decoration: none; display: block; font-weight: 500;">🔒 Privacy Policy</a>
             </div>
         </aside>
 
-        <!-- Sidebar Overlay -->
         <div id="sidebar-overlay" class="sidebar-overlay"></div>
     `;
 

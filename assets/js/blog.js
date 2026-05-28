@@ -1,13 +1,12 @@
 /**
  * SmartGen Blog Frontend
- * Handles dynamic blog rendering, filtering, search, and related posts
+ * Handles dynamic blog rendering, filtering, search, related posts, and scroll animations
  */
 
 document.addEventListener('DOMContentLoaded', async () => {
   const blogGrid = document.getElementById('blog-grid');
   const filterContainer = document.getElementById('blog-filters');
   const relatedPostsGrid = document.getElementById('related-posts-grid');
-  const blogSearchInput = document.getElementById('blog-search-input');
 
   // Determine if we're on the archive page or a single post page
   if (blogGrid && filterContainer) {
@@ -15,7 +14,29 @@ document.addEventListener('DOMContentLoaded', async () => {
   } else if (relatedPostsGrid) {
     await initRelatedPosts();
   }
+
+  // Initial trigger for elements already in viewport
+  setTimeout(handleScrollReveal, 100);
 });
+
+/* ==========================================
+   SCROLL REVEAL ANIMATION LOGIC
+   ========================================== */
+function handleScrollReveal() {
+  const reveals = document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right');
+  const windowHeight = window.innerHeight;
+  const elementVisible = 100; // Trigger point (100px from bottom)
+
+  reveals.forEach((reveal) => {
+    const elementTop = reveal.getBoundingClientRect().top;
+    if (elementTop < windowHeight - elementVisible) {
+      reveal.classList.add('active');
+    }
+  });
+}
+
+// Listen to scroll events
+window.addEventListener('scroll', handleScrollReveal);
 
 /**
  * Fetch blog data from blog.json
@@ -45,8 +66,8 @@ async function initBlogArchive() {
     return;
   }
 
-  // Extract unique tags
-  const allTags = new Set(['All']);
+  // Fixed Premium Categories + Dynamic Tags
+  const allTags = new Set(['All', 'Tools Blog', 'Open Source Guidelines', 'Daily Tech Blog']);
   posts.forEach(post => {
     if (post.tags && Array.isArray(post.tags)) {
       post.tags.forEach(tag => allTags.add(tag));
@@ -114,19 +135,25 @@ function renderPosts(posts) {
     return;
   }
 
-  blogGrid.innerHTML = posts.map(post => `
-    <a href="/blog/${post.slug}/" class="blog-card">
+  blogGrid.innerHTML = posts.map((post, index) => {
+    // Staggered animation delay for cards (0ms, 100ms, 200ms)
+    const delayClass = index % 3 === 0 ? '' : (index % 3 === 1 ? 'delay-100' : 'delay-200');
+
+    return `
+    <a href="/blog/${post.slug}/" class="blog-card reveal-up ${delayClass}">
       <img src="${post.image}" alt="${post.title}" class="blog-card-image" onerror="this.src='/assets/images/blog-default.jpg'">
       <div class="blog-card-content">
         <span class="blog-card-tag">${post.tags && post.tags.length > 0 ? post.tags[0] : 'General'}</span>
         <h3 class="blog-card-title">${escapeHtml(post.title)}</h3>
         <p class="blog-card-excerpt">${escapeHtml(post.description)}</p>
         
-        <!-- Read Article Button Design -->
-        <div style="margin-top: 1.5rem;">
-          <span style="display: inline-block; padding: 8px 18px; background: rgba(37, 99, 235, 0.1); color: var(--blog-primary); border-radius: 50px; font-size: 0.85rem; font-weight: 600; border: 1px solid rgba(37, 99, 235, 0.2); transition: all 0.3s ease;">
-            Read Article ↗
-          </span>
+        <!-- Premium Animated Read Article Button -->
+        <div class="premium-read-btn">
+          Read Article 
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
         </div>
 
       </div>
@@ -135,7 +162,10 @@ function renderPosts(posts) {
         <span>${formatDate(post.date)}</span>
       </div>
     </a>
-  `).join('');
+  `}).join('');
+
+  // Trigger reveal animation for newly added posts
+  setTimeout(handleScrollReveal, 50);
 }
 
 /**
@@ -161,8 +191,11 @@ async function initRelatedPosts() {
     return;
   }
 
-  relatedPostsGrid.innerHTML = relatedPosts.map(post => `
-    <a href="/blog/${post.slug}/" class="blog-card">
+  relatedPostsGrid.innerHTML = relatedPosts.map((post, index) => {
+    const delayClass = index % 3 === 0 ? '' : (index % 3 === 1 ? 'delay-100' : 'delay-200');
+    
+    return `
+    <a href="/blog/${post.slug}/" class="blog-card reveal-up ${delayClass}">
       <img src="${post.image}" alt="${post.title}" class="blog-card-image" onerror="this.src='/assets/images/blog-default.jpg'">
       <div class="blog-card-content">
         <h3 class="blog-card-title" style="font-size: 1.1rem;">${escapeHtml(post.title)}</h3>
@@ -171,7 +204,10 @@ async function initRelatedPosts() {
         </div>
       </div>
     </a>
-  `).join('');
+  `}).join('');
+
+  // Trigger reveal for related posts
+  setTimeout(handleScrollReveal, 50);
 }
 
 /**

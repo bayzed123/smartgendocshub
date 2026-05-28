@@ -1,5 +1,10 @@
 [
   {
+    "title": "Create smartgen-vocal-remover.md",
+    "date": "2026-05-28T16:49:50Z",
+    "description": "add blog AI Vocal Remover, Free Audio Stem Splitter, Separate Music and Voice Online, Extract Acapella Free, Best Vocal Remover for Karaoke, SmartGen Tools, Demucs v4 online, no sign up vocal remover"
+  },
+  {
     "title": "fix: resolve sticky header overlap issue on single blog posts",
     "date": "2026-05-28T16:11:17Z",
     "description": "fixed - Overrode global sticky header styles for the .blog-post-header class by setting position to relative and removing fixed background/shadows. This ensures the blog title section scrolls naturally with the page and no longer hides the content underneath.git add assets/css/blog.css git commit -m \"fix: resolve sticky header overlap issue on single blog posts\" -m \"Overrode global sticky header styles for the .blog-post-header class by setting position to relative and removing fixed background/shadows. This ensures the blog title section scrolls naturally with the page and no longer hides the content underneath.\" git push origin main"

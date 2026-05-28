@@ -142,7 +142,7 @@ function generatePostHTML(post) {
     <header id="main-header"></header>
 
     <main class="blog-post-container">
-        <article class="blog-post-article">
+        <article class="blog-post-article reveal-up">
             <header class="blog-post-header">
                 <div class="blog-post-meta">
                     <time datetime="${post.date}">${new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</time>
@@ -155,21 +155,31 @@ function generatePostHTML(post) {
                 <p class="blog-post-excerpt">${post.description}</p>
             </header>
 
-            <img src="${post.image}" alt="${post.title}" class="blog-post-featured-image">
+            <img src="${post.image}" alt="${post.title}" class="blog-post-featured-image reveal-up delay-100">
 
-            <div class="blog-post-content">
+            <div class="blog-post-content reveal-up delay-200">
                 ${htmlContent}
             </div>
 
-            <footer class="blog-post-footer">
+            <footer class="blog-post-footer reveal-up delay-300">
                 <div class="blog-post-tags">
                     ${post.tags.map(tag => `<span class="blog-tag">${tag}</span>`).join('')}
                 </div>
             </footer>
         </article>
 
+        <!-- Newsletter Section -->
+        <section class="newsletter-section reveal-up" style="background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%); padding: 5rem 2rem; border-radius: 30px; margin: 4rem auto; max-width: 900px; text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,0.03);">
+            <h2 style="font-size: 2.2rem; color: #2c3e50; margin-bottom: 1rem; font-weight: 800;">Join the SmartGen Community</h2>
+            <p style="color: #666; font-size: 1.1rem; max-width: 600px; margin: 0 auto 2.5rem; line-height: 1.6;">Get our latest tech updates, open-source guidelines, and tool reviews delivered straight to your inbox.</p>
+            <form action="#" style="display: flex; gap: 10px; max-width: 500px; margin: 0 auto; flex-wrap: wrap; justify-content: center;">
+                <input type="email" placeholder="Enter your email address" required style="flex: 1; min-width: 250px; padding: 15px 25px; border-radius: 50px; border: 1px solid #ddd; font-size: 1rem; outline: none; transition: border-color 0.3s ease;">
+                <button type="submit" style="background: #2563eb; color: white; padding: 15px 35px; border-radius: 50px; border: none; font-weight: 600; font-size: 1rem; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 20px rgba(37,99,235,0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">Subscribe</button>
+            </form>
+        </section>
+
         <!-- Related Posts Section -->
-        <section class="blog-related-posts" data-post-slug="${post.slug}" data-post-tags="${post.tags.join(',')}">
+        <section class="blog-related-posts reveal-up" data-post-slug="${post.slug}" data-post-tags="${post.tags.join(',')}">
             <h2 class="related-posts-title">📚 Related Posts</h2>
             <div id="related-posts-grid" class="blog-grid">
                 <!-- Related posts will be injected by JS -->
@@ -243,22 +253,22 @@ function generateArchiveHTML() {
     <header id="main-header"></header>
 
     <main>
-        <section class="blog-hero">
+        <section class="blog-hero reveal-up">
             <div class="container">
                 <h1 class="blog-hero-title">📖 SmartGen Blog</h1>
                 <p class="blog-hero-subtitle">Discover expert insights, step-by-step tutorials, and the latest updates from the SmartGen ecosystem.</p>
                 
-                <div class="blog-search-bar">
+                <div class="blog-search-bar reveal-up delay-100">
                     <input type="text" id="blog-search-input" placeholder="Search posts..." class="blog-search-input">
                 </div>
                 
-                <div id="blog-filters" class="blog-filters">
+                <div id="blog-filters" class="blog-filters reveal-up delay-200">
                     <!-- Filters will be injected by JS -->
                 </div>
             </div>
         </section>
 
-        <section class="container">
+        <section class="container reveal-up delay-300">
             <div id="blog-grid" class="blog-grid">
                 <!-- Blog cards will be injected by JS -->
                 <div class="loading-spinner" style="grid-column: 1/-1; text-align: center; padding: 3rem;">
@@ -266,6 +276,19 @@ function generateArchiveHTML() {
                 </div>
             </div>
         </section>
+        
+        <!-- Premium Newsletter Section -->
+        <section class="newsletter-section reveal-up" style="background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%); padding: 5rem 2rem; border-radius: 30px; margin: 4rem auto; max-width: 1000px; text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,0.03);">
+            <h2 style="font-size: 2.5rem; color: #2c3e50; margin-bottom: 1rem; font-weight: 800;">Join the SmartGen Community</h2>
+            <p style="color: #666; font-size: 1.1rem; max-width: 600px; margin: 0 auto 2.5rem; line-height: 1.6;">Get our latest tech updates, open-source guidelines, and tool reviews delivered straight to your inbox every week.</p>
+            
+            <form action="#" style="display: flex; gap: 10px; max-width: 500px; margin: 0 auto; flex-wrap: wrap; justify-content: center;">
+                <input type="email" placeholder="Enter your email address" required style="flex: 1; min-width: 250px; padding: 15px 25px; border-radius: 50px; border: 1px solid #ddd; font-size: 1rem; outline: none; transition: border-color 0.3s ease;">
+                <button type="submit" style="background: #2563eb; color: white; padding: 15px 35px; border-radius: 50px; border: none; font-weight: 600; font-size: 1rem; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 20px rgba(37,99,235,0.3)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">Subscribe Now</button>
+            </form>
+            <p style="font-size: 0.8rem; color: #999; margin-top: 1.5rem;">No spam, ever. Unsubscribe at any time.</p>
+        </section>
+
     </main>
 
     <footer id="main-footer"></footer>

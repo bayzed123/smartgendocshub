@@ -14,6 +14,7 @@ on:
 
   workflow_dispatch:
 
+# Fixes Node.js 20 deprecation warnings on GitHub Actions
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
@@ -33,7 +34,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 0 # Required to fetch full git history for accurate dates
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -60,46 +61,59 @@ jobs:
 
           ET.register_namespace('', NAMESPACE)
 
+          # Create URLSET root
           urlset = ET.Element(f'{{{NAMESPACE}}}urlset')
+
+          # Store URLs uniquely
           unique_urls = {}
 
-          # Fallback date (YYYY-MM-DD format without using percentage signs)
+          # Fallback date in YYYY-MM-DD format directly using isoformat
           current_date = datetime.utcnow().date().isoformat()
 
           def slugify(text):
+              """Generates URL-friendly slugs"""
               text = text.lower()
               text = re.sub(r'[^a-z0-9]+', '-', text)
               return text.strip('-')
 
           def get_git_lastmod(filepath):
-              """Extracts real git commit date without using % formatting strings"""
+              """Extracts exact git commit date directly without regex matching on 'Date:'"""
               try:
+                  # --format=%cs returns the date strictly in YYYY-MM-DD format
                   git_log = subprocess.check_output(
-                      ['git', 'log', '-1', '--date=short'],
+                      ['git', 'log', '-1', '--format=%cs', '--', filepath],
                       stderr=subprocess.DEVNULL
-                  ).decode('utf-8')
+                  ).decode('utf-8').strip()
                   
-                  # Search for "Date: YYYY-MM-DD"
-                  match = re.search(r'Date:\s+(\d{4}-\d{2}-\d{2})', git_log)
-                  if match:
-                      return match.group(1)
+                  # Verify the output is strictly a valid YYYY-MM-DD date
+                  if re.match(r'^\d{4}-\d{2}-\d{2}$', git_log):
+                      return git_log
               except Exception:
                   pass
               
+              # Fallback to file system modification time if not found in git
               try:
                   mtime = os.path.getmtime(filepath)
                   return datetime.utcfromtimestamp(mtime).date().isoformat()
               except Exception:
                   return current_date
 
+          # Scan repository
           for current_root, dirs, files in os.walk('.'):
+
+              # Ignore hidden directories
               dirs[:] = [d for d in dirs if not d.startswith('.')]
 
               for file in files:
                   full_path = os.path.join(current_root, file)
+                  
+                  # Normalize path
                   relative_path = os.path.relpath(full_path, '.')
                   relative_path = relative_path.replace('\\', '/')
 
+                  # -----------------------------
+                  # 1. DYNAMIC BLOG POSTS PROCESSING (.md)
+                  # -----------------------------
                   if relative_path.startswith('blog-posts/') and file.endswith('.md'):
                       if file.lower() == 'readme.md':
                           continue
@@ -108,6 +122,7 @@ jobs:
                       with open(full_path, 'r', encoding='utf-8') as f:
                           content = f.read()
                       
+                      # Read title from Front-matter
                       match = re.match(r'^---\s*\n(.*?)\n---\s*\n', content, re.DOTALL)
                       if match:
                           try:
@@ -124,28 +139,38 @@ jobs:
                       priority = '0.8'
                       changefreq = 'weekly'
                       
+                      # Verify if the built HTML page actually exists
                       expected_html_path = os.path.join('blog', blog_slug, 'index.html')
                       if not os.path.exists(expected_html_path):
                           continue
                           
                       lastmod_date = get_git_lastmod(full_path)
 
+                  # -----------------------------
+                  # 2. STATIC HTML PROCESSING
+                  # -----------------------------
                   elif file.endswith('.html'):
                       if file == '404.html':
                           continue
 
+                      # Skip generated individual blog sub-pages to prevent conflict
                       if relative_path.startswith('blog/') and relative_path != 'blog/index.html':
                           continue
 
+                      # Homepage
                       if relative_path == 'index.html':
                           clean_url = f'{BASE_URL}/'
                           priority = '1.0'
                           changefreq = 'weekly'
+
+                      # Convert folder/index.html → /folder/
                       elif relative_path.endswith('/index.html'):
                           folder_path = relative_path[:-11]
                           clean_url = f'{BASE_URL}/{folder_path}/'
                           priority = '0.8'
                           changefreq = 'weekly'
+
+                      # Normal HTML pages
                       else:
                           html_path = relative_path[:-5]
                           clean_url = f'{BASE_URL}/{html_path}/'
@@ -153,11 +178,16 @@ jobs:
                           changefreq = 'weekly'
                           
                       lastmod_date = get_git_lastmod(full_path)
+                  
                   else:
                       continue
 
+                  # -----------------------------
+                  # STRICT DUPLICATE PREVENTION
+                  # -----------------------------
                   normalized_url = clean_url.strip().rstrip('/') + '/'
 
+                  # Skip if already exists
                   if normalized_url in unique_urls:
                       continue
 
@@ -168,8 +198,10 @@ jobs:
                       'priority': priority
                   }
 
+          # Sort URLs alphabetically
           sorted_urls = sorted(unique_urls.values(), key=lambda x: x['loc'])
 
+          # Create XML entries
           for item in sorted_urls:
               url_element = ET.SubElement(urlset, f'{{{NAMESPACE}}}url')
               
@@ -185,24 +217,29 @@ jobs:
               priority_element = ET.SubElement(url_element, f'{{{NAMESPACE}}}priority')
               priority_element.text = item['priority']
 
+          # Generate pretty XML
           raw_xml = ET.tostring(urlset, encoding='utf-8')
           parsed_xml = minidom.parseString(raw_xml)
           pretty_xml = parsed_xml.toprettyxml(indent='  ', encoding='utf-8')
 
+          # Remove blank lines
           pretty_xml_clean = b'\n'.join(
               line for line in pretty_xml.splitlines()
               if line.strip()
           )
 
+          # Read old sitemap if it exists
           old_content = b''
           if os.path.exists(SITEMAP_FILE):
               with open(SITEMAP_FILE, 'rb') as old_file:
                   old_content = old_file.read()
 
+          # Skip writing if no changes
           if old_content == pretty_xml_clean:
               print('Sitemap already clean and up to date.')
               exit(0)
 
+          # Save sitemap.xml
           with open(SITEMAP_FILE, 'wb') as sitemap_file:
               sitemap_file.write(pretty_xml_clean)
 
@@ -216,11 +253,17 @@ jobs:
 
           git add sitemap.xml
 
+          # Exit if no changes detected
           if git diff --cached --quiet; then
             echo "No sitemap changes detected."
             exit 0
           fi
 
-          git commit -m "chore: auto-update sitemap.xml [skip ci]"
+          # Commit changes
+          git commit -m "fix(sitemap): implement direct git format extraction for precise dates"
+
+          # Pull latest changes safely
           git pull --rebase origin main
+
+          # Push sitemap update
           git push origin main

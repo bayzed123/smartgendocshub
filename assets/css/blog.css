@@ -240,9 +240,15 @@
   box-shadow: var(--blog-shadow);
 }
 
+/* Fixed the sticky header issue here */
 .blog-post-header {
   text-align: center;
   margin-bottom: 3rem;
+  position: relative !important;
+  top: auto !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  z-index: 1 !important;
 }
 
 .blog-post-meta {

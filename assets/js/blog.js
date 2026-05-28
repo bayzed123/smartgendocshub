@@ -121,6 +121,14 @@ function renderPosts(posts) {
         <span class="blog-card-tag">${post.tags && post.tags.length > 0 ? post.tags[0] : 'General'}</span>
         <h3 class="blog-card-title">${escapeHtml(post.title)}</h3>
         <p class="blog-card-excerpt">${escapeHtml(post.description)}</p>
+        
+        <!-- Read Article Button Design -->
+        <div style="margin-top: 1.5rem;">
+          <span style="display: inline-block; padding: 8px 18px; background: rgba(37, 99, 235, 0.1); color: var(--blog-primary); border-radius: 50px; font-size: 0.85rem; font-weight: 600; border: 1px solid rgba(37, 99, 235, 0.2); transition: all 0.3s ease;">
+            Read Article ↗
+          </span>
+        </div>
+
       </div>
       <div class="blog-card-footer">
         <span>${escapeHtml(post.author)}</span>
@@ -158,6 +166,9 @@ async function initRelatedPosts() {
       <img src="${post.image}" alt="${post.title}" class="blog-card-image" onerror="this.src='/assets/images/blog-default.jpg'">
       <div class="blog-card-content">
         <h3 class="blog-card-title" style="font-size: 1.1rem;">${escapeHtml(post.title)}</h3>
+        <div style="margin-top: 1rem;">
+          <span style="font-size: 0.85rem; font-weight: 600; color: var(--blog-primary);">Read Post →</span>
+        </div>
       </div>
     </a>
   `).join('');

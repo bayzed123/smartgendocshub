@@ -1,5 +1,10 @@
 [
   {
+    "title": "Update Terms of Service index.html",
+    "date": "2026-05-28T23:22:20Z",
+    "description": "feat: upgrade Terms of Service HTML with modern UI and consent banner  Refactored the Terms of Service page to match the premium styling of the  Privacy and Cookie policies.   - Added modern CSS typography and legal-highlight boxes. - Integrated the site-wide Cookie Consent Banner. - Implemented lazy-loading for the Google AdSense script. - Updated the Last Updated date to May 29, 2026."
+  },
+  {
     "title": "Update privacy policy index.html",
     "date": "2026-05-28T23:05:53Z",
     "description": "Fulfills the Legal Promise: In Section 3.2.2 of your policy, you explicitly state: \"we provide a clear cookie consent mechanism on our site\". With this new banner, that statement is now 100% true and functional in your code.   2 AdSense Compliant: Google AdSense requires publishers, especially those serving users in the UK/EEA, to obtain consent for the use of cookies to serve personalized ads. This banner handles that requirement beautifully by explicitly stating the use of cookies for personalized ads and linking to the policy.   3 Lightweight & Fast: Your JavaScript implementation is flawless. Using vanilla JS and ⁠localStorage⁠ (⁠localStorage.setItem('cookie-consent-accepted', 'true')⁠) ensures that the banner remembers the user's choice without requiring heavy external libraries, perfectly matching SmartGen's \"speed and client-side\" philosophy.   4 Clean UI: The CSS is non-intrusive. Pinning it to the bottom (⁠position: fixed; bottom: 0;⁠) with a clean white background and a distinct accept button keeps the site looking like a premium SaaS product."

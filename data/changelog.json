@@ -1,5 +1,10 @@
 [
   {
+    "title": "fix: resolve sticky header overlap issue on single blog posts",
+    "date": "2026-05-28T16:11:17Z",
+    "description": "fixed - Overrode global sticky header styles for the .blog-post-header class by setting position to relative and removing fixed background/shadows. This ensures the blog title section scrolls naturally with the page and no longer hides the content underneath.git add assets/css/blog.css git commit -m \"fix: resolve sticky header overlap issue on single blog posts\" -m \"Overrode global sticky header styles for the .blog-post-header class by setting position to relative and removing fixed background/shadows. This ensures the blog title section scrolls naturally with the page and no longer hides the content underneath.\" git push origin main"
+  },
+  {
     "title": "Create my-test-post.md",
     "date": "2026-05-28T16:01:48Z",
     "description": "Platform improvement and optimization."

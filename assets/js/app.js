@@ -24,6 +24,7 @@ function injectNavbar() {
                 </div>
                 <nav id="nav-links">
                     <a href="${prefix}">Home</a>
+                    <a href="${prefix}blog/">Blog</a>
                     <div class="dropdown" id="tools-dropdown">
                         <a href="${prefix}#all-tools" class="dropdown-trigger">Tools</a>
                         <div class="dropdown-content">
@@ -71,6 +72,7 @@ function injectNavbar() {
 
             <div class="sidebar-nav-links" style="display: flex; flex-direction: column; padding: 20px; overflow-y: auto;">
                 <a href="${prefix}" class="nav-item" style="color: var(--text-primary); padding: 10px 0; text-decoration: none; font-weight: 600; font-size: 1rem;">🏠 Home</a>
+                <a href="${prefix}blog/" class="nav-item" style="color: var(--text-primary); padding: 10px 0; text-decoration: none; font-weight: 600; font-size: 1rem;">📝 Blog</a>
                 <hr style="margin: 15px 0; border: 0; border-top: 1px solid var(--border-color, #e5e7eb);">
                 
                 <div class="nav-category" style="font-weight: 700; color: var(--text-secondary, #6b7280); margin-top: 10px; font-size: 0.85rem; text-transform: uppercase;">🧑‍💻 Developer Tools</div>
@@ -214,6 +216,14 @@ function injectFooter() {
                             <li><a href="/color-palette-extractor/">Color Palette Extractor</a></li>
                             <li><a href="/lorem-ipsum-generator/">Lorem Ipsum Generator</a></li>
                             <li><a href="/facebook-id-finder/">Facebook ID Finder</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4 class="footer-accordion-trigger">📚 RESOURCES <span class="accordion-icon"></span></h4>
+                        <ul class="footer-links">
+                            <li><a href="/blog/" style="font-weight: 700; color: var(--blog-accent, #2563eb);">📖 Read Our Blog</a></li>
+                            <li><a href="/about/">About Us</a></li>
+                            <li><a href="/contact/">Contact Support</a></li>
                         </ul>
                     </div>
                     <div class="footer-column">

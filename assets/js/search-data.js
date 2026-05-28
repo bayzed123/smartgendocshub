@@ -394,8 +394,17 @@ const TOOLS_INDEX = [
 	        keywords: ['vocal', 'remover', 'voice', 'music', 'splitter', 'stems', 'ai', 'karaoke'],
 	        description: 'Separate vocals and music with 100% free AI.',
 	        url: './voice-remover/',
-	        icon: '🎤'
-	    }
+        icon: '🎤'
+    },
+    {
+        id: 'blog',
+        title: 'SmartGen Blog',
+        category: 'Resources',
+        keywords: ['blog', 'news', 'article', 'tutorial', 'insights', 'smartgen blog'],
+        description: 'Explore the SmartGen blog for the latest tutorials and insights.',
+        url: './blog/',
+        icon: '📝'
+    }
 	];
 
 // Search function

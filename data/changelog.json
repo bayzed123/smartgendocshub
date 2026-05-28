@@ -1,5 +1,10 @@
 [
   {
+    "title": "Delete SmartGenQR.oi/node_modules directory",
+    "date": "2026-05-28T15:52:53Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "feat: implement premium automated blog ecosystem (manual workflow setup required)",
     "date": "2026-05-28T14:58:24Z",
     "description": "Platform improvement and optimization."

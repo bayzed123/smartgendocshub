@@ -159,8 +159,12 @@
             overflow: hidden;
             border: 1px solid var(--border-color);
             box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            position: relative; /* Added for fullscreen positioning */
         }
         .preview-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             padding: 0.75rem 1rem;
             background: var(--bg-secondary);
             border-bottom: 1px solid var(--border-color);
@@ -171,6 +175,7 @@
         #preview-iframe {
             flex: 1;
             width: 100%;
+            height: 100%;
             border: none;
             background: #fff;
         }
@@ -184,6 +189,39 @@
             margin-bottom: 2rem;
             text-align: center;
         }
+
+        /* Full Screen CSS Added Here */
+        .fullscreen-mode {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100vw !important;
+            height: 100vh !important;
+            z-index: 99999 !important;
+            margin: 0 !important;
+            border-radius: 0 !important;
+            border: none !important;
+        }
+        .btn-close-fullscreen {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: #ff4d4d;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            z-index: 100000;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+        .btn-close-fullscreen:hover {
+            background: #ff1a1a;
+        }
+        .btn-fullscreen { background: #28a745; color: #fff; }
+        .btn-fullscreen:hover { background: #218838; }
     </style>
     <script src="../assets/js/search-data.js" defer></script>
     <script src="../assets/js/related-tools.js" defer></script>
@@ -270,8 +308,12 @@
                 </div>
 
                 <!-- Preview Section -->
-                <div class="preview-section">
-                    <div class="preview-header">Live Preview</div>
+                <div class="preview-section" id="preview-section">
+                    <button id="btn-close-fullscreen" class="btn-close-fullscreen" onclick="toggleFullScreen()" style="display: none;">✖ Close Full Screen</button>
+                    <div class="preview-header">
+                        <span>Live Preview</span>
+                        <button class="editor-btn btn-fullscreen" onclick="toggleFullScreen()">Full Screen ⛶</button>
+                    </div>
                     <iframe id="preview-iframe"></iframe>
                 </div>
             </div>
@@ -395,6 +437,22 @@
             setTimeout(() => {
                 btn.innerText = originalText;
             }, 2000);
+        }
+
+        // Full Screen Toggle Logic added here
+        function toggleFullScreen() {
+            const previewSection = document.getElementById('preview-section');
+            const closeBtn = document.getElementById('btn-close-fullscreen');
+            
+            previewSection.classList.toggle('fullscreen-mode');
+            
+            if (previewSection.classList.contains('fullscreen-mode')) {
+                closeBtn.style.display = 'block';
+                document.body.style.overflow = 'hidden'; // Stop background scrolling
+            } else {
+                closeBtn.style.display = 'none';
+                document.body.style.overflow = 'auto'; // Re-enable background scrolling
+            }
         }
 
         editor.addEventListener('input', updatePreview);

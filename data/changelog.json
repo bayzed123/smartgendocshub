@@ -1,9 +1,15 @@
-[{
-  "title": "fix sitemap implement direct git format extraction for precise dates and silence node warnings",
-  "date": "2026-05-28T21:17:16.108Z",
-  "description": " Resolved Date Formatting and Regex Issues: Replaced the previous regex-based parsing (`Date: YYYY-MM-DD`) which was failing because the `git log` output format could vary (or not contain the word \"Date:\"). Implemented `--format=%cs` in the git command to output the date directly in strict `YYYY-MM-DD` format, ensuring zero parse errors and preventing `lastmod` values from returning as `None` or formatting incorrectly (like `%Y-&gt;-`).\nFixed File-Specific Date Tracking: Added `-- filepath` to the `subprocess` git command. Previously, the command fetched the latest commit of the entire repository instead of the specific file being analyzed. This fix guarantees that untouched legacy pages retain their accurate older dates, while only newly updated or newly created pages get today's date, fully complying with SEO best practices.\nAddressed Node.js Deprecation: Added the `FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true` environment variable. This future-proofs the workflow and silences the deprecation warnings thrown by `actions/checkout@v4` and `actions/setup-python@v5` as GitHub transitions away from Node.js 20.\nImproved Fallback Logic: Standardized Python's date generation using `datetime.date.isoformat()` for cases where Git history is unavailable, ensuring fallback dates are always perfectly formatted.\nTranslated inline code comments to English for a cleaner, universally readable codebase."
-},
-{
+[
+  {
+    "title": "Create index.html",
+    "date": "2026-05-28T21:45:44Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
+    "title": "fix sitemap implement direct git format extraction for precise dates and silence node warnings",
+    "date": "2026-05-28T21:17:16.108Z",
+    "description": " Resolved Date Formatting and Regex Issues: Replaced the previous regex-based parsing (`Date: YYYY-MM-DD`) which was failing because the `git log` output format could vary (or not contain the word \"Date:\"). Implemented `--format=%cs` in the git command to output the date directly in strict `YYYY-MM-DD` format, ensuring zero parse errors and preventing `lastmod` values from returning as `None` or formatting incorrectly (like `%Y-&gt;-`).\nFixed File-Specific Date Tracking: Added `-- filepath` to the `subprocess` git command. Previously, the command fetched the latest commit of the entire repository instead of the specific file being analyzed. This fix guarantees that untouched legacy pages retain their accurate older dates, while only newly updated or newly created pages get today's date, fully complying with SEO best practices.\nAddressed Node.js Deprecation: Added the `FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true` environment variable. This future-proofs the workflow and silences the deprecation warnings thrown by `actions/checkout@v4` and `actions/setup-python@v5` as GitHub transitions away from Node.js 20.\nImproved Fallback Logic: Standardized Python's date generation using `datetime.date.isoformat()` for cases where Git history is unavailable, ensuring fallback dates are always perfectly formatted.\nTranslated inline code comments to English for a cleaner, universally readable codebase."
+  },
+  {
     "title": "Update app.js",
     "date": "2026-05-28T18:42:19Z",
     "description": "Platform improvement and optimization."

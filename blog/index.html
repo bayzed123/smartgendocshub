@@ -6,29 +6,29 @@
     <title>Blog - SmartGen | Insights, Tutorials & Digital Tool Updates</title>
     <meta name="description" content="Explore the SmartGen blog for the latest tutorials, digital marketing insights, and web utility updates. Stay ahead with expert advice from Sayad Md Bayezid Hosan.">
     
-    <!-- SEO & Open Graph -->
+    <!-- Open Graph Tags -->
     <meta property="og:title" content="SmartGen Blog - Digital Insights & Web Tools">
     <meta property="og:description" content="Expert tutorials and insights on web utilities, SEO, and digital growth.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://smartgentools.com/blog/">
     <meta property="og:image" content="https://smartgentools.com/assets/images/blog-og.jpg">
+    
+    <!-- Twitter Card Tags -->
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SmartGen Blog">
+    <meta name="twitter:description" content="Expert tutorials and insights on web utilities, SEO, and digital growth.">
     
-    <!-- Fonts & Styles -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/blog.css">
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://smartgentools.com/blog/">
     
-    <!-- Scripts -->
-    <script src="../assets/js/app.js" defer></script>
-    <script src="../assets/js/blog.js" defer></script>
-    
+    <!-- JSON-LD Blog Schema -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Blog",
         "name": "SmartGen Blog",
         "description": "Digital insights and web tool tutorials.",
+        "url": "https://smartgentools.com/blog/",
         "publisher": {
             "@type": "Organization",
             "name": "SmartGen",
@@ -39,6 +39,15 @@
         }
     }
     </script>
+
+    <!-- Fonts & Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/blog.css">
+    
+    <!-- Scripts -->
+    <script src="../assets/js/app.js" defer></script>
+    <script src="../assets/js/blog.js" defer></script>
 </head>
 <body>
     <header id="main-header"></header>
@@ -46,10 +55,12 @@
     <main>
         <section class="blog-hero">
             <div class="container">
-                <h1 style="font-size: 3.5rem; font-weight: 800; margin-bottom: 1rem;">Our Blog</h1>
-                <p style="color: var(--blog-text-muted); font-size: 1.2rem; max-width: 600px; margin: 0 auto 3rem;">
-                    Discover expert insights, step-by-step tutorials, and the latest updates from the SmartGen ecosystem.
-                </p>
+                <h1 class="blog-hero-title">📖 SmartGen Blog</h1>
+                <p class="blog-hero-subtitle">Discover expert insights, step-by-step tutorials, and the latest updates from the SmartGen ecosystem.</p>
+                
+                <div class="blog-search-bar">
+                    <input type="text" id="blog-search-input" placeholder="Search posts..." class="blog-search-input">
+                </div>
                 
                 <div id="blog-filters" class="blog-filters">
                     <!-- Filters will be injected by JS -->
@@ -61,7 +72,7 @@
             <div id="blog-grid" class="blog-grid">
                 <!-- Blog cards will be injected by JS -->
                 <div class="loading-spinner" style="grid-column: 1/-1; text-align: center; padding: 3rem;">
-                    <p>Loading amazing stories...</p>
+                    <p>✨ Loading amazing stories...</p>
                 </div>
             </div>
         </section>

@@ -221,7 +221,7 @@ function injectFooter() {
                     <div class="footer-column">
                         <h4 class="footer-accordion-trigger">📚 RESOURCES <span class="accordion-icon"></span></h4>
                         <ul class="footer-links">
-                            <li><a href="/blog/" style="font-weight: 700; color: var(--blog-accent, #2563eb);">📖 Read Our Blog</a></li>
+                            <li><a href="/blog/" style="font-weight: 700; color: #2563eb;">📖 Read Our Blog</a></li>
                             <li><a href="/about/">About Us</a></li>
                             <li><a href="/contact/">Contact Support</a></li>
                         </ul>

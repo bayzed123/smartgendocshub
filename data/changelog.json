@@ -1,5 +1,10 @@
 [
   {
+    "title": "Update privacy policy index.html",
+    "date": "2026-05-28T23:05:53Z",
+    "description": "Fulfills the Legal Promise: In Section 3.2.2 of your policy, you explicitly state: \"we provide a clear cookie consent mechanism on our site\". With this new banner, that statement is now 100% true and functional in your code.   2 AdSense Compliant: Google AdSense requires publishers, especially those serving users in the UK/EEA, to obtain consent for the use of cookies to serve personalized ads. This banner handles that requirement beautifully by explicitly stating the use of cookies for personalized ads and linking to the policy.   3 Lightweight & Fast: Your JavaScript implementation is flawless. Using vanilla JS and ⁠localStorage⁠ (⁠localStorage.setItem('cookie-consent-accepted', 'true')⁠) ensures that the banner remembers the user's choice without requiring heavy external libraries, perfectly matching SmartGen's \"speed and client-side\" philosophy.   4 Clean UI: The CSS is non-intrusive. Pinning it to the bottom (⁠position: fixed; bottom: 0;⁠) with a clean white background and a distinct accept button keeps the site looking like a premium SaaS product."
+  },
+  {
     "title": "Update About page index.html",
     "date": "2026-05-28T22:45:43Z",
     "description": "feat: add comprehensive About Us page for AdSense compliance  Implement the full, detailed About page HTML structure with inline styling  for readability. This update focuses on building domain authority and E-E-A-T.  - Add founder biography (Sayad Md Bayezid Hosan) and origin story. - Detail the privacy-first, client-side technical architecture. - Include a structured table categorizing the 40+ tool ecosystem. - Outline adherence to Better Ads Standards to ensure AdSense compliance."

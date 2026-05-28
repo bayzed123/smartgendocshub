@@ -1,5 +1,10 @@
 [
   {
+    "title": "Update index.html",
+    "date": "2026-05-28T23:31:26Z",
+    "description": "fixed cookies link"
+  },
+  {
     "title": "Update Terms of Service index.html",
     "date": "2026-05-28T23:22:20Z",
     "description": "feat: upgrade Terms of Service HTML with modern UI and consent banner  Refactored the Terms of Service page to match the premium styling of the  Privacy and Cookie policies.   - Added modern CSS typography and legal-highlight boxes. - Integrated the site-wide Cookie Consent Banner. - Implemented lazy-loading for the Google AdSense script. - Updated the Last Updated date to May 29, 2026."

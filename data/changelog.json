@@ -1,5 +1,10 @@
 [
   {
+    "title": "Update About page index.html",
+    "date": "2026-05-28T22:45:43Z",
+    "description": "feat: add comprehensive About Us page for AdSense compliance  Implement the full, detailed About page HTML structure with inline styling  for readability. This update focuses on building domain authority and E-E-A-T.  - Add founder biography (Sayad Md Bayezid Hosan) and origin story. - Detail the privacy-first, client-side technical architecture. - Include a structured table categorizing the 40+ tool ecosystem. - Outline adherence to Better Ads Standards to ensure AdSense compliance."
+  },
+  {
     "title": "Update smartgen_ultimate_tools_guide-v2fullguide.md",
     "date": "2026-05-28T22:24:46Z",
     "description": "Platform improvement and optimization."

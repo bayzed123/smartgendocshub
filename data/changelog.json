@@ -1,5 +1,10 @@
 [
   {
+    "title": "Update index.html",
+    "date": "2026-05-29T00:26:17Z",
+    "description": "fixed Broken link faq"
+  },
+  {
     "title": "refactor: modernize Contact Us page and implement direct email workflow  - Removed Formspree contact form to eliminate redirection-related AdSense policy risks. - Added a client-side JavaScript handler for form submission feedback to improve UX. - Integrated standard SmartGen legal UI components (Cookie banner with Decline/Accept options, AdSense lazy-loader). - Standardized CSS and styling for consistency across all platform pages. - Added official website and founder portfolio domain references.",
     "date": "2026-05-29T00:19:52Z",
     "description": "- Refactored the 'Contact Us' page to eliminate dependency on third-party form handlers (Formspree). - Removed external redirects to align with AdSense 'Valuable Inventory' and 'User Experience' policies, ensuring better monetization safety. - Implemented a secure client-side form submission handler using JavaScript to provide immediate feedback to users without page reloads. - Integrated a site-wide 'Cookie Consent Banner' with both 'Accept' and 'Decline' functionality to ensure GDPR/CCPA compliance. - Added a high-performance, lazy-loaded AdSense script implementation using 'requestIdleCallback' to maintain core web vitals and optimal page loading speed. - Standardized the visual layout and CSS variables to ensure visual consistency with other platform pages. - Included official domain references and updated social media placeholders."

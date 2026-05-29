@@ -21,8 +21,9 @@ jobs:
         with:
           node-version: 20
 
+      # Install required dependencies for bulletproof AST parsing
       - name: Install dependencies
-        run: npm install glob axios cheerio
+        run: npm install glob axios cheerio remark-parse remark-stringify unified unist-util-visit
 
       - name: Run Smart Scanner
         run: node scripts/global-link-scanner.js

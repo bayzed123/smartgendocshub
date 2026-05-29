@@ -1,6 +1,11 @@
 [
   {
     "title": "Update global-link-scanner.js",
+    "date": "2026-05-29T03:11:34Z",
+    "description": "The markdown tools we are using (unified, remark-parse, remark-stringify) recently updated to Pure ESM (ECMAScript Modules). When the script uses the older require() method to load them, it accidentally loads a wrapper object { default: [Function] } instead of the actual plugin function. This is why it says \"received an empty preset\"."
+  },
+  {
+    "title": "Update global-link-scanner.js",
     "date": "2026-05-29T03:07:03Z",
     "description": "fixed add mdast"
   },

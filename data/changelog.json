@@ -1,5 +1,10 @@
 [
   {
+    "title": "Update cookies index.html",
+    "date": "2026-05-29T00:00:41Z",
+    "description": "style: apply unified UI styling and optimization scripts to Cookie Policy  Refactored the Cookie Policy page to match the premium styling of the  rest of the legal pages.  - Applied modern CSS typography and layout standards. - Appended the global, dynamic cookie consent banner with the /cookies/ link. - Added event-listener-based lazy loading for the AdSense script."
+  },
+  {
     "title": "upgrade Disclaimer index.html",
     "date": "2026-05-28T23:49:45Z",
     "description": "feat: upgrade Disclaimer HTML with modern UI and updated cookie banner  Refactored the Disclaimer page to match the premium styling of the rest  of the legal pages and optimize ad performance.  - Applied modern CSS typography and .legal-highlight boxes. - Integrated the Cookie Consent Banner with the updated /cookies/ link. - Implemented event-listener lazy loading for the Google AdSense script. - Updated the Last Updated date to May 29, 2026."

@@ -5,12 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
 
-    <title>Contact Us - SmartGen: Your Feedback Matters</title>
+    <title>Contact Us - SmartGen</title>
 
-    <meta name="description" content="Get in touch with the SmartGen team for support, feedback, partnership inquiries, or general questions. We value your input!">
+    <meta name="description" content="Contact SmartGen for support, feedback, business inquiries, and help with our free online tools.">
 
     <link rel="preconnect" href="https://www.googletagmanager.com">
     <link rel="preconnect" href="https://pagead2.googlesyndication.com">
@@ -21,16 +19,21 @@
 
     <script src="../assets/js/app.js" defer></script>
 
-    <!-- Lazy Load Google AdSense -->
+    <!-- Lazy Load AdSense -->
     <script>
         window.addEventListener('load', () => {
+
             const loadAdsense = () => {
+
                 if (document.getElementById('adsense-script')) return;
 
                 const script = document.createElement('script');
+
                 script.id = 'adsense-script';
                 script.async = true;
-                script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX';
+                script.src =
+                    'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX';
+
                 script.crossOrigin = 'anonymous';
 
                 document.head.appendChild(script);
@@ -39,14 +42,20 @@
             if ('requestIdleCallback' in window) {
                 requestIdleCallback(loadAdsense);
             } else {
-                setTimeout(loadAdsense, 2000);
+                setTimeout(loadAdsense, 2500);
             }
         });
     </script>
 
     <style>
-        /* Basic styling for content within the .content-body to ensure readability and structure */
-        .content-body h2, .content-body h3, .content-body h4 {
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .content-body h2,
+        .content-body h3,
+        .content-body h4 {
             margin-top: 1.5rem;
             margin-bottom: 0.8rem;
             color: var(--text-primary);
@@ -56,29 +65,6 @@
             margin-bottom: 1rem;
             line-height: 1.7;
             color: var(--text-secondary);
-        }
-
-        .content-body ul {
-            list-style-type: disc;
-            margin-left: 20px;
-            margin-bottom: 1rem;
-            color: var(--text-secondary);
-        }
-
-        .content-body ol {
-            list-style-type: decimal;
-            margin-left: 20px;
-            margin-bottom: 1rem;
-            color: var(--text-secondary);
-        }
-
-        .content-body ul li,
-        .content-body ol li {
-            margin-bottom: 0.5rem;
-        }
-
-        .content-body strong {
-            color: var(--text-primary);
         }
 
         .content-body a {
@@ -97,13 +83,34 @@
             display: block;
         }
 
-        /* Contact Form Specific Styles */
+        .quick-nav {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .quick-nav a {
+            background: var(--bg-secondary);
+            padding: 0.8rem 1.2rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            transition: 0.3s ease;
+            font-weight: 600;
+        }
+
+        .quick-nav a:hover {
+            background: var(--primary);
+            color: #fff;
+            text-decoration: none;
+        }
+
         .contact-form-container {
             background-color: var(--bg-secondary);
             padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            border-radius: 12px;
             margin-top: 2rem;
+            border: 1px solid var(--border-color);
         }
 
         .contact-form label {
@@ -113,91 +120,113 @@
             color: var(--text-primary);
         }
 
-        .contact-form input[type="text"],
-        .contact-form input[type="email"],
+        .contact-form input,
         .contact-form textarea {
             width: 100%;
-            padding: 0.8rem;
+            padding: 0.9rem;
             margin-bottom: 1.5rem;
             border: 1px solid var(--border-color);
-            border-radius: 4px;
+            border-radius: 8px;
             background-color: var(--input-bg);
             color: var(--text-primary);
             font-size: 1rem;
+            box-sizing: border-box;
         }
 
         .contact-form textarea {
             resize: vertical;
-            min-height: 120px;
+            min-height: 140px;
         }
 
         .contact-form button {
             background-color: var(--primary);
-            color: #ffffff;
-            padding: 0.9rem 2rem;
+            color: #fff;
+            padding: 1rem 2rem;
             border: none;
-            border-radius: 4px;
+            border-radius: 8px;
             cursor: pointer;
-            font-size: 1.1rem;
-            font-weight: 600;
-            transition: background-color 0.3s ease;
+            font-size: 1rem;
+            font-weight: 700;
+            transition: 0.3s ease;
         }
 
         .contact-form button:hover {
-            background-color: var(--primary-dark);
+            opacity: 0.9;
+            transform: translateY(-2px);
+        }
+
+        #form-status {
+            margin-top: 1rem;
+            font-size: 0.95rem;
+            color: #22c55e;
+            display: none;
+            font-weight: 600;
         }
 
         .contact-info {
-            margin-top: 2rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border-color);
-        }
-
-        .contact-info p {
-            margin-bottom: 0.8rem;
-        }
-
-        .contact-info strong {
-            display: inline-block;
-            min-width: 100px;
-        }
-
-        .social-links {
-            margin-top: 1.5rem;
-        }
-
-        .social-links a {
-            display: inline-block;
-            margin-right: 1rem;
-            font-size: 1.5rem;
-            color: var(--text-secondary);
-            transition: color 0.3s ease;
-        }
-
-        .social-links a:hover {
-            color: var(--primary);
-        }
-
-        .faq-section {
             margin-top: 3rem;
             padding-top: 2rem;
             border-top: 1px solid var(--border-color);
         }
 
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            background: var(--bg-secondary);
+            padding: 0.8rem 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            transition: 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .faq-section {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
         .faq-item {
-            margin-bottom: 1.5rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            overflow: hidden;
         }
 
-        .faq-item h3 {
+        .faq-question {
+            width: 100%;
+            text-align: left;
+            background: transparent;
+            border: none;
+            padding: 1.2rem;
+            font-size: 1rem;
+            font-weight: 700;
             color: var(--text-primary);
-            margin-bottom: 0.5rem;
+            cursor: pointer;
         }
 
-        .faq-item p {
+        .faq-answer {
+            display: none;
+            padding: 0 1.2rem 1.2rem;
             color: var(--text-secondary);
+            line-height: 1.7;
         }
 
-        /* Cookie Banner */
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
         .cookie-banner {
             position: fixed;
             bottom: 20px;
@@ -206,16 +235,14 @@
             background: var(--bg-secondary);
             border: 1px solid var(--border-color);
             padding: 1rem 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
             z-index: 9999;
             display: none;
         }
 
         .cookie-banner p {
-            margin: 0 0 1rem;
-            color: var(--text-secondary);
-            line-height: 1.6;
+            margin-bottom: 1rem;
         }
 
         .cookie-buttons {
@@ -226,10 +253,10 @@
 
         .cookie-buttons button {
             border: none;
-            padding: 0.7rem 1.2rem;
-            border-radius: 6px;
+            padding: 0.8rem 1.3rem;
+            border-radius: 8px;
             cursor: pointer;
-            font-weight: 600;
+            font-weight: 700;
         }
 
         .accept-cookies {
@@ -241,6 +268,20 @@
             background: var(--border-color);
             color: var(--text-primary);
         }
+
+        @media (max-width: 768px) {
+
+            .cookie-banner {
+                left: 10px;
+                right: 10px;
+                bottom: 10px;
+            }
+
+            .quick-nav {
+                flex-direction: column;
+            }
+        }
+
     </style>
 </head>
 
@@ -250,77 +291,79 @@
 
     <main class="container">
 
-        <section class="tool-container" style="margin-top: 2rem;">
+        <section class="tool-container" style="margin-top:2rem;">
 
-            <h1 style="margin-bottom: 1.5rem;">Contact SmartGen: We're Here to Help!</h1>
+            <h1>Contact SmartGen — We're Here to Help</h1>
 
-            <span class="last-updated">Last Updated: May 29, 2026</span>
+            <span class="last-updated">
+                Last Updated: May 29, 2026
+            </span>
+
+            <!-- Quick Navigation -->
+            <div class="quick-nav">
+                <a href="#contact-form">Contact Form</a>
+                <a href="#contact-info">Support Info</a>
+                <a href="#faq-section">Frequently Asked Questions</a>
+            </div>
 
             <div class="content-body">
 
                 <p>
-                    At SmartGen, your feedback, questions, and suggestions are invaluable to us.
-                    We are committed to providing you with the best possible experience using our suite of free online tools.
-                    Whether you have a technical query, a feature request, a partnership proposal,
-                    or just want to say hello, we're eager to hear from you.
+                    At SmartGen, your feedback and suggestions help us improve
+                    every day. Whether you need support, want to report a bug,
+                    request a feature, or discuss a business opportunity,
+                    we're always ready to hear from you.
                 </p>
 
                 <p>
-                    Our dedicated support team strives to respond to all inquiries promptly and efficiently.
-                    Before reaching out, please consider checking our
-                    <a href="/faq/">FAQ section</a>
-                    or our comprehensive
-                    <a href="/privacy/">Privacy Policy</a>
-                    and
-                    <a href="/terms/">Terms of Service</a>.
+                    Our mission is to provide high-quality free online tools
+                    with the best possible user experience while maintaining
+                    privacy and performance.
                 </p>
 
-                <h2>How to Reach Us</h2>
+                <!-- Contact Form -->
+                <div class="contact-form-container" id="contact-form">
 
-                <p>
-                    We offer several convenient ways to get in touch with the SmartGen team:
-                </p>
-
-                <div class="contact-form-container">
-
-                    <h3>Send Us a Message Directly</h3>
+                    <h2>Send Us a Message</h2>
 
                     <p>
-                        For general inquiries, support requests, or feedback,
-                        please use the contact form below.
+                        Fill out the form below and we’ll get back to you
+                        as soon as possible.
                     </p>
 
-                    <!-- Formspree Removed -->
                     <form class="contact-form" id="contactForm">
 
-                        <label for="name">Your Name:</label>
-                        <input type="text" id="name" name="name" required>
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" required>
 
-                        <label for="email">Your Email:</label>
-                        <input type="email" id="email" name="email" required>
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" required>
 
-                        <label for="subject">Subject:</label>
-                        <input type="text" id="subject" name="subject" required>
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" required>
 
-                        <label for="message">Your Message:</label>
-                        <textarea id="message" name="message" required></textarea>
+                        <label for="message">Message</label>
+                        <textarea id="message" required></textarea>
 
-                        <button type="submit">Send Message</button>
+                        <button type="submit">
+                            Send Message
+                        </button>
 
                     </form>
 
-                    <p id="form-status"
-                       style="font-size: 0.9rem; margin-top: 1rem; color: var(--primary); display:none;">
+                    <p id="form-status">
+                        Your message has been submitted successfully!
                     </p>
 
                 </div>
 
-                <div class="contact-info">
+                <!-- Contact Info -->
+                <div class="contact-info" id="contact-info">
 
-                    <h3>Other Ways to Connect</h3>
+                    <h2>Other Ways to Contact Us</h2>
 
                     <p>
-                        If you prefer, you can also reach us via email or connect with us on social media:
+                        Prefer direct communication? Reach us anytime:
                     </p>
 
                     <p>
@@ -331,92 +374,100 @@
                     </p>
 
                     <p>
-                        <strong>Business Inquiries:</strong>
-                        For partnership opportunities, advertising, or media relations,
-                        please contact us at the email above with "Business Inquiry"
-                        in the subject line.
+                        <strong>Business:</strong>
+                        Partnership, sponsorship, or advertising inquiries.
                     </p>
 
                     <p>
                         <strong>Support:</strong>
-                        For technical assistance or help with any of our tools,
-                        please include "Support Request" in your email subject.
+                        Technical issues, bugs, and help requests.
                     </p>
 
                     <div class="social-links">
 
-                        <h4>Connect With Us:</h4>
-
-                        <a href="#" target="_blank" aria-label="SmartGen on Facebook">
-                            <i class="fab fa-facebook-f"></i>
+                        <a href="#">
+                            Facebook
                         </a>
 
-                        <a href="#" target="_blank" aria-label="SmartGen on Twitter">
-                            <i class="fab fa-twitter"></i>
+                        <a href="#">
+                            Twitter
                         </a>
 
-                        <a href="#" target="_blank" aria-label="SmartGen on LinkedIn">
-                            <i class="fab fa-linkedin-in"></i>
+                        <a href="#">
+                            LinkedIn
                         </a>
 
-                        <a href="#" target="_blank" aria-label="SmartGen on Instagram">
-                            <i class="fab fa-instagram"></i>
+                        <a href="#">
+                            Instagram
                         </a>
 
                     </div>
 
                 </div>
 
-                <div class="faq-section">
+                <!-- FAQ SECTION -->
+                <div class="faq-section" id="faq-section">
 
-                    <h2>Frequently Asked Questions (FAQ)</h2>
+                    <h2>Frequently Asked Questions</h2>
 
                     <p>
-                        Here are some common questions we receive.
-                        Your answer might be here!
+                        Click any question below to view the answer.
                     </p>
 
                     <div class="faq-item">
-                        <h3>Q: Are SmartGen tools truly free to use?</h3>
-                        <p>
-                            A: Yes, all tools provided on SmartGen are completely free to use.
-                            Our operations are supported by advertisements.
-                        </p>
+                        <button class="faq-question">
+                            Are SmartGen tools really free?
+                        </button>
+
+                        <div class="faq-answer">
+                            Yes. All SmartGen tools are completely free to use.
+                            We support operations through advertisements and
+                            optional partnerships.
+                        </div>
                     </div>
 
                     <div class="faq-item">
-                        <h3>Q: Do you store any data I input into your tools?</h3>
-                        <p>
-                            A: For the vast majority of our tools,
-                            data processing occurs client-side directly in your browser.
-                        </p>
+                        <button class="faq-question">
+                            Do you store uploaded data?
+                        </button>
+
+                        <div class="faq-answer">
+                            Most SmartGen tools process files directly in your
+                            browser. Your data is not permanently stored on our servers.
+                        </div>
                     </div>
 
                     <div class="faq-item">
-                        <h3>Q: How can I report a bug or suggest a new feature?</h3>
-                        <p>
-                            A: You can report bugs or suggest new features
-                            using the contact form above or via email.
-                        </p>
+                        <button class="faq-question">
+                            How can I report a bug?
+                        </button>
+
+                        <div class="faq-answer">
+                            You can report bugs through the contact form above
+                            or by emailing us directly.
+                        </div>
                     </div>
 
                     <div class="faq-item">
-                        <h3>Q: How does SmartGen ensure my privacy?</h3>
-                        <p>
-                            A: We are deeply committed to user privacy
-                            and client-side processing.
-                        </p>
+                        <button class="faq-question">
+                            How long does support take?
+                        </button>
+
+                        <div class="faq-answer">
+                            Most responses are sent within 24–48 business hours.
+                        </div>
                     </div>
 
                     <div class="faq-item">
-                        <h3>Q: I'm interested in partnering with SmartGen. How can I do that?</h3>
-                        <p>
-                            A: Send your proposal to
-                            <a href="mailto:cwb.agency@outlook.com">
-                                cwb.agency@outlook.com
-                            </a>
-                            with "Business Inquiry" in the subject line.
-                        </p>
+                        <button class="faq-question">
+                            Can I advertise or partner with SmartGen?
+                        </button>
+
+                        <div class="faq-answer">
+                            Yes. Send your proposal to
+                            cwb.agency@outlook.com
+                            with the subject "Business Inquiry".
+                        </div>
                     </div>
 
                 </div>
@@ -429,16 +480,16 @@
 
     <footer id="main-footer"></footer>
 
-    <!-- Cookie Consent Banner -->
+    <!-- Cookie Banner -->
     <div class="cookie-banner" id="cookieBanner">
 
         <p>
             We use cookies and Google AdSense to improve your experience,
-            analyze traffic, and serve personalized ads.
-            By clicking "Accept", you consent to our cookie usage.
+            personalize ads, and analyze traffic.
         </p>
 
         <div class="cookie-buttons">
+
             <button class="accept-cookies" id="acceptCookies">
                 Accept
             </button>
@@ -446,39 +497,75 @@
             <button class="decline-cookies" id="declineCookies">
                 Decline
             </button>
+
         </div>
 
     </div>
 
     <script>
-        // Fake Contact Form Handler
-        document.getElementById('contactForm').addEventListener('submit', function (e) {
-            e.preventDefault();
 
-            const status = document.getElementById('form-status');
+        // Fake Form Submit
+        document.getElementById('contactForm')
+            .addEventListener('submit', function(e) {
 
-            status.style.display = 'block';
-            status.textContent = 'Your message has been submitted successfully!';
+                e.preventDefault();
 
-            this.reset();
-        });
+                const status =
+                    document.getElementById('form-status');
 
-        // Cookie Banner Logic
-        const cookieBanner = document.getElementById('cookieBanner');
+                status.style.display = 'block';
+
+                this.reset();
+
+                setTimeout(() => {
+                    status.style.display = 'none';
+                }, 4000);
+            });
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question')
+            .forEach(button => {
+
+                button.addEventListener('click', () => {
+
+                    const faqItem =
+                        button.parentElement;
+
+                    faqItem.classList.toggle('active');
+                });
+            });
+
+        // Cookie Banner
+        const cookieBanner =
+            document.getElementById('cookieBanner');
 
         if (!localStorage.getItem('smartgen_cookie_consent')) {
+
             cookieBanner.style.display = 'block';
         }
 
-        document.getElementById('acceptCookies').addEventListener('click', () => {
-            localStorage.setItem('smartgen_cookie_consent', 'accepted');
-            cookieBanner.style.display = 'none';
-        });
+        document.getElementById('acceptCookies')
+            .addEventListener('click', () => {
 
-        document.getElementById('declineCookies').addEventListener('click', () => {
-            localStorage.setItem('smartgen_cookie_consent', 'declined');
-            cookieBanner.style.display = 'none';
-        });
+                localStorage.setItem(
+                    'smartgen_cookie_consent',
+                    'accepted'
+                );
+
+                cookieBanner.style.display = 'none';
+            });
+
+        document.getElementById('declineCookies')
+            .addEventListener('click', () => {
+
+                localStorage.setItem(
+                    'smartgen_cookie_consent',
+                    'declined'
+                );
+
+                cookieBanner.style.display = 'none';
+            });
+
     </script>
 
 </body>

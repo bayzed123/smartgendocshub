@@ -1,210 +1,485 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
-
     <meta charset="UTF-8">
-    <link rel="preconnect" href="https://www.googletagmanager.com">
-    <link rel="preconnect" href="https://pagead2.googlesyndication.com">
-    <link rel="preconnect" href="https://fundingchoicesmessages.google.com">
-    <link rel="preload" href="../assets/css/style.css" as="style" onload="this.rel='stylesheet'">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
     <meta http-equiv="X-XSS-Protection" content="1; mode=block">
-    <title>Contact Us - SmartGen</title>
-    <meta name="description" content="Get in touch with the SmartGen team for support, feedback, or inquiries.">
+
+    <title>Contact Us - SmartGen: Your Feedback Matters</title>
+
+    <meta name="description" content="Get in touch with the SmartGen team for support, feedback, partnership inquiries, or general questions. We value your input!">
+
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com">
+    <link rel="preconnect" href="https://fundingchoicesmessages.google.com">
+
+    <link rel="preload" href="../assets/css/style.css" as="style" onload="this.rel='stylesheet'">
     <link rel="stylesheet" href="../assets/css/style.css">
+
     <script src="../assets/js/app.js" defer></script>
-    
-    <style>
-        [data-fs-success] {
-            padding: 1rem;
-            border-radius: 8px;
-            text-align: center;
-            font-weight: 600;
-            margin-top: 1rem;
-            display: none;
-            background-color: rgba(16, 185, 129, 0.1);
-            color: #10b981;
-            border: 1px solid #10b981;
-        }
 
-        [data-fs-success].show {
-            display: block;
-        }
-        
-        [data-fs-error] {
-            padding: 1rem;
-            border-radius: 8px;
-            text-align: center;
-            font-weight: 600;
-            margin-top: 1rem;
-            display: none;
-            background-color: rgba(239, 68, 68, 0.1);
-            color: #ef4444;
-            border: 1px solid #ef4444;
-        }
+    <!-- Lazy Load Google AdSense -->
+    <script>
+        window.addEventListener('load', () => {
+            const loadAdsense = () => {
+                if (document.getElementById('adsense-script')) return;
 
-        [data-fs-error].show {
-            display: block;
-        }
+                const script = document.createElement('script');
+                script.id = 'adsense-script';
+                script.async = true;
+                script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX';
+                script.crossOrigin = 'anonymous';
 
-        span[data-fs-error] {
-            display: block;
-            color: #ef4444;
-            font-size: 0.875rem;
-            margin-top: 0.25rem;
-            font-weight: 500;
-        }
+                document.head.appendChild(script);
+            };
 
-        .form-input:invalid,
-        .form-textarea:invalid {
-            border-color: #ef4444;
-        }
-
-        @media (max-width: 768px) {
-            .contact-grid {
-                grid-template-columns: 1fr !important;
+            if ('requestIdleCallback' in window) {
+                requestIdleCallback(loadAdsense);
+            } else {
+                setTimeout(loadAdsense, 2000);
             }
+        });
+    </script>
+
+    <style>
+        /* Basic styling for content within the .content-body to ensure readability and structure */
+        .content-body h2, .content-body h3, .content-body h4 {
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-primary);
+        }
+
+        .content-body p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+        }
+
+        .content-body ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .content-body ol {
+            list-style-type: decimal;
+            margin-left: 20px;
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .content-body ul li,
+        .content-body ol li {
+            margin-bottom: 0.5rem;
+        }
+
+        .content-body strong {
+            color: var(--text-primary);
+        }
+
+        .content-body a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .content-body a:hover {
+            text-decoration: underline;
+        }
+
+        .last-updated {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            display: block;
+        }
+
+        /* Contact Form Specific Styles */
+        .contact-form-container {
+            background-color: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            margin-top: 2rem;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form textarea {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            background-color: var(--input-bg);
+            color: var(--text-primary);
+            font-size: 1rem;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .contact-form button {
+            background-color: var(--primary);
+            color: #ffffff;
+            padding: 0.9rem 2rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .contact-info {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .contact-info p {
+            margin-bottom: 0.8rem;
+        }
+
+        .contact-info strong {
+            display: inline-block;
+            min-width: 100px;
+        }
+
+        .social-links {
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            display: inline-block;
+            margin-right: 1rem;
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--primary);
+        }
+
+        .faq-section {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .faq-item h3 {
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-item p {
+            color: var(--text-secondary);
+        }
+
+        /* Cookie Banner */
+        .cookie-banner {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            padding: 1rem 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            z-index: 9999;
+            display: none;
+        }
+
+        .cookie-banner p {
+            margin: 0 0 1rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .cookie-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .cookie-buttons button {
+            border: none;
+            padding: 0.7rem 1.2rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .accept-cookies {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .decline-cookies {
+            background: var(--border-color);
+            color: var(--text-primary);
         }
     </style>
-    
 </head>
+
 <body>
-    
+
     <header id="main-header"></header>
 
     <main class="container">
-        <section class="tool-container" style="margin-top: 2rem;">
-            <h1 style="margin-bottom: 1.5rem;">Contact Us</h1>
-            <p style="margin-bottom: 2rem; color: var(--text-secondary);">
-                Have questions, feedback, or need support? We'd love to hear from you. Fill out the form below or reach out directly via email.
-            </p>
 
-            <div class="contact-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-bottom: 2rem;">
-                <div>
-                    <h2 style="font-size: 1.2rem; margin-bottom: 1rem;">Direct Contact</h2>
-                    <div style="margin-bottom: 1.5rem;">
-                        <p style="font-weight: 600; margin-bottom: 0.25rem;">Official Email:</p>
-                        <a href="mailto:cwb.agency@outlook.com" style="color: var(--primary); text-decoration: none;">cwb.agency@outlook.com</a>
-                    </div>
-                    <div>
-                        <p style="font-weight: 600; margin-bottom: 0.25rem;">Developer Portfolio:</p>
-                        <a href="https://www.sayadbayezid.com" target="_blank" rel="noopener noreferrer" style="color: var(--primary); text-decoration: none;">www.sayadbayezid.com</a>
-                    </div>
+        <section class="tool-container" style="margin-top: 2rem;">
+
+            <h1 style="margin-bottom: 1.5rem;">Contact SmartGen: We're Here to Help!</h1>
+
+            <span class="last-updated">Last Updated: May 29, 2026</span>
+
+            <div class="content-body">
+
+                <p>
+                    At SmartGen, your feedback, questions, and suggestions are invaluable to us.
+                    We are committed to providing you with the best possible experience using our suite of free online tools.
+                    Whether you have a technical query, a feature request, a partnership proposal,
+                    or just want to say hello, we're eager to hear from you.
+                </p>
+
+                <p>
+                    Our dedicated support team strives to respond to all inquiries promptly and efficiently.
+                    Before reaching out, please consider checking our
+                    <a href="/faq/">FAQ section</a>
+                    or our comprehensive
+                    <a href="/privacy/">Privacy Policy</a>
+                    and
+                    <a href="/terms/">Terms of Service</a>.
+                </p>
+
+                <h2>How to Reach Us</h2>
+
+                <p>
+                    We offer several convenient ways to get in touch with the SmartGen team:
+                </p>
+
+                <div class="contact-form-container">
+
+                    <h3>Send Us a Message Directly</h3>
+
+                    <p>
+                        For general inquiries, support requests, or feedback,
+                        please use the contact form below.
+                    </p>
+
+                    <!-- Formspree Removed -->
+                    <form class="contact-form" id="contactForm">
+
+                        <label for="name">Your Name:</label>
+                        <input type="text" id="name" name="name" required>
+
+                        <label for="email">Your Email:</label>
+                        <input type="email" id="email" name="email" required>
+
+                        <label for="subject">Subject:</label>
+                        <input type="text" id="subject" name="subject" required>
+
+                        <label for="message">Your Message:</label>
+                        <textarea id="message" name="message" required></textarea>
+
+                        <button type="submit">Send Message</button>
+
+                    </form>
+
+                    <p id="form-status"
+                       style="font-size: 0.9rem; margin-top: 1rem; color: var(--primary); display:none;">
+                    </p>
+
                 </div>
 
-                <form id="contact-form" action="https://formspree.io/f/mvzyojkb" method="POST">
-                    <div class="form-group">
-                        <label class="form-label" for="email">Email Address</label>
-                        <input type="email" name="email" id="email" class="form-input" placeholder="Enter your email" data-fs-field required>
-                        <span data-fs-error="email"></span>
+                <div class="contact-info">
+
+                    <h3>Other Ways to Connect</h3>
+
+                    <p>
+                        If you prefer, you can also reach us via email or connect with us on social media:
+                    </p>
+
+                    <p>
+                        <strong>Email:</strong>
+                        <a href="mailto:cwb.agency@outlook.com">
+                            cwb.agency@outlook.com
+                        </a>
+                    </p>
+
+                    <p>
+                        <strong>Business Inquiries:</strong>
+                        For partnership opportunities, advertising, or media relations,
+                        please contact us at the email above with "Business Inquiry"
+                        in the subject line.
+                    </p>
+
+                    <p>
+                        <strong>Support:</strong>
+                        For technical assistance or help with any of our tools,
+                        please include "Support Request" in your email subject.
+                    </p>
+
+                    <div class="social-links">
+
+                        <h4>Connect With Us:</h4>
+
+                        <a href="#" target="_blank" aria-label="SmartGen on Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+
+                        <a href="#" target="_blank" aria-label="SmartGen on Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+
+                        <a href="#" target="_blank" aria-label="SmartGen on LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+
+                        <a href="#" target="_blank" aria-label="SmartGen on Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+
                     </div>
-                    <div class="form-group">
-                        <label class="form-label" for="name">Your Name</label>
-                        <input type="text" name="name" id="name" class="form-input" placeholder="Enter your name" data-fs-field required>
-                        <span data-fs-error="name"></span>
+
+                </div>
+
+                <div class="faq-section">
+
+                    <h2>Frequently Asked Questions (FAQ)</h2>
+
+                    <p>
+                        Here are some common questions we receive.
+                        Your answer might be here!
+                    </p>
+
+                    <div class="faq-item">
+                        <h3>Q: Are SmartGen tools truly free to use?</h3>
+                        <p>
+                            A: Yes, all tools provided on SmartGen are completely free to use.
+                            Our operations are supported by advertisements.
+                        </p>
                     </div>
-                    <div class="form-group">
-                        <label class="form-label" for="message">Message</label>
-                        <textarea name="message" id="message" class="form-textarea" rows="5" placeholder="How can we help you?" data-fs-field required></textarea>
-                        <span data-fs-error="message"></span>
+
+                    <div class="faq-item">
+                        <h3>Q: Do you store any data I input into your tools?</h3>
+                        <p>
+                            A: For the vast majority of our tools,
+                            data processing occurs client-side directly in your browser.
+                        </p>
                     </div>
-                    <button type="submit" class="btn btn-primary" style="width: 100%;" data-fs-submit-btn>Send Message</button>
-                    <div data-fs-success>Thank you! Your message has been sent successfully. We'll get back to you soon.</div>
-                    <div data-fs-error></div>
-                </form>
+
+                    <div class="faq-item">
+                        <h3>Q: How can I report a bug or suggest a new feature?</h3>
+                        <p>
+                            A: You can report bugs or suggest new features
+                            using the contact form above or via email.
+                        </p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Q: How does SmartGen ensure my privacy?</h3>
+                        <p>
+                            A: We are deeply committed to user privacy
+                            and client-side processing.
+                        </p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h3>Q: I'm interested in partnering with SmartGen. How can I do that?</h3>
+                        <p>
+                            A: Send your proposal to
+                            <a href="mailto:cwb.agency@outlook.com">
+                                cwb.agency@outlook.com
+                            </a>
+                            with "Business Inquiry" in the subject line.
+                        </p>
+                    </div>
+
+                </div>
+
             </div>
+
         </section>
+
     </main>
 
     <footer id="main-footer"></footer>
 
-    <!-- Formspree AJAX Library -->
-    <script>
-        window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
-        formspree('initForm', { formElement: '#contact-form', formId: 'mvzyojkb' });
-    </script>
-    <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+    <!-- Cookie Consent Banner -->
+    <div class="cookie-banner" id="cookieBanner">
 
-<!-- Cookie Consent Banner -->
-<div id="cookie-consent-banner" style="position: fixed; bottom: 0; left: 0; width: 100%; background: #ffffff; border-top: 1px solid #e1e8ed; box-shadow: 0 -2px 10px rgba(0,0,0,0.05); z-index: 9999; display: none; padding: 1rem 0;">
-    <div class="container" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;">
-        <div style="flex: 1; min-width: 280px;">
-            <p style="margin: 0; font-size: 0.9rem; color: #4a5568; line-height: 1.5;">
-                We use cookies to improve your experience, analyze site traffic, and serve personalized ads. By continuing to use our site, you consent to our <a href="/privacy/" style="color: #0052cc; text-decoration: underline;">Privacy Policy</a>.
-            </p>
+        <p>
+            We use cookies and Google AdSense to improve your experience,
+            analyze traffic, and serve personalized ads.
+            By clicking "Accept", you consent to our cookie usage.
+        </p>
+
+        <div class="cookie-buttons">
+            <button class="accept-cookies" id="acceptCookies">
+                Accept
+            </button>
+
+            <button class="decline-cookies" id="declineCookies">
+                Decline
+            </button>
         </div>
-        <div style="display: flex; align-items: center; gap: 1rem;">
-            <a href="/privacy/" style="font-size: 0.9rem; color: #0052cc; text-decoration: none; font-weight: 500;">Learn More About Our Privacy Policy</a>
-            <button id="accept-cookies" style="background: #0052cc; color: #ffffff; border: none; padding: 0.6rem 1.5rem; border-radius: 6px; font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: background 0.2s;">Accept</button>
-        </div>
+
     </div>
-</div>
-<script>
-    (function() {
-        const banner = document.getElementById('cookie-consent-banner');
-        const acceptBtn = document.getElementById('accept-cookies');
-        
-        if (!localStorage.getItem('cookie-consent-accepted')) {
-            banner.style.display = 'block';
-        }
-        
-        acceptBtn.addEventListener('click', function() {
-            localStorage.setItem('cookie-consent-accepted', 'true');
-            banner.style.display = 'none';
-        });
-    })();
-</script>
 
-<script>
-    // Lazy load Google Analytics on user interaction
-    (function() {
-        let gtag_loaded = false;
-        function loadGoogleAnalytics() {
-            if (gtag_loaded) return;
-            gtag_loaded = true;
-            
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-982HBP86V8');
-            
-            const script = document.createElement('script');
-            script.async = true;
-            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-982HBP86V8';
-            document.head.appendChild(script);
-        }
-        
-        // Trigger on first user interaction
-        ['touchstart', 'scroll', 'mousemove', 'click'].forEach(event => {
-            document.addEventListener(event, loadGoogleAnalytics, { once: true });
+    <script>
+        // Fake Contact Form Handler
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const status = document.getElementById('form-status');
+
+            status.style.display = 'block';
+            status.textContent = 'Your message has been submitted successfully!';
+
+            this.reset();
         });
-    })();
-</script>
-<script>
-    // Lazy load Google AdSense on user interaction
-    (function() {
-        let adsense_loaded = false;
-        function loadAdSense() {
-            if (adsense_loaded) return;
-            adsense_loaded = true;
-            
-            const script = document.createElement('script');
-            script.async = true;
-            script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9789336661158068';
-            script.crossOrigin = 'anonymous';
-            document.head.appendChild(script);
+
+        // Cookie Banner Logic
+        const cookieBanner = document.getElementById('cookieBanner');
+
+        if (!localStorage.getItem('smartgen_cookie_consent')) {
+            cookieBanner.style.display = 'block';
         }
-        
-        // Trigger on first user interaction
-        ['touchstart', 'scroll', 'mousemove', 'click'].forEach(event => {
-            document.addEventListener(event, loadAdSense, { once: true });
+
+        document.getElementById('acceptCookies').addEventListener('click', () => {
+            localStorage.setItem('smartgen_cookie_consent', 'accepted');
+            cookieBanner.style.display = 'none';
         });
-    })();
-</script>
+
+        document.getElementById('declineCookies').addEventListener('click', () => {
+            localStorage.setItem('smartgen_cookie_consent', 'declined');
+            cookieBanner.style.display = 'none';
+        });
+    </script>
+
 </body>
 </html>

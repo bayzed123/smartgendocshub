@@ -2,6 +2,10 @@ const fs = require("fs");
 const glob = require("glob");
 const axios = require("axios");
 const cheerio = require("cheerio");
+const { unified } = require("unified");
+const remarkParse = require("remark-parse");
+const remarkStringify = require("remark-stringify");
+const { visit } = require("unist-util-visit");
 
 // -----------------------------
 // CONFIGURATION
@@ -18,12 +22,22 @@ const urlRegex = /https?:\/\/[^\s"'<>]*(?<![.,;:!?])/g;
 let validUrls = new Set();
 let brokenLinksReport = []; 
 
+// Normalize URLs to a standard format (removes trailing slashes and makes lowercase)
+// This prevents valid links like /base64-to-image/ from being falsely flagged
+function normalizeUrl(url) {
+  if (!url) return "";
+  return url.trim().replace(/\/+$/, "").toLowerCase();
+}
+
 // 1. Load valid links from Sitemap
 async function loadSitemapUrls() {
   try {
     const res = await axios.get(SITEMAP_URL);
     const $ = cheerio.load(res.data, { xmlMode: true });
-    $("url loc").each((_, el) => validUrls.add($(el).text().trim()));
+    $("url loc").each((_, el) => {
+      const url = $(el).text().trim();
+      if (url) validUrls.add(normalizeUrl(url));
+    });
   } catch (e) {
     console.error("❌ Sitemap error:", e.message);
   }
@@ -36,7 +50,7 @@ function loadReadmeUrls() {
       const content = fs.readFileSync(README_FILE, "utf-8");
       const matches = [...content.matchAll(urlRegex)];
       matches.forEach(m => {
-        if (m[0].startsWith(MY_DOMAIN)) validUrls.add(m[0]);
+        if (m[0].startsWith(MY_DOMAIN)) validUrls.add(normalizeUrl(m[0]));
       });
     }
   } catch (e) {
@@ -44,57 +58,73 @@ function loadReadmeUrls() {
   }
 }
 
-// 3. Load valid links from index.html / all HTML files
+// 3. Load valid links from HTML files (including relative paths)
 function loadHtmlUrls() {
   for (const file of HTML_FILES) {
     try {
       const content = fs.readFileSync(file, "utf-8");
-      const matches = [...content.matchAll(urlRegex)];
-      matches.forEach(m => {
-        if (m[0].startsWith(MY_DOMAIN)) validUrls.add(m[0]);
+      const $ = cheerio.load(content);
+      
+      $("a").each((_, el) => {
+        let href = $(el).attr("href");
+        if (href) {
+          if (href.startsWith(MY_DOMAIN)) {
+            validUrls.add(normalizeUrl(href));
+          } else if (href.startsWith("/") && !href.startsWith("//")) {
+            // Convert relative links (/page) to full URLs before adding to the valid list
+            validUrls.add(normalizeUrl(MY_DOMAIN + href));
+          }
+        }
       });
     } catch (e) {}
   }
 }
 
-// 4. Scan blog posts and remove broken internal links only
+// 4. Safely process blog posts using AST (Abstract Syntax Tree)
 function processBlogFiles() {
+  const processor = unified().use(remarkParse).use(remarkStringify);
+
   for (const file of BLOG_FILES) {
-    let content = fs.readFileSync(file, "utf-8");
-    let updated = content;
-    let madeChanges = false;
+    try {
+      let content = fs.readFileSync(file, "utf-8");
+      const ast = processor.parse(content);
+      let madeChanges = false;
 
-    const matches = [...content.matchAll(urlRegex)];
-
-    for (const match of matches) {
-      const url = match[0];
-
-      // Strictly check only your domain links
-      if (url.startsWith(MY_DOMAIN)) {
-        // If it's not found in the valid sources, remove it
-        if (!validUrls.has(url)) {
-          console.log(`❌ Removing broken internal link: ${url}`);
-          updated = updated.replaceAll(url, ""); 
-          brokenLinksReport.push({ file, url });
-          madeChanges = true;
+      // Accurately visit only link nodes in the Markdown tree
+      visit(ast, "link", (node) => {
+        const originalUrl = node.url;
+        
+        if (originalUrl && originalUrl.startsWith(MY_DOMAIN)) {
+          const normalized = normalizeUrl(originalUrl);
+          
+          // If the link is missing from valid sources, neutralize it safely
+          if (!validUrls.has(normalized)) {
+            console.log(`❌ Removing broken internal link in [${file}]: ${originalUrl}`);
+            node.url = "#"; // Converts broken link to a dead link (#) without destroying anchor text
+            brokenLinksReport.push({ file, url: originalUrl });
+            madeChanges = true;
+          }
         }
-      }
-    }
+      });
 
-    if (madeChanges) {
-      fs.writeFileSync(file, updated, "utf-8");
+      if (madeChanges) {
+        const updatedContent = processor.stringify(ast);
+        fs.writeFileSync(file, updatedContent, "utf-8");
+      }
+    } catch (e) {
+      console.error(`❌ Error parsing file ${file}:`, e.message);
     }
   }
 }
 
-// 5. Update README.md Status Alerts (Pure English)
+// 5. Generate README.md Status Alerts
 function updateReadmeStatus() {
   try {
     if (!fs.existsSync(README_FILE)) return;
     let readmeContent = fs.readFileSync(README_FILE, "utf-8");
     
-    const startTag = "<!-- LINK_STATUS_START -->";
-    const endTag = "<!-- LINK_STATUS_END -->";
+    const startTag = "";
+    const endTag = "";
 
     if (!readmeContent.includes(startTag) || !readmeContent.includes(endTag)) return;
 
@@ -102,7 +132,7 @@ function updateReadmeStatus() {
     if (brokenLinksReport.length === 0) {
       statusContent = `\n### 🟢 Link Status: All Perfect!\nNo broken internal links (\`${MY_DOMAIN}\`) found in Blog Posts. Last checked: ${new Date().toUTCString()}\n`;
     } else {
-      statusContent = `\n### 🔴 Warning: Broken Internal Links Removed!\nAutomatically removed **${brokenLinksReport.length}** invalid internal link(s) from blog posts. External/Promo links were skipped.\n\n| Blog File | Removed URL |\n| --- | --- |\n`;
+      statusContent = `\n### 🔴 Warning: Broken Internal Links Cleaned!\nAutomatically neutralized **${brokenLinksReport.length}** invalid internal link(s) from blog posts. External links and article layouts remain fully safe.\n\n| Blog File | Removed URL |\n| --- | --- |\n`;
       brokenLinksReport.forEach(item => {
         statusContent += `| \`${item.file}\` | \`${item.url}\` |\n`;
       });
@@ -117,9 +147,9 @@ function updateReadmeStatus() {
   }
 }
 
-// Run Process
+// Execution block
 (async () => {
-  console.log(`🚀 Starting Scanner for: ${MY_DOMAIN}`);
+  console.log(`🚀 Starting Bulletproof Scanner for: ${MY_DOMAIN}`);
   await loadSitemapUrls();
   loadReadmeUrls();
   loadHtmlUrls();
@@ -127,5 +157,5 @@ function updateReadmeStatus() {
   
   processBlogFiles();
   updateReadmeStatus();
-  console.log("✅ Process Complete!");
+  console.log("✅ Process safely finished without text destruction.");
 })();

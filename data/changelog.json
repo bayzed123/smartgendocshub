@@ -1,5 +1,10 @@
 [
   {
+    "title": "Update global-link-scanner.js",
+    "date": "2026-05-29T02:52:59Z",
+    "description": "add new"
+  },
+  {
     "title": "Create global-link-scanner.js",
     "date": "2026-05-29T02:31:28Z",
     "description": "Platform improvement and optimization."

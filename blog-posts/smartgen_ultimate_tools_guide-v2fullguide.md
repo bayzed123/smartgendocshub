@@ -27,9 +27,9 @@ In this massive, comprehensive guide, we will break down every single tool avail
 
 ## Developer & Technical
 
-### 🖼️ [Base64 to Image Decoder ↗](https://smartgentools.com/base64-to-image-decoder/)
+### 🖼️ [Base64 to Image Decoder ↗](https://smartgentools.com/base64-to-image/)
 
-**Overview:** Decode Base64 strings back into image files. Welcome to the ultimate guide on mastering the [Base64 to Image Decoder](https://smartgentools.com/base64-to-image-decoder/). In today's fast-paced digital environment, having the right utility at your fingertips can make the difference between hours of frustration and instant success.
+**Overview:** Decode Base64 strings back into image files. Welcome to the ultimate guide on mastering the [Base64 to Image Decoder](https://smartgentools.com/base64-to-image/). In today's fast-paced digital environment, having the right utility at your fingertips can make the difference between hours of frustration and instant success.
 
 #### Understanding the Challenge
 Every professional workflow encounters bottlenecks. For software engineers, web developers, system administrators, and IT professionals, the challenge is clear: Dealing with raw data, unformatted code, or complex server configurations manually can lead to critical errors, wasted hours of debugging, and deployment delays. Relying on manual methods is no longer a viable option if you want to scale your operations or maintain high standards of quality.
@@ -39,7 +39,7 @@ The Base64 to Image Decoder automates this complex process. By providing a clean
 
 #### A to Z Master Guide: How to Use the Base64 to Image Decoder
 Follow these exact steps to get the maximum value out of this tool:
-1. Navigate to the [Base64 to Image Decoder](https://smartgentools.com/base64-to-image-decoder/) tool from the SmartGen Developer dashboard.
+1. Navigate to the [Base64 to Image Decoder](https://smartgentools.com/base64-to-image/) tool from the SmartGen Developer dashboard.
 2. Input your raw data, code snippet, or configuration parameters into the secure input field.
 3. Adjust any advanced settings or parameters specific to your technical requirements.
 4. Click the generate/format button (or watch the live preview update instantly).
@@ -53,7 +53,7 @@ Follow these exact steps to get the maximum value out of this tool:
 *   **Q: Is my data safe when using this tool?**
     A: 100% secure. We utilize advanced client-side processing technologies. This means your inputs, files, and generated data remain strictly on your local device and are never uploaded or stored on our external servers.
 *   **Q: Does this tool work on mobile devices?**
-    A: Yes! The [Base64 to Image Decoder](https://smartgentools.com/base64-to-image-decoder/) features a highly responsive, SaaS-style UI that works flawlessly on smartphones, tablets, and desktop computers. You can manage your tasks on the go.
+    A: Yes! The [Base64 to Image Decoder](https://smartgentools.com/base64-to-image/) features a highly responsive, SaaS-style UI that works flawlessly on smartphones, tablets, and desktop computers. You can manage your tasks on the go.
 
 ---
 

@@ -5,21 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block">
 
-    <title>Contact Us - SmartGen</title>
+    <title>Contact Us - SmartGen: Your Feedback Matters</title>
 
-    <meta name="description"
-          content="Get in touch with SmartGen for support, feedback, partnerships, and inquiries.">
+    <meta name="description" content="Get in touch with the SmartGen team for support, feedback, partnership inquiries, or general questions. We value your input!">
 
     <link rel="preconnect" href="https://www.googletagmanager.com">
     <link rel="preconnect" href="https://pagead2.googlesyndication.com">
     <link rel="preconnect" href="https://fundingchoicesmessages.google.com">
 
-    <link rel="preload"
-          href="../assets/css/style.css"
-          as="style"
-          onload="this.rel='stylesheet'">
-
+    <link rel="preload" href="../assets/css/style.css" as="style" onload="this.rel='stylesheet'">
     <link rel="stylesheet" href="../assets/css/style.css">
 
     <script src="../assets/js/app.js" defer></script>
@@ -27,77 +24,96 @@
     <!-- Lazy Load AdSense -->
     <script>
         window.addEventListener('load', () => {
-
             const loadAdsense = () => {
-
                 if (document.getElementById('adsense-script')) return;
-
                 const script = document.createElement('script');
-
                 script.id = 'adsense-script';
-
                 script.async = true;
-
-                script.src =
-                    'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX';
-
+                script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX';
                 script.crossOrigin = 'anonymous';
-
                 document.head.appendChild(script);
             };
 
             if ('requestIdleCallback' in window) {
-
                 requestIdleCallback(loadAdsense);
-
             } else {
-
                 setTimeout(loadAdsense, 2500);
             }
         });
     </script>
 
     <style>
+        /* Modern Color Palette for Best User Experience */
+        :root {
+            --bg-primary: #f4f7f6;
+            --bg-secondary: #ffffff;
+            --text-primary: #1e293b;
+            --text-secondary: #475569;
+            --text-muted: #94a3b8;
+            --primary: #2563eb;       /* Vibrant Blue */
+            --primary-dark: #1d4ed8;  /* Deep Blue for hovers */
+            --border-color: #e2e8f0;
+            --input-bg: #f8fafc;
+            --icon-color: #64748b;
+        }
 
         html {
             scroll-behavior: smooth;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-primary);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
         .content-body h2,
         .content-body h3,
         .content-body h4 {
-            margin-top: 1.5rem;
+            margin-top: 1.8rem;
             margin-bottom: 0.8rem;
             color: var(--text-primary);
+            line-height: 1.3;
         }
 
         .content-body p {
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
             line-height: 1.7;
             color: var(--text-secondary);
+            font-size: 1.05rem;
         }
 
         .content-body a {
             color: var(--primary);
             text-decoration: none;
+            font-weight: 500;
         }
 
         .content-body a:hover {
             text-decoration: underline;
+            color: var(--primary-dark);
         }
 
         .last-updated {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: var(--text-muted);
             margin-bottom: 2rem;
             display: block;
         }
 
+        /* Quick Navigation Pills */
         .quick-nav {
             display: flex;
             gap: 1rem;
             flex-wrap: wrap;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
         }
 
         .quick-nav a {
@@ -106,20 +122,26 @@
             padding: 0.8rem 1.2rem;
             border-radius: 8px;
             font-weight: 600;
-            transition: 0.3s ease;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
         }
 
         .quick-nav a:hover {
             background: var(--primary);
             color: #fff;
+            border-color: var(--primary);
             text-decoration: none;
+            transform: translateY(-2px);
         }
 
+        /* Form Container */
         .contact-form-container {
             background-color: var(--bg-secondary);
-            padding: 2rem;
+            padding: 2.5rem;
             border-radius: 12px;
             border: 1px solid var(--border-color);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
             margin-top: 2rem;
         }
 
@@ -133,7 +155,7 @@
         .contact-form input,
         .contact-form textarea {
             width: 100%;
-            padding: 0.9rem;
+            padding: 1rem;
             margin-bottom: 1.5rem;
             border: 1px solid var(--border-color);
             border-radius: 8px;
@@ -141,73 +163,138 @@
             color: var(--text-primary);
             font-size: 1rem;
             box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
         }
 
         .contact-form textarea {
             resize: vertical;
-            min-height: 140px;
+            min-height: 150px;
         }
 
         .contact-form button {
             background: var(--primary);
             color: #fff;
             border: none;
-            padding: 1rem 2rem;
+            padding: 1rem 2.5rem;
             border-radius: 8px;
             cursor: pointer;
-            font-size: 1rem;
+            font-size: 1.05rem;
             font-weight: 700;
-            transition: 0.3s ease;
+            transition: all 0.3s ease;
+            width: 100%;
         }
 
         .contact-form button:hover {
-            opacity: 0.9;
+            background-color: var(--primary-dark);
             transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(29, 78, 216, 0.3);
         }
 
         #form-status {
-            margin-top: 1rem;
-            color: #22c55e;
+            margin-top: 1.5rem;
+            color: #16a34a; /* Vibrant green */
             display: none;
             font-weight: 600;
+            text-align: center;
+            background: #dcfce7;
+            padding: 1rem;
+            border-radius: 8px;
         }
 
+        /* Contact Info & Socials */
         .contact-info {
             margin-top: 3rem;
             padding-top: 2rem;
-            border-top: 1px solid var(--border-color);
+            border-top: 2px dashed var(--border-color);
         }
 
         .social-links {
-            display: flex;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 1rem;
-            flex-wrap: wrap;
-            margin-top: 1rem;
+            margin-top: 1.5rem;
         }
 
         .social-links a {
             display: flex;
             align-items: center;
-            gap: 0.6rem;
+            gap: 0.8rem;
             background: var(--bg-secondary);
             border: 1px solid var(--border-color);
-            padding: 0.9rem 1rem;
+            padding: 1rem 1.2rem;
             border-radius: 8px;
-            transition: 0.3s ease;
+            transition: all 0.3s ease;
             color: var(--text-primary);
             font-weight: 600;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
         }
 
         .social-links a:hover {
             background: var(--primary);
             color: #fff;
+            border-color: var(--primary);
             text-decoration: none;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
         }
 
+        .social-links a:hover svg {
+            fill: #fff;
+        }
+
+        /* Important Resources Area */
+        .resources-section {
+            margin-top: 3rem;
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+
+        .resources-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .resources-grid a {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--input-bg);
+            padding: 0.8rem 1.2rem;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: 0.3s ease;
+        }
+
+        .resources-grid a:hover {
+            background: var(--primary);
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        .resources-grid a:hover svg {
+            stroke: #fff;
+        }
+
+        /* FAQ Accordion */
         .faq-section {
             margin-top: 4rem;
             padding-top: 2rem;
-            border-top: 1px solid var(--border-color);
+            border-top: 2px dashed var(--border-color);
+            margin-bottom: 4rem;
         }
 
         .faq-item {
@@ -216,6 +303,11 @@
             margin-bottom: 1rem;
             background: var(--bg-secondary);
             overflow: hidden;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
         }
 
         .faq-question {
@@ -223,51 +315,79 @@
             background: transparent;
             border: none;
             text-align: left;
-            padding: 1.2rem;
+            padding: 1.2rem 1.5rem;
             cursor: pointer;
             color: var(--text-primary);
-            font-size: 1rem;
+            font-size: 1.1rem;
             font-weight: 700;
+            position: relative;
+        }
+
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 1.5rem;
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--primary);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+            transform: rotate(90deg);
         }
 
         .faq-answer {
             display: none;
-            padding: 0 1.2rem 1.2rem;
+            padding: 0 1.5rem 1.5rem;
             color: var(--text-secondary);
             line-height: 1.7;
         }
 
         .faq-item.active .faq-answer {
             display: block;
+            border-top: 1px solid var(--border-color);
+            padding-top: 1rem;
         }
 
+        /* Cookie Banner */
         .cookie-banner {
             position: fixed;
             bottom: 20px;
             left: 20px;
-            right: 20px;
+            max-width: 400px;
             background: var(--bg-secondary);
             border: 1px solid var(--border-color);
-            padding: 1rem 1.5rem;
+            padding: 1.5rem;
             border-radius: 12px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
             z-index: 9999;
             display: none;
+            border-left: 5px solid var(--primary);
+        }
+
+        .cookie-banner p {
+            margin-top: 0;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+            line-height: 1.5;
         }
 
         .cookie-buttons {
             display: flex;
             gap: 10px;
-            margin-top: 1rem;
             flex-wrap: wrap;
         }
 
         .cookie-buttons button {
             border: none;
-            padding: 0.8rem 1.2rem;
-            border-radius: 8px;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
             cursor: pointer;
             font-weight: 700;
+            transition: 0.3s ease;
         }
 
         .accept-cookies {
@@ -275,11 +395,18 @@
             color: #fff;
         }
 
+        .accept-cookies:hover {
+            background: var(--primary-dark);
+        }
+
         .decline-cookies {
             background: var(--border-color);
             color: var(--text-primary);
         }
 
+        .decline-cookies:hover {
+            background: #cbd5e1;
+        }
     </style>
 </head>
 
@@ -289,9 +416,9 @@
 
 <main class="container">
 
-<section class="tool-container" style="margin-top:2rem;">
+<section class="tool-container" style="margin-top:3rem;">
 
-<h1>Contact SmartGen — We're Here to Help</h1>
+<h1 style="color: var(--text-primary); font-size: 2.5rem; margin-bottom: 0.5rem;">Contact SmartGen: We're Here to Help!</h1>
 
 <span class="last-updated">
     Last Updated: May 29, 2026
@@ -299,186 +426,153 @@
 
 <div class="quick-nav">
     <a href="#contact-form">Contact Form</a>
-    <a href="#contact-info">Support Info</a>
-    <a href="#faq-section">Frequently Asked Questions</a>
+    <a href="#contact-info">Support & Networks</a>
+    <a href="#resources-section">Important Links</a>
+    <a href="#faq-section">FAQs</a>
 </div>
 
 <div class="content-body">
 
 <p>
-At SmartGen, your feedback and suggestions help us improve every day.
-Whether you need support, want to report a bug, request a feature,
-or discuss a business opportunity, we're always ready to hear from you.
+    At SmartGen, your feedback, questions, and suggestions are invaluable to us. We are committed to providing you with the best possible experience using our suite of free online tools. Whether you have a technical query, a feature request, a partnership proposal, or just want to say hello, we're eager to hear from you.
 </p>
+<p>
+    Our dedicated support team strives to respond to all inquiries promptly and efficiently. Before reaching out, please consider checking our FAQ section below, or our comprehensive policies, as your question might already be answered there.
+</p>
+
+<h2>How to Reach Us</h2>
 
 <div class="contact-form-container" id="contact-form">
 
-<h2>Send Us a Message</h2>
+    <h3 style="margin-top: 0;">Send Us a Message Directly</h3>
+    <p>For general inquiries, support requests, or feedback, please use the contact form below. We aim to respond within 24-48 business hours.</p>
 
-<p>
-Fill out the form below and we’ll get back to you soon.
-</p>
+    <form class="contact-form" id="contactForm">
 
-<form class="contact-form" id="contactForm">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" placeholder="John Doe" required>
 
-<label for="name">Your Name</label>
-<input type="text" id="name" required>
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" placeholder="john@example.com" required>
 
-<label for="email">Your Email</label>
-<input type="email" id="email" required>
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" placeholder="How can we help?" required>
 
-<label for="subject">Subject</label>
-<input type="text" id="subject" required>
+        <label for="message">Your Message:</label>
+        <textarea id="message" placeholder="Type your message here..." required></textarea>
 
-<label for="message">Message</label>
-<textarea id="message" required></textarea>
+        <button type="submit">
+            Send Message
+        </button>
 
-<button type="submit">
-    Send Message
-</button>
+    </form>
 
-</form>
-
-<p id="form-status">
-    Your message has been submitted successfully!
-</p>
+    <div id="form-status">
+        ✅ Your message has been submitted successfully! We'll be in touch soon.
+    </div>
 
 </div>
 
 <div class="contact-info" id="contact-info">
 
-<h2>Other Ways to Connect</h2>
+    <h2>Connect With Our Developer & Team</h2>
+    <p>For partnership opportunities, advertising, or media relations, please connect with us directly using the official channels below.</p>
+    
+    <p><strong>Email:</strong> <a href="mailto:cwb.agency@outlook.com">cwb.agency@outlook.com</a></p>
 
-<p>
-You can also contact us directly through the platforms below:
-</p>
+    <div class="social-links">
 
-<p>
-<strong>Email:</strong>
-<a href="mailto:cwb.agency@outlook.com">
-    cwb.agency@outlook.com
-</a>
-</p>
+        <a href="https://www.linkedin.com/in/sayadbayezid?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener noreferrer" aria-label="Official LinkedIn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="var(--primary)" viewBox="0 0 16 16" style="transition: fill 0.3s;">
+                <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zM4.943 12.245V6.169H2.542v6.076h2.401zm-1.2-7.392c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 7.392V9.359c0-.317.023-.633.116-.86.256-.633.856-1.288 1.854-1.288 1.307 0 1.83.996 1.83 2.458v2.576h2.402V9.224c0-1.635-.873-2.396-2.036-2.396-1.026 0-1.488.566-1.745.966h.016V6.169h-2.4c.032.677 0 6.076 0 6.076h2.4z"/>
+            </svg>
+            LinkedIn
+        </a>
 
-<div class="social-links">
+        <a href="https://www.facebook.com/bayezidhosan" target="_blank" rel="noopener noreferrer" aria-label="Official Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="var(--primary)" viewBox="0 0 16 16" style="transition: fill 0.3s;">
+                <path d="M16 8.049C16 3.603 12.418 0 8 0S0 3.603 0 8.049C0 12.073 2.926 15.387 6.75 16v-5.625H4.719V8.049H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.994 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16C13.074 15.387 16 12.073 16 8.049z"/>
+            </svg>
+            Facebook
+        </a>
 
-<a href="https://www.facebook.com/bayezidhosan"
-   target="_blank"
-   rel="noopener noreferrer"
-   aria-label="Official Facebook">
+        <a href="https://www.sayadbayezid.com" target="_blank" rel="noopener noreferrer" aria-label="Developer Business Inquiry">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="var(--primary)" viewBox="0 0 16 16" style="transition: fill 0.3s;">
+                <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm7.5-6.923c-.67.204-1.335.82-1.887 1.855A7.97 7.97 0 0 0 5.145 4H7.5V1.077zM4.09 4a9.267 9.267 0 0 1 .64-1.539 6.7 6.7 0 0 1 .597-.933A7.025 7.025 0 0 0 2.255 4H4.09zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a6.958 6.958 0 0 0-.656 2.5h2.49zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5H4.847zM8.5 5v2.5h2.99a12.495 12.495 0 0 0-.337-2.5H8.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5H4.51zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5H8.5zM5.145 12c.138.386.295.744.468 1.068.552 1.035 1.218 1.65 1.887 1.855V12H5.145zm.182 2.472a6.696 6.696 0 0 1-.597-.933A9.268 9.268 0 0 1 4.09 12H2.255a7.024 7.024 0 0 0 3.072 2.472zM3.82 11a13.652 13.652 0 0 1-.312-2.5H1.018a6.956 6.956 0 0 0 .656 2.5H3.82zm6.853 3.472A7.024 7.024 0 0 0 13.745 12H11.91a9.27 9.27 0 0 1-.64 1.539 6.688 6.688 0 0 1-.597.933zM8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855.173-.324.33-.682.468-1.068H8.5zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.65 13.65 0 0 1-.312 2.5zm2.802-3.5a6.959 6.959 0 0 0-.656-2.5H11.84c.174.782.282 1.623.312 2.5h2.49zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7.024 7.024 0 0 0-3.072-2.472c.218.284.418.598.597.933zM10.855 4c-.138-.386-.295-.744-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4h2.355z"/>
+            </svg>
+            Business Inquiry
+        </a>
 
-<svg xmlns="http://www.w3.org/2000/svg"
-     width="20"
-     height="20"
-     fill="currentColor"
-     viewBox="0 0 16 16">
+        <a href="https://www.smartgentools.com/contact" target="_blank" rel="noopener noreferrer" aria-label="SmartGen Contact">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="var(--primary)" viewBox="0 0 16 16" style="transition: fill 0.3s;">
+                <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
+            </svg>
+            SmartGen Support
+        </a>
 
-<path d="M16 8.049C16 3.603 12.418 0 8 0S0
-3.603 0 8.049C0 12.073 2.926 15.387
-6.75 16v-5.625H4.719V8.049H6.75V6.275
-c0-2.017 1.195-3.131 3.022-3.131.876
-0 1.791.157 1.791.157v1.98h-1.009
-c-.994 0-1.303.621-1.303 1.258v1.51
-h2.218l-.354 2.326H9.25V16C13.074
-15.387 16 12.073 16 8.049z"/>
-</svg>
-
-Facebook
-
-</a>
-
-<a href="https://www.linkedin.com/in/sayadbayezid"
-   target="_blank"
-   rel="noopener noreferrer"
-   aria-label="Official LinkedIn">
-
-<svg xmlns="http://www.w3.org/2000/svg"
-     width="20"
-     height="20"
-     fill="currentColor"
-     viewBox="0 0 16 16">
-
-<path d="M0 1.146C0 .513.526 0 1.175 0h13.65
-C15.474 0 16 .513 16 1.146v13.708
-c0 .633-.526 1.146-1.175 1.146H1.175
-C.526 16 0 15.487 0 14.854V1.146z"/>
-</svg>
-
-LinkedIn
-
-</a>
-
-<a href="https://www.sayadbayezid.com"
-   target="_blank"
-   rel="noopener noreferrer">
-
-Business Inquiry
-
-</a>
-
-<a href="https://www.smartgentools.com/contact"
-   target="_blank"
-   rel="noopener noreferrer">
-
-SmartGen Contact
-
-</a>
+    </div>
 
 </div>
 
+<div class="resources-section" id="resources-section">
+    <h2 style="margin-top: 0;">Important Company Resources</h2>
+    <p>Review our company policies, terms, and learn more about what makes SmartGen work.</p>
+    
+    <div class="resources-grid">
+        <a href="https://smartgentools.com/about/">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+            About Us
+        </a>
+        <a href="https://smartgentools.com/privacy/">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            Privacy Policy
+        </a>
+        <a href="https://smartgentools.com/terms/">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            Terms of Service
+        </a>
+        <a href="https://smartgentools.com/disclaimer/">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+            Disclaimer
+        </a>
+        <a href="https://smartgentools.com/cookies/">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"></path><path d="M8.5 8.5v.01"></path><path d="M16 12.5v.01"></path><path d="M12 16v.01"></path><path d="M11 11v.01"></path></svg>
+            Cookie Policy
+        </a>
+    </div>
 </div>
 
 <div class="faq-section" id="faq-section">
 
-<h2>Frequently Asked Questions</h2>
+    <h2>Frequently Asked Questions (FAQ)</h2>
+    <p>Here are some common questions we receive. Your answer might be here!</p>
 
-<div class="faq-item">
+    <div class="faq-item">
+        <button class="faq-question">
+            Are SmartGen tools truly free to use?
+        </button>
+        <div class="faq-answer">
+            Yes, all tools provided on SmartGen are completely free to use. We aim to offer valuable utilities without any hidden costs or subscriptions. Our operations are supported by advertisements.
+        </div>
+    </div>
 
-<button class="faq-question">
-Are SmartGen tools really free?
-</button>
+    <div class="faq-item">
+        <button class="faq-question">
+            Do you store any data I input into your tools?
+        </button>
+        <div class="faq-answer">
+            For the vast majority of our tools, data processing occurs client-side, directly in your web browser. This means the data you input is never sent to or stored on our servers. Please refer to our Privacy Policy for detailed information on data handling.
+        </div>
+    </div>
 
-<div class="faq-answer">
-Yes. All SmartGen tools are completely free to use.
-</div>
-
-</div>
-
-<div class="faq-item">
-
-<button class="faq-question">
-Do you store uploaded data?
-</button>
-
-<div class="faq-answer">
-Most SmartGen tools process files directly inside your browser.
-</div>
-
-</div>
-
-<div class="faq-item">
-
-<button class="faq-question">
-How can I report bugs?
-</button>
-
-<div class="faq-answer">
-Use the contact form above or email us directly.
-</div>
-
-</div>
-
-<div class="faq-item">
-
-<button class="faq-question">
-Can I advertise or partner with SmartGen?
-</button>
-
-<div class="faq-answer">
-Yes. Contact us through the Business Inquiry link.
-</div>
-
-</div>
+    <div class="faq-item">
+        <button class="faq-question">
+            How can I report a bug or suggest a new feature?
+        </button>
+        <div class="faq-answer">
+            We highly appreciate your contributions! You can report bugs or suggest new features using the contact form above, or by sending an email to cwb.agency@outlook.com. Please be as detailed as possible in your description.
+        </div>
+    </div>
 
 </div>
 
@@ -491,95 +585,81 @@ Yes. Contact us through the Business Inquiry link.
 <footer id="main-footer"></footer>
 
 <!-- Cookie Banner -->
-
 <div class="cookie-banner" id="cookieBanner">
-
-<p>
-We use cookies and Google AdSense to improve your experience.
-</p>
-
-<div class="cookie-buttons">
-
-<button class="accept-cookies" id="acceptCookies">
-Accept
-</button>
-
-<button class="decline-cookies" id="declineCookies">
-Decline
-</button>
-
-</div>
-
+    <p>
+        We use cookies and Google AdSense to ensure you get the best experience on our website and to keep our tools free. 
+    </p>
+    <div class="cookie-buttons">
+        <button class="accept-cookies" id="acceptCookies">
+            Accept All
+        </button>
+        <button class="decline-cookies" id="declineCookies">
+            Decline
+        </button>
+    </div>
 </div>
 
 <script>
+    // Form Submission Handler
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
 
-document.getElementById('contactForm')
-.addEventListener('submit', function(e) {
+        const status = document.getElementById('form-status');
+        const submitBtn = this.querySelector('button[type="submit"]');
+        
+        // Optional: Change button state to simulate loading
+        submitBtn.textContent = 'Sending...';
+        submitBtn.style.opacity = '0.7';
+        
+        // Simulate an API call or email send
+        setTimeout(() => {
+            status.style.display = 'block';
+            this.reset();
+            
+            submitBtn.textContent = 'Send Message';
+            submitBtn.style.opacity = '1';
 
-    e.preventDefault();
-
-    const status =
-        document.getElementById('form-status');
-
-    status.style.display = 'block';
-
-    this.reset();
-
-    setTimeout(() => {
-
-        status.style.display = 'none';
-
-    }, 4000);
-
-});
-
-// FAQ Accordion
-
-document.querySelectorAll('.faq-question')
-.forEach(button => {
-
-    button.addEventListener('click', () => {
-
-        const faqItem =
-            button.parentElement;
-
-        faqItem.classList.toggle('active');
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                status.style.display = 'none';
+            }, 5000);
+        }, 800);
     });
-});
 
-// Cookie Banner
+    // FAQ Accordion Handler
+    document.querySelectorAll('.faq-question').forEach(button => {
+        button.addEventListener('click', () => {
+            const faqItem = button.parentElement;
+            
+            // Optional: Close other open FAQs when opening a new one
+            document.querySelectorAll('.faq-item').forEach(item => {
+                if(item !== faqItem) {
+                    item.classList.remove('active');
+                }
+            });
 
-const cookieBanner =
-    document.getElementById('cookieBanner');
+            faqItem.classList.toggle('active');
+        });
+    });
 
-if (!localStorage.getItem('smartgen_cookie_consent')) {
+    // Cookie Banner Handler
+    const cookieBanner = document.getElementById('cookieBanner');
 
-    cookieBanner.style.display = 'block';
-}
+    if (!localStorage.getItem('smartgen_cookie_consent')) {
+        setTimeout(() => {
+            cookieBanner.style.display = 'block';
+        }, 1000); // Slight delay for better UX
+    }
 
-document.getElementById('acceptCookies')
-.addEventListener('click', () => {
+    document.getElementById('acceptCookies').addEventListener('click', () => {
+        localStorage.setItem('smartgen_cookie_consent', 'accepted');
+        cookieBanner.style.display = 'none';
+    });
 
-    localStorage.setItem(
-        'smartgen_cookie_consent',
-        'accepted'
-    );
-
-    cookieBanner.style.display = 'none';
-});
-
-document.getElementById('declineCookies')
-.addEventListener('click', () => {
-
-    localStorage.setItem(
-        'smartgen_cookie_consent',
-        'declined'
-    );
-
-    cookieBanner.style.display = 'none';
-});
-
+    document.getElementById('declineCookies').addEventListener('click', () => {
+        localStorage.setItem('smartgen_cookie_consent', 'declined');
+        cookieBanner.style.display = 'none';
+    });
 </script>
 
 </body>

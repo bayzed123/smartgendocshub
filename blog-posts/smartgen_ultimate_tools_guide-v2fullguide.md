@@ -69,21 +69,21 @@ The CSS Gradient Generator automates this complex process. By providing a clean,
 
 #### A to Z Master Guide: How to Use the CSS Gradient Generator
 Follow these exact steps to get the maximum value out of this tool:
-1. Navigate to the [CSS Gradient Generator](https://smartgentools.com/css-gradient-generator/) tool from the SmartGen Developer dashboard.
+1. Navigate to the [CSS Gradient Generator](https://smartgentools.com/base64-to-image/) tool from the SmartGen Developer dashboard.
 2. Input your raw data, code snippet, or configuration parameters into the secure input field.
 3. Adjust any advanced settings or parameters specific to your technical requirements.
 4. Click the generate/format button (or watch the live preview update instantly).
 5. Copy the processed output or download the generated file to integrate directly into your project repository.
 
-**Pro Tip for Advanced Users:** Always ensure your browser is updated to the latest version to take full advantage of the client-side processing speeds offered by this [live tool](https://smartgentools.com/css-gradient-generator/). If you are integrating this into a larger project, consider bookmarking the direct tool URL for instant access during your deep-work sessions.
+**Pro Tip for Advanced Users:** Always ensure your browser is updated to the latest version to take full advantage of the client-side processing speeds offered by this [live tool](https://smartgentools.com/base64-to-image/). If you are integrating this into a larger project, consider bookmarking the direct tool URL for instant access during your deep-work sessions.
 
 #### Frequently Asked Questions (FAQs)
 *   **Q: Is the CSS Gradient Generator completely free to use?**
-    A: Yes, absolutely. At SmartGen, we believe in democratizing access to premium digital tools. You can use this utility as many times as you need without any hidden fees or subscription walls. Try it live here: [CSS Gradient Generator Link](https://smartgentools.com/css-gradient-generator/).
+    A: Yes, absolutely. At SmartGen, we believe in democratizing access to premium digital tools. You can use this utility as many times as you need without any hidden fees or subscription walls. Try it live here: [CSS Gradient Generator Link](https://smartgentools.com/base64-to-image/).
 *   **Q: Is my data safe when using this tool?**
     A: 100% secure. We utilize advanced client-side processing technologies. This means your inputs, files, and generated data remain strictly on your local device and are never uploaded or stored on our external servers.
 *   **Q: Does this tool work on mobile devices?**
-    A: Yes! The [CSS Gradient Generator](https://smartgentools.com/css-gradient-generator/) features a highly responsive, SaaS-style UI that works flawlessly on smartphones, tablets, and desktop computers. You can manage your tasks on the go.
+    A: Yes! The [CSS Gradient Generator](https://smartgentools.com/base64-to-image/) features a highly responsive, SaaS-style UI that works flawlessly on smartphones, tablets, and desktop computers. You can manage your tasks on the go.
 
 ---
 

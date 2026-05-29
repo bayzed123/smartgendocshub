@@ -6,7 +6,7 @@ const { unified } = require("unified");
 const remarkParse = require("remark-parse");
 const remarkStringify = require("remark-stringify");
 const { visit } = require("unist-util-visit");
-const { findAndReplace } = require("unist-util-find-and-replace");
+const { findAndReplace } = require("mdast-util-find-and-replace");
 
 // -----------------------------
 // CONFIGURATION & KEYWORDS

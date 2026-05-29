@@ -21,9 +21,9 @@ jobs:
         with:
           node-version: 20
 
-      # Added unist-util-find-and-replace for safe keyword auto-linking
+      # FIXED: Changed to mdast-util-find-and-replace
       - name: Install dependencies
-        run: npm install glob axios cheerio remark-parse remark-stringify unified unist-util-visit unist-util-find-and-replace
+        run: npm install glob axios cheerio remark-parse remark-stringify unified unist-util-visit mdast-util-find-and-replace
 
       - name: Run Smart Scanner
         run: node scripts/global-link-scanner.js

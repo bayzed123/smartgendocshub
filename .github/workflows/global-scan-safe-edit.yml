@@ -1,4 +1,4 @@
-name: Global Link Scanner (Safe Blog Editor)
+name: Global Link Scanner & Auto-Linker
 
 on:
   schedule:
@@ -21,9 +21,9 @@ jobs:
         with:
           node-version: 20
 
-      # Install required dependencies for bulletproof AST parsing
+      # Added unist-util-find-and-replace for safe keyword auto-linking
       - name: Install dependencies
-        run: npm install glob axios cheerio remark-parse remark-stringify unified unist-util-visit
+        run: npm install glob axios cheerio remark-parse remark-stringify unified unist-util-visit unist-util-find-and-replace
 
       - name: Run Smart Scanner
         run: node scripts/global-link-scanner.js
@@ -33,5 +33,5 @@ jobs:
           git config user.name "github-actions"
           git config user.email "actions@github.com"
           git add blog-posts/ README.md
-          git diff --cached --quiet || git commit -m "Auto-removed broken internal links & updated README alert"
+          git diff --cached --quiet || git commit -m "Auto-removed broken links, injected tool links & updated README"
           git push

@@ -2,11 +2,6 @@ const fs = require("fs");
 const glob = require("glob");
 const axios = require("axios");
 const cheerio = require("cheerio");
-const { unified } = require("unified");
-const remarkParse = require("remark-parse");
-const remarkStringify = require("remark-stringify");
-const { visit } = require("unist-util-visit");
-const { findAndReplace } = require("mdast-util-find-and-replace");
 
 // -----------------------------
 // CONFIGURATION & KEYWORDS
@@ -18,7 +13,6 @@ const BLOG_FILES = glob.sync("blog-posts/**/*.md");
 const HTML_FILES = glob.sync("**/*.html", { ignore: ["node_modules/**", ".git/**"] }); 
 const README_FILE = "README.md";
 
-// Your Tool Keywords Dictionary mapped from your sitemap
 const TOOL_KEYWORDS = {
   "age calculator": "https://smartgentools.com/age-calculator/",
   "base64 to image": "https://smartgentools.com/base64-to-image/",
@@ -76,7 +70,6 @@ let validUrls = new Set();
 let brokenLinksReport = []; 
 let autoLinksAdded = 0;
 
-// URL Normalizer (removes trailing slashes)
 function normalizeUrl(url) {
   if (!url) return "";
   return url.trim().replace(/\/+$/, "").toLowerCase();
@@ -117,7 +110,6 @@ async function loadValidUrls() {
 
 // 2. Build the Auto-Link Replacer Rules
 const autoLinkRules = Object.entries(TOOL_KEYWORDS).map(([keyword, url]) => {
-  // Finds the keyword ignoring case, strictly matching whole words
   return [
     new RegExp(`\\b${keyword}\\b`, 'gi'), 
     (match) => {
@@ -131,9 +123,16 @@ const autoLinkRules = Object.entries(TOOL_KEYWORDS).map(([keyword, url]) => {
   ];
 });
 
-// 3. Process Blog Files (Remove Broken + Inject Valid Tool Links)
-function processBlogFiles() {
-  const processor = unified().use(remarkParse).use(remarkStringify);
+// 3. Process Blog Files (Async to support modern ESM packages)
+async function processBlogFiles() {
+  // Dynamically load Pure ESM packages to avoid the "empty preset" error
+  const { unified } = await import("unified");
+  const remarkParse = (await import("remark-parse")).then(m => m.default);
+  const remarkStringify = (await import("remark-stringify")).then(m => m.default);
+  const { visit } = await import("unist-util-visit");
+  const { findAndReplace } = await import("mdast-util-find-and-replace");
+
+  const processor = unified().use(await remarkParse).use(await remarkStringify);
 
   for (const file of BLOG_FILES) {
     try {
@@ -142,7 +141,7 @@ function processBlogFiles() {
       let madeChanges = false;
       let initialAutoLinkCount = autoLinksAdded;
 
-      // A: Auto-Link Keywords (Safely ignores headings, code, and existing links)
+      // A: Auto-Link Keywords safely
       findAndReplace(ast, autoLinkRules, { ignore: ['link', 'linkReference', 'heading', 'code'] });
       
       if (autoLinksAdded > initialAutoLinkCount) {
@@ -150,7 +149,7 @@ function processBlogFiles() {
         madeChanges = true;
       }
 
-      // B: Clean Broken Internal Links
+      // B: Clean Broken Internal Links safely
       visit(ast, "link", (node) => {
         const originalUrl = node.url;
         if (originalUrl && originalUrl.startsWith(MY_DOMAIN)) {
@@ -188,14 +187,12 @@ function updateReadmeStatus() {
 
     let statusContent = `\n### 🟢 Link Status Report\n*Last automated run: ${new Date().toUTCString()}*\n\n`;
     
-    // Auto-linker report
     if (autoLinksAdded > 0) {
       statusContent += `- **Auto-Linked:** Safely generated **${autoLinksAdded}** tool keyword link(s) across blog posts.\n`;
     } else {
       statusContent += `- **Auto-Linked:** No new keywords found to link.\n`;
     }
 
-    // Broken links report
     if (brokenLinksReport.length === 0) {
       statusContent += `- **Broken Links:** 0 internal broken links found. All perfect!\n`;
     } else {
@@ -219,7 +216,7 @@ function updateReadmeStatus() {
   await loadValidUrls();
   console.log(`✅ Loaded ${validUrls.size} valid internal URLs.`);
   
-  processBlogFiles();
+  await processBlogFiles();
   updateReadmeStatus();
   console.log("✅ Process safely finished!");
 })();

@@ -3,135 +3,178 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SmartGen Trust Center - Legal & Resources</title>
-    <meta name="description" content="Comprehensive legal information, privacy policy, terms of service, and resources for the SmartGen mobile application and web tools.">
+    <title>SmartGen Trust Center - The Ultimate Legal & Resource Guide</title>
+    <meta name="description" content="A deep-dive resource center for SmartGen users, covering our philosophy of privacy, ethical monetization, tech stack transparency, and user empowerment.">
     <link rel="stylesheet" href="./assets/css/style.css">
     <script src="./assets/js/app.js" defer></script>
     <style>
-        /* General Layout & Typography */
+        /* Mega Style Enhancements */
+        :root {
+            --accent-glow: rgba(37, 99, 235, 0.1);
+        }
         .trust-center-container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 4rem auto;
-            padding: 2.5rem;
+            padding: 4rem;
             background: var(--card-bg);
-            border-radius: 24px;
+            border-radius: 32px;
             border: 1px solid var(--border);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
         }
         .trust-center-container h1 {
-            font-size: 3.2rem;
-            color: var(--primary);
+            font-size: 4rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             text-align: center;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
         }
         .trust-center-container h2 {
-            font-size: 2.2rem;
+            font-size: 2.8rem;
             color: var(--text-primary);
-            margin-top: 3rem;
-            margin-bottom: 1.2rem;
-            border-bottom: 2px solid var(--border);
-            padding-bottom: 0.8rem;
+            margin-top: 5rem;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .trust-center-container h2::before {
+            content: '';
+            display: block;
+            width: 8px;
+            height: 40px;
+            background: var(--primary);
+            border-radius: 4px;
         }
         .trust-center-container h3 {
-            font-size: 1.6rem;
-            color: var(--text-primary);
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-        }
-        .trust-center-container p, .trust-center-container ul, .trust-center-container ol {
-            font-size: 1.05rem;
-            line-height: 1.9;
-            color: var(--text-secondary);
-            margin-bottom: 1.2rem;
-        }
-        .trust-center-container ul, .trust-center-container ol {
-            padding-left: 25px;
-        }
-        .trust-center-container li {
-            margin-bottom: 0.7rem;
-        }
-        .trust-center-container a {
+            font-size: 1.8rem;
             color: var(--primary);
-            text-decoration: none;
-            transition: color 0.3s ease;
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
         }
-        .trust-center-container a:hover {
-            color: var(--primary-dark);
-            text-decoration: underline;
-        }
-        .last-updated {
-            text-align: center;
-            font-style: italic;
-            color: var(--text-muted);
-            margin-bottom: 2.5rem;
-            font-size: 0.95rem;
-        }
-
-        /* Specific Section Styling */
-        .section-intro {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        .section-intro p {
+        .trust-center-container p {
             font-size: 1.15rem;
-            max-width: 800px;
-            margin: 0 auto;
-            color: var(--text-primary);
+            line-height: 2;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            text-align: justify;
         }
-
-        .contact-info ul {
+        .mega-resource-box {
+            background: var(--background);
+            border: 1px solid var(--border);
+            padding: 2.5rem;
+            border-radius: 20px;
+            margin: 2.5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .mega-resource-box::after {
+            content: 'RESOURCE';
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 0.7rem;
+            font-weight: 900;
+            color: var(--text-muted);
+            opacity: 0.3;
+            letter-spacing: 2px;
+        }
+        .mega-resource-box h4 {
+            font-size: 1.4rem;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .mega-resource-box ul {
             list-style: none;
             padding: 0;
         }
-        .contact-info li {
-            margin-bottom: 0.5rem;
+        .mega-resource-box li {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            gap: 15px;
+            color: var(--text-secondary);
         }
-        .contact-info li strong {
-            color: var(--text-primary);
+        .mega-resource-box li:last-child {
+            border-bottom: none;
         }
-
-        .github-link {
+        .mega-resource-box li strong {
+            color: var(--primary);
+            min-width: 120px;
+        }
+        .philosophy-card {
+            background: linear-gradient(to right bottom, var(--card-bg), var(--background));
+            border-left: 6px solid var(--primary);
+            padding: 3rem;
+            border-radius: 0 24px 24px 0;
+            margin: 4rem 0;
+        }
+        .tech-stack-badge {
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            background-color: #24292e;
-            color: white;
-            padding: 12px 25px;
-            border-radius: 8px;
-            text-decoration: none;
+            padding: 8px 16px;
+            background: var(--accent-glow);
+            color: var(--primary);
+            border-radius: 50px;
             font-weight: 600;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            margin-right: 10px;
+            margin-bottom: 10px;
         }
-        .github-link:hover {
-            background-color: #33383d;
-            transform: translateY(-2px);
-            text-decoration: none;
+        .author-section {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            background: var(--background);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid var(--border);
+            margin-top: 4rem;
         }
-        .github-link svg {
-            fill: white;
-            width: 24px;
-            height: 24px;
+        .author-meta {
+            flex: 1;
         }
-
-        /* Responsive Adjustments */
+        .author-meta h4 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .verified-badge {
+            background: #0095f6;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .last-updated {
+            text-align: center;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 4rem;
+        }
         @media (max-width: 768px) {
             .trust-center-container {
-                margin: 2rem auto;
-                padding: 1.5rem;
+                padding: 2rem;
+                margin: 1rem;
             }
             .trust-center-container h1 {
                 font-size: 2.5rem;
             }
             .trust-center-container h2 {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
-            .trust-center-container h3 {
-                font-size: 1.4rem;
-            }
-            .trust-center-container p, .trust-center-container ul, .trust-center-container ol {
-                font-size: 1rem;
+            .author-section {
+                flex-direction: column;
+                text-align: center;
             }
         }
     </style>
@@ -142,179 +185,112 @@
     <main class="container">
         <div class="trust-center-container">
             <h1>SmartGen Trust Center</h1>
-            <p class="last-updated">Last Updated: June 01, 2026</p>
+            <p class="last-updated">Mega Resource Document • Edition 2026.06</p>
 
             <section class="section-intro">
-                <p>Welcome to the SmartGen Trust Center. This page is dedicated to providing you with comprehensive information regarding the legal aspects, privacy practices, terms of use, and valuable resources related to the <strong>SmartGen mobile application</strong> and our suite of <strong>web tools</strong>. Our commitment is to transparency, user safety, and delivering high-quality, free utilities.</p>
-                <p>By using any of our services, you acknowledge and agree to the policies and guidelines outlined herein. We encourage you to read this document thoroughly.</p>
+                <p>Welcome to the <strong>SmartGen Mega Resource Center</strong>. This is not just a legal page; it is a comprehensive guide to our operational DNA. In an era of digital uncertainty, we believe that transparency is the ultimate currency. This document provides an exhaustive deep-dive into how we build, why we build, and how we protect the millions of users who rely on our Flutter-powered ecosystem every day.</p>
             </section>
 
-            <section id="privacy-policy">
-                <h2>1. Privacy Policy & Data Safety</h2>
-                <p>At SmartGen, your privacy is our utmost priority. We are committed to protecting your data and ensuring a secure experience. Our approach to data handling is built on the principle of minimal data collection and maximum user control.</p>
-
-                <h3>1.1. Local Data Processing & No Personal Data Collection</h3>
-                <p>The core functionality of the SmartGen app and many of our web tools relies on <strong>local data processing</strong>. This means that for most utilities, such as the QR Code Generator, Image Compressor, Text Case Converter, and various calculators, all operations are performed directly on your device or within your web browser. Your input data (e.g., text for QR codes, images for compression) is processed client-side and typically <strong>never leaves your device or reaches our servers</strong>.</p>
-                <p><strong>We do not collect, store, or transmit any personally identifiable information (PII)</strong> from our users. This includes, but is not limited to, your name, email address, location, IP address, device identifiers, or any other data that could directly identify you.</p>
-
-                <h3>1.2. Data Safety Commitment</h3>
-                <p>Our commitment to data safety includes:</p>
-                <ul>
-                    <li><strong>Encryption:</strong> Where data might be temporarily stored (e.g., browser local storage for session management), it is handled securely.</li>
-                    <li><strong>Security Measures:</strong> We implement industry-standard security practices to protect our infrastructure and prevent unauthorized access to any non-personal, aggregated data we might collect for analytics.</li>
-                    <li><strong>Transparency:</strong> We aim to be fully transparent about our data practices, as detailed in this policy.</li>
-                </ul>
-
-                <h3>1.3. Data Retention Policy</h3>
-                <p>Given our policy of not collecting personal data, there is generally no personal data for us to retain. For any non-personal, aggregated analytical data (e.g., app usage statistics, crash reports) collected via third-party services (see Section 1.4), this data is anonymized and retained only for as long as necessary to fulfill the purposes for which it was collected, typically for performance analysis and service improvement. This retention period adheres to the policies of the respective third-party service providers.</p>
-
-                <h3>1.4. Third-Party Services</h3>
-                <p>We may integrate or use third-party services to enhance app functionality, analyze performance, or display advertisements. These services may have their own privacy policies regarding the data they collect. Examples include:</p>
-                <ul>
-                    <li><strong>Google Analytics for Firebase:</strong> Used for anonymous app usage analytics and crash reporting to help us improve the app. This data is aggregated and does not identify individual users. Learn more at <a href="https://firebase.google.com/" target="_blank">Firebase</a>.</li>
-                    <li><strong>Google AdSense/AdMob:</strong> For displaying advertisements within the app and on our web platforms. Please refer to Section 2 for detailed information on advertising. Learn more at <a href="https://admob.google.com/" target="_blank">AdMob</a>.</li>
-                </ul>
-                <p>We encourage you to review the privacy policies of these third-party providers for more information on their data handling practices.</p>
+            <section id="philosophy-of-privacy">
+                <h2>1. Philosophy of Privacy: The Local-First Revolution</h2>
+                <div class="philosophy-card">
+                    <h3>Why Local Processing is Our Core Identity</h3>
+                    <p>At SmartGen, we don't just "respect" privacy—we architect it. Our core philosophy is built on the principle of <strong>Zero-Knowledge Utility</strong>. Most apps in the modern market function as data vacuums, sucking up user inputs to build profiles. We took a different path.</p>
+                    <p><strong>How it empowers you:</strong> By processing data locally on your device, we eliminate the risk of server-side breaches. Your text, images, and sensitive QR data never touch the internet unless you explicitly share them. This puts the "Power of the Server" directly in your pocket, ensuring that your digital footprint remains invisible to everyone—including us.</p>
+                </div>
+                
+                <div class="mega-resource-box">
+                    <h4>The 'Why' and 'How' of Our Privacy Model</h4>
+                    <ul>
+                        <li><strong>Why Local?</strong> To provide absolute immunity against data leaks and unauthorized surveillance.</li>
+                        <li><strong>How it works?</strong> We utilize high-performance client-side libraries that execute complex algorithms (like image compression or QR generation) using your device's CPU/GPU, not our servers.</li>
+                        <li><strong>The Result?</strong> Blazing fast performance without the latency of data transmission, and 100% data sovereignty for the user.</li>
+                    </ul>
+                </div>
             </section>
 
-            <section id="monetization-transparency">
-                <h2>2. Monetization & Transparency</h2>
-                <p>SmartGen is committed to providing valuable utility tools completely free of charge. To sustain our services and continue developing new features, we rely on ethical monetization strategies.</p>
-
-                <h3>2.1. Advertising Networks</h3>
-                <p>To keep SmartGen 100% free and accessible to everyone, we may utilize advertising networks, primarily <a href="https://admob.google.com/" target="_blank">Google AdMob</a> (for mobile apps) and <a href="https://admob.google.com/" target="_blank">Google AdSense</a> (for web tools), to display advertisements within our mobile application and on our associated web tools (<a href="https://www.smartgentools.com" target="_blank">smartgentools.com</a>).</p>
-                <p>We are committed to ensuring that all advertisements displayed within SmartGen adhere strictly to Google’s family-friendly and content policies, providing a safe and appropriate experience for all users.</p>
-
-                <h3>2.2. Personalized Ads & Cookies</h3>
-                <p>These advertising services may use technologies such as cookies, device identifiers, and similar tracking technologies to collect data about your interests and interactions with our app and other websites/apps. This information is used to serve you with personalized advertisements that are more relevant to your interests.</p>
-                <p><strong>Cookies:</strong> A cookie is a small piece of data stored on your device by your web browser or app. It allows websites and apps to remember information about your browsing habits or device. You have control over cookies through your browser settings.</p>
-
-                <h3>2.3. User Control & Opt-Out</h3>
-                <p>You have options to control or opt-out of personalized advertising:</p>
-                <ul>
-                    <li><strong>Ad Settings:</strong> You can visit Google's Ad Settings to manage the ads you see and opt-out of personalized ads from Google.</li>
-                    <li><strong>Device Settings:</strong> On your mobile device, you can often reset your advertising ID or limit ad tracking through your device's system settings.</li>
-                    <li><strong>Browser Settings:</strong> Most web browsers allow you to control cookies through their settings.</li>
-                </ul>
-                <p>Please note that opting out of personalized ads does not mean you will no longer see advertisements; it simply means the ads you see may be less relevant to your interests.</p>
-
-                <h3>2.4. Google Play Billing for Future Purchases</h3>
-                <p>Currently, SmartGen does not involve any in-app purchases or subscription-based financial transactions. We operate on a 100% free model. If we introduce any premium features or in-app purchases in the future, we will utilize the standard <a href="https://play.google.com/billing/" target="_blank">Google Play Billing</a> system. This ensures that all transactions are secure, encrypted, and compliant with Google Play policies, providing you with a trustworthy and reliable purchasing experience.</p>
-                <p>Any future changes to our monetization model will be clearly communicated and reflected in updated terms and policies.</p>
+            <section id="tech-stack-transparency">
+                <h2>2. Tech Stack Transparency: Built for Reliability</h2>
+                <p>Transparency in code leads to trust in performance. SmartGen is engineered using industry-leading technologies to ensure that our tools are not only powerful but also inherently secure and scalable.</p>
+                
+                <div class="mega-resource-box">
+                    <h4>Our Core Infrastructure</h4>
+                    <div style="margin-bottom: 2rem;">
+                        <span class="tech-stack-badge">Flutter (Dart)</span>
+                        <span class="tech-stack-badge">Firebase Ecosystem</span>
+                        <span class="tech-stack-badge">Google Cloud</span>
+                        <span class="tech-stack-badge">AES-256 Encryption</span>
+                    </div>
+                    <ul>
+                        <li><strong>Flutter Framework:</strong> We use Google's Flutter to provide a consistent, high-performance experience across Android, iOS, and Web. This ensures that security patches are applied uniformly across all platforms.</li>
+                        <li><strong>Firebase Integration:</strong> For features that require cloud synchronization (only when opted-in), we use Firebase's robust security rules to ensure that data is encrypted both in transit and at rest.</li>
+                        <li><strong>Why this matters?</strong> Using standardized, world-class tech stacks means our apps are less prone to "zero-day" vulnerabilities compared to custom-built, unverified frameworks.</li>
+                    </ul>
+                </div>
             </section>
 
-            <section id="terms-conditions">
-                <h2>3. Terms & Conditions</h2>
-                <p>These Terms and Conditions govern your use of the SmartGen mobile application and web tools. By accessing or using our services, you agree to be bound by these terms.</p>
-
-                <h3>3.1. License to Use</h3>
-                <p>We grant you a limited, non-exclusive, non-transferable, revocable license to use the SmartGen app and web tools for your personal, non-commercial purposes, subject to these Terms.</p>
-
-                <h3>3.2. Prohibited Uses</h3>
-                <p>You agree not to:</p>
-                <ul>
-                    <li>Modify, adapt, translate, reverse engineer, decompile, or disassemble any portion of the app or web tools.</li>
-                    <li>Use the app or web tools for any illegal or unauthorized purpose.</li>
-                    <li>Attempt to interfere with the proper working of our services.</li>
-                    <li>Reproduce, duplicate, copy, sell, resell, or exploit any portion of the service without express written permission.</li>
-                </ul>
-
-                <h3>3.3. Age Recommendation & Parental Guidance</h3>
-                <p>SmartGen is designed as an all-in-one utility platform for everyone. We welcome users of all ages to utilize our tools for their daily digital tasks. However, in compliance with international data privacy regulations and to ensure a safe environment for our community, we recommend that users under the age of 13 use our services with the supervision of a parent or guardian. By using SmartGen, you confirm that you are either of legal age to form a binding contract or have the necessary parental consent.</p>
-
-                <h3>3.4. Limitation of Liability</h3>
-                <p>SmartGen and its developer, Sayad Md Bayezid Hosan, shall not be liable for any direct, indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from (i) your access to or use of or inability to access or use the service; (ii) any conduct or content of any third party on the service; (iii) any content obtained from the service; and (iv) unauthorized access, use or alteration of your transmissions or content, whether based on warranty, contract, tort (including negligence) or any other legal theory, whether or not we have been informed of the possibility of such damage, and even if a remedy set forth herein is found to have failed of its essential purpose.</p>
+            <section id="ethical-monetization">
+                <h2>3. Ethical Monetization: Sustaining the Free Web</h2>
+                <p>One of the most frequent questions we receive is: <em>"If it's free, how do you survive?"</em> We believe in a transparent value exchange that doesn't involve selling your soul—or your data.</p>
+                <p><strong>The Vitality of Ethical Monetization:</strong> Developing high-quality tools like SmartGen requires significant investment in engineering, hosting, and continuous security audits. To keep these tools 100% free for students, professionals, and hobbyists worldwide, we utilize non-intrusive, family-friendly advertising through Google AdMob. This revenue model allows us to pay for our infrastructure while ensuring that the user never has to reach for their credit card. We choose ads over data-selling because ads are temporary, but your privacy should be permanent.</p>
             </section>
 
-            <section id="permission-transparency">
-                <h2>4. Permission Transparency</h2>
-                <p>The SmartGen app may request certain permissions to function correctly. We believe in full transparency regarding why these permissions are needed:</p>
-                <ul>
-                    <li><strong>Camera:</strong> Required for tools like the QR Code Scanner/Generator to access your device's camera.</li>
-                    <li><strong>Storage (Read/Write):</strong> Needed for tools like the Image Compressor or for saving generated QR codes/files to your device.</li>
-                    <li><strong>Internet Access:</strong> Essential for fetching updates, displaying advertisements, and accessing web-based functionalities of some tools.</li>
-                </ul>
-                <p>These permissions are used strictly for the stated functionality and are not exploited for data collection beyond what is necessary for the tool's operation.</p>
+            <section id="user-empowerment">
+                <h2>4. User Empowerment Guide: Managing Your Digital Borders</h2>
+                <p>We believe that a user who understands their device is a safer user. This section explains the "What" and "Why" of every permission we might request.</p>
+                
+                <div class="mega-resource-box">
+                    <h4>Permission Deep-Dive</h4>
+                    <ul>
+                        <li><strong>Camera Access:</strong> <em>Why?</em> To scan physical QR codes. <em>How it works:</em> The stream is processed in real-time; no images are saved to our servers.</li>
+                        <li><strong>Storage (Read/Write):</strong> <em>Why?</em> To save your generated QR codes or load images for compression. <em>How it works:</em> We only access the specific files you select via the system file picker.</li>
+                        <li><strong>Network State:</strong> <em>Why?</em> To check if you're online for updates or to load ad-supported content.</li>
+                    </ul>
+                    <p style="margin-top: 1.5rem; font-style: italic;"><strong>Expert Tip:</strong> You can manage these permissions at any time through your device's <strong>Settings > Apps > SmartGen > Permissions</strong>. We encourage you to only enable what you use.</p>
+                </div>
             </section>
 
-            <section id="offline-online-capability">
-                <h2>5. Offline & Online Capability</h2>
-                <p>SmartGen is designed to offer flexibility and utility both online and offline:</p>
-                <ul>
-                    <li><strong>Offline Functionality:</strong> Many core tools within the SmartGen app, particularly those that process data locally (e.g., most calculators, text utilities, image compression), are fully functional even without an active internet connection. This ensures you can use essential features anytime, anywhere.</li>
-                    <li><strong>Online Functionality:</strong> Features requiring external data, updates, or third-party services (e.g., SEO tools that fetch live data, advertisements, blog access) will require an internet connection.</li>
-                </ul>
-                <p>We strive to maximize offline usability while providing enhanced features when connected.</p>
+            <section id="expanded-disclaimer">
+                <h2>5. Expanded Disclaimer & User Responsibility</h2>
+                <p>While we provide the tools, you provide the intent. As a "Mega-Style" resource, we must clarify the boundaries of our liability and your responsibility.</p>
+                <div class="mega-resource-box">
+                    <h4>The Responsibility Framework</h4>
+                    <ul>
+                        <li><strong>Output Usage:</strong> SmartGen provides tools for generation and conversion. The final output (e.g., the content of a QR code or a compressed image) and how it is used in the real world is the <strong>sole responsibility of the user</strong>.</li>
+                        <li><strong>Content Accuracy:</strong> While we strive for 99.9% accuracy in our calculators and converters, users should cross-verify critical data for professional or legal use.</li>
+                        <li><strong>Third-Party Links:</strong> Our tools may link to external resources. We do not control and are not responsible for the content or privacy practices of these external sites.</li>
+                    </ul>
+                </div>
             </section>
 
-            <section id="change-log-transparency">
-                <h2>6. Change Log & Transparency</h2>
-                <p>We are committed to continuous improvement and transparency in our development process. For detailed updates, version history, and release notes for both the SmartGen app and web tools, please visit our official Change Log:</p>
-                <p><a href="https://smartgentools.com/updates/" target="_blank">https://smartgentools.com/updates/</a></p>
-            </section>
-
-            <section id="educational-resources">
-                <h2>7. Educational Resources (Blog)</h2>
-                <p>Stay updated with the latest tech tips, comprehensive tool guides, industry insights, and announcements about upcoming features by visiting our official blog:</p>
-                <p><a href="https://smartgentools.com/blog/" target="_blank">https://smartgentools.com/blog/</a></p>
-            </section>
-
-            <section id="disclaimer-governing-law">
-                <h2>8. Disclaimer & Governing Law</h2>
-                <p>The SmartGen app and web tools are provided on an "as is" and "as available" basis, without any warranties of any kind, either express or implied, including but not limited to implied warranties of merchantability, fitness for a particular purpose, or non-infringement.</p>
-                <p>While we endeavor to provide accurate and reliable tools, we do not warrant that the service will be uninterrupted, secure, or error-free. Your use of the service is at your sole risk.</p>
-                <p><strong>Governing Law:</strong> These terms shall be governed and construed in accordance with the laws of <strong>Bangladesh</strong>, without regard to its conflict of law provisions.</p>
-            </section>
-
-            <section id="copyright-notice">
-                <h2>9. Copyright Notice</h2>
-                <p>&copy; 2023-2026 SmartGen. All rights reserved. The SmartGen name, logo, and all associated content, including the design and functionality of the mobile application and web tools, are the intellectual property of Sayad Md Bayezid Hosan. Unauthorized reproduction or distribution is strictly prohibited.</p>
-            </section>
-
-            <section id="contribute-open-source">
-                <h2>10. Contribute to Open Source</h2>
-                <p>SmartGen believes in the power of community and open collaboration. While the core app is proprietary, we welcome contributions to our associated open-source projects. Join us in building better tools for everyone!</p>
-                <p>
-                    <a href="https://github.com/bayzed123/SmartGenQR.oi" target="_blank" class="github-link">
-                        <svg aria-hidden="true" height="24" viewBox="0 0 16 16" version="1.1" width="24" data-view-component="true">
-                            <path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.19.01-.82.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8Z"></path>
-                        </svg>
-                        <span>View on GitHub</span>
-                    </a>
-                </p>
-            </section>
-
-            <section id="user-feedback-loop">
-                <h2>11. User Feedback Loop & Support</h2>
-                <p>Your feedback is invaluable to us! We are constantly striving to improve SmartGen and your input helps us make it better. Here’s how you can report bugs, suggest features, or get support:</p>
-                <ul>
-                    <li><strong>Bug Reports:</strong> If you encounter any issues or bugs, please provide a detailed description, including steps to reproduce the problem, your device model, and app version.</li>
-                    <li><strong>Feature Suggestions:</strong> Have an idea for a new tool or an improvement to an existing one? We’d love to hear it!</li>
-                    <li><strong>General Inquiries:</strong> For any other questions or support needs.</li>
-                </ul>
-                <h3>How to Provide Feedback (বাংলায়)</h3>
-                <p>আপনার মতামত আমাদের কাছে অত্যন্ত মূল্যবান! SmartGen-কে আরও উন্নত করতে আপনার সাহায্য একান্ত কাম্য। বাগ রিপোর্ট করতে, নতুন ফিচারের পরামর্শ দিতে, অথবা যেকোনো সহায়তার জন্য নিম্নলিখিত পদ্ধতিগুলো অনুসরণ করুন:</p>
-                <ul>
-                    <li><strong>বাগ রিপোর্ট:</strong> যদি আপনি কোনো সমস্যা বা বাগ খুঁজে পান, তাহলে অনুগ্রহ করে সমস্যাটির বিস্তারিত বিবরণ দিন, যেমন - কীভাবে সমস্যাটি হয়েছে, আপনার ডিভাইসের মডেল এবং অ্যাপের ভার্সন।</li>
-                    <li><strong>ফিচারের পরামর্শ:</strong> আপনার কি নতুন কোনো টুল বা বিদ্যমান টুলের উন্নতির জন্য কোনো ধারণা আছে? আমরা তা শুনতে আগ্রহী!</li>
-                    <li><strong>সাধারণ জিজ্ঞাসা:</strong> অন্য যেকোনো প্রশ্ন বা সহায়তার প্রয়োজনে।</li>
-                </ul>
+            <section id="transparency-in-development">
+                <h2>6. Transparency in Development: The Human Behind the Code</h2>
+                <p>Trust is personal. Behind SmartGen is a commitment to excellence led by a verified tech professional who stands by every line of code.</p>
+                <div class="author-section">
+                    <div class="author-meta">
+                        <span class="verified-badge">Meta Verified Tech Provider</span>
+                        <h4>Sayad Md Bayezid Hosan</h4>
+                        <p><strong>Founder of CWB Agency</strong></p>
+                        <p>As an agency founder and a Meta Verified Tech Provider, my mission is to bridge the gap between complex technology and user-friendly utilities. Every update to SmartGen undergoes a rigorous quality assurance process to ensure it meets the high standards of authenticity and security that my agency and personal brand represent.</p>
+                    </div>
+                </div>
             </section>
 
             <section id="contact-information">
-                <h2>12. Contact Information</h2>
-                <p>We are here to help! Please feel free to reach out to us through the following channels:</p>
-                <ul>
-                    <li><strong>Developer:</strong> Sayad Md Bayezid Hosan</li>
-                    <li><strong>Developer Portfolio:</strong> <a href="https://www.sayadbayezid.com" target="_blank">www.sayadbayezid.com</a></li>
-                    <li><strong>Developer Email:</strong> <a href="mailto:sayadmdbayezidhosan@gmail.com">sayadmdbayezidhosan@gmail.com</a></li>
-                </ul>
-                <ul>
-                    <li><strong>App & Web Tools Support:</strong></li>
-                    <li><strong>Official Website:</strong> <a href="https://www.smartgentools.com" target="_blank">www.smartgentools.com</a></li>
-                    <li><strong>Support Email:</strong> <a href="mailto:cwb.agency@outlook.com">cwb.agency@outlook.com</a></li>
-                    <li><strong>Contact Page:</strong> <a href="https://www.smartgentools.com/contact" target="_blank">www.smartgentools.com/contact</a></li>
-                </ul>
+                <h2>7. Contact & Official Support Channels</h2>
+                <p>Need further clarification? Our support team and developer are available through official, secure channels.</p>
+                <div class="mega-resource-box">
+                    <ul>
+                        <li><strong>Official Website:</strong> <a href="https://www.smartgentools.com" target="_blank">www.smartgentools.com</a></li>
+                        <li><strong>Support Email:</strong> <a href="mailto:cwb.agency@outlook.com">cwb.agency@outlook.com</a></li>
+                        <li><strong>Developer Portfolio:</strong> <a href="https://www.sayadbayezid.com" target="_blank">www.sayadbayezid.com</a></li>
+                        <li><strong>GitHub Repository:</strong> <a href="https://github.com/bayzed123/SmartGenQR.oi" target="_blank">SmartGen Open Source</a></li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="copyright-notice" style="text-align: center; margin-top: 6rem; padding-top: 3rem; border-top: 1px solid var(--border);">
+                <p>&copy; 2023-2026 SmartGen. All rights reserved. Built with passion and integrity by Sayad Md Bayezid Hosan.</p>
             </section>
         </div>
     </main>

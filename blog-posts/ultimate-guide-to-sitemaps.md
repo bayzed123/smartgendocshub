@@ -1,3 +1,12 @@
+---
+title: "The Ultimate Guide to Sitemaps: How to Create, Optimize, and Boost Your SEO"
+description: "A comprehensive guide to understanding, creating, optimizing, and submitting XML and HTML sitemaps to supercharge your website's search engine rankings."
+keywords: "XML sitemap, HTML sitemap, SEO guide, create sitemap online, optimize sitemap, submit sitemap to Google, SmartGen Tools, find sitemap"
+date: "2026-05-31"
+image: "https://i.ibb.co/TDGfjVC1/IMG-4284.jpg"
+author: "Sayad Md Bayezid Hosan"
+tags: ["SEO", "SmartGen", "Webmaster"]
+---
 ## The Ultimate Guide to Sitemaps: How to Create, Optimize, and Boost Your SEO
 
 When building a website, having stellar content and a beautiful design is only half the battle. If search engines cannot efficiently navigate, discover, and index your web pages, your target audience will never find you. Whether you are launching a brand-new website, adding a blog, or restructuring your domain, you need a clear roadmap for search engine crawlers. This is exactly where a **Sitemap** becomes your most powerful SEO asset.

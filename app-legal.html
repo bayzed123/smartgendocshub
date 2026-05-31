@@ -41,12 +41,16 @@
             gap: 15px;
         }
         .trust-center-container h2::before {
-            content: '';
+            content: ">"; /* Changed from empty to a symbol for visual flair */
             display: block;
             width: 8px;
             height: 40px;
             background: var(--primary);
             border-radius: 4px;
+            font-size: 2rem;
+            line-height: 40px;
+            text-align: center;
+            color: white;
         }
         .trust-center-container h3 {
             font-size: 1.8rem;
@@ -144,15 +148,6 @@
             font-size: 1.5rem;
             margin-bottom: 0.5rem;
         }
-        .verified-badge {
-            background: #0095f6;
-            color: white;
-            padding: 4px 12px;
-            border-radius: 4px;
-            font-size: 0.75rem;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
         .last-updated {
             text-align: center;
             font-weight: 600;
@@ -163,8 +158,10 @@
         }
         @media (max-width: 768px) {
             .trust-center-container {
-                padding: 2rem;
+                padding: 15px;
                 margin: 1rem;
+                width: 100%; /* Full width for mobile */
+                border-radius: 0;
             }
             .trust-center-container h1 {
                 font-size: 2.5rem;
@@ -175,6 +172,11 @@
             .author-section {
                 flex-direction: column;
                 text-align: center;
+            }
+            .trust-center-container h2::before {
+                height: 30px;
+                font-size: 1.5rem;
+                line-height: 30px;
             }
         }
     </style>
@@ -192,92 +194,179 @@
             </section>
 
             <section id="philosophy-of-privacy">
-                <h2>1. Philosophy of Privacy: The Local-First Revolution</h2>
+                <h2>Philosophy of Privacy & Security: The Edge Processing Imperative</h2>
                 <div class="philosophy-card">
-                    <h3>Why Local Processing is Our Core Identity</h3>
-                    <p>At SmartGen, we don't just "respect" privacy—we architect it. Our core philosophy is built on the principle of <strong>Zero-Knowledge Utility</strong>. Most apps in the modern market function as data vacuums, sucking up user inputs to build profiles. We took a different path.</p>
-                    <p><strong>How it empowers you:</strong> By processing data locally on your device, we eliminate the risk of server-side breaches. Your text, images, and sensitive QR data never touch the internet unless you explicitly share them. This puts the "Power of the Server" directly in your pocket, ensuring that your digital footprint remains invisible to everyone—including us.</p>
+                    <h3>Why Edge Processing is Our Core Identity</h3>
+                    <p>At SmartGen, our commitment to user privacy and data security is not merely a policy; it is the foundational philosophy embedded in every line of code and every feature we develop. In an increasingly interconnected digital landscape, where personal data has become a commodity, we stand firm in our belief that privacy is a fundamental human right. This conviction drives our unwavering dedication to **Edge Processing**, a paradigm that places data control firmly in the hands of the user.</p>
+                    <p>Traditional cloud-based applications, while offering convenience, inherently introduce vulnerabilities. User data is transmitted to remote servers, processed, and then returned. This journey, often across multiple networks and through various third-party infrastructures, creates numerous points of potential interception, storage, and misuse. Even with robust encryption, the sheer volume of data aggregated on central servers makes them attractive targets for malicious actors. Furthermore, legal jurisdictions and data retention policies of cloud providers can complicate user control over their own information.</p>
+                    <p>SmartGen’s Edge Processing model fundamentally alters this dynamic. Instead of relying on distant servers, the vast majority of our core functionalities—such as QR code generation, image compression, text manipulation, and various calculations—are executed directly on your device. This means that when you use SmartGen to create a QR code from sensitive text, compress a personal image, or convert a document, that data **never leaves your device**. It is processed locally, within the secure confines of your smartphone, tablet, or web browser. This architectural choice is a deliberate and powerful statement: your data is yours, and its privacy is non-negotiable.</p>
                 </div>
                 
                 <div class="mega-resource-box">
-                    <h4>The 'Why' and 'How' of Our Privacy Model</h4>
+                    <h4>The Unparalleled Advantages of Local Processing:</h4>
                     <ul>
-                        <li><strong>Why Local?</strong> To provide absolute immunity against data leaks and unauthorized surveillance.</li>
-                        <li><strong>How it works?</strong> We utilize high-performance client-side libraries that execute complex algorithms (like image compression or QR generation) using your device's CPU/GPU, not our servers.</li>
-                        <li><strong>The Result?</strong> Blazing fast performance without the latency of data transmission, and 100% data sovereignty for the user.</li>
+                        <li><strong>Enhanced Security:</strong> By keeping data on the device, we eliminate the risks associated with data transmission and server-side storage. There is no central repository of user-generated content for hackers to target, significantly reducing the attack surface.</li>
+                        <li><strong>Absolute Privacy:</strong> Since your input data is processed client-side, we have no access to it. We cannot collect, store, analyze, or monetize your personal information because it simply never reaches our systems. This provides a level of privacy that cloud-dependent applications cannot match.</li>
+                        <li><strong>Offline Functionality:</strong> A direct benefit of Edge Processing is the ability to use many SmartGen tools without an internet connection. Whether you're in a remote area or simply wish to conserve data, our core utilities remain fully functional, empowering you with productivity anytime, anywhere.</li>
+                        <li><strong>Superior Performance:</strong> Processing data locally often results in faster execution times. There's no network latency, no server queues, and no bandwidth limitations impacting your experience. Tasks are completed instantaneously, leveraging the processing power of your own device.</li>
+                        <li><strong>User Empowerment:</strong> Edge Processing puts you in complete control. You decide what data is input, and you control its output. This model fosters a sense of digital sovereignty, allowing you to use powerful tools without sacrificing your personal information.</li>
                     </ul>
-                </div>
-            </section>
-
-            <section id="tech-stack-transparency">
-                <h2>2. Tech Stack Transparency: Built for Reliability</h2>
-                <p>Transparency in code leads to trust in performance. SmartGen is engineered using industry-leading technologies to ensure that our tools are not only powerful but also inherently secure and scalable.</p>
-                
-                <div class="mega-resource-box">
-                    <h4>Our Core Infrastructure</h4>
-                    <div style="margin-bottom: 2rem;">
-                        <span class="tech-stack-badge">Flutter (Dart)</span>
-                        <span class="tech-stack-badge">Firebase Ecosystem</span>
-                        <span class="tech-stack-badge">Google Cloud</span>
-                        <span class="tech-stack-badge">AES-256 Encryption</span>
-                    </div>
-                    <ul>
-                        <li><strong>Flutter Framework:</strong> We use Google's Flutter to provide a consistent, high-performance experience across Android, iOS, and Web. This ensures that security patches are applied uniformly across all platforms.</li>
-                        <li><strong>Firebase Integration:</strong> For features that require cloud synchronization (only when opted-in), we use Firebase's robust security rules to ensure that data is encrypted both in transit and at rest.</li>
-                        <li><strong>Why this matters?</strong> Using standardized, world-class tech stacks means our apps are less prone to "zero-day" vulnerabilities compared to custom-built, unverified frameworks.</li>
-                    </ul>
+                    <p style="margin-top: 1.5rem;"><strong>How SmartGen Implements Edge Processing:</strong> Our applications are meticulously engineered to maximize client-side operations. We leverage efficient algorithms and optimized code to ensure that even complex tasks are handled effectively by your device's processor. For instance, when you compress an image, the entire process—from pixel analysis to re-encoding—occurs within your app, utilizing your device's CPU and memory. Similarly, QR code generation involves mathematical computations performed locally, rendering the code without any external data exchange. This design principle extends across our suite of tools, ensuring that your digital interactions remain private and secure by default.</p>
+                    <p>In a world where data breaches are commonplace and digital trust is eroding, SmartGen's Edge Processing philosophy is our pledge to you: a commitment to building tools that respect your privacy, secure your data, and empower your digital life without compromise. We believe this is not just a feature, but the future of responsible software development.</p>
                 </div>
             </section>
 
             <section id="ethical-monetization">
-                <h2>3. Ethical Monetization: Sustaining the Free Web</h2>
-                <p>One of the most frequent questions we receive is: <em>"If it's free, how do you survive?"</em> We believe in a transparent value exchange that doesn't involve selling your soul—or your data.</p>
-                <p><strong>The Vitality of Ethical Monetization:</strong> Developing high-quality tools like SmartGen requires significant investment in engineering, hosting, and continuous security audits. To keep these tools 100% free for students, professionals, and hobbyists worldwide, we utilize non-intrusive, family-friendly advertising through Google AdMob. This revenue model allows us to pay for our infrastructure while ensuring that the user never has to reach for their credit card. We choose ads over data-selling because ads are temporary, but your privacy should be permanent.</p>
-            </section>
-
-            <section id="user-empowerment">
-                <h2>4. User Empowerment Guide: Managing Your Digital Borders</h2>
-                <p>We believe that a user who understands their device is a safer user. This section explains the "What" and "Why" of every permission we might request.</p>
+                <h2>Ethical Monetization Strategy: Sustaining Innovation Without Compromise</h2>
+                <p>SmartGen is built on a core principle: to provide powerful, high-quality utility tools that are **100% free and accessible to everyone**. This commitment, however, comes with inherent operational costs—costs associated with continuous development, infrastructure maintenance, security audits, and supporting a global user base. The question naturally arises: <em>"How does SmartGen sustain itself without charging users or compromising their privacy?"</em></p>
+                <p>Our answer lies in a carefully considered **Ethical Monetization Strategy**, a model designed to generate necessary revenue while upholding our values of transparency, user respect, and data integrity. We firmly reject business models that rely on selling user data, implementing intrusive paywalls, or employing deceptive advertising practices. Instead, we embrace a sustainable approach that aligns with our mission to empower users.</p>
                 
                 <div class="mega-resource-box">
-                    <h4>Permission Deep-Dive</h4>
+                    <h4>The Imperative of Sustainable Funding:</h4>
+                    <p>Developing and maintaining cutting-edge software is a resource-intensive endeavor. It requires:</p>
                     <ul>
-                        <li><strong>Camera Access:</strong> <em>Why?</em> To scan physical QR codes. <em>How it works:</em> The stream is processed in real-time; no images are saved to our servers.</li>
-                        <li><strong>Storage (Read/Write):</strong> <em>Why?</em> To save your generated QR codes or load images for compression. <em>How it works:</em> We only access the specific files you select via the system file picker.</li>
-                        <li><strong>Network State:</strong> <em>Why?</em> To check if you're online for updates or to load ad-supported content.</li>
+                        <li><strong>Skilled Engineering:</strong> Talented developers dedicate countless hours to designing, coding, testing, and refining features.</li>
+                        <li><strong>Robust Infrastructure:</strong> While our core processing is on-device, certain functionalities (like updates, content delivery, and crash reporting) require secure cloud infrastructure.</li>
+                        <li><strong>Security & Compliance:</strong> Ongoing security audits, vulnerability assessments, and adherence to evolving privacy regulations are critical to protecting our users.</li>
+                        <li><strong>Customer Support:</strong> Providing timely and effective support to a diverse global community.</li>
+                        <li><strong>Innovation:</strong> Investing in research and development to bring new, valuable tools to our users.</li>
                     </ul>
-                    <p style="margin-top: 1.5rem; font-style: italic;"><strong>Expert Tip:</strong> You can manage these permissions at any time through your device's <strong>Settings > Apps > SmartGen > Permissions</strong>. We encourage you to only enable what you use.</p>
+                    <p>Without a sustainable revenue stream, it would be impossible to cover these costs and continue offering SmartGen as a free, high-quality service. Our ethical monetization strategy is the bridge that connects our commitment to free tools with the reality of operational expenses.</p>
                 </div>
-            </section>
 
-            <section id="expanded-disclaimer">
-                <h2>5. Expanded Disclaimer & User Responsibility</h2>
-                <p>While we provide the tools, you provide the intent. As a "Mega-Style" resource, we must clarify the boundaries of our liability and your responsibility.</p>
                 <div class="mega-resource-box">
-                    <h4>The Responsibility Framework</h4>
+                    <h4>Our Approach: Non-Intrusive, Family-Friendly Advertising:</h4>
+                    <p>The cornerstone of our monetization strategy is the judicious use of **non-intrusive, family-friendly advertising**. We partner with reputable advertising networks, primarily Google AdMob for our mobile applications and Google AdSense for our web tools. These platforms allow us to display advertisements that are:</p>
                     <ul>
-                        <li><strong>Output Usage:</strong> SmartGen provides tools for generation and conversion. The final output (e.g., the content of a QR code or a compressed image) and how it is used in the real world is the <strong>sole responsibility of the user</strong>.</li>
-                        <li><strong>Content Accuracy:</strong> While we strive for 99.9% accuracy in our calculators and converters, users should cross-verify critical data for professional or legal use.</li>
-                        <li><strong>Third-Party Links:</strong> Our tools may link to external resources. We do not control and are not responsible for the content or privacy practices of these external sites.</li>
+                        <li><strong>Contextually Relevant (where possible):</strong> Ads are often tailored to general app usage or broad categories, rather than specific personal data.</li>
+                        <li><strong>Non-Personalized (user-controlled):</strong> Users retain significant control over whether they receive personalized ads, with clear options to opt-out via device or browser settings. We prioritize user choice and transparency in ad delivery.</li>
+                        <li><strong>Strictly Compliant:</strong> All advertisements adhere to stringent content policies, ensuring they are appropriate for all ages and do not promote harmful or misleading content. We actively monitor ad content to maintain a safe user environment.</li>
+                        <li><strong>Respectful of User Experience:</strong> Ads are integrated in a manner that minimizes disruption to the user workflow. We avoid pop-ups, full-screen interstitials at critical moments, or any format that detracts significantly from the utility of our tools.</li>
                     </ul>
+                    <p style="margin-top: 1.5rem;"><strong>Why Advertising Over Data Selling?</strong> This choice is fundamental to our ethical stance. Advertisements, by their nature, are temporary and transactional. They provide a means to an end—funding our operations—without requiring us to compromise the privacy of our users. Selling user data, on the other hand, creates a permanent vulnerability and undermines the trust we strive to build. We believe that while ads may be a minor inconvenience for some, the alternative of data exploitation is an unacceptable breach of user trust and digital rights. Our commitment is to ensure that your privacy remains permanent, even as we rely on advertising to keep our tools free and continually improving.</p>
+                    <p>By choosing SmartGen, you are supporting a model that values your privacy and contributes to the ecosystem of free, high-quality software. Your engagement allows us to continue innovating and providing valuable utilities without ever putting a price tag on your data or a paywall on essential features.</p>
                 </div>
             </section>
 
-            <section id="transparency-in-development">
-                <h2>6. Transparency in Development: The Human Behind the Code</h2>
-                <p>Trust is personal. Behind SmartGen is a commitment to excellence led by a verified tech professional who stands by every line of code.</p>
-                <div class="author-section">
-                    <div class="author-meta">
-                        <span class="verified-badge">Meta Verified Tech Provider</span>
-                        <h4>Sayad Md Bayezid Hosan</h4>
-                        <p><strong>Founder of CWB Agency</strong></p>
-                        <p>As an agency founder and a Meta Verified Tech Provider, my mission is to bridge the gap between complex technology and user-friendly utilities. Every update to SmartGen undergoes a rigorous quality assurance process to ensure it meets the high standards of authenticity and security that my agency and personal brand represent.</p>
-                    </div>
+            <section id="responsibility-framework">
+                <h2>The Responsibility Framework: Empowering Users, Clarifying Roles</h2>
+                <p>At SmartGen, we are dedicated to providing powerful, intuitive tools that enhance your digital productivity. However, it is crucial to establish a clear **Responsibility Framework** that delineates the roles of SmartGen as the utility provider and you, the user, as the ultimate controller and decision-maker. We equip you with advanced capabilities, but the application and implications of these capabilities rest squarely with the user.</p>
+                
+                <div class="mega-resource-box">
+                    <h4>Understanding Your Role as the User:</h4>
+                    <p>SmartGen's tools are designed to be versatile and adaptable to a wide range of personal and professional needs. Whether you are generating a QR code for a business, compressing an image for a website, or converting text for a document, our applications function as sophisticated instruments. Like any powerful instrument, its effectiveness and ethical use are determined by the operator. We provide the hammer, but you decide what to build, or indeed, what to strike.</p>
+                    <p>This framework is built on the principle of **informed autonomy**. We strive to make our tools as transparent and predictable as possible, but the final judgment and accountability for their use reside with you. This includes, but is not limited to:</p>
+                    <ul>
+                        <li><strong>Content of Output:</strong> Any data, information, or media generated by SmartGen tools (e.g., the URL embedded in a QR code, the text in a converted document, the visual content of a compressed image) is a direct reflection of your input. SmartGen does not review, moderate, or endorse the content you choose to process. Therefore, you are solely responsible for ensuring that your input and the resulting output comply with all applicable laws, regulations, and ethical standards.</li>
+                        <li><strong>Application and Distribution:</strong> How you choose to apply, share, or distribute the output from SmartGen tools is your responsibility. For instance, if you generate a QR code linking to a website, you are accountable for the content of that website. If you compress an image containing copyrighted material, you are responsible for obtaining the necessary permissions.</li>
+                        <li><strong>Legal and Ethical Compliance:</strong> Users must ensure that their use of SmartGen tools does not infringe upon the rights of others, violate any intellectual property laws, or contribute to any illegal, harmful, or unethical activities. This includes avoiding the creation or dissemination of malicious QR codes, misleading information, or any content that could be considered offensive, defamatory, or discriminatory.</li>
+                        <li><strong>Data Handling and Privacy:</strong> While SmartGen employs Edge Processing to protect your data, any data you choose to export, share, or upload to third-party services after processing with SmartGen falls under your responsibility. Always exercise caution and review the privacy policies of external platforms before sharing sensitive information.</li>
+                    </ul>
+                    <p style="margin-top: 1.5rem;"><strong>SmartGen's Commitment as the Utility Provider:</strong> Our responsibility lies in providing reliable, secure, and high-performing tools. We commit to:</p>
+                    <ul>
+                        <li><strong>Tool Integrity:</strong> Ensuring that our tools function as described, without hidden agendas or malicious functionalities.</li>
+                        <li><strong>Security by Design:</strong> Implementing robust security measures within the application architecture to protect the integrity of the processing environment.</li>
+                        <li><strong>Transparency:</strong> Clearly communicating the capabilities, limitations, and permission requirements of our tools.</li>
+                        <li><strong>Continuous Improvement:</strong> Regularly updating and refining our tools to enhance functionality, improve security, and address user feedback.</li>
+                    </ul>
+                    <p>By using SmartGen, you acknowledge and accept this shared responsibility. We empower you with the means to achieve your digital goals, trusting in your judgment to use these tools wisely and responsibly. This partnership between SmartGen and its users is vital for fostering a safe, productive, and ethical digital environment for everyone.</p>
+                </div>
+            </section>
+
+            <section id="technical-excellence">
+                <h2>Why Choose SmartGen: Technical Excellence & Reliability</h2>
+                <p>In the rapidly evolving landscape of mobile and web applications, the underlying technology stack is paramount to delivering a superior user experience. SmartGen is not just a collection of tools; it is a testament to **Technical Excellence & Reliability**, meticulously engineered using a combination of cutting-edge frameworks and robust cloud services. Our choice of **Flutter** and **Firebase** is deliberate, aimed at providing an application that is not only powerful and feature-rich but also exceptionally fast, stable, and secure across all platforms.</p>
+                
+                <div class="mega-resource-box">
+                    <h4>Flutter: Unifying Performance Across Platforms</h4>
+                    <p>At the heart of SmartGen's cross-platform prowess lies **Flutter**, Google's UI toolkit for building natively compiled applications for mobile, web, and desktop from a single codebase. This strategic choice offers several profound advantages:</p>
+                    <ul>
+                        <li><strong>Native Performance:</strong> Unlike many cross-platform solutions that rely on web views, Flutter compiles directly to native ARM code for mobile and JavaScript for the web. This means SmartGen applications run with near-native performance, offering buttery-smooth animations, rapid response times, and efficient resource utilization. For you, this translates to a fluid and responsive experience, whether you're generating a complex QR code or compressing a high-resolution image.</li>
+                        <li><strong>Consistent User Experience (UX):</strong> Flutter's declarative UI framework ensures that SmartGen looks and feels identical across Android, iOS, and web platforms. This consistency reduces the learning curve and provides a predictable, high-quality interaction regardless of your device.</li>
+                        <li><strong>Rapid Development & Updates:</strong> The single codebase approach significantly accelerates our development cycle. New features, performance optimizations, and crucial security updates can be deployed much faster and more uniformly across all versions of SmartGen, ensuring you always have access to the latest and most secure iteration of our tools.</li>
+                        <li><strong>Optimized Resource Usage:</strong> Flutter is designed for efficiency. Its rendering engine is highly optimized, leading to lower CPU and GPU usage. This directly contributes to **improved battery efficiency** on mobile devices, allowing you to use SmartGen's powerful tools for longer without draining your battery.</li>
+                    </ul>
+                </div>
+
+                <div class="mega-resource-box">
+                    <h4>Firebase: A Secure and Scalable Backend (When Needed)</h4>
+                    <p>While our core philosophy emphasizes Edge Processing, certain functionalities, such as delivering application updates, anonymous crash reporting, or potentially future optional cloud-synced features (always with explicit user consent), require a robust and secure backend. For these needs, we integrate with the **Firebase ecosystem**, Google's comprehensive platform for mobile and web development.</p>
+                    <ul>
+                        <li><strong>Scalability & Reliability:</strong> Firebase services are built on Google's global infrastructure, offering unparalleled scalability and uptime. This ensures that any cloud-dependent aspects of SmartGen are always available and performant, even under heavy load.</li>
+                        <li><strong>Enhanced Security Features:</strong> Firebase provides enterprise-grade security features, including secure authentication, robust data encryption (both in transit and at rest), and granular access controls. This means that any non-personal, aggregated data (like anonymous usage statistics) or optional user-synced data is handled with the highest security standards.</li>
+                        <li><strong>Real-time Capabilities:</strong> For features that benefit from real-time data synchronization (e.g., dynamic content updates or future collaborative tools), Firebase's real-time database capabilities provide instant data propagation, enhancing responsiveness.</li>
+                    </ul>
+                    <p style="margin-top: 1.5rem;"><strong>The Synergy of Flutter and Firebase:</strong> The combination of Flutter's native performance and Firebase's secure, scalable backend creates a powerful synergy. It allows SmartGen to deliver a high-performance, reliable, and secure application that respects your privacy through Edge Processing while leveraging cloud capabilities responsibly for essential services. This technical foundation is our promise of a stable, efficient, and continuously improving utility experience.</p>
+                </div>
+            </section>
+
+            <section id="user-empowerment-guide">
+                <h2>User Empowerment Guide: Managing Your Digital Borders</h2>
+                <p>We believe that a user who understands their device is a safer user. This section explains the "What" and "Why" of every permission we might request, and how you can manage them to maintain control over your digital environment.</p>
+                
+                <div class="mega-resource-box">
+                    <h4>Permission Deep-Dive: Understanding and Managing Access</h4>
+                    <p>SmartGen is designed to operate with minimal permissions, requesting access only when absolutely necessary for a specific feature to function. We are transparent about these requirements:</p>
+                    <ul>
+                        <li><strong>Camera Access:</strong>
+                            <ul>
+                                <li><em>Why it's needed:</em> This permission is essential for tools that interact with the physical world, such as our QR Code Scanner. It allows the app to access your device's camera to capture images of QR codes for decoding.</li>
+                                <li><em>How it works:</em> When you activate the QR scanner, the app requests camera access. The camera feed is processed in real-time on your device to detect and decode QR codes. No images or video streams from your camera are stored locally by SmartGen or transmitted to our servers. The access is temporary and only active while the scanner is in use.</li>
+                                <li><em>Your control:</em> You can grant or revoke camera permission at any time through your device's system settings. If revoked, QR scanning functionality will be unavailable.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Storage (Read/Write) Access:</strong>
+                            <ul>
+                                <li><em>Why it's needed:</em> This permission is crucial for features that involve saving or loading files from your device. For example, when you generate a QR code, you might want to save it as an image file to your gallery. Similarly, our Image Compressor tool needs to read an image from your device to process it and then write the compressed version back.</li>
+                                <li><em>How it works:</em> SmartGen uses this permission to interact with your device's file system. When saving, it writes the generated output (e.g., QR code image) to a location you choose. When loading, it accesses only the specific files you select via the system's file picker interface. We do not indiscriminately scan or access your entire storage.</li>
+                                <li><em>Your control:</em> You can manage storage permissions via your device settings. Restricting this permission will prevent you from saving generated content or loading files for processing within SmartGen.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Internet Access (Network State):</strong>
+                            <ul>
+                                <li><em>Why it's needed:</em> While many core SmartGen tools function offline due to Edge Processing, internet access is necessary for certain functionalities. This includes fetching application updates, displaying advertisements (which fund our free services), accessing web-based functionalities of some tools (e.g., SEO tools that fetch live data), and anonymous crash reporting to help us improve stability.</li>
+                                <li><em>How it works:</em> The app checks your network state to determine if an internet connection is available. If connected, it can perform tasks like downloading updates or loading ad content. For web-based tools, it facilitates communication with external APIs to retrieve necessary data.</li>
+                                <li><em>Your control:</em> You can disable mobile data or Wi-Fi on your device. While this will limit certain features, many core offline functionalities of SmartGen will remain accessible.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <p style="margin-top: 1.5rem; font-style: italic;"><strong>Expert Tip:</strong> We strongly encourage all users to regularly review and manage app permissions on their devices. Navigate to <strong>Settings > Apps > SmartGen > Permissions</strong> on Android, or <strong>Settings > SmartGen</strong> on iOS, to customize access according to your comfort level and usage patterns. Only enable the permissions you actively use for the features you need.</p>
+                </div>
+            </section>
+
+            <section id="developer-commitment">
+                <h2>Developer Commitment & Transparency: The Human Element Behind SmartGen</h2>
+                <p>In an age dominated by anonymous digital entities, we believe in the power of personal accountability and transparent development. SmartGen is not an abstract corporation; it is the product of dedicated effort, guided by a clear vision for user empowerment and ethical technology. This section illuminates the human element behind SmartGen, detailing our commitment to continuous improvement, authenticity, and a collaborative growth trajectory.</p>
+                
+                <div class="mega-resource-box">
+                    <h4>The Visionary Behind the Code: Sayad Md Bayezid Hosan</h4>
+                    <p>SmartGen is spearheaded by Sayad Md Bayezid Hosan, an experienced agency founder and a professional deeply committed to bridging the gap between complex technological solutions and accessible, user-friendly utilities. This personal involvement ensures that every aspect of SmartGen, from its foundational philosophy to its user interface, is imbued with a commitment to quality, security, and ethical practice. The development process is not merely about coding; it's about crafting tools that genuinely serve and protect the user.</p>
+                </div>
+
+                <div class="mega-resource-box">
+                    <h4>Transparent Development Lifecycle:</h4>
+                    <p>Our development process is characterized by transparency and a rigorous commitment to quality assurance. Every update, every new feature, and every bug fix undergoes a meticulous review process. This ensures that:</p>
+                    <ul>
+                        <li><strong>Quality Assurance:</strong> New releases are thoroughly tested to maintain stability, performance, and security across all supported platforms.</li>
+                        <li><strong>Authenticity:</strong> We stand by the integrity of our code and the functionality of our tools. There are no hidden features, no undisclosed data collection, and no compromises on user trust.</li>
+                        <li><strong>Continuous Improvement:</strong> The digital landscape is constantly evolving, and so is SmartGen. We are dedicated to ongoing research and development, integrating the latest technological advancements and security protocols to keep our tools at the forefront of utility and safety.</li>
+                    </ul>
+                </div>
+
+                <div class="mega-resource-box">
+                    <h4>How We Grow Together: A Community-Driven Evolution</h4>
+                    <p>SmartGen's evolution is intrinsically linked to its user community. We believe that the best tools are those shaped by the needs and insights of the people who use them every day. This collaborative approach is fundamental to our growth strategy:</p>
+                    <ul>
+                        <li><strong>User Feedback Integration:</strong> Your feedback is invaluable. We actively listen to bug reports, feature requests, and suggestions from our users. This direct input informs our development roadmap, ensuring that SmartGen evolves in ways that are most beneficial and relevant to you.</li>
+                        <li><strong>Open Communication Channels:</strong> We maintain accessible channels for communication, including support emails and community forums (where applicable), to foster an environment of open dialogue. We are committed to responding to your queries and concerns with clarity and promptness.</li>
+                        <li><strong>Commitment to Open Source (where applicable):</strong> While the core SmartGen application is proprietary, we actively engage with and contribute to the broader open-source community. We believe in sharing knowledge and collaborating on foundational technologies that benefit everyone. Our GitHub presence for related projects reflects this commitment, inviting contributions and fostering collective innovation.</li>
+                    </ul>
+                    <p style="margin-top: 1.5rem;">By choosing SmartGen, you are not just adopting a set of tools; you are joining a community that values transparency, ethical development, and continuous improvement. We are committed to growing with you, ensuring that SmartGen remains a reliable, secure, and indispensable part of your digital toolkit for years to come.</p>
                 </div>
             </section>
 
             <section id="contact-information">
-                <h2>7. Contact & Official Support Channels</h2>
+                <h2>Contact & Official Support Channels</h2>
                 <p>Need further clarification? Our support team and developer are available through official, secure channels.</p>
                 <div class="mega-resource-box">
                     <ul>
@@ -285,6 +374,8 @@
                         <li><strong>Support Email:</strong> <a href="mailto:cwb.agency@outlook.com">cwb.agency@outlook.com</a></li>
                         <li><strong>Developer Portfolio:</strong> <a href="https://www.sayadbayezid.com" target="_blank">www.sayadbayezid.com</a></li>
                         <li><strong>GitHub Repository:</strong> <a href="https://github.com/bayzed123/SmartGenQR.oi" target="_blank">SmartGen Open Source</a></li>
+                        <li><strong>Change Log & Updates:</strong> <a href="https://smartgentools.com/updates/" target="_blank">https://smartgentools.com/updates/</a></li>
+                        <li><strong>Educational Resources (Blog):</strong> <a href="https://smartgentools.com/blog/" target="_blank">https://smartgentools.com/blog/</a></li>
                     </ul>
                 </div>
             </section>

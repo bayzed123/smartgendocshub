@@ -199,8 +199,7 @@
                         <p>Client-side processing means that all the sitemap fetching, parsing, and modification happens directly within your web browser. This is crucial for privacy and security because your website's URLs and data are never sent to an external server for processing. It ensures that your sensitive site structure information remains confidential.</p>
                     </div>
                 </details>
-                        <!-- Related SEO Guides Section Start -->
-        <div style="margin-top: 30px; margin-bottom: 30px; padding: 20px; background-color: #f8f9fa; border-left: 5px solid #2b5a9e; border-radius: 6px;">
+                        <div style="margin-top: 30px; margin-bottom: 30px; padding: 20px; background-color: #f8f9fa; border-left: 5px solid #2b5a9e; border-radius: 6px;">
             <h3 style="color: #2b5a9e; font-size: 22px; margin-top: 0; margin-bottom: 15px;">📚 Learn More About Sitemaps</h3>
             <p style="margin-bottom: 10px; color: #444;">Deep dive into sitemap optimization and technical SEO with our comprehensive master guides:</p>
             <ul style="list-style-type: none; padding-left: 0; margin-bottom: 0;">
@@ -212,9 +211,7 @@
                 </li>
             </ul>
         </div>
-        <!-- Related SEO Guides Section End -->
-
-                <h2>References</h2>
+        <h2>References</h2>
                 <p>[1] Yoast. (2026, March 11). <em>What is an XML sitemap and why should you have one?</em> [Blog post]. Retrieved from <a href="https://yoast.com/what-is-an-xml-sitemap-and-why-should-you-have-one/">https://yoast.com/what-is-an-xml-sitemap-and-why-should-you-have-one/</a></p>
                 <p>[2] Search Engine Land. (2025, November 27). <em>XML Sitemaps: What They Are & Why They Matter for SEO</em>. [Guide]. Retrieved from <a href="https://searchengineland.com/guide/xml-sitemaps">https://searchengineland.com/guide/xml-sitemaps</a></p>
                 <p>[3] Search Engine Roundtable. (2025, April 29). <em>Google: Changing Lastmod Date In Sitemap Isn't An SEO ...</em> [News article]. Retrieved from <a href="https://www.seroundtable.com/google-lastmod-date-seo-hack-39318.html">https://www.seroundtable.com/google-lastmod-date-seo-hack-39318.html</a></p>
@@ -246,29 +243,24 @@
                     return;
                 }
 
-                // --- NEW UX LOGIC VARIABLES ---
+                // --- LIVE TIMER & UX VARIABLES ---
                 let seconds = 0;
-                let liveCount = 0;
                 let timerInterval;
 
-                // UI Loading State Initial Setup
+                // UI Loading State (Kept exactly as original layout)
                 fetchSitemapBtn.disabled = true;
-                statusMessage.textContent = ''; // clear old status
                 loadingState.style.display = 'block';
+                outputSection.style.display = 'none';
                 
-                // Show output section immediately for the terminal effect, clear old URLs
-                outputSection.style.display = 'block';
-                urlsTextarea.value = '';
-                
-                loadingState.innerHTML = `<strong>Processing... Please wait (${seconds}s) | URLs found so far: ${liveCount}</strong>`;
-                
-                // Start live timer
+                // Initialize Dynamic Processing Message
+                loadingState.innerHTML = `<strong>Processing... Please wait (${seconds}s) | URLs found: 0</strong>`;
+                sitemapData = [];
+
+                // Start Live Timer Interval
                 timerInterval = setInterval(() => {
                     seconds++;
-                    loadingState.innerHTML = `<strong>Processing... Please wait (${seconds}s) | URLs found so far: ${liveCount}</strong>`;
+                    loadingState.innerHTML = `<strong>Processing... Please wait (${seconds}s) | URLs found: ${sitemapData.length}</strong>`;
                 }, 1000);
-
-                sitemapData = [];
 
                 try {
                     const sitemapContent = await fetchSitemap(domain);
@@ -276,12 +268,15 @@
                         sitemapData = parseSitemap(sitemapContent);
                         if (sitemapData.length > 0) {
                             
-                            // --- TERMINAL STREAMING EFFECT ---
+                            // Make Output container live immediately for visual impact
+                            outputSection.style.display = 'block';
+                            urlsTextarea.value = '';
+
+                            // --- LIIVE TERMINAL STREAMING EFFECT ---
                             await new Promise((resolve) => {
                                 let i = 0;
                                 const totalUrls = sitemapData.length;
-                                // Determine batch size so the animation takes ~1.5s max, preventing browser freeze
-                                const batchSize = Math.max(1, Math.ceil(totalUrls / 50)); 
+                                const batchSize = Math.max(1, Math.ceil(totalUrls / 40)); 
                                 
                                 const streamInterval = setInterval(() => {
                                     const batch = sitemapData.slice(i, i + batchSize);
@@ -292,34 +287,36 @@
                                         return;
                                     }
                                     
-                                    const newUrls = batch.map(item => item.loc).join('\n') + (i + batchSize >= totalUrls ? '' : '\n');
-                                    urlsTextarea.value += newUrls;
-                                    liveCount += batch.length;
+                                    const chunkContent = batch.map(item => item.loc).join('\n') + (i + batchSize >= totalUrls ? '' : '\n');
+                                    urlsTextarea.value += chunkContent;
                                     
-                                    // Update counter instantly
-                                    loadingState.innerHTML = `<strong>Processing... Please wait (${seconds}s) | URLs found so far: ${liveCount}</strong>`;
+                                    // Update counter in real-time inside the interval loop
+                                    loadingState.innerHTML = `<strong>Processing... Please wait (${seconds}s) | URLs found: ${urlsTextarea.value.split('\n').filter(Boolean).length}</strong>`;
                                     
-                                    // Auto-scroll to bottom like a terminal
+                                    // Auto-scroll logic to feel like a hacker console
                                     urlsTextarea.scrollTop = urlsTextarea.scrollHeight;
                                     
                                     i += batchSize;
-                                }, 30); // 30ms delay between batches
+                                }, 25); // Blazing fast 25ms animation delay
                             });
 
-                            showStatus(`Fetch Complete! Found ${sitemapData.length} URLs. You can edit them below.`, 'var(--success)');
+                            showStatus(`Found ${sitemapData.length} URLs. You can edit them below.`, 'var(--success)');
                         } else {
                             showStatus('No URLs found in sitemap.', 'var(--warning)');
+                            outputSection.style.display = 'none';
                         }
                     } else {
                         showStatus('Could not fetch sitemap. Please check the domain URL.', 'var(--error)');
+                        outputSection.style.display = 'none';
                     }
                 } catch (error) {
                     showStatus(`Error: ${error.message}`, 'var(--error)');
                     console.error('Sitemap fetch error:', error);
+                    outputSection.style.display = 'none';
                 } finally {
-                    clearInterval(timerInterval); // Stop timer immediately
+                    clearInterval(timerInterval); // Terminate timer cleanly
                     fetchSitemapBtn.disabled = false;
-                    loadingState.style.display = 'none'; // Hide loading state once done
+                    loadingState.style.display = 'none';
                 }
             });
 
@@ -432,7 +429,6 @@
         });
     </script>
 
-    <!-- Cookie Consent and Scripts -->
     <div id="cookie-consent-banner" style="position: fixed; bottom: 0; left: 0; width: 100%; background: #ffffff; border-top: 1px solid #e1e8ed; box-shadow: 0 -2px 10px rgba(0,0,0,0.05); z-index: 9999; display: none; padding: 1rem 0;">
         <div class="container" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;">
             <div style="flex: 1; min-width: 280px;">

@@ -378,6 +378,15 @@ const TOOLS_INDEX = [
         url: './ip-address-lookup/',
         icon: '🌐'
     },
+    {
+        id: 'sitemap-finder-and-downloader',
+        title: 'Sitemap Finder & Custom XML Downloader',
+        category: 'Developer & Technical',
+        keywords: ['sitemap', 'finder', 'downloader', 'xml', 'seo', 'extract', 'urls'],
+        description: 'Extract URLs, modify lastmod dates, and download custom XML sitemaps.',
+        url: './sitemap-finder-and-downloader/',
+        icon: '🗺️'
+    },
 	    {
 	        id: 'html-code-preview',
 	        title: 'Live HTML Previewer',

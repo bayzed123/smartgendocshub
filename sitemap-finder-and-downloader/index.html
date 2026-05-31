@@ -5,7 +5,7 @@
     <link rel="preconnect" href="https://www.googletagmanager.com">
     <link rel="preconnect" href="https://pagead2.googlesyndication.com">
     <link rel="preconnect" href="https://fundingchoicesmessages.google.com">
-    <link rel="preload" href="../assets/css/style.css" as="style" onload="this.rel=\'stylesheet\'">
+    <link rel="preload" href="../assets/css/style.css" as="style" onload="this.rel='stylesheet'">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -62,263 +62,264 @@
             <div class="form-group">
                 <button id="fetch-sitemap-btn" class="btn btn-primary" style="width: 100%;">Fetch Sitemap</button>
             </div>
+            <div id="loading-state" style="display: none; margin-top: 1rem; text-align: center; color: var(--primary);">
+                <strong>Processing... Please wait</strong>
+            </div>
             <div class="form-group">
                 <label class="form-label">Date Customization Options</label>
                 <div class="radio-group" style="display: flex; gap: 1rem;">
                     <label><input type="radio" name="date-option" value="original" checked> Keep Original Post Date</label>
-                    <label><input type="radio" name="date-option" value="today"> Use Today\'s Date & Time</label>
+                    <label><input type="radio" name="date-option" value="today"> Use Today's Date & Time</label>
                 </div>
             </div>
-            <div class="form-group" style="display: none;" id="download-section">
-                <button id="download-sitemap-btn" class="btn btn-primary" style="width: 100%;">Download XML Sitemap</button>
+            
+            <div id="output-section" style="display: none; margin-top: 2rem;">
+                <div class="form-group">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                        <label class="form-label" style="margin-bottom: 0;">Extracted URLs (Editable)</label>
+                        <button id="copy-links-btn" class="btn" style="padding: 0.4rem 0.8rem; font-size: 0.85rem; background: var(--border);">Copy Links</button>
+                    </div>
+                    <textarea id="sitemap-urls-textarea" class="form-textarea" rows="10" placeholder="URLs will appear here..."></textarea>
+                </div>
+                <div class="download-buttons" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <button id="download-txt-btn" class="btn btn-primary">Download Links (.txt)</button>
+                    <button id="download-xml-btn" class="btn btn-primary">Download Sitemap (.xml)</button>
+                </div>
             </div>
+
             <div id="status-message" style="margin-top: 1rem; color: var(--text-primary);"></div>
         </div>
 
-        <!-- Related Tools Section -->
-        <div id="dynamic-related-tools" class="container">
-            <div class="category-section">
-                <div class="category-header">
-                    <span class="category-icon">🛠️</span>
-                    <h2>Related Tools</h2>
-                </div>
-                <div class="tool-grid">
-                    <a href="../html-code-preview/" class="tool-card">
-                        <div class="tool-icon">💻</div>
-                        <h3>HTML Previewer</h3>
-                        <p>Write HTML/CSS/JS and see live results instantly.</p>
-                    </a>
-                    <a href="../css-gradient-generator/" class="tool-card">
-                        <div class="tool-icon">🎨</div>
-                        <h3>CSS Gradient Generator</h3>
-                        <p>Create beautiful CSS gradients with color pickers.</p>
-                    </a>
-                    <a href="../meta-tag-generator/" class="tool-card">
-                        <div class="tool-icon">🏷️</div>
-                        <h3>Meta Tag Generator</h3>
-                        <p>Boost your SEO with perfect meta tags.</p>
-                    </a>
-                    <a href="../schema-generator/" class="tool-card">
-                        <div class="tool-icon">📜</div>
-                        <h3>Schema Generator</h3>
-                        <p>Generate JSON-LD schema markup for SEO.</p>
-                    </a>
-                </div>
+        <section class="related-tools-section container" style="margin-top: 4rem;">
+            <div class="category-header">
+                <span class="category-icon">🛠️</span>
+                <h2>Related Tools</h2>
             </div>
-        </div>
-        <!-- End Related Tools Section -->
+            <div class="tool-grid">
+                <a href="../html-code-preview/" class="tool-card">
+                    <div class="tool-icon">💻</div>
+                    <h3>HTML Previewer</h3>
+                    <p>Write HTML/CSS/JS and see live results instantly.</p>
+                </a>
+                <a href="../css-gradient-generator/" class="tool-card">
+                    <div class="tool-icon">🎨</div>
+                    <h3>CSS Gradient Generator</h3>
+                    <p>Create beautiful CSS gradients with color pickers.</p>
+                </a>
+                <a href="../meta-tag-generator/" class="tool-card">
+                    <div class="tool-icon">🏷️</div>
+                    <h3>Meta Tag Generator</h3>
+                    <p>Boost your SEO with perfect meta tags.</p>
+                </a>
+                <a href="../schema-generator/" class="tool-card">
+                    <div class="tool-icon">📜</div>
+                    <h3>Schema Generator</h3>
+                    <p>Generate JSON-LD schema markup for SEO.</p>
+                </a>
+            </div>
+        </section>
 
         <article class="seo-content-container container mt-5 mb-5">
             <section class="seo-content">
-# The Ultimate Guide to XML Sitemaps: Boosting Your SEO with Smart Management
+                <h1>The Ultimate Guide to XML Sitemaps: Boosting Your SEO with Smart Management</h1>
+                <p>In the ever-evolving landscape of search engine optimization (SEO), an XML sitemap remains a foundational element for any website aiming for high visibility. Far from being a relic of the past, a well-structured XML sitemap acts as a crucial roadmap for search engine crawlers, guiding them through your website's most important pages and ensuring efficient indexing. This comprehensive guide will delve into the significance of XML sitemaps, explore the powerful SEO tactic of managing the <strong>&lt;lastmod&gt;</strong> date, and introduce you to an innovative tool designed to extract, modify, and download sitemaps safely and effectively.</p>
 
-In the ever-evolving landscape of search engine optimization (SEO), an XML sitemap remains a foundational element for any website aiming for high visibility. Far from being a relic of the past, a well-structured XML sitemap acts as a crucial roadmap for search engine crawlers, guiding them through your website's most important pages and ensuring efficient indexing. This comprehensive guide will delve into the significance of XML sitemaps, explore the powerful SEO tactic of managing the `<lastmod>` date, and introduce you to an innovative tool designed to extract, modify, and download sitemaps safely and effectively.
+                <h2>Understanding the Importance of XML Sitemaps for SEO</h2>
+                <p>An XML sitemap is a file that lists all the important URLs on your website, providing search engines like Google, Bing, and others with a clear understanding of your site's structure and content hierarchy <a href="https://yoast.com/what-is-an-xml-sitemap-and-why-should-you-have-one/">[1]</a>. While search engines can discover pages by following links, an XML sitemap offers a direct and efficient way to communicate which pages you consider most valuable. This is particularly beneficial for:</p>
+                <ul>
+                    <li><strong>New Websites:</strong> For sites with few external links, a sitemap helps search engines discover content that might otherwise be missed during the initial crawling phase.</li>
+                    <li><strong>Large Websites:</strong> E-commerce sites, news portals, and other large platforms often have thousands or even millions of pages. A sitemap ensures that all these pages, especially those deep within the site structure, are found and indexed.</li>
+                    <li><strong>Isolated Pages:</strong> Pages that are not well-linked internally can be easily overlooked by crawlers. A sitemap provides a direct path to these pages, ensuring they receive the attention they deserve.</li>
+                    <li><strong>Rich Media Content:</strong> Sitemaps can include specific information about video, image, and news content, helping search engines to better understand and display these elements in specialized search results.</li>
+                </ul>
+                <p>By facilitating efficient crawling and indexing, XML sitemaps indirectly contribute to improved search engine rankings. When search engines can easily access and understand your content, they are more likely to rank it appropriately for relevant queries, leading to increased organic traffic <a href="https://searchengineland.com/guide/xml-sitemaps">[2]</a>.</p>
 
-## Understanding the Importance of XML Sitemaps for SEO
+                <h2>The Power of the &lt;lastmod&gt; Date: A Strategic SEO Tactic</h2>
+                <p>The <strong>&lt;lastmod&gt;</strong> tag within an XML sitemap indicates the last modification date of a particular URL. While Google has stated that changing the <strong>&lt;lastmod&gt;</strong> date alone won't directly impact rankings, it plays a vital role in guiding crawler behavior and signaling content freshness <a href="https://www.seroundtable.com/google-lastmod-date-seo-hack-39318.html">[3]</a>. Here's why managing this date strategically can be a powerful SEO tactic:</p>
+                <ul>
+                    <li><strong>Prioritizing Recrawling:</strong> When a search engine sees an updated <strong>&lt;lastmod&gt;</strong> date for a page, it signals that the content has changed and might warrant a recrawl. This can lead to faster indexing of fresh content, which is particularly important for time-sensitive information or frequently updated articles.</li>
+                    <li><strong>Resource Allocation:</strong> Search engines have limited crawling budgets. By accurately reflecting when content was last updated, you help them allocate their resources more effectively, focusing on pages that have genuinely changed rather than recrawling static content unnecessarily.</li>
+                    <li><strong>Content Freshness Signals:</strong> Although not a direct ranking factor, content freshness is often associated with relevance. Regularly updating and accurately reflecting these updates in your sitemap can subtly contribute to how search engines perceive the timeliness and value of your content.</li>
+                    <li><strong>Identifying Stale Content:</strong> Conversely, pages with old <strong>&lt;lastmod&gt;</strong> dates can indicate stale content. This can prompt you to review and update these pages, improving their relevance and potentially their search performance.</li>
+                </ul>
+                <p>It's crucial to use the <strong>&lt;lastmod&gt;</strong> tag honestly. Falsely updating the <strong>&lt;lastmod&gt;</strong> date without making significant changes to the content can be counterproductive and may lead to search engines devaluing the signal from your sitemap <a href="https://webmasters.stackexchange.com/questions/25833/does-google-penalize-daily-updated-lastmod-tags-in-sitemaps-if-the-data-is-not">[4]</a>. The goal is to accurately inform search engines about genuine updates, thereby optimizing their crawling and indexing process.</p>
 
-An XML sitemap is a file that lists all the important URLs on your website, providing search engines like Google, Bing, and others with a clear understanding of your site's structure and content hierarchy [1]. While search engines can discover pages by following links, an XML sitemap offers a direct and efficient way to communicate which pages you consider most valuable. This is particularly beneficial for:
+                <h2>How the Sitemap Finder & Custom XML Downloader Extracts and Modifies Sitemaps Safely</h2>
+                <p>Our advanced "Sitemap Finder & Custom XML Downloader" tool is designed to empower website owners and SEO professionals with granular control over their XML sitemaps. This client-side only tool ensures maximum privacy and security, as all processing occurs directly within your browser, meaning your sensitive sitemap data never leaves your device.</p>
 
-*   **New Websites:** For sites with few external links, a sitemap helps search engines discover content that might otherwise be missed during the initial crawling phase.
-*   **Large Websites:** E-commerce sites, news portals, and other large platforms often have thousands or even millions of pages. A sitemap ensures that all these pages, especially those deep within the site structure, are found and indexed.
-*   **Isolated Pages:** Pages that are not well-linked internally can be easily overlooked by crawlers. A sitemap provides a direct path to these pages, ensuring they receive the attention they deserve.
-*   **Rich Media Content:** Sitemaps can include specific information about video, image, and news content, helping search engines to better understand and display these elements in specialized search results.
+                <h3>Step-by-Step Usage Instructions:</h3>
+                <ol>
+                    <li><strong>Enter Domain URL:</strong> Begin by entering the full domain URL of the website you wish to analyze (e.g., <code>https://example.com</code>) into the designated input field.</li>
+                    <li><strong>Fetch Sitemap:</strong> Click the "Fetch Sitemap" button. The tool will intelligently attempt to locate the sitemap by first checking the <code>robots.txt</code> file for a sitemap directive. If not found there, it will then try common sitemap paths (e.g., <code>/sitemap.xml</code>, <code>/sitemap_index.xml</code>). This robust fetching mechanism ensures a high success rate in discovering your sitemap.</li>
+                    <li><strong>Review Found URLs:</strong> Once the sitemap is successfully fetched and parsed, the tool will display the number of URLs found. This provides an immediate overview of your site's indexed content.</li>
+                    <li><strong>Choose Date Customization:</strong> This is where the tool's power truly shines. You have two critical options for managing the <strong>&lt;lastmod&gt;</strong> dates:
+                        <ul>
+                            <li><strong>"Keep Original Post Date":</strong> Selecting this option will preserve the original <strong>&lt;lastmod&gt;</strong> dates as found in the fetched sitemap. This is ideal when you want to maintain the integrity of your existing sitemap's date information.</li>
+                            <li><strong>"Use Today's Date & Time":</strong> This powerful feature allows you to replace all <strong>&lt;lastmod&gt;</strong> tags within the sitemap with the current ISO date and time. This can be particularly useful after a major site overhaul, a significant content update, or when you want to signal to search engines that a large portion of your content has been recently reviewed and refreshed.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Download XML Sitemap:</strong> After selecting your preferred date customization option, click the "Download XML Sitemap" button. The tool will instantly generate a valid <code>.xml</code> file containing all extracted URLs and your chosen <strong>&lt;lastmod&gt;</strong> dates. This file will be downloaded directly to your device, ready for submission to search consoles or for local archiving.</li>
+                </ol>
+                <p>This tool provides a transparent and secure way to manage your sitemaps, giving you the flexibility to optimize your site's crawlability and indexing signals without compromising data privacy.</p>
 
-By facilitating efficient crawling and indexing, XML sitemaps indirectly contribute to improved search engine rankings. When search engines can easily access and understand your content, they are more likely to rank it appropriately for relevant queries, leading to increased organic traffic [2].
+                <h2>Frequently Asked Questions (FAQs)</h2>
+                <details>
+                    <summary style="background-color: #f0f4f8; padding: 15px; border-radius: 8px; margin-bottom: 10px; cursor: pointer; font-weight: bold; color: #2b5a9e; display: flex; justify-content: space-between; align-items: center;">What is an XML sitemap and why is it important for SEO?</summary>
+                    <div style="padding: 15px; border: 1px solid #e5e7eb; border-radius: 8px; margin-bottom: 10px;">
+                        <p>An XML sitemap is a file that lists all the important pages of your website, acting as a guide for search engine crawlers. It helps search engines discover and index your content more efficiently, especially for new, large, or internally isolated pages. This improved crawlability can lead to better visibility and higher rankings in search results.</p>
+                    </div>
+                </details>
+                <details>
+                    <summary style="background-color: #f0f4f8; padding: 15px; border-radius: 8px; margin-bottom: 10px; cursor: pointer; font-weight: bold; color: #2b5a9e; display: flex; justify-content: space-between; align-items: center;">How does the &lt;lastmod&gt; tag in a sitemap affect SEO?</summary>
+                    <div style="padding: 15px; border: 1px solid #e5e7eb; border-radius: 8px; margin-bottom: 10px;">
+                        <p>The &lt;lastmod&gt; tag indicates when a page was last modified. While not a direct ranking factor, it signals to search engines that content has been updated, prompting them to recrawl the page sooner. This helps in faster indexing of fresh content and efficient allocation of crawling resources, indirectly supporting content freshness signals for SEO.</p>
+                    </div>
+                </details>
+                <details>
+                    <summary style="background-color: #f0f4f8; padding: 15px; border-radius: 8px; margin-bottom: 10px; cursor: pointer; font-weight: bold; color: #2b5a9e; display: flex; justify-content: space-between; align-items: center;">Is it safe to use a CORS proxy to fetch sitemaps?</summary>
+                    <div style="padding: 15px; border: 1px solid #e5e7eb; border-radius: 8px; margin-bottom: 10px;">
+                        <p>Yes, using a reputable CORS proxy like <code>api.allorigins.win</code> is generally safe for fetching publicly available sitemap data. Since the "Sitemap Finder & Custom XML Downloader" tool is client-side only, the data processing happens in your browser, and the proxy merely facilitates the cross-origin request without storing or processing your data.</p>
+                    </div>
+                </details>
+                <details>
+                    <summary style="background-color: #f0f4f8; padding: 15px; border-radius: 8px; margin-bottom: 10px; cursor: pointer; font-weight: bold; color: #2b5a9e; display: flex; justify-content: space-between; align-items: center;">Can I use this tool to generate a sitemap for a new website?</summary>
+                    <div style="padding: 15px; border: 1px solid #e5e7eb; border-radius: 8px; margin-bottom: 10px;">
+                        <p>This tool is designed to <em>find, extract, and modify</em> existing sitemaps from a given domain. While it can help you obtain a structured list of URLs, it does not <em>generate</em> a sitemap from scratch by crawling your entire site. For new websites, you would typically use a CMS plugin or a dedicated sitemap generator to create the initial sitemap.</p>
+                    </div>
+                </details>
+                <details>
+                    <summary style="background-color: #f0f4f8; padding: 15px; border-radius: 8px; margin-bottom: 10px; cursor: pointer; font-weight: bold; color: #2b5a9e; display: flex; justify-content: space-between; align-items: center;">What happens if the tool cannot find my sitemap?</summary>
+                    <div style="padding: 15px; border: 1px solid #e5e7eb; border-radius: 8px; margin-bottom: 10px;">
+                        <p>The tool first checks your website's <code>robots.txt</code> file for a sitemap directive. If it's not specified there, it then attempts to find the sitemap at common default locations (e.g., <code>/sitemap.xml</code>). If the sitemap is located at a non-standard path and not declared in <code>robots.txt</code>, the tool might not be able to find it.</p>
+                    </div>
+                </details>
+                <details>
+                    <summary style="background-color: #f0f4f8; padding: 15px; border-radius: 8px; margin-bottom: 10px; cursor: pointer; font-weight: bold; color: #2b5a9e; display: flex; justify-content: space-between; align-items: center;">Why is client-side processing important for sitemap tools?</summary>
+                    <div style="padding: 15px; border: 1px solid #e5e7eb; border-radius: 8px; margin-bottom: 10px;">
+                        <p>Client-side processing means that all the sitemap fetching, parsing, and modification happens directly within your web browser. This is crucial for privacy and security because your website's URLs and data are never sent to an external server for processing. It ensures that your sensitive site structure information remains confidential.</p>
+                    </div>
+                </details>
 
-## The Power of the `<lastmod>` Date: A Strategic SEO Tactic
-
-The `<lastmod>` tag within an XML sitemap indicates the last modification date of a particular URL. While Google has stated that changing the `<lastmod>` date alone won't directly impact rankings, it plays a vital role in guiding crawler behavior and signaling content freshness [3]. Here's why managing this date strategically can be a powerful SEO tactic:
-
-*   **Prioritizing Recrawling:** When a search engine sees an updated `<lastmod>` date for a page, it signals that the content has changed and might warrant a recrawl. This can lead to faster indexing of fresh content, which is particularly important for time-sensitive information or frequently updated articles.
-*   **Resource Allocation:** Search engines have limited crawling budgets. By accurately reflecting when content was last updated, you help them allocate their resources more effectively, focusing on pages that have genuinely changed rather than recrawling static content unnecessarily.
-*   **Content Freshness Signals:** Although not a direct ranking factor, content freshness is often associated with relevance. Regularly updating and accurately reflecting these updates in your sitemap can subtly contribute to how search engines perceive the timeliness and value of your content.
-*   **Identifying Stale Content:** Conversely, pages with old `<lastmod>` dates can indicate stale content. This can prompt you to review and update these pages, improving their relevance and potentially their search performance.
-
-It's crucial to use the `<lastmod>` tag honestly. Falsely updating the `<lastmod>` date without making significant changes to the content can be counterproductive and may lead to search engines devaluing the signal from your sitemap [4]. The goal is to accurately inform search engines about genuine updates, thereby optimizing their crawling and indexing process.
-
-## How the Sitemap Finder & Custom XML Downloader Extracts and Modifies Sitemaps Safely
-
-Our advanced "Sitemap Finder & Custom XML Downloader" tool is designed to empower website owners and SEO professionals with granular control over their XML sitemaps. This client-side only tool ensures maximum privacy and security, as all processing occurs directly within your browser, meaning your sensitive sitemap data never leaves your device.
-
-### Step-by-Step Usage Instructions:
-
-1.  **Enter Domain URL:** Begin by entering the full domain URL of the website you wish to analyze (e.g., `https://example.com`) into the designated input field.
-2.  **Fetch Sitemap:** Click the "Fetch Sitemap" button. The tool will intelligently attempt to locate the sitemap by first checking the `robots.txt` file for a sitemap directive. If not found there, it will then try common sitemap paths (e.g., `/sitemap.xml`, `/sitemap_index.xml`). This robust fetching mechanism ensures a high success rate in discovering your sitemap.
-3.  **Review Found URLs:** Once the sitemap is successfully fetched and parsed, the tool will display the number of URLs found. This provides an immediate overview of your site's indexed content.
-4.  **Choose Date Customization:** This is where the tool's power truly shines. You have two critical options for managing the `<lastmod>` dates:
-    *   **"Keep Original Post Date":** Selecting this option will preserve the original `<lastmod>` dates as found in the fetched sitemap. This is ideal when you want to maintain the integrity of your existing sitemap's date information.
-    *   **"Use Today's Date & Time":** This powerful feature allows you to replace all `<lastmod>` tags within the sitemap with the current ISO date and time. This can be particularly useful after a major site overhaul, a significant content update, or when you want to signal to search engines that a large portion of your content has been recently reviewed and refreshed. Remember to use this option judiciously and only when actual content updates warrant it.
-5.  **Download XML Sitemap:** After selecting your preferred date customization option, click the "Download XML Sitemap" button. The tool will instantly generate a valid `.xml` file containing all extracted URLs and your chosen `<lastmod>` dates. This file will be downloaded directly to your device, ready for submission to search consoles or for local archiving.
-
-This tool provides a transparent and secure way to manage your sitemaps, giving you the flexibility to optimize your site's crawlability and indexing signals without compromising data privacy.
-
-## Frequently Asked Questions (FAQs)
-
-<details>
-<summary style="background-color: #f0f4f8; padding: 15px; border-radius: 8px; margin-bottom: 10px; cursor: pointer; font-weight: bold; color: #2b5a9e; display: flex; justify-content: space-between; align-items: center;">What is an XML sitemap and why is it important for SEO?</summary>
-<div style="padding: 15px; border: 1px solid #e5e7eb; border-radius: 8px; margin-bottom: 10px;">
-<p>An XML sitemap is a file that lists all the important pages of your website, acting as a guide for search engine crawlers. It helps search engines discover and index your content more efficiently, especially for new, large, or internally isolated pages. This improved crawlability can lead to better visibility and higher rankings in search results.</p>
-</div>
-</details>
-
-<details>
-<summary style="background-color: #f0f4f8; padding: 15px; border-radius: 8px; margin-bottom: 10px; cursor: pointer; font-weight: bold; color: #2b5a9e; display: flex; justify-content: space-between; align-items: center;">How does the `<lastmod>` tag in a sitemap affect SEO?</summary>
-<div style="padding: 15px; border: 1px solid #e5e7eb; border-radius: 8px; margin-bottom: 10px;">
-<p>The `<lastmod>` tag indicates when a page was last modified. While not a direct ranking factor, it signals to search engines that content has been updated, prompting them to recrawl the page sooner. This helps in faster indexing of fresh content and efficient allocation of crawling resources, indirectly supporting content freshness signals for SEO.</p>
-</div>
-</details>
-
-<details>
-<summary style="background-color: #f0f4f8; padding: 15px; border-radius: 8px; margin-bottom: 10px; cursor: pointer; font-weight: bold; color: #2b5a9e; display: flex; justify-content: space-between; align-items: center;">Is it safe to use a CORS proxy to fetch sitemaps?</summary>
-<div style="padding: 15px; border: 1px solid #e5e7eb; border-radius: 8px; margin-bottom: 10px;">
-<p>Yes, using a reputable CORS proxy like `api.allorigins.win` is generally safe for fetching publicly available sitemap data. Since the "Sitemap Finder & Custom XML Downloader" tool is client-side only, the data processing happens in your browser, and the proxy merely facilitates the cross-origin request without storing or processing your data.</p>
-</div>
-</details>
-
-<details>
-<summary style="background-color: #f0f4f8; padding: 15px; border-radius: 8px; margin-bottom: 10px; cursor: pointer; font-weight: bold; color: #2b5a9e; display: flex; justify-content: space-between; align-items: center;">Can I use this tool to generate a sitemap for a new website?</summary>
-<div style="padding: 15px; border: 1px solid #e5e7eb; border-radius: 8px; margin-bottom: 10px;">
-<p>This tool is designed to *find, extract, and modify* existing sitemaps from a given domain. While it can help you obtain a structured list of URLs, it does not *generate* a sitemap from scratch by crawling your entire site. For new websites, you would typically use a CMS plugin or a dedicated sitemap generator to create the initial sitemap.</p>
-</div>
-</details>
-
-<details>
-<summary style="background-color: #f0f4f8; padding: 15px; border-radius: 8px; margin-bottom: 10px; cursor: pointer; font-weight: bold; color: #2b5a9e; display: flex; justify-content: space-between; align-items: center;">What happens if the tool cannot find my sitemap?</summary>
-<div style="padding: 15px; border: 1px solid #e5e7eb; border-radius: 8px; margin-bottom: 10px;">
-<p>The tool first checks your website's `robots.txt` file for a sitemap directive. If it's not specified there, it then attempts to find the sitemap at common default locations (e.g., `/sitemap.xml`). If the sitemap is located at a non-standard path and not declared in `robots.txt`, the tool might not be able to find it. Ensure your sitemap is correctly declared in `robots.txt` or placed at a common URL.</p>
-</div>
-</details>
-
-<details>
-<summary style="background-color: #f0f4f8; padding: 15px; border-radius: 8px; margin-bottom: 10px; cursor: pointer; font-weight: bold; color: #2b5a9e; display: flex; justify-content: space-between; align-items: center;">Why is client-side processing important for sitemap tools?</summary>
-<div style="padding: 15px; border: 1px solid #e5e7eb; border-radius: 8px; margin-bottom: 10px;">
-<p>Client-side processing means that all the sitemap fetching, parsing, and modification happens directly within your web browser. This is crucial for privacy and security because your website's URLs and data are never sent to an external server for processing. It ensures that your sensitive site structure information remains confidential and under your control.</p>
-</div>
-</details>
-
-## References
-
-[1] Yoast. (2026, March 11). *What is an XML sitemap and why should you have one?* [Blog post]. Retrieved from https://yoast.com/what-is-an-xml-sitemap-and-why-should-you-have-one/
-
-[2] Search Engine Land. (2025, November 27). *XML Sitemaps: What They Are & Why They Matter for SEO*. [Guide]. Retrieved from https://searchengineland.com/guide/xml-sitemaps
-
-[3] Search Engine Roundtable. (2025, April 29). *Google: Changing Lastmod Date In Sitemap Isn't An SEO ...* [News article]. Retrieved from https://www.seroundtable.com/google-lastmod-date-seo-hack-39318.html
-
-[4] Stack Exchange. (2012, February 13). *Does Google penalize daily updated <lastmod> tags in sitemaps if the data is not...* [Forum post]. Retrieved from https://webmasters.stackexchange.com/questions/25833/does-google-penalize-daily-updated-lastmod-tags-in-sitemaps-if-the-data-is-not
+                <h2>References</h2>
+                <p>[1] Yoast. (2026, March 11). <em>What is an XML sitemap and why should you have one?</em> [Blog post]. Retrieved from <a href="https://yoast.com/what-is-an-xml-sitemap-and-why-should-you-have-one/">https://yoast.com/what-is-an-xml-sitemap-and-why-should-you-have-one/</a></p>
+                <p>[2] Search Engine Land. (2025, November 27). <em>XML Sitemaps: What They Are & Why They Matter for SEO</em>. [Guide]. Retrieved from <a href="https://searchengineland.com/guide/xml-sitemaps">https://searchengineland.com/guide/xml-sitemaps</a></p>
+                <p>[3] Search Engine Roundtable. (2025, April 29). <em>Google: Changing Lastmod Date In Sitemap Isn't An SEO ...</em> [News article]. Retrieved from <a href="https://www.seroundtable.com/google-lastmod-date-seo-hack-39318.html">https://www.seroundtable.com/google-lastmod-date-seo-hack-39318.html</a></p>
+                <p>[4] Stack Exchange. (2012, February 13). <em>Does Google penalize daily updated &lt;lastmod&gt; tags in sitemaps if the data is not...</em> [Forum post]. Retrieved from <a href="https://webmasters.stackexchange.com/questions/25833/does-google-penalize-daily-updated-lastmod-tags-in-sitemaps-if-the-data-is-not">https://webmasters.stackexchange.com/questions/25833/does-google-penalize-daily-updated-lastmod-tags-in-sitemaps-if-the-data-is-not</a></p>
             </section>
         </article>
     </main>
     <footer id="main-footer"></footer>
 
     <script>
-                document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('DOMContentLoaded', () => {
             const domainUrlInput = document.getElementById('domain-url');
             const fetchSitemapBtn = document.getElementById('fetch-sitemap-btn');
-            const downloadSitemapBtn = document.getElementById('download-sitemap-btn');
-            const downloadSection = document.getElementById('download-section');
+            const copyLinksBtn = document.getElementById('copy-links-btn');
+            const downloadTxtBtn = document.getElementById('download-txt-btn');
+            const downloadXmlBtn = document.getElementById('download-xml-btn');
+            const outputSection = document.getElementById('output-section');
             const statusMessage = document.getElementById('status-message');
+            const loadingState = document.getElementById('loading-state');
+            const urlsTextarea = document.getElementById('sitemap-urls-textarea');
             const dateOptions = document.getElementsByName('date-option');
 
-            let sitemapUrls = [];
+            let sitemapData = [];
 
             fetchSitemapBtn.addEventListener('click', async () => {
                 const domain = domainUrlInput.value.trim();
                 if (!domain) {
-                    statusMessage.textContent = 'Please enter a domain URL.';
-                    statusMessage.style.color = 'var(--error)';
+                    showStatus('Please enter a domain URL.', 'var(--error)');
                     return;
                 }
 
-                statusMessage.textContent = 'Fetching sitemap... This may take a moment.';
-                statusMessage.style.color = 'var(--text-primary)';
-                downloadSection.style.display = 'none';
-                sitemapUrls = [];
+                // UI Loading State
+                fetchSitemapBtn.disabled = true;
+                loadingState.style.display = 'block';
+                outputSection.style.display = 'none';
+                showStatus('Fetching sitemap... This may take a moment.', 'var(--text-primary)');
+                sitemapData = [];
 
                 try {
                     const sitemapContent = await fetchSitemap(domain);
                     if (sitemapContent) {
-                        sitemapUrls = parseSitemap(sitemapContent);
-                        if (sitemapUrls.length > 0) {
-                            statusMessage.textContent = `Found ${sitemapUrls.length} URLs. Ready to download.`;
-                            statusMessage.style.color = 'var(--success)';
-                            downloadSection.style.display = 'block';
+                        sitemapData = parseSitemap(sitemapContent);
+                        if (sitemapData.length > 0) {
+                            urlsTextarea.value = sitemapData.map(item => item.loc).join('\n');
+                            showStatus(`Found ${sitemapData.length} URLs. You can edit them below.`, 'var(--success)');
+                            outputSection.style.display = 'block';
                         } else {
-                            statusMessage.textContent = 'No URLs found in sitemap.';
-                            statusMessage.style.color = 'var(--warning)';
+                            showStatus('No URLs found in sitemap.', 'var(--warning)');
                         }
                     } else {
-                        statusMessage.textContent = 'Could not fetch sitemap. Please check the domain URL.';
-                        statusMessage.style.color = 'var(--error)';
+                        showStatus('Could not fetch sitemap. Please check the domain URL.', 'var(--error)');
                     }
                 } catch (error) {
-                    statusMessage.textContent = `Error: ${error.message}`;
-                    statusMessage.style.color = 'var(--error)';
+                    showStatus(`Error: ${error.message}`, 'var(--error)');
                     console.error('Sitemap fetch error:', error);
+                } finally {
+                    fetchSitemapBtn.disabled = false;
+                    loadingState.style.display = 'none';
                 }
             });
 
-            downloadSitemapBtn.addEventListener('click', () => {
-                if (sitemapUrls.length === 0) {
-                    statusMessage.textContent = 'No URLs to download. Please fetch sitemap first.';
-                    statusMessage.style.color = 'var(--warning)';
-                    return;
-                }
+            copyLinksBtn.addEventListener('click', () => {
+                urlsTextarea.select();
+                document.execCommand('copy');
+                const originalText = copyLinksBtn.textContent;
+                copyLinksBtn.textContent = 'Copied!';
+                setTimeout(() => copyLinksBtn.textContent = originalText, 2000);
+            });
+
+            downloadTxtBtn.addEventListener('click', () => {
+                const content = urlsTextarea.value.trim();
+                if (!content) return;
+                downloadFile(content, 'sitemap-links.txt', 'text/plain');
+            });
+
+            downloadXmlBtn.addEventListener('click', () => {
+                const urls = urlsTextarea.value.trim().split('\n').filter(url => url.trim() !== '');
+                if (urls.length === 0) return;
 
                 const selectedDateOption = Array.from(dateOptions).find(radio => radio.checked).value;
-                const modifiedSitemap = generateModifiedSitemap(sitemapUrls, selectedDateOption);
-                downloadXmlFile(modifiedSitemap);
-                statusMessage.textContent = 'Sitemap downloaded successfully!';
-                statusMessage.style.color = 'var(--success)';
+                const xmlContent = generateXmlSitemap(urls, selectedDateOption);
+                downloadFile(xmlContent, 'sitemap.xml', 'application/xml');
             });
+
+            function showStatus(msg, color) {
+                statusMessage.textContent = msg;
+                statusMessage.style.color = color;
+            }
 
             async function fetchSitemap(domain) {
                 const corsProxy = 'https://api.allorigins.win/raw?url=';
                 const commonPaths = [
-                    '/sitemap.xml',
-                    '/sitemap_index.xml',
-                    '/sitemap_news.xml',
-                    '/sitemap_products.xml',
-                    '/sitemap_images.xml',
-                    '/sitemap_video.xml',
-                    '/sitemap.php',
-                    '/sitemap.txt'
+                    '/sitemap.xml', '/sitemap_index.xml', '/sitemap_news.xml', 
+                    '/sitemap_products.xml', '/sitemap_images.xml', '/sitemap_video.xml', 
+                    '/sitemap.php', '/sitemap.txt'
                 ];
 
-                // Try robots.txt first to find sitemap location
+                const cleanDomain = domain.endsWith('/') ? domain.slice(0, -1) : domain;
+
+                // Try robots.txt first
                 try {
-                    const robotsTxtUrl = `${corsProxy}${encodeURIComponent(domain.endsWith('/') ? domain : domain + '/') + 'robots.txt'}`;
-                    const robotsResponse = await fetch(robotsTxtUrl);
+                    const robotsResponse = await fetch(`${corsProxy}${encodeURIComponent(cleanDomain + '/robots.txt')}`);
                     if (robotsResponse.ok) {
                         const robotsText = await robotsResponse.text();
-                        const sitemapRegex = /Sitemap:\s*(.*)/i;
-                        const match = robotsText.match(sitemapRegex);
+                        const match = robotsText.match(/Sitemap:\s*(.*)/i);
                         if (match && match[1]) {
                             const sitemapUrl = match[1].trim();
-                            statusMessage.textContent = `Found sitemap in robots.txt: ${sitemapUrl}`; 
-                            statusMessage.style.color = 'var(--text-primary)';
                             const sitemapResponse = await fetch(`${corsProxy}${encodeURIComponent(sitemapUrl)}`);
-                            if (sitemapResponse.ok) {
-                                return await sitemapResponse.text();
-                            }
+                            if (sitemapResponse.ok) return await sitemapResponse.text();
                         }
                     }
-                } catch (error) {
-                    console.warn('Could not fetch robots.txt or sitemap from robots.txt:', error);
-                }
+                } catch (e) {}
 
-                // If not found in robots.txt, try common paths
+                // Try common paths
                 for (const path of commonPaths) {
                     try {
-                        const sitemapUrl = `${corsProxy}${encodeURIComponent(domain.endsWith('/') ? domain.slice(0, -1) : domain)}${path}`;
-                        const response = await fetch(sitemapUrl);
-                        if (response.ok) {
-                            statusMessage.textContent = `Found sitemap at: ${domain}${path}`; 
-                            statusMessage.style.color = 'var(--text-primary)';
-                            return await response.text();
-                        }
-                    } catch (e) {
-                        console.warn(`Could not fetch sitemap from ${domain}${path}:`, e);
-                    }
+                        const response = await fetch(`${corsProxy}${encodeURIComponent(cleanDomain + path)}`);
+                        if (response.ok) return await response.text();
+                    } catch (e) {}
                 }
                 return null;
             }
@@ -326,42 +327,42 @@ This tool provides a transparent and secure way to manage your sitemaps, giving 
             function parseSitemap(xmlString) {
                 const parser = new DOMParser();
                 const xmlDoc = parser.parseFromString(xmlString, 'application/xml');
-                const urls = [];
-                const locElements = xmlDoc.querySelectorAll('loc');
-                locElements.forEach(loc => {
-                    const url = loc.textContent;
-                    const lastmodElement = loc.nextElementSibling && loc.nextElementSibling.tagName === 'lastmod' ? loc.nextElementSibling : null;
-                    const lastmod = lastmodElement ? lastmodElement.textContent : '';
-                    urls.push({ loc: url, lastmod: lastmod });
+                const results = [];
+                const locs = xmlDoc.querySelectorAll('loc');
+                locs.forEach(loc => {
+                    const lastmod = loc.parentElement.querySelector('lastmod')?.textContent || '';
+                    results.push({ loc: loc.textContent.trim(), lastmod });
                 });
-                return urls;
+                return results;
             }
 
-            function generateModifiedSitemap(urls, dateOption) {
-                const now = new Date().toISOString().split('.')[0] + '+00:00'; // ISO 8601 format with timezone
+            function generateXmlSitemap(urls, dateOption) {
+                const now = new Date().toISOString().split('.')[0] + '+00:00';
                 let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
                 xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
-
                 urls.forEach(url => {
                     xml += '  <url>\n';
-                    xml += `    <loc>${url.loc}</loc>\n`;
+                    xml += `    <loc>${url.trim()}</loc>\n`;
                     if (dateOption === 'today') {
                         xml += `    <lastmod>${now}</lastmod>\n`;
-                    } else if (url.lastmod) {
-                        xml += `    <lastmod>${url.lastmod}</lastmod>\n`;
+                    } else {
+                        // Try to find original lastmod if available
+                        const original = sitemapData.find(item => item.loc === url.trim());
+                        if (original && original.lastmod) {
+                            xml += `    <lastmod>${original.lastmod}</lastmod>\n`;
+                        }
                     }
                     xml += '  </url>\n';
                 });
-
                 xml += '</urlset>';
                 return xml;
             }
 
-            function downloadXmlFile(content) {
-                const blob = new Blob([content], { type: 'application/xml' });
+            function downloadFile(content, filename, type) {
+                const blob = new Blob([content], { type });
                 const a = document.createElement('a');
                 a.href = URL.createObjectURL(blob);
-                a.download = 'sitemap.xml';
+                a.download = filename;
                 document.body.appendChild(a);
                 a.click();
                 document.body.removeChild(a);
@@ -370,7 +371,7 @@ This tool provides a transparent and secure way to manage your sitemaps, giving 
         });
     </script>
 
-    <!-- Cookie Consent Banner and Google Analytics/AdSense scripts from index.html -->
+    <!-- Cookie Consent and Scripts -->
     <div id="cookie-consent-banner" style="position: fixed; bottom: 0; left: 0; width: 100%; background: #ffffff; border-top: 1px solid #e1e8ed; box-shadow: 0 -2px 10px rgba(0,0,0,0.05); z-index: 9999; display: none; padding: 1rem 0;">
         <div class="container" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem; max-width: 1200px; margin: 0 auto; padding: 0 1.5rem;">
             <div style="flex: 1; min-width: 280px;">
@@ -386,16 +387,12 @@ This tool provides a transparent and secure way to manage your sitemaps, giving 
     </div>
     <script>
         (function() {
-            const banner = document.getElementById(\'cookie-consent-banner\');
-            const acceptBtn = document.getElementById(\'accept-cookies\');
-            
-            if (!localStorage.getItem(\'cookie-consent-accepted\')) {
-                banner.style.display = \'block\';
-            }
-            
-            acceptBtn.addEventListener(\'click\', function() {
-                localStorage.setItem(\'cookie-consent-accepted\', \'true\');
-                banner.style.display = \'none\';
+            const banner = document.getElementById('cookie-consent-banner');
+            const acceptBtn = document.getElementById('accept-cookies');
+            if (!localStorage.getItem('cookie-consent-accepted')) banner.style.display = 'block';
+            acceptBtn.addEventListener('click', () => {
+                localStorage.setItem('cookie-consent-accepted', 'true');
+                banner.style.display = 'none';
             });
         })();
     </script>
@@ -405,19 +402,16 @@ This tool provides a transparent and secure way to manage your sitemaps, giving 
             function loadGoogleAnalytics() {
                 if (gtag_loaded) return;
                 gtag_loaded = true;
-                
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
-                gtag(\'js\', new Date());
-                gtag(\'config\', \'G-982HBP86V8\');
-                
-                const script = document.createElement(\'script\');
+                gtag('js', new Date());
+                gtag('config', 'G-982HBP86V8');
+                const script = document.createElement('script');
                 script.async = true;
-                script.src = \'https://www.googletagmanager.com/gtag/js?id=G-982HBP86V8\';
+                script.src = 'https://www.googletagmanager.com/gtag/js?id=G-982HBP86V8';
                 document.head.appendChild(script);
             }
-            
-            [\'touchstart\', \'scroll\', \'mousemove\', \'click\'].forEach(event => {
+            ['touchstart', 'scroll', 'mousemove', 'click'].forEach(event => {
                 document.addEventListener(event, loadGoogleAnalytics, { once: true });
             });
         })();
@@ -428,15 +422,13 @@ This tool provides a transparent and secure way to manage your sitemaps, giving 
             function loadAdSense() {
                 if (adsense_loaded) return;
                 adsense_loaded = true;
-                
-                const script = document.createElement(\'script\');
+                const script = document.createElement('script');
                 script.async = true;
-                script.src = \'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9789336661158068\';
-                script.crossOrigin = \'anonymous\';
+                script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9789336661158068';
+                script.crossOrigin = 'anonymous';
                 document.head.appendChild(script);
             }
-            
-            [\'touchstart\', \'scroll\', \'mousemove\', \'click\'].forEach(event => {
+            ['touchstart', 'scroll', 'mousemove', 'click'].forEach(event => {
                 document.addEventListener(event, loadAdSense, { once: true });
             });
         })();

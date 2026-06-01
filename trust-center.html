@@ -1,281 +1,571 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SmartGen Trust Center</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartGen Trust Center & Privacy Policy</title>
+    <meta name="description" content="Official Trust Center, Privacy Policy, and Data Safety guidelines for the SmartGen Tools ecosystem.">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --background: #f8fafc;
+            --card-bg: #ffffff;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --border: #e2e8f0;
+            --accent: #eff6ff;
+        }
 
-<style>
-:root {
-    --primary: #4f46e5;
-    --background: #f9fafb;
-    --card-bg: #ffffff;
-    --border: #e5e7eb;
-    --text: #111827;
-}
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--background);
+            margin: 0;
+            padding: 0;
+        }
 
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: var(--background);
-    color: var(--text);
-    line-height: 1.6;
-}
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
 
-.container {
-    max-width: 1100px;
-    margin: auto;
-    padding: 20px;
-}
+        h1, h2, h3, h4 {
+            color: var(--text-primary);
+            margin-top: 2em;
+            margin-bottom: 0.5em;
+        }
 
-h1, h2, h3 {
-    color: var(--primary);
-}
+        h1 { font-size: 2.5rem; text-align: center; margin-top: 0; }
+        h2 { font-size: 1.8rem; border-bottom: 2px solid var(--border); padding-bottom: 10px; }
+        h3 { font-size: 1.4rem; color: var(--primary); }
 
-section {
-    background: var(--card-bg);
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 12px;
-    border: 1px solid var(--border);
-}
+        p, li { color: var(--text-secondary); font-size: 1.05rem; }
+        
+        a { color: var(--primary); text-decoration: none; font-weight: 500; }
+        a:hover { text-decoration: underline; }
 
-.version-header {
-    text-align: center;
-    padding: 20px;
-    border: 2px solid var(--primary);
-    border-radius: 12px;
-    background: var(--card-bg);
-}
+        .version-header {
+            background: var(--card-bg);
+            border: 2px solid var(--primary);
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
+        .version-header h2 {
+            margin-top: 0;
+            border: none;
+            text-align: center;
+            color: var(--primary);
+        }
 
-th, td {
-    border: 1px solid var(--border);
-    padding: 10px;
-    text-align: left;
-}
+        .version-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+            background: var(--accent);
+            padding: 20px;
+            border-radius: 8px;
+        }
 
-th {
-    background: var(--primary);
-    color: white;
-}
-</style>
+        .mega-resource-box {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        .highlight-quote {
+            background: var(--accent);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 5px solid var(--primary);
+            margin: 20px 0;
+            font-weight: 600;
+            color: var(--text-primary);
+            font-style: italic;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+        }
+
+        th, td {
+            padding: 15px;
+            border: 1px solid var(--border);
+            text-align: left;
+        }
+
+        th { background: var(--primary); color: white; font-weight: 600; }
+        
+        .tool-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .tool-summary {
+            background: var(--background);
+            border: 1px solid var(--border);
+            padding: 20px;
+            border-radius: 8px;
+            transition: transform 0.2s;
+        }
+
+        .tool-summary:hover { transform: translateY(-2px); box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
+        .tool-summary h4 { margin-top: 0; font-size: 1.2rem; }
+        .tool-summary p { margin: 8px 0; font-size: 0.95rem; }
+
+        .faq-accordion { margin-top: 20px; }
+        
+        .faq-item {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            background: var(--background);
+            margin: 0;
+            color: var(--text-primary);
+        }
+
+        .faq-answer {
+            padding: 20px;
+            border-top: 1px solid var(--border);
+        }
+    </style>
 </head>
-
 <body>
 
 <div class="container">
-
-<!-- HEADER -->
-<div class="version-header">
     <h1>SmartGen Trust Center</h1>
-    <p><strong>Official Compliance & Transparency Portal</strong></p>
-    <p>https://www.smartgentools.com/trust-center</p>
 
-    <div style="margin-top:15px;">
-        <div>Mobile App: v1.0.0</div>
-        <div>Web Tools: v3.2.0</div>
-        <div>Privacy Policy: v1.0.0</div>
-        <div>Edition: 2026.06</div>
-        <div>Build: Production Release</div>
-    </div>
-</div>
-
-<!-- INTRO -->
-<section>
-<h2>Overview</h2>
-<p>
-SmartGen is built on a privacy-first architecture where most tools operate locally on the user's device.
-We prioritize transparency, minimal data usage, and full compliance with Google Play policies, GDPR, and CCPA.
-</p>
-</section>
-
-<!-- DATA POLICY -->
-<section>
-<h2>Data Collection & Usage</h2>
-<ul>
-<li>No personal data (name, email, phone) is collected</li>
-<li>No user content is stored on servers</li>
-<li>Only limited technical data is processed</li>
-<li>Analytics via Firebase & Google Analytics</li>
-<li>Ads via Google AdMob</li>
-</ul>
-</section>
-
-<!-- API -->
-<section>
-<h2>External API Processing</h2>
-<p>
-Some tools may use external APIs. These are only triggered by user actions.
-Data is processed temporarily and not stored by SmartGen.
-</p>
-</section>
-
-<!-- CHILD SAFETY -->
-<section>
-<h2>Children’s Privacy</h2>
-<p>
-SmartGen is not intended for users under 13. We do not knowingly collect data from children.
-AdMob is configured with child-safe restrictions.
-</p>
-</section>
-
-<!-- ANALYTICS -->
-<section>
-<h2>Analytics & Tracking</h2>
-<ul>
-<li>Firebase Crashlytics for stability</li>
-<li>Google Analytics for usage insights</li>
-<li>Google Tag Manager for event tracking</li>
-<li>All data is aggregated & anonymized</li>
-</ul>
-</section>
-
-<!-- ADVERTISING -->
-<section>
-<h2>Advertising Disclosure</h2>
-<p>
-We use Google AdMob to keep tools free. Users can opt out of personalized ads via device settings.
-We do not control AdMob targeting systems.
-</p>
-</section>
-
-<!-- ACCOUNT -->
-<section>
-<h2>Account Policy</h2>
-<p>No registration or login is required. SmartGen does not create user accounts or profiles.</p>
-</section>
-
-<!-- SECURITY -->
-<section>
-<h2>Security & Architecture</h2>
-<ul>
-<li>HTTPS encrypted communication</li>
-<li>Local-first processing model</li>
-<li>No centralized database</li>
-<li>Secure API handling</li>
-</ul>
-</section>
-
-<!-- GDPR -->
-<section>
-<h2>GDPR & CCPA Compliance</h2>
-<ul>
-<li>Right to access (limited to technical data)</li>
-<li>Right to deletion (via uninstall/cache clear)</li>
-<li>No sale of user data</li>
-<li>No behavioral profiling</li>
-</ul>
-</section>
-
-<!-- DATA TABLE -->
-<section>
-<h2>Google Play Data Safety Summary</h2>
-
-<table>
-<tr>
-<th>Data Type</th>
-<th>Status</th>
-</tr>
-<tr><td>Personal Data</td><td>Not Collected</td></tr>
-<tr><td>User Content</td><td>Not Stored</td></tr>
-<tr><td>Device Info</td><td>Limited (Analytics)</td></tr>
-<tr><td>Crash Logs</td><td>Yes (Firebase)</td></tr>
-<tr><td>Ads Data</td><td>Yes (AdMob)</td></tr>
-<tr><td>Analytics</td><td>Aggregated</td></tr>
-</table>
-</section>
-
-<!-- TOOLS -->
-<section>
-<h2>SmartGen Tools Ecosystem</h2>
-<p>Includes developers, marketing, SEO, utilities, and AI-powered tools.</p>
-<ul>
-<li>QR Generator</li>
-<li>JSON Formatter</li>
-<li>Image Compressor</li>
-<li>UTM Builder</li>
-<li>AI Vocal Remover</li>
-<li>Word Counter</li>
-<li>EMI Calculator</li>
-<li>Privacy Policy Generator</li>
-<li>And many more</li>
-</ul>
-</section>
-
-<!-- FAQ -->
-<section>
-<h2>Frequently Asked Questions</h2>
-
-<p><strong>Do you collect personal data?</strong><br>No.</p>
-
-<p><strong>Is SmartGen free?</strong><br>Yes, supported by ads.</p>
-
-<p><strong>Can I use offline?</strong><br>Most tools work offline after loading.</p>
-
-<p><strong>Do you sell data?</strong><br>No.</p>
-
-<p><strong>How to contact support?</strong><br>cwb.agency@outlook.com</p>
-</section>
-
-<!-- FINAL -->
-<section>
-<h2>Final Declaration</h2>
-<p>
-SmartGen is committed to privacy-first computing, local processing, and full transparency.
-We do not sell user data, store personal information, or build user profiles.
-</p>
-</section>
-
-</div>
-<!-- FOOTER -->
-<footer style="background: var(--primary); color: white; padding: 30px 20px; margin-top: 40px; text-align: center; border-radius: 12px 12px 0 0;">
-
-    <div style="max-width: 1100px; margin: auto;">
-
-        <h3 style="color: white; margin-bottom: 10px;">SmartGen Trust Center</h3>
-
-        <p style="margin-bottom: 20px;">
-            Transparency • Privacy • Compliance • Security
+    <!-- 1. TITLE + VERSION HEADER -->
+    <div class="version-header">
+        <h2>Production Release Candidate (v1.0.0)</h2>
+        <p style="text-align: center; color: var(--text-secondary);">The official compliance, transparency, and data safety framework for the SmartGen ecosystem.</p>
+        
+        <div class="version-grid">
+            <div><strong>Mobile App Version:</strong> v1.0.0 (FIRST PUBLIC RELEASE)</div>
+            <div><strong>Web Tools Version:</strong> v3.2.0 (Stable GitHub Release)</div>
+            <div><strong>Privacy Policy Version:</strong> v1.0.0</div>
+            <div><strong>Trust Center Edition:</strong> 2026.06</div>
+            <div><strong>Build Type:</strong> Production Release Candidate</div>
+        </div>
+        
+        <p style="margin-top: 20px; font-size: 0.95rem;">
+            * <strong>Note:</strong> The mobile application represents our first Google Play Store release, while the web tools ecosystem is a mature, established system. This document serves as the initial unified compliance layer.<br>
+            * Future updates may include new tools, improvements, performance optimizations, and compliance enhancements aligned with Google Play policies and third-party SDK requirements.
         </p>
+        <p style="margin-top: 15px; text-align: center;">
+            <a href="https://smartgentools.com/updates/" target="_blank">Version Change Log</a> | 
+            <a href="https://smartgentools.com/blog/" target="_blank">Resources & Blog</a>
+        </p>
+    </div>
 
-        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-bottom: 20px;">
+    <!-- 2. REAL DATA MODEL & CORE ARCHITECTURE -->
+    <section id="data-model-clarification">
+        <h2>Real Data Model & Privacy-First Architecture</h2>
+        <div class="mega-resource-box">
+            <h3>Architecture & Data Flow</h3>
+            <p>SmartGen follows a strict <strong>Privacy-First, Client-Side Architecture</strong>. All core logic is executed directly on your device (Edge Processing). We utilize <strong>local storage-based processing</strong> to ensure that your sensitive inputs never touch a central server unless explicitly required by a specific external API-based tool.</p>
             
-            <a href="https://www.smartgentools.com/blog" target="_blank" style="color: white; text-decoration: underline;">
-                Docs & Blog
-            </a>
+            <h3>Account & Registration Policy</h3>
+            <p>SmartGen does not require user registration, login, or account creation. All features are accessible without creating any user profile or submitting personal credentials. There is no account system, meaning no user identity is stored, no personal profile is created, and no cross-device tracking is performed.</p>
+            
+            <div class="highlight-quote">
+                "SmartGen does not collect or store personally identifiable user-generated content. However, limited technical and analytics data may be processed by trusted third-party services such as Google Analytics, Google Tag Manager, Google AdMob, and selected API providers strictly for performance, functionality, and monetization purposes."
+            </div>
 
-            <a href="https://www.smartgentools.com/updates" target="_blank" style="color: white; text-decoration: underline;">
-                Update Changelog
-            </a>
+            <h3>Core Truth: Data Collection Policy</h3>
+            <p>SmartGen does <strong>NOT</strong> collect or store:</p>
+            <ul>
+                <li>User personal information (names, emails, physical addresses, phone numbers, browsing history).</li>
+                <li>User-generated content or files processed within our tools.</li>
+                <li>Passwords, sensitive inputs, or private documents.</li>
+            </ul>
+        </div>
+    </section>
 
-            <a href="https://www.smartgentools.com" target="_blank" style="color: white; text-decoration: underline;">
-                Official Website
-            </a>
+    <!-- 3. PLAY STORE & DATA SAFETY COMPLIANCE -->
+    <section id="play-store-compliance">
+        <h2>Smart Play Store Compliance Layer & Data Safety</h2>
+        <div class="mega-resource-box">
+            <p>In accordance with Google Play's Data Safety requirements, we declare that SmartGen does not sell user data. We collect only the minimum technical data required for app stability and performance monitoring.</p>
 
+            <h3>Data Collection Summary</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data Type</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Personal Data</td><td>Not Collected</td></tr>
+                    <tr><td>User Content</td><td>Not Stored</td></tr>
+                    <tr><td>Device Info</td><td>Limited (Analytics Only)</td></tr>
+                    <tr><td>Crash Logs</td><td>Yes (Anonymized via Firebase)</td></tr>
+                    <tr><td>Ads Data</td><td>Yes (Processed by AdMob)</td></tr>
+                    <tr><td>Analytics Data</td><td>Aggregated & Non-Identifiable</td></tr>
+                </tbody>
+            </table>
+
+            <h3>Data Usage Purpose</h3>
+            <ul>
+                <li><strong>App Functionality:</strong> Ensuring tools work as expected across different device ecosystems.</li>
+                <li><strong>Security:</strong> Protecting the application and users from malicious activity.</li>
+                <li><strong>Analytics:</strong> Understanding usage patterns to prioritize feature development and improve UX.</li>
+                <li><strong>Monetization:</strong> Serving relevant ads to keep the ecosystem free for all users.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 4. THIRD-PARTY SERVICES & EXTERNAL APIS -->
+    <section id="third-party-apis">
+        <h2>Third-Party Services, APIs & Advertising</h2>
+        <div class="mega-resource-box">
+            <h3>Unified Analytics & Firebase Transparency</h3>
+            <p>SmartGen integrates trusted third-party services to monitor stability and deliver content. These include:</p>
+            <ul>
+                <li><strong>Google Analytics / Tag Manager:</strong> Collects aggregated, anonymized usage insights.</li>
+                <li><strong>Firebase Crashlytics:</strong> Monitors app stability and reports fatal/non-fatal errors securely.</li>
+                <li><strong>Google AdMob:</strong> Manages advertising delivery and ad performance metrics.</li>
+            </ul>
+
+            <h3>AdMob Advertising Disclosure & Opt-Out</h3>
+            <p>To keep our tools free, we display ads via Google AdMob. AdMob may use device identifiers (Advertising ID) to serve relevant advertisements. SmartGen does not directly control AdMob's internal ad targeting system. Users can opt out of personalized advertising at any time by:</p>
+            <ul>
+                <li>Adjusting device-level advertising settings (Opting out of personalized ads).</li>
+                <li>Resetting the Advertising ID from Android settings.</li>
+                <li>Limiting ad tracking depending on regional OS settings.</li>
+            </ul>
+
+            <h3>External API Processing & Data Flow</h3>
+            <p>Certain advanced features (e.g., AI Vocal Remover, specialized URL generators, or YouTube Thumbnail fetchers) use external APIs. Data flow rules for APIs include:</p>
+            <ul>
+                <li>All API requests are initiated <strong>only by user action</strong>.</li>
+                <li>Only the user-provided input necessary for that specific tool is transmitted.</li>
+                <li>Data is processed temporarily and is not stored permanently by SmartGen servers.</li>
+                <li>Third-party APIs may apply their own respective privacy policies.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 5. COMPLIANCE & LEGAL FRAMEWORK -->
+    <section id="compliance-framework">
+        <h2>Comprehensive Compliance Framework (GDPR, CCPA & Safety)</h2>
+        <div class="mega-resource-box">
+            
+            <h3>GDPR & CCPA Alignment</h3>
+            <p>We respect user rights under the General Data Protection Regulation (GDPR) and the California Consumer Privacy Act (CCPA). Our strict data-minimization approach means these rights are inherently protected:</p>
+            <ul>
+                <li><strong>Right to Access & Transparency:</strong> You can view all technical data practices outlined in this exact document.</li>
+                <li><strong>Right to Deletion:</strong> Since we don't store personal data, deleting the app or clearing your browser cache instantly removes all local data. No server-side deletion request is required.</li>
+                <li><strong>Right to Opt-Out:</strong> You hold the right to opt-out of personalized ads via standard device settings. We do not "sell" user data in the traditional sense.</li>
+                <li><strong>Lawful Basis:</strong> Data is processed based on "Legitimate Interest" (security, stability) and "Consent" (advertising/APIs).</li>
+            </ul>
+
+            <h3>Children's Privacy & Age Restrictions</h3>
+            <p>SmartGen is not directed to children under the age of 13 (or applicable digital consent age in your region). We do not knowingly collect personal data from children, profile minors for advertising, or encourage unsupervised use of sensitive tools. If a minor uses the application, parental/guardian consent is required. AdMob is actively configured to comply with child-safe advertising policies.</p>
+
+            <h3>Android Permissions Disclosure</h3>
+            <ul>
+                <li><strong>Camera:</strong> Used strictly for QR scanning; no images are stored or transmitted.</li>
+                <li><strong>Storage:</strong> Used for saving/exporting files only with user-controlled access.</li>
+                <li><strong>Internet:</strong> Required for API features, ads, analytics, and dynamic updates.</li>
+                <li><strong>Background Services:</strong> Used strictly for background performance tracking or ad delivery.</li>
+            </ul>
+
+            <h3>Security & Data Retention</h3>
+            <p>All external communication uses enforced HTTPS encryption. Because we operate on a "No Backend Policy" for user content, there is no centralized database to breach. Technical logs (like Firebase crash reports) are inherently anonymized and automatically purged every 30-90 days.</p>
+        </div>
+    </section>
+
+    <!-- 6. SMARTGEN TOOLS ECOSYSTEM DIRECTORY -->
+    <section id="tools-ecosystem">
+        <h2>SmartGen Tools Ecosystem Overview</h2>
+        <p>A comprehensive directory of our specialized utilities, categorized by function, alongside specific local processing notes.</p>
+
+        <h3>Developer & Technical Tools</h3>
+        <div class="tool-grid">
+            <div class="tool-summary">
+                <h4>Base64 to Image Decoder</h4>
+                <p>Converts Base64 strings back into viewable image files for debugging data URIs. <br><strong>Processing:</strong> Entirely in browser/app memory.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>CSS Gradient Generator</h4>
+                <p>Create CSS linear and radial gradients visually. <br><strong>Processing:</strong> Real-time rendering by device GPU.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>MD5/SHA Hash Generator</h4>
+                <p>Generates secure cryptographic hashes. <br><strong>Processing:</strong> Hashing is strictly local; never sent to a server.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>Live HTML Previewer</h4>
+                <p>Instantly renders HTML, CSS, and JS code in a sandbox. <br><strong>Processing:</strong> Uses a secure local iframe.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>IP Address Lookup</h4>
+                <p>Displays public IP information and geolocation. <br><strong>Processing:</strong> Fetched via API. We do not log the IPs making requests.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>JSON Formatter & Validator</h4>
+                <p>Beautifies and checks JSON data for syntax errors. <br><strong>Processing:</strong> Parsing performed client-side.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>Meta Tag Generator</h4>
+                <p>Creates SEO-optimized meta tags. <br><strong>Processing:</strong> Generates HTML tags locally.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>Picture URL Generator</h4>
+                <p>Converts local images into temporary/permanent URLs. <br><strong>Processing:</strong> May use secure cloud storage (user-controlled).</p>
+            </div>
+            <div class="tool-summary">
+                <h4>QR Code Generator</h4>
+                <p>Creates custom QR codes for various data types. <br><strong>Processing:</strong> Encoding logic is 100% offline-capable.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>Random Choice Picker</h4>
+                <p>Randomly selects an item from a provided list. <br><strong>Processing:</strong> Uses on-device random number generator.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>Robots.txt Generator</h4>
+                <p>Generates instructions for search engine crawlers. <br><strong>Processing:</strong> Outputs text files locally.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>Schema Generator</h4>
+                <p>Creates JSON-LD structured data for SEO. <br><strong>Processing:</strong> Formats markup entirely on your device.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>URL Encoder-Decoder</h4>
+                <p>Safely encodes/decodes special characters. <br><strong>Processing:</strong> Uses standard local encoding libraries.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>UUID / GUID Generator</h4>
+                <p>Generates unique identifiers for databases. <br><strong>Processing:</strong> Generates random IDs without server interaction.</p>
+            </div>
         </div>
 
-        <p style="margin-bottom: 10px;">
-            © All Rights Reserved SmartGen
-        </p>
+        <h3 style="margin-top: 40px;">Marketing & Social Media</h3>
+        <div class="tool-grid">
+            <div class="tool-summary">
+                <h4>Blog Title Generator</h4>
+                <p>Suggests catchy, SEO-friendly titles. <br><strong>Processing:</strong> Uses local template logic.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>Disclaimer Generator</h4>
+                <p>Creates legal disclaimers for websites/apps. <br><strong>Processing:</strong> Templates populated entirely on-device.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>Facebook ID Finder</h4>
+                <p>Retrieves the numeric ID for profiles/pages. <br><strong>Processing:</strong> Fetches data from public Graph API endpoints.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>Hashtag Generator</h4>
+                <p>Discovers trending hashtags. <br><strong>Processing:</strong> Suggests tags based on local keyword analysis.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>Mailto Generator</h4>
+                <p>Creates HTML email links with pre-filled parameters. <br><strong>Processing:</strong> Generates standard HTML locally.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>Privacy Policy Generator</h4>
+                <p>Generates custom privacy policies. <br><strong>Processing:</strong> Your business inputs are never stored on our servers.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>Terms & Conditions Generator</h4>
+                <p>Creates usage agreements for digital platforms. <br><strong>Processing:</strong> Logic-based template generation happens locally.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>UTM Link Builder</h4>
+                <p>Adds tracking parameters to URLs. <br><strong>Processing:</strong> Appends parameters client-side.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>WhatsApp Link Generator</h4>
+                <p>Creates direct chat links with custom messages. <br><strong>Processing:</strong> Formats the API link locally.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>YouTube Thumbnail Downloader</h4>
+                <p>Retrieves high-quality thumbnails from videos. <br><strong>Processing:</strong> Accesses public YouTube image servers directly.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>AI Vocal Remover</h4>
+                <p>Separates vocals from music tracks. <br><strong>Processing:</strong> Uses advanced browser-based ML or secure transient API processing.</p>
+            </div>
+        </div>
 
-        <p style="margin-bottom: 10px;">
-            Developed by 
-            <a href="https://www.sayadbayezid.com" target="_blank" style="color: #ffffff; text-decoration: underline;">
-                Sayad Md Bayezid Hosan
-            </a>
-        </p>
+        <h3 style="margin-top: 40px;">SEO & Content</h3>
+        <div class="tool-grid">
+            <div class="tool-summary">
+                <h4>Keyword Density Checker</h4>
+                <p>Analyzes how often keywords appear in text. <br><strong>Processing:</strong> Text analysis is performed locally.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>Lorem Ipsum Generator</h4>
+                <p>Generates placeholder text for design layouts. <br><strong>Processing:</strong> Pulls from a local dictionary.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>SERP Preview Tool</h4>
+                <p>Shows how pages look in Google search. <br><strong>Processing:</strong> Visual preview rendered in browser.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>Text Case Converter</h4>
+                <p>Changes text to UPPERCASE, lowercase, etc. <br><strong>Processing:</strong> Instant transformation without server calls.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>Word Counter</h4>
+                <p>Counts words, characters, and reading time. <br><strong>Processing:</strong> Real-time local analysis.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>Sitemap Finder & Downloader</h4>
+                <p>Locates and generates XML sitemaps. <br><strong>Processing:</strong> Scans and compiles data locally.</p>
+            </div>
+        </div>
 
-        <p style="font-size: 0.85rem; opacity: 0.9;">
-            SmartGen Trust Center • Version 2026.06
-        </p>
+        <h3 style="margin-top: 40px;">Daily Utilities & Calculators</h3>
+        <div class="tool-grid">
+            <div class="tool-summary">
+                <h4>Age Calculator</h4>
+                <p>Calculates exact age. <br><strong>Processing:</strong> Date math is performed locally.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>BMI & BMR Calculator</h4>
+                <p>Calculates health and fitness metrics. <br><strong>Processing:</strong> Physical data is never stored or shared.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>CPM & ROI Calculator</h4>
+                <p>Calculates advertising costs and returns. <br><strong>Processing:</strong> Financial formulas executed client-side.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>Color Palette Extractor</h4>
+                <p>Pulls palettes from uploaded images. <br><strong>Processing:</strong> Pixel analysis is done on your device.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>EMI Calculator</h4>
+                <p>Calculates monthly loan repayments. <br><strong>Processing:</strong> Offline-capable financial calculations.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>Fancy Font Generator</h4>
+                <p>Converts text into stylish Unicode fonts. <br><strong>Processing:</strong> Character mapping is done locally.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>Image Compressor</h4>
+                <p>Reduces image file size safely. <br><strong>Processing:</strong> Compression logic runs strictly in-app/browser.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>Password Generator</h4>
+                <p>Creates strong, random passwords. <br><strong>Processing:</strong> High-entropy generation happens on-device.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>Percentage Calculator</h4>
+                <p>Solves percentage-based math problems. <br><strong>Processing:</strong> Instant calculations without internet.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>Pomodoro Timer</h4>
+                <p>A productivity and focus timer. <br><strong>Processing:</strong> Timer logic runs locally.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>Secure Notepad</h4>
+                <p>Private area to write and save notes. <br><strong>Processing:</strong> Stored in your device's local storage only.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>Unit Converter</h4>
+                <p>Converts units of measurement. <br><strong>Processing:</strong> Conversion tables are built-in for offline use.</p>
+            </div>
+        </div>
+        
+        <div class="highlight-quote" style="margin-top: 30px;">
+            <strong>Tool-Specific Privacy Commitments:</strong> 90% of our tools process data entirely on your device (Edge Processing) or in your browser memory (cleared on exit). Only tools that specifically fetch external data require an internet connection.
+        </div>
+    </section>
 
-    </div>
+    <!-- 7. EXPANDED FAQ -->
+    <section id="expanded-faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-accordion">
+            <details class="faq-item">
+                <summary class="faq-question">How does SmartGen protect my data during processing?</summary>
+                <div class="faq-answer">
+                    <p>We use "Edge Processing," meaning the logic to generate your QR code, compress your image, or calculate your loan happens directly on your device. Your data never travels to our servers, eliminating the risk of interception or unauthorized storage.</p>
+                </div>
+            </details>
+            <details class="faq-item">
+                <summary class="faq-question">Why are the tools free? What's the catch?</summary>
+                <div class="faq-answer">
+                    <p>There is no catch. We monetize through non-intrusive advertisements (Google AdMob) and optional donations. This allows us to keep the tools free for everyone while covering our development and infrastructure costs.</p>
+                </div>
+            </details>
+            <details class="faq-item">
+                <summary class="faq-question">Can I use SmartGen tools offline?</summary>
+                <div class="faq-answer">
+                    <p>Yes! Once the app or website is loaded, the majority of our tools—including the QR Generator, Image Compressor, and all Calculators—work perfectly without an active internet connection.</p>
+                </div>
+            </details>
+            <details class="faq-item">
+                <summary class="faq-question">Does SmartGen sell my personal information to third parties?</summary>
+                <div class="faq-answer">
+                    <p>Absolutely not. We do not collect your personal information (name, email, etc.) in the first place, so there is nothing for us to sell. We are committed to a strict zero-data-collection philosophy regarding personal identity.</p>
+                </div>
+            </details>
+            <details class="faq-item">
+                <summary class="faq-question">Are the legal documents generated by SmartGen legally binding?</summary>
+                <div class="faq-answer">
+                    <p>The Privacy Policy and Terms & Conditions generators provide professional-grade templates that comply with standard regulations. However, since every business is unique, we strongly recommend having a legal professional review the final output to ensure it meets your specific jurisdictional needs.</p>
+                </div>
+            </details>
+            <details class="faq-item">
+                <summary class="faq-question">Who is responsible for the content generated?</summary>
+                <div class="faq-answer">
+                    <p>Users are entirely responsible for the legality and accuracy of the content they generate (QR codes, legal policies, calculators). Tools are provided "as-is" without express warranty. Users must ensure their use of SmartGen tools complies with local laws and third-party terms of service.</p>
+                </div>
+            </details>
+        </div>
+    </section>
 
-</footer>
+    <!-- 8. FINAL DECLARATION & CONTACT -->
+    <section id="final-declaration">
+        <h2>Final Declaration & Contact Information</h2>
+        <div class="mega-resource-box">
+            <p>SmartGen is built on a strict privacy-first architecture, transparency, and user empowerment. By utilizing edge processing, minimizing technical data collection, and operating with total disclosure, we ensure that:</p>
+            <ul>
+                <li>User content remains on-device.</li>
+                <li>No personal data is stored or sold.</li>
+                <li>Third-party services are used strictly for essential functionality and platform survival.</li>
+                <li>Users retain absolute control over their local data.</li>
+            </ul>
+            
+            <p style="margin-top: 20px;">All tool logic, branding, and proprietary content are the intellectual property of SmartGen and Sayad Md Bayezid Hosan. We reserve the right to update this policy; significant changes will be notified via application updates.</p>
+
+            <div style="background: var(--background); padding: 20px; border-radius: 8px; margin-top: 30px; border: 1px solid var(--border);">
+                <h3 style="margin-top: 0;">Contact & Support</h3>
+                <p>For legal inquiries, data privacy requests, or bug reports, please contact our support team. We value user feedback and aim to respond within 24-48 hours.</p>
+                <p><strong>Email:</strong> <a href="mailto:cwb.agency@outlook.com">cwb.agency@outlook.com</a></p>
+                <p><strong>Subject Line:</strong> Please use "Legal Inquiry" or "Data Privacy Request" for expedited handling.</p>
+                <p><strong>Official Website:</strong> <a href="https://www.smartgentools.com" target="_blank">www.smartgentools.com</a></p>
+            </div>
+        </div>
+    </section>
+
+</div>
+
 </body>
 </html>

@@ -142,6 +142,42 @@
             text-decoration: underline;
         }
 
+        /* Accordion Styles */
+        .faq-accordion details {
+            background: var(--background);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .faq-accordion summary {
+            font-weight: 700;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-primary);
+        }
+
+        .faq-accordion summary::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        .faq-accordion details[open] summary::after {
+            content: '−';
+        }
+
+        .faq-accordion .faq-answer {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+
         /* Mobile-First Adjustments */
         @media (max-width: 768px) {
             .trust-center-container {
@@ -342,6 +378,436 @@
                     </ul>
                 </div>
             </section>
+
+
+    <!-- NEW COMPLIANCE SECTIONS -->
+    <section id="compliance-framework">
+        <h2>SmartGen Compliance & Legal Framework</h2>
+        
+        <div class="mega-resource-box">
+            <h3>1. Effective Date</h3>
+            <p>This policy is effective as of June 1, 2026, and applies to all users of the SmartGen ecosystem.</p>
+
+            <h3>2. Last Updated</h3>
+            <p>Last significant revision: June 1, 2026.</p>
+
+            <h3>3. Version History</h3>
+            <p>v2026.06: Expanded Trust Center with comprehensive tool ecosystem and compliance disclosures.</p>
+
+            <h3>4. Information We Collect</h3>
+            <p>We collect minimal technical data required for app functionality, including device type, OS version, and crash logs. No personal identifiers or user-generated content are collected.</p>
+
+            <h3>5. Information We Do Not Collect</h3>
+            <p>We do not collect names, email addresses (unless you contact support), physical addresses, phone numbers, browsing history, or any data processed within our tools.</p>
+
+            <h3>6. Third-Party Services</h3>
+            <p>We utilize trusted third-party services for infrastructure and monetization, as detailed in the following disclosures.</p>
+
+            <h3>7. Firebase Disclosure</h3>
+            <p>We use Google Firebase for analytics and crash reporting to improve app stability. Data is anonymized and used solely for technical optimization.</p>
+
+            <h3>8. Google Play Services Disclosure</h3>
+            <p>Our Android applications utilize Google Play Services for core functionality and security verification.</p>
+
+            <h3>9. AdMob Disclosure</h3>
+            <p>To keep our tools free, we display ads via Google AdMob. AdMob may use device identifiers to serve relevant ads; you can manage this in your device settings.</p>
+
+            <h3>10. Data Processing Architecture</h3>
+            <p>Our architecture follows the "Local-First" principle. 95% of tool logic resides on the client-side (Edge Processing).</p>
+
+            <h3>11. Data Retention Policy</h3>
+            <p>Since we do not collect personal data, we have no retention period for user content. Technical logs are purged every 30-90 days.</p>
+
+            <h3>12. User Rights</h3>
+            <p>Users have the right to access, delete, or limit the processing of their technical data. Since we don't store personal data, these rights are inherently protected.</p>
+
+            <h3>13. GDPR Compliance</h3>
+            <p>We comply with the General Data Protection Regulation (GDPR) by minimizing data collection and ensuring all processing is transparent.</p>
+
+            <h3>14. CCPA Compliance</h3>
+            <p>We respect the California Consumer Privacy Act (CCPA). We do not "sell" user data in the traditional sense.</p>
+
+            <h3>15. Children’s Privacy</h3>
+            <p>Our tools are not directed at children under 13. We do not knowingly collect data from children.</p>
+
+            <h3>16. Security Measures</h3>
+            <p>We employ industry-standard encryption for data in transit and follow secure coding practices to prevent local data leaks.</p>
+
+            <h3>17. Advertising Transparency</h3>
+            <p>All advertisements are clearly labeled. We do not use "dark patterns" to force ad engagement.</p>
+
+            <h3>18. Cookies & Tracking Technologies</h3>
+            <p>Our web tools may use essential cookies for session management. We do not use tracking cookies for cross-site profiling.</p>
+
+            <h3>19. International Users</h3>
+            <p>Data processed locally stays in your jurisdiction. Technical logs may be processed in servers located in the United States or EU.</p>
+
+            <h3>20. Intellectual Property</h3>
+            <p>All tool logic, branding, and content are the intellectual property of SmartGen and Sayad Md Bayezid Hosan.</p>
+
+            <h3>21. Disclaimer of Warranties</h3>
+            <p>Tools are provided "as-is" without warranty of any kind, express or implied.</p>
+
+            <h3>22. Limitation of Liability</h3>
+            <p>SmartGen is not liable for any damages arising from the use or inability to use our tools.</p>
+
+            <h3>23. Financial Tool Disclaimer</h3>
+            <p>Calculators (EMI, ROI, etc.) are for informational purposes only. Consult a professional for financial decisions.</p>
+
+            <h3>24. Generated Content Disclaimer</h3>
+            <p>Users are responsible for the legality and accuracy of content generated (QR codes, Privacy Policies, etc.).</p>
+
+            <h3>25. Expanded User Responsibility Framework</h3>
+            <p>Users must ensure their use of SmartGen tools complies with local laws and third-party terms of service.</p>
+
+            <h3>26. Google Play Data Safety Compliance</h3>
+            <p>We maintain an up-to-date Data Safety section on Google Play, reflecting our zero-collection policy for personal data.</p>
+
+            <h3>27. Policy Changes</h3>
+            <p>We reserve the right to update this policy. Significant changes will be notified via app updates.</p>
+
+            <h3>28. Expanded Contact & Support Information</h3>
+            <p>For legal inquiries, contact <a href="mailto:cwb.agency@outlook.com">cwb.agency@outlook.com</a> with the subject "Legal Inquiry".</p>
+
+            <h3>29. Compliance Summary</h3>
+            <p>SmartGen is built on privacy, transparency, and user empowerment. We process locally, collect minimally, and disclose everything.</p>
+        </div>
+    </section>
+
+    <!-- SMARTGEN TOOLS ECOSYSTEM SECTION -->
+    <section id="tools-ecosystem">
+        <h2>SmartGen Tools Ecosystem Overview</h2>
+        <p>A comprehensive directory of our specialized utilities, categorized by their primary function.</p>
+
+        <h3>Developer & Technical Tools</h3>
+        <div class="mega-resource-box">
+            <div class="tool-summary">
+                <h4>Base64 to Image Decoder</h4>
+                <p><strong>Short Summary:</strong> Converts Base64 strings back into viewable image files.</p>
+                <p><strong>Purpose:</strong> Useful for developers debugging data URIs or embedded images.</p>
+                <p><strong>Local Processing Note:</strong> Decoding happens entirely in your browser/app memory.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>CSS Gradient Generator</h4>
+                <p><strong>Short Summary:</strong> Create beautiful CSS linear and radial gradients visually.</p>
+                <p><strong>Purpose:</strong> Simplifies UI design by generating ready-to-use CSS code.</p>
+                <p><strong>Local Processing Note:</strong> Real-time rendering is handled by your device's GPU.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>MD5/SHA Hash Generator</h4>
+                <p><strong>Short Summary:</strong> Generates secure cryptographic hashes for text or files.</p>
+                <p><strong>Purpose:</strong> Verifying data integrity and password security testing.</p>
+                <p><strong>Privacy Note:</strong> Your input data is never sent to a server; hashing is local.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>Live HTML Previewer</h4>
+                <p><strong>Short Summary:</strong> Instantly renders HTML, CSS, and JS code in a sandbox.</p>
+                <p><strong>Purpose:</strong> Rapid prototyping and testing of web snippets.</p>
+                <p><strong>Local Processing Note:</strong> Uses an iframe to render code locally without server execution.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>IP Address Lookup</h4>
+                <p><strong>Short Summary:</strong> Displays public IP information and geolocation data.</p>
+                <p><strong>Purpose:</strong> Network troubleshooting and security verification.</p>
+                <p><strong>Privacy Note:</strong> We do not log the IP addresses that use this tool.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>JSON Formatter & Validator</h4>
+                <p><strong>Short Summary:</strong> Beautifies and checks JSON data for syntax errors.</p>
+                <p><strong>Purpose:</strong> Essential for API development and data debugging.</p>
+                <p><strong>Local Processing Note:</strong> Parsing and formatting are performed client-side.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>Meta Tag Generator</h4>
+                <p><strong>Short Summary:</strong> Creates SEO-optimized meta tags for websites.</p>
+                <p><strong>Purpose:</strong> Improving search engine visibility and social sharing previews.</p>
+                <p><strong>Local Processing Note:</strong> Generates HTML tags based on your input locally.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>Picture URL Generator</h4>
+                <p><strong>Short Summary:</strong> Converts local images into temporary or permanent URLs.</p>
+                <p><strong>Purpose:</strong> Sharing images in environments that only accept links.</p>
+                <p><strong>Third-Party Note:</strong> May use secure cloud storage with user-controlled deletion.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>QR Code Generator</h4>
+                <p><strong>Short Summary:</strong> Creates custom QR codes for various data types.</p>
+                <p><strong>Purpose:</strong> Bridging physical and digital information sharing.</p>
+                <p><strong>Local Processing Note:</strong> All encoding logic is offline-capable.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>Random Choice Picker</h4>
+                <p><strong>Short Summary:</strong> Randomly selects an item from a provided list.</p>
+                <p><strong>Purpose:</strong> Decision-making, giveaways, and random sampling.</p>
+                <p><strong>Local Processing Note:</strong> Uses your device's random number generator.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>Robots.txt Generator</h4>
+                <p><strong>Short Summary:</strong> Generates instructions for search engine crawlers.</p>
+                <p><strong>Purpose:</strong> Controlling how search engines index your website.</p>
+                <p><strong>Local Processing Note:</strong> Outputs text files based on your selections.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>Schema Generator</h4>
+                <p><strong>Short Summary:</strong> Creates JSON-LD structured data for SEO.</p>
+                <p><strong>Purpose:</strong> Helping search engines understand your content better.</p>
+                <p><strong>Local Processing Note:</strong> Formats schema markup entirely on your device.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>URL Encoder-Decoder</h4>
+                <p><strong>Short Summary:</strong> Safely encodes or decodes special characters in URLs.</p>
+                <p><strong>Purpose:</strong> Ensuring URL compatibility across different systems.</p>
+                <p><strong>Local Processing Note:</strong> Uses standard browser encoding libraries locally.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>UUID / GUID Generator</h4>
+                <p><strong>Short Summary:</strong> Generates unique identifiers for databases and apps.</p>
+                <p><strong>Purpose:</strong> Ensuring data uniqueness in software development.</p>
+                <p><strong>Local Processing Note:</strong> Generates random IDs without server interaction.</p>
+            </div>
+        </div>
+
+        <h3>Marketing & Social Media</h3>
+        <div class="mega-resource-box">
+            <div class="tool-summary">
+                <h4>Blog Title Generator</h4>
+                <p><strong>Short Summary:</strong> Suggests catchy and SEO-friendly titles for articles.</p>
+                <p><strong>Purpose:</strong> Overcoming writer's block and improving click-through rates.</p>
+                <p><strong>Local Processing Note:</strong> Uses local template logic to generate suggestions.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>Disclaimer Generator</h4>
+                <p><strong>Short Summary:</strong> Creates legal disclaimers for websites and apps.</p>
+                <p><strong>Purpose:</strong> Protecting owners from legal liability.</p>
+                <p><strong>Local Processing Note:</strong> Templates are populated on your device.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>Facebook ID Finder</h4>
+                <p><strong>Short Summary:</strong> Retrieves the numeric ID for Facebook profiles/pages.</p>
+                <p><strong>Purpose:</strong> Integrating Facebook features into websites or apps.</p>
+                <p><strong>Third-Party Note:</strong> Fetches data from public Facebook Graph API endpoints.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>Hashtag Generator</h4>
+                <p><strong>Short Summary:</strong> Discovers trending and relevant hashtags for social posts.</p>
+                <p><strong>Purpose:</strong> Increasing social media reach and engagement.</p>
+                <p><strong>Local Processing Note:</strong> Suggests tags based on keyword analysis.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>Mailto Generator</h4>
+                <p><strong>Short Summary:</strong> Creates HTML email links with pre-filled subjects/bodies.</p>
+                <p><strong>Purpose:</strong> Simplifying contact options for website visitors.</p>
+                <p><strong>Local Processing Note:</strong> Generates standard HTML code locally.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>Privacy Policy Generator</h4>
+                <p><strong>Short Summary:</strong> Generates custom privacy policies based on your needs.</p>
+                <p><strong>Purpose:</strong> Ensuring compliance with global privacy laws.</p>
+                <p><strong>Local Processing Note:</strong> Your inputs are never stored on our servers.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>Terms & Conditions Generator</h4>
+                <p><strong>Short Summary:</strong> Creates usage agreements for digital platforms.</p>
+                <p><strong>Purpose:</strong> Defining the rules and guidelines for your users.</p>
+                <p><strong>Local Processing Note:</strong> Logic-based template generation happens locally.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>UTM Link Builder</h4>
+                <p><strong>Short Summary:</strong> Adds tracking parameters to URLs for marketing campaigns.</p>
+                <p><strong>Purpose:</strong> Measuring the effectiveness of different traffic sources.</p>
+                <p><strong>Local Processing Note:</strong> Appends parameters to your URL client-side.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>WhatsApp Link Generator</h4>
+                <p><strong>Short Summary:</strong> Creates direct chat links for WhatsApp with custom messages.</p>
+                <p><strong>Purpose:</strong> Making it easier for customers to start a conversation.</p>
+                <p><strong>Local Processing Note:</strong> Formats the WhatsApp API link on your device.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>YouTube Thumbnail Downloader</h4>
+                <p><strong>Short Summary:</strong> Retrieves high-quality thumbnails from YouTube videos.</p>
+                <p><strong>Purpose:</strong> For use in blog posts, social media, or design projects.</p>
+                <p><strong>Third-Party Note:</strong> Accesses public YouTube image servers directly.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>AI Vocal Remover</h4>
+                <p><strong>Short Summary:</strong> Separates vocals from music tracks using AI.</p>
+                <p><strong>Purpose:</strong> Creating karaoke tracks or sampling music.</p>
+                <p><strong>Local Processing Note:</strong> Uses advanced browser-based ML (where supported) or secure processing.</p>
+            </div>
+        </div>
+
+        <h3>SEO & Content</h3>
+        <div class="mega-resource-box">
+            <div class="tool-summary">
+                <h4>Keyword Density Checker</h4>
+                <p><strong>Short Summary:</strong> Analyzes how often keywords appear in your text.</p>
+                <p><strong>Purpose:</strong> Optimizing content for search engine rankings.</p>
+                <p><strong>Local Processing Note:</strong> Text analysis is performed entirely on your device.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>Lorem Ipsum Generator</h4>
+                <p><strong>Short Summary:</strong> Generates placeholder text for design layouts.</p>
+                <p><strong>Purpose:</strong> Visualizing how content will look before it's written.</p>
+                <p><strong>Local Processing Note:</strong> Randomly generates text from a local dictionary.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>SERP Preview Tool</h4>
+                <p><strong>Short Summary:</strong> Shows how your page will look in Google search results.</p>
+                <p><strong>Purpose:</strong> Optimizing titles and descriptions for better CTR.</p>
+                <p><strong>Local Processing Note:</strong> Renders a visual preview in your browser.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>Text Case Converter</h4>
+                <p><strong>Short Summary:</strong> Changes text to UPPERCASE, lowercase, Title Case, etc.</p>
+                <p><strong>Purpose:</strong> Quick formatting of large text blocks.</p>
+                <p><strong>Local Processing Note:</strong> Instant transformation without server calls.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>Word Counter</h4>
+                <p><strong>Short Summary:</strong> Counts words, characters, and reading time.</p>
+                <p><strong>Purpose:</strong> Meeting length requirements for articles or essays.</p>
+                <p><strong>Local Processing Note:</strong> Real-time analysis happens as you type.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>Sitemap Finder & Custom XML Downloader</h4>
+                <p><strong>Short Summary:</strong> Locates and generates XML sitemaps for websites.</p>
+                <p><strong>Purpose:</strong> Improving site indexability for search engines.</p>
+                <p><strong>Local Processing Note:</strong> Scans and compiles sitemap data locally.</p>
+            </div>
+        </div>
+
+        <h3>Daily Utilities & Calculators</h3>
+        <div class="mega-resource-box">
+            <div class="tool-summary">
+                <h4>Age Calculator</h4>
+                <p><strong>Short Summary:</strong> Calculates exact age in years, months, and days.</p>
+                <p><strong>Purpose:</strong> Quick age verification and birthday planning.</p>
+                <p><strong>Local Processing Note:</strong> Date math is performed locally.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>BMI BMR Calculator</h4>
+                <p><strong>Short Summary:</strong> Calculates Body Mass Index and Basal Metabolic Rate.</p>
+                <p><strong>Purpose:</strong> Tracking health and fitness metrics.</p>
+                <p><strong>Privacy Note:</strong> Your physical data is never stored or shared.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>CPM ROI Calculator</h4>
+                <p><strong>Short Summary:</strong> Calculates advertising costs and return on investment.</p>
+                <p><strong>Purpose:</strong> Planning and evaluating marketing budgets.</p>
+                <p><strong>Local Processing Note:</strong> Financial formulas are executed client-side.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>Color Palette Extractor</h4>
+                <p><strong>Short Summary:</strong> Pulls a color palette from any uploaded image.</p>
+                <p><strong>Purpose:</strong> Design inspiration and brand consistency.</p>
+                <p><strong>Local Processing Note:</strong> Image pixel analysis is done on your device.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>EMI Calculator</h4>
+                <p><strong>Short Summary:</strong> Calculates monthly loan repayments.</p>
+                <p><strong>Purpose:</strong> Financial planning and loan comparison.</p>
+                <p><strong>Local Processing Note:</strong> Offline-capable financial calculations.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>Fancy Font Generator</h4>
+                <p><strong>Short Summary:</strong> Converts text into various stylish Unicode fonts.</p>
+                <p><strong>Purpose:</strong> Enhancing social media bios and posts.</p>
+                <p><strong>Local Processing Note:</strong> Character mapping is done locally.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>Image Compressor</h4>
+                <p><strong>Short Summary:</strong> Reduces image file size without losing quality.</p>
+                <p><strong>Purpose:</strong> Faster web loading and storage saving.</p>
+                <p><strong>Local Processing Note:</strong> Compression logic runs in your browser/app.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>Password Generator</h4>
+                <p><strong>Short Summary:</strong> Creates strong, random passwords.</p>
+                <p><strong>Purpose:</strong> Improving online account security.</p>
+                <p><strong>Local Processing Note:</strong> High-entropy generation happens on-device.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>Percentage Calculator</h4>
+                <p><strong>Short Summary:</strong> Solves various percentage-based math problems.</p>
+                <p><strong>Purpose:</strong> Quick math for discounts, tips, and growth.</p>
+                <p><strong>Local Processing Note:</strong> Instant calculations without internet.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>Pomodoro Timer</h4>
+                <p><strong>Short Summary:</strong> A focus timer based on the Pomodoro Technique.</p>
+                <p><strong>Purpose:</strong> Improving productivity and time management.</p>
+                <p><strong>Local Processing Note:</strong> Timer logic runs locally on your device.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>Secure Notepad</h4>
+                <p><strong>Short Summary:</strong> A private area to write and save notes locally.</p>
+                <p><strong>Purpose:</strong> Quick drafting without cloud syncing.</p>
+                <p><strong>Privacy Note:</strong> Notes are stored in your device's local storage only.</p>
+            </div>
+            <div class="tool-summary">
+                <h4>Unit Converter</h4>
+                <p><strong>Short Summary:</strong> Converts between different units of measurement.</p>
+                <p><strong>Purpose:</strong> Daily utility for weight, length, temperature, etc.</p>
+                <p><strong>Local Processing Note:</strong> Conversion tables are built into the app.</p>
+            </div>
+        </div>
+
+        <h3>Tool-Specific Privacy Commitments</h3>
+        <div class="mega-resource-box">
+            <ul>
+                <li><strong>Local Processing Tools:</strong> 90% of our tools (Calculators, Converters, Generators) process data entirely on your device.</li>
+                <li><strong>Browser-Based Processing:</strong> For our web suite, processing happens in your browser's memory and is cleared upon closing the tab.</li>
+                <li><strong>Offline-Capable Features:</strong> Most tools do not require an internet connection once the app/page is loaded.</li>
+                <li><strong>Internet-Required Features:</strong> Only tools that fetch external data (IP Lookup, YouTube Downloader) require an active connection.</li>
+                <li><strong>Third-Party Service Interactions:</strong> We only interact with external APIs (like Google or Facebook) when explicitly requested by the tool's function.</li>
+                <li><strong>User Data Protection Measures:</strong> We use sandbox environments and local-only storage to ensure your data never leaks to the cloud.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- EXPANDED FAQ SECTION WITH ACCORDION -->
+    <section id="expanded-faq">
+        <h2>Frequently Asked Questions (Expanded)</h2>
+        <div class="faq-accordion">
+            <details class="faq-item">
+                <summary class="faq-question">How does SmartGen protect my data during processing?</summary>
+                <div class="faq-answer">
+                    <p>We use "Edge Processing," meaning the logic to generate your QR code, compress your image, or calculate your loan happens directly on your device. Your data never travels to our servers, eliminating the risk of interception or unauthorized storage.</p>
+                </div>
+            </details>
+            <details class="faq-item">
+                <summary class="faq-question">Why are the tools free? What's the catch?</summary>
+                <div class="faq-answer">
+                    <p>There is no catch. We monetize through non-intrusive advertisements (Google AdMob) and optional donations. This allows us to keep the tools free for everyone while covering our development and infrastructure costs.</p>
+                </div>
+            </details>
+            <details class="faq-item">
+                <summary class="faq-question">Can I use SmartGen tools offline?</summary>
+                <div class="faq-answer">
+                    <p>Yes! Once the app or website is loaded, the majority of our tools—including the QR Generator, Image Compressor, and all Calculators—work perfectly without an internet connection.</p>
+                </div>
+            </details>
+            <details class="faq-item">
+                <summary class="faq-question">Does SmartGen sell my personal information to third parties?</summary>
+                <div class="faq-answer">
+                    <p>Absolutely not. We do not even collect your personal information (name, email, etc.) in the first place, so there is nothing for us to sell. We are committed to a zero-data-collection philosophy.</p>
+                </div>
+            </details>
+            <details class="faq-item">
+                <summary class="faq-question">Are the legal documents generated by SmartGen legally binding?</summary>
+                <div class="faq-answer">
+                    <p>The Privacy Policy and Terms & Conditions generators provide professional-grade templates that comply with standard regulations. However, since every business is unique, we recommend having a legal professional review the final document to ensure it meets your specific needs.</p>
+                </div>
+            </details>
+            <details class="faq-item">
+                <summary class="faq-question">How can I contact support if I find a bug?</summary>
+                <div class="faq-answer">
+                    <p>You can reach us directly at <a href="mailto:cwb.agency@outlook.com">cwb.agency@outlook.com</a>. We appreciate user feedback and typically respond within 24-48 hours.</p>
+                </div>
+            </details>
+        </div>
+    </section>
 
             <section id="copyright-notice" style="text-align: center; margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border);">
                 <p>&copy; 2023-2026 SmartGen. All rights reserved. Built with passion and integrity by Sayad Md Bayezid Hosan.</p>

@@ -1,5 +1,10 @@
 [
   {
+    "title": "Production Release v1.0.0: Reordered sections, added Play Store compliance, data model, and security extension",
+    "date": "2026-06-01T02:26:07Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "Update app-legal.html: Add compliance sections, tool ecosystem, and FAQ accordion",
     "date": "2026-06-01T00:45:40Z",
     "description": "Platform improvement and optimization."

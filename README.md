@@ -19,11 +19,14 @@
 ---
 
 <!-- START_LINK_CHECKER -->
+
 ### ⚠️ Link Status Report
+
 | Broken URL | Error Code |
 |---|---|
 | https://smartgentools.com/app-legal/ | 404 |
 | https://smartgentools.com/trust-center/ | 404 |
+
 <!-- END_LINK_CHECKER -->
 
 ---

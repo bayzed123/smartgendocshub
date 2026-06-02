@@ -22,7 +22,7 @@ To ensure a welcoming and inclusive environment for all contributors, SmartGen a
 
 ### How to Contribute
 
-If you're interested in contributing code, please follow the detailed setup guide and development workflow outlined in the [Setup Guide](#setup-guide) section of this Wiki. Key steps include:
+If you're interested in contributing code, please follow the detailed setup guide and development workflow outlined in the [Setup Guide](WIKI_Setup_Guide.md) section of this Wiki. Key steps include:
 
 1.  **Fork the Repository:** Create a copy of the [SmartGenQR.oi GitHub repository](https://github.com/bayzed123/SmartGenQR.oi) under your own GitHub account.
 2.  **Clone Your Fork:** Download your forked repository to your local machine.

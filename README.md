@@ -12,7 +12,7 @@
 | Resource | Link |
 | :--- | :--- |
 | **Live Platform** | [![Website](https://img.shields.io/badge/Website-smartgentools.com-blue?style=for-the-badge&logo=google-chrome&logoColor=white)](https://smartgentools.com) |
-| **Official Wiki** | [![Wiki](https://img.shields.io/badge/Documentation-Wiki-success?style=for-the-badge&logo=wikipedia&logoColor=white)](https://github.com/bayzed123/SmartGenQR.oi/wiki) |
+| **Official Wiki** | [![Wiki](https://img.shields.io/badge/Documentation-Wiki-success?style=for-the-badge&logo=wikipedia&logoColor=white)](WIKI.md) |
 | **Trust Center** | [![Trust Center](https://img.shields.io/badge/Legal-Trust_Center-informational?style=for-the-badge&logo=shield-halved&logoColor=white)](WIKI_Trust_Center.md) |
 | **Founder** | [![Founder](https://img.shields.io/badge/Founder-Sayad_Bayezid-orange?style=for-the-badge&logo=person&logoColor=white)](https://www.sayadbayezid.com) |
 

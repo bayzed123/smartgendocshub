@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartGen Marquee Generator</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Space+Mono&amp;display=swap" rel="stylesheet">
+  <style>
+    /* Fixed Colors & Forced Dark Theme for all browsers/devices */
+    body { 
+        font-family: 'DM Sans', sans-serif; 
+        background-color: #0a1f1a !important; 
+        color: #d1fae5 !important; 
+    }
+    .code-output { font-family: 'Space Mono', monospace; font-size: 12px; }
+    .toast { animation: slideIn 0.3s ease, fadeOut 0.3s ease 2s forwards; }
+    @keyframes slideIn { from { transform: translateY(-20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+    @keyframes fadeOut { to { opacity: 0; } }
+    
+    .tab-btn { padding: 6px 16px; border-radius: 6px; font-size: 13px; font-weight: 500; cursor: pointer; transition: all 0.2s; background: transparent; color: #86efac; border: 1px solid transparent; }
+    .tab-btn.active { background: #065f46; color: #86efac; border-color: #10b981; }
+    .tab-btn:not(.active):hover { color: #bbf7d0; }
+    
+    .panel { 
+        background-color: #0d2e24 !important; 
+        border: 1px solid #1a5c45; 
+        border-radius: 12px; 
+        padding: 20px; 
+    }
+    
+    .field-input { 
+        width: 100%; 
+        background-color: #071a14 !important; 
+        border: 1px solid #1a5c45 !important; 
+        border-radius: 8px; 
+        padding: 8px 12px; 
+        color: #ffffff !important; 
+        font-size: 14px; 
+        outline: none;
+        -webkit-appearance: none; /* Crucial for iOS inputs */
+        appearance: none;
+    }
+    .field-input:focus { border-color: #34d399 !important; }
+    
+    .field-label { 
+        display: block; 
+        font-size: 13px; 
+        font-weight: 500;
+        color: #6ee7b7 !important; 
+        margin-bottom: 6px; 
+    }
+  </style>
+ </head>
+ <body data-template-id="__page-root" class="min-h-screen w-full">
+  <div id="toast-container" class="fixed top-4 right-4 z-50"></div>
+  <header class="border-b border-emerald-800/50 px-6 py-4">
+   <div class="max-w-6xl mx-auto flex items-center justify-between">
+    <h1 data-template-id="app-title" class="canva-text font-bold text-lg text-emerald-200">SmartGen Marquee Generator</h1>
+    <button id="reset-btn" class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-emerald-800 text-emerald-100 hover:bg-emerald-700 transition-colors text-sm font-medium"> 
+        <i data-lucide="rotate-ccw" style="width:14px;height:14px"></i> Reset 
+    </button>
+   </div>
+  </header>
+  <main class="max-w-6xl mx-auto p-6">
+   <div class="grid lg:grid-cols-2 gap-6"><div class="space-y-4">
+     <section class="panel">
+      <h2 data-template-id="content-title" class="canva-text font-semibold text-emerald-100 mb-3">Content Settings</h2>
+      <div class="space-y-3">
+       <div><label class="field-label">Content Type</label> <select id="content-type" class="field-input"><option value="text">Text</option><option value="image">Image</option></select>
+       </div>
+       <div id="text-input-wrap"><label class="field-label">Marquee Text</label> <input id="marquee-text" type="text" value="HTML marquee..." class="field-input">
+       </div>
+       <div id="image-input-wrap" class="hidden"><label class="field-label">Image URL</label> <input id="marquee-img" type="text" value="" class="field-input"> <label class="field-label mt-2">Alt Text</label> <input id="marquee-alt" type="text" value="Swimming fish" class="field-input">
+       </div>
+      </div>
+     </section>
+     <section class="panel">
+      <h2 data-template-id="behavior-title" class="canva-text font-semibold text-emerald-100 mb-3">Behavior</h2>
+      <div class="grid grid-cols-2 gap-3">
+       <div>
+        <label class="field-label">Direction</label><select id="direction" class="field-input"><option value="left">Left</option><option value="right">Right</option><option value="up">Up</option><option value="down">Down</option></select>
+       </div>
+       <div>
+        <label class="field-label">Behavior</label><select id="behavior" class="field-input"><option value="scroll">Scroll</option><option value="slide">Slide</option><option value="alternate">Bounce</option></select>
+       </div>
+      </div>
+      <div class="grid grid-cols-2 gap-3 mt-3">
+       <div>
+        <label class="field-label">Delay (ms)</label><input id="scroll-delay" type="number" value="85" min="1" class="field-input">
+       </div>
+       <div>
+        <label class="field-label">Amount (px)</label><input id="scroll-amount" type="number" value="6" min="1" class="field-input">
+       </div>
+      </div>
+      <div class="mt-3">
+       <label class="field-label">Loop (-1 = infinite)</label><input id="loop" type="number" value="-1" class="field-input">
+      </div>
+     </section>
+     <section class="panel">
+      <h2 data-template-id="dimensions-title" class="canva-text font-semibold text-emerald-100 mb-3">Dimensions</h2>
+      <div class="grid grid-cols-2 gap-3">
+       <div>
+        <label class="field-label">Width</label><input id="m-width" type="text" value="100%" class="field-input">
+       </div>
+       <div>
+        <label class="field-label">Height</label><input id="m-height" type="text" value="" placeholder="auto" class="field-input">
+       </div>
+      </div>
+     </section>
+     <section class="panel">
+      <h2 data-template-id="colors-title" class="canva-text font-semibold text-emerald-100 mb-3">Colors</h2>
+      <div class="grid grid-cols-2 gap-3">
+       <div>
+        <label class="field-label">Text Color</label><input id="text-color" type="color" value="#330099" class="field-input h-10 p-1 cursor-pointer">
+       </div>
+       <div>
+        <label class="field-label">Background</label><input id="bg-color" type="color" value="#CCFFFF" class="field-input h-10 p-1 cursor-pointer">
+       </div>
+      </div>
+     </section>
+     <section class="panel">
+      <h2 data-template-id="output-mode-title" class="canva-text font-semibold text-emerald-100 mb-3">Output Mode</h2>
+      <div class="flex gap-2"><button class="tab-btn active" data-mode="html">HTML Marquee</button> <button class="tab-btn" data-mode="css">CSS Marquee</button>
+      </div>
+     </section>
+    </div><div class="space-y-4">
+     <section class="panel">
+      <h2 data-template-id="preview-title" class="canva-text font-semibold text-emerald-100 mb-3">Preview</h2>
+      <div id="preview-box" class="bg-black/30 rounded-lg p-4 min-h-[80px] border border-emerald-800/50 overflow-hidden text-emerald-100"></div>
+     </section>
+     <section class="panel">
+      <h2 data-template-id="code-title" class="canva-text font-semibold text-emerald-100 mb-3">Generated Code</h2>
+      <pre id="code-output" class="code-output bg-black/40 rounded-lg p-4 overflow-x-auto text-emerald-200 border border-emerald-800/50 min-h-[100px] whitespace-pre-wrap"></pre>
+      <div class="flex gap-3 mt-3">
+          <button id="copy-btn" class="flex items-center gap-2 px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg text-sm font-medium transition-colors"> <i data-lucide="copy" style="width:14px;height:14px"></i> Copy </button> 
+          <button id="download-btn" class="flex items-center gap-2 px-4 py-2 bg-emerald-800 hover:bg-emerald-700 text-emerald-100 rounded-lg text-sm font-medium transition-colors border border-emerald-700"> <i data-lucide="download" style="width:14px;height:14px"></i> Download </button>
+      </div>
+     </section>
+    </div>
+   </div>
+  </main>
+  
+  <script>
+    lucide.createIcons();
+    const $ = id => document.getElementById(id);
+    let outputMode = 'html';
+
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        outputMode = btn.dataset.mode;
+        update();
+      });
+    });
+
+    $('content-type').addEventListener('change', () => {
+      const isImage = $('content-type').value === 'image';
+      $('text-input-wrap').classList.toggle('hidden', isImage);
+      $('image-input-wrap').classList.toggle('hidden', !isImage);
+      update();
+    });
+
+    document.querySelectorAll('input, select').forEach(el => {
+      el.addEventListener('input', update);
+      el.addEventListener('change', update);
+    });
+
+    function update() {
+      const isImage = $('content-type').value === 'image';
+      const dir = $('direction').value;
+      const beh = $('behavior').value;
+      const delay = $('scroll-delay').value;
+      const amount = $('scroll-amount').value;
+      const loop = $('loop').value;
+      const width = $('m-width').value;
+      const height = $('m-height').value;
+      const textColor = $('text-color').value;
+      const bgColor = $('bg-color').value;
+
+      let content;
+      if (isImage) {
+        content = `<img src="${$('marquee-img').value}" alt="${$('marquee-alt').value}" height="60">`;
+      } else {
+        content = $('marquee-text').value;
+      }
+
+      let code;
+      if (outputMode === 'html') {
+        let attrs = [];
+        if (dir !== 'left') attrs.push(`direction="${dir}"`);
+        if (beh !== 'scroll') attrs.push(`behavior="${beh}"`);
+        if (delay !== '85') attrs.push(`scrolldelay="${delay}"`);
+        if (amount !== '6') attrs.push(`scrollamount="${amount}"`);
+        if (loop !== '-1') attrs.push(`loop="${loop}"`);
+        if (width && width !== '100%') attrs.push(`width="${width}"`);
+        if (height) attrs.push(`height="${height}"`);
+        attrs.push(`bgcolor="${bgColor}"`);
+        const style = isImage ? '' : ` style="color:${textColor}"`;
+        code = `<marquee${attrs.length ? ' ' + attrs.join(' ') : ''}${style}>${content}</marquee>`;
+      } else {
+        let animName = 'marquee-scroll';
+        let duration = Math.max(1, Math.round(200 / parseInt(amount || 6))) + 's';
+        let iteration = loop === '-1' ? 'infinite' : loop;
+        let fillMode = '';
+        let fromT, toT;
+
+        if (beh === 'slide') { animName = 'marquee-slide'; iteration = '1'; fillMode = '\n  animation-fill-mode: forwards;'; }
+        else if (beh === 'alternate') { animName = 'marquee-bounce'; }
+
+        if (beh === 'alternate') {
+          fromT = (dir === 'up' || dir === 'down') ? 'translateY(0)' : 'translateX(0)';
+          toT = (dir === 'up' || dir === 'down') ? 'translateY(calc(100% - 60px))' : 'translateX(calc(100% - 200px))';
+        } else {
+          if (dir === 'left') { fromT = 'translateX(100%)'; toT = beh === 'slide' ? 'translateX(0)' : 'translateX(-100%)'; }
+          else if (dir === 'right') { fromT = 'translateX(-100%)'; toT = beh === 'slide' ? 'translateX(0)' : 'translateX(100%)'; }
+          else if (dir === 'up') { fromT = 'translateY(100%)'; toT = beh === 'slide' ? 'translateY(0)' : 'translateY(-100%)'; }
+          else { fromT = 'translateY(-100%)'; toT = beh === 'slide' ? 'translateY(0)' : 'translateY(100%)'; }
+        }
+
+        const wrapStyle = [`overflow: hidden`, `background: ${bgColor}`, width ? `width: ${width}` : null, height ? `height: ${height}` : null].filter(Boolean).join(';\n  ');
+        const itemStyle = isImage ? '' : `\n  color: ${textColor};`;
+
+        code = `<style>\n@keyframes ${animName} {\n  0% { transform: ${fromT}; }\n  100% { transform: ${toT}; }\n}\n.marquee-wrap {\n  ${wrapStyle};\n}\n.marquee-item {\n  display: inline-block;${itemStyle}\n  animation: ${animName} ${duration} linear ${iteration};${fillMode}\n}\n</style>\n\n<div class="marquee-wrap">\n  <span class="marquee-item">${content}</span>\n</div>`;
+      }
+
+      $('code-output').textContent = code;
+
+      if (outputMode === 'html') {
+        $('preview-box').innerHTML = code;
+      } else {
+        const previewContent = isImage ? content : `<span style="color:${textColor}">${content}</span>`;
+        $('preview-box').innerHTML = `<div style="overflow:hidden;background:${bgColor};padding:8px;border-radius:6px;${height ? 'height:'+height+';' : ''}"><span style="display:inline-block;animation:marquee-scroll 8s linear infinite">${previewContent}</span></div>`;
+      }
+    }
+
+    $('copy-btn').addEventListener('click', () => {
+      navigator.clipboard.writeText($('code-output').textContent).then(() => showToast('Copied!'));
+    });
+
+    $('download-btn').addEventListener('click', () => {
+      const blob = new Blob([`<!DOCTYPE html>\n<html><head><meta charset="UTF-8"></head><body>\n${$('code-output').textContent}\n</body></html>`], { type: 'text/html' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'marquee.html';
+      a.click();
+    });
+
+    $('reset-btn').addEventListener('click', () => {
+      $('content-type').value = 'text';
+      $('text-input-wrap').classList.remove('hidden');
+      $('image-input-wrap').classList.add('hidden');
+      $('marquee-text').value = 'HTML marquee...';
+      $('direction').value = 'left';
+      $('behavior').value = 'scroll';
+      $('scroll-delay').value = '85';
+      $('scroll-amount').value = '6';
+      $('loop').value = '-1';
+      $('m-width').value = '100%';
+      $('m-height').value = '';
+      $('text-color').value = '#330099';
+      $('bg-color').value = '#CCFFFF';
+      update();
+    });
+
+    function showToast(msg) {
+      const t = document.createElement('div');
+      t.className = 'toast bg-emerald-500 text-white px-4 py-2 rounded-lg text-sm font-medium shadow-lg';
+      t.textContent = msg;
+      $('toast-container').appendChild(t);
+      setTimeout(() => t.remove(), 2500);
+    }
+
+    update();
+  </script>
+ </body>
+</html>

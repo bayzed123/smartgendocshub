@@ -1,14 +1,16 @@
 import os
-import google.generativeai as genai
-from github import Github
+from google import genai
+from github import Github, Auth
 
 # API and GitHub Configuration
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 GITHUB_TOKEN = os.getenv("GH_TOKEN")
 REPO_NAME = os.getenv("GITHUB_REPOSITORY")
 
-genai.configure(api_key=GEMINI_API_KEY)
-g = Github(GITHUB_TOKEN)
+# New Gemini and GitHub initialization
+client = genai.Client(api_key=GEMINI_API_KEY)
+auth = Auth.Token(GITHUB_TOKEN)
+g = Github(auth=auth)
 repo = g.get_repo(REPO_NAME)
 
 BLOG_FOLDER = "Blog-posts"
@@ -40,9 +42,7 @@ def get_repository_tools():
         return "Various open-source tech tools and scripts"
 
 def generate_blog_content(existing_blogs, tools_info, sample_format):
-    """Generates a 1500+ word educational tech guide."""
-    # Using Gemini 1.5 Pro for long-form, high-quality content
-    model = genai.GenerativeModel('gemini-1.5-pro')
+    """Generates a 1500+ word educational tech guide using new genai package."""
     
     prompt = f"""
     You are an expert open-source contributor, educator, and tech blogger. 
@@ -64,7 +64,11 @@ def generate_blog_content(existing_blogs, tools_info, sample_format):
     6. At the very top of your response, provide the filename exactly like this: 'FILENAME: your-topic-slug.md' followed by a newline, then the actual Markdown content.
     """
     
-    response = model.generate_content(prompt)
+    # Updated API Call method
+    response = client.models.generate_content(
+        model='gemini-1.5-pro',
+        contents=prompt
+    )
     return response.text
 
 def save_blog_to_github(generated_text):
@@ -100,8 +104,6 @@ if __name__ == "__main__":
     existing_topics, format_template = get_existing_data()
     tools = get_repository_tools()
     
-    # We only generate ONE high-quality 1500+ word blog per run.
-    # Since the GitHub Action is scheduled 3 times a day, we will get 3 blogs daily.
     blog_text = generate_blog_content(existing_topics, tools, format_template)
     save_blog_to_github(blog_text)
     

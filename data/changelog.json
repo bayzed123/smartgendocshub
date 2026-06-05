@@ -1,5 +1,10 @@
 [
   {
+    "title": "Add generate_blogs.py for automated blog creation",
+    "date": "2026-06-05T13:33:05Z",
+    "description": "This script automates the generation and saving of educational tech blog posts to GitHub using AI. It fetches existing topics, generates new content, and uploads it to a specified repository."
+  },
+  {
     "title": "Create index.html",
     "date": "2026-06-03T17:44:10Z",
     "description": "Platform improvement and optimization."

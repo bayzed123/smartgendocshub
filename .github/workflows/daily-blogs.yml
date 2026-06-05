@@ -5,13 +5,13 @@ on:
     - cron: '0 0 * * *'  # 6:00 AM Bangladesh Time
     - cron: '0 9 * * *'  # 3:00 PM Bangladesh Time
     - cron: '0 14 * * *' # 8:00 PM Bangladesh Time
-  workflow_dispatch:
+  workflow_dispatch:     # Allows manual trigger from the Actions tab
 
 jobs:
   generate-and-publish:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: write    # Required to create files in the repository
 
     steps:
       - name: Checkout Repository

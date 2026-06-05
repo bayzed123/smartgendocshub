@@ -1,0 +1,34 @@
+name: Automated Tech Blog Generator (3 Times/Day)
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # 6:00 AM Bangladesh Time
+    - cron: '0 9 * * *'  # 3:00 PM Bangladesh Time
+    - cron: '0 14 * * *' # 8:00 PM Bangladesh Time
+  workflow_dispatch:
+
+jobs:
+  generate-and-publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install Dependencies
+        run: |
+          pip install google-generativeai PyGithub
+
+      - name: Run Blog Generator Script
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python generate_blogs.py

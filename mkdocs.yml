@@ -1,7 +1,7 @@
 site_name: DocsLab
 site_description: Central Documentation Hub for Connect With Bayezid
 site_author: Sayad Md Bayezid Hosan
-site_url: https://smartgentools.com/docslab
+site_url: https://github.com/bayzed123/smartgendocshub
 
 theme:
   name: material

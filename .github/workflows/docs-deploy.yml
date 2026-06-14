@@ -1,27 +1,49 @@
-name: Deploy DocsLab
+site_name: SmartGen Documentation
+site_description: Central Documentation Hub for Connect With Bayezid
+site_author: Sayad Md Bayezid Hosan
+site_url: https://github.com/bayzed123/smartgendocshub/
 
-on:
-  push:
-    branches:
-      - main
-    paths:
-      - 'docs/**'
-      - 'mkdocs.yml'
+copyright: "Copyright &copy; 2026 Connect With Bayezid. All rights reserved."
 
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
+theme:
+  name: material
+  custom_dir: overrides
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: light blue
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: light blue
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.top
+    - search.suggest
+    - content.code.copy
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: 3.x
+plugins:
+  - search
+  - meta
+  - social:
+      cards_layout_dir: layouts
+      cards_layout: custom
 
-      - name: Install Dependencies
-        run: pip install -r requirements.txt
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - admonition
+  - pymdownx.details
 
-      - name: Deploy to GitHub Pages
-        run: mkdocs gh-deploy --force
+nav:
+  - Home: index.md
+  - User Guide:
+    - Installation: deployment.md
+  - Reference:
+    - API Endpoints: api.md

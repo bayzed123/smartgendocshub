@@ -1,5 +1,10 @@
 [
   {
+    "title": "Create mkdocs.yml",
+    "date": "2026-06-14T10:15:09Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "fix(sitemap): implement direct git format extraction for precise dates",
     "date": "2026-06-13T01:16:19Z",
     "description": "Platform improvement and optimization."

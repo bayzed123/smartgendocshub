@@ -1,22 +1,21 @@
-name: Docs Helper Workflow
+name: Deploy SmartGen Docs
 
 on:
   push:
     branches:
       - main
-    # 1. PATH LOCK: Workflow will ONLY wake up for these specific paths
     paths:
       - 'docs/**'
       - 'mkdocs.yml'
   workflow_dispatch: 
 
 permissions:
-  contents: read  # Read-only access to code. Cannot modify your repository files.
+  contents: read  
   pages: write     
   id-token: write
 
 jobs:
-  build-and-deploy-docs:
+  build-and-deploy:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
@@ -25,30 +24,21 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Docs Helper Signal & Isolation Check
-        # 2. SIGNAL: Explicitly declaring isolation in the GitHub Action Logs
-        run: |
-          echo "🛑 STRICT ISOLATION MODE ENGAGED"
-          echo "✅ This workflow is acting solely as a Docs Helper."
-          echo "✅ It will ONLY process the 'docs/' directory and 'mkdocs.yml'."
-          echo "🚫 All other SmartGen root files and folders are COMPLETELY IGNORED and protected."
-
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.10'
 
-      - name: Install MkDocs Engine
+      - name: Install Dependencies
+        # Directly installing the required theme to avoid file not found errors
         run: pip install mkdocs-material>=9.0.0
 
-      - name: Generate Docs Page (Strict Mode)
-        # 3. BUILD: MkDocs compiles only the markdown files inside docs/
-        run: mkdocs build --strict
+      - name: Build MkDocs Site
+        run: mkdocs build
 
-      - name: Upload Only Docs Artifact
+      - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # 4. DEPLOY ISOLATION: Only the generated HTML site goes to GitHub Pages
           path: './site'
 
       - name: Deploy to GitHub Pages

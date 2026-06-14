@@ -1,0 +1,42 @@
+site_name: DocsLab
+site_description: Central Documentation Hub for Connect With Bayezid
+site_author: Sayad Md Bayezid Hosan
+site_url: https://smartgentools.com/docslab
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: light blue
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: light blue
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.top
+    - search.suggest
+    - content.code.copy
+
+plugins:
+  - search
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - admonition
+  - pymdownx.details
+
+nav:
+  - Home: index.md
+  - User Guide:
+    - Installation: deployment.md
+  - Reference:
+    - API Endpoints: api.md

@@ -1,49 +1,57 @@
-site_name: SmartGen Documentation
-site_description: Central Documentation Hub for Connect With Bayezid
-site_author: Sayad Md Bayezid Hosan
-site_url: https://github.com/bayzed123/smartgendocshub/
+name: Generate and Deploy DocsLab
 
-copyright: "Copyright &copy; 2026 Connect With Bayezid. All rights reserved."
+on:
+  push:
+    branches:
+      - main
+    # Only trigger workflow if files related to documentation are changed
+    paths:
+      - 'docs/**'
+      - 'mkdocs.yml'
+      - 'generate_docs.py'
+  workflow_dispatch: # Allows you to trigger this manually from GitHub Actions tab
 
-theme:
-  name: material
-  custom_dir: overrides
-  palette:
-    - scheme: default
-      primary: indigo
-      accent: light blue
-      toggle:
-        icon: material/brightness-7
-        name: Switch to dark mode
-    - scheme: slate
-      primary: indigo
-      accent: light blue
-      toggle:
-        icon: material/brightness-4
-        name: Switch to light mode
-  features:
-    - navigation.tabs
-    - navigation.top
-    - search.suggest
-    - content.code.copy
+permissions:
+  contents: write  # Allows bot to commit generated markdown files
+  pages: write     # Allows deployment to GitHub pages
+  id-token: write
 
-plugins:
-  - search
-  - meta
-  - social:
-      cards_layout_dir: layouts
-      cards_layout: custom
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
 
-markdown_extensions:
-  - pymdownx.highlight:
-      anchor_linenums: true
-  - pymdownx.superfences
-  - admonition
-  - pymdownx.details
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
 
-nav:
-  - Home: index.md
-  - User Guide:
-    - Installation: deployment.md
-  - Reference:
-    - API Endpoints: api.md
+      - name: Install Dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run Gemini Script (Generate Markdown)
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python generate_docs.py
+
+      - name: Commit Generated Docs (Strictly docs/ folder)
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add docs/
+          git commit -m "docs: auto-generate markdown guidelines from Gemini" || echo "No changes to commit"
+          git push
+
+      - name: Build MkDocs Site
+        run: mkdocs build
+
+      - name: Upload Artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './site'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

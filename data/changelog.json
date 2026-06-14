@@ -1,5 +1,10 @@
 [
   {
+    "title": "Update mkdocs.yml",
+    "date": "2026-06-14T10:21:42Z",
+    "description": "Platform improvement and optimization."
+  },
+  {
     "title": "Create mkdocs.yml",
     "date": "2026-06-14T10:15:09Z",
     "description": "Platform improvement and optimization."

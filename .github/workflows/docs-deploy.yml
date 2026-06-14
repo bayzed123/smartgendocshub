@@ -4,11 +4,10 @@ on:
   push:
     branches:
       - main
-    # Only trigger workflow if docs, config, or the script are changed
     paths:
       - 'docs/**'
       - 'mkdocs.yml'
-      - 'generate_docs.py'
+      - 'script/generate_docs.py'
   workflow_dispatch: 
 
 permissions:
@@ -33,11 +32,9 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run SmartGen Script
-        # Executes your custom SmartGen script
-        run: python generate_docs.py
+        run: python script/generate_docs.py
 
       - name: Commit Generated Docs
-        # Commits ONLY the files inside the docs/ folder to protect the main project
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"

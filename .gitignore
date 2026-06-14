@@ -1,0 +1,7 @@
+# MkDocs build directory
+site/
+
+# Python cache
+__pycache__/
+*.pyc
+.env

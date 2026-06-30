@@ -14,7 +14,7 @@ function injectNavbar() {
         <div class="container">
             <div class="header-content">
                 <a href="/" class="logo" style="display: flex; align-items: center; gap: 8px; text-decoration: none;">
-                    <img src="/assets/images/logo.png" alt="SmartGen Logo" class="logo-icon" style="height: 35px; width: auto; object-fit: contain;">
+                    <img src="https://raw.githubusercontent.com/bayzed123/smartgendocshub/main/assets/images/logo.png" alt="SmartGen Logo" class="logo-icon" style="height: 35px; width: auto; object-fit: contain;">
                 </a>
                 <div class="header-actions">
                     <button id="theme-toggle" class="icon-btn" title="Toggle Theme">🌓</button>
@@ -61,7 +61,7 @@ function injectNavbar() {
         <aside id="mobile-sidebar" class="mobile-sidebar">
             <div class="sidebar-header">
                 <a href="/" class="sidebar-logo" style="display: flex; align-items: center; gap: 8px; text-decoration: none;">
-                    <img src="/assets/images/logo.png" alt="SmartGen Logo" class="sidebar-logo-icon" style="height: 30px; width: auto; object-fit: contain;">
+                    <img src="https://raw.githubusercontent.com/bayzed123/smartgendocshub/main/assets/images/logo.png" alt="SmartGen Logo" class="sidebar-logo-icon" style="height: 30px; width: auto; object-fit: contain;">
                     <span style="font-weight: bold;">SmartGen</span>
                 </a>
                 <button id="sidebar-close" class="sidebar-close-btn" title="Close Menu">✕</button>
@@ -153,7 +153,7 @@ function injectFooter() {
             <div class="footer-top">
                 <div class="footer-brand-section">
                     <div class="footer-logo" style="display: flex; align-items: center; gap: 10px;">
-                        <img src="/assets/images/logo.png" alt="SmartGen Logo" class="logo-icon" style="width: 40px; height: 40px; object-fit: contain;">
+                        <img src="https://raw.githubusercontent.com/bayzed123/smartgendocshub/main/assets/images/logo.png" alt="SmartGen Logo" class="logo-icon" style="width: 40px; height: 40px; object-fit: contain;">
                         <h3 style="margin: 0;">SmartGen</h3>
                     </div>
                     <p class="footer-description">Fast, secure, and 100% free client-side web utilities for developers, marketers, and everyday users.</p>

@@ -101,7 +101,6 @@ Updating the website is as simple as writing text.
 | Broken URL | Error Code |
 |---|---|
 | https://smartgentools.com/privacy-eeat-enhanced/ | 404 |
-| https://smartgentools.com/tool-content-template/ | 404 |
 
 <!-- END_LINK_CHECKER -->
 

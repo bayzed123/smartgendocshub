@@ -14,7 +14,8 @@ function injectNavbar() {
         <div class="container">
             <div class="header-content">
                 <a href="/" class="logo">
-                    <div class="logo-icon">⚡</div>
+                    <div class="logo-icon">
+                     <a href="./assets/images/logo.png</div>
                     SmartGen
                 </a>
                 <div class="header-actions">

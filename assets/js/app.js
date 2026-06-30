@@ -13,8 +13,9 @@ function injectNavbar() {
     header.innerHTML = `
         <div class="container">
             <div class="header-content">
-                <a href="/" class="logo">
-                    <div class="logo-icon">"/assets/images/logo.png</div></a>
+                <a href="/" class="logo" style="display: flex; align-items: center; gap: 8px; text-decoration: none;">
+                    <img src="/assets/images/logo.png" alt="SmartGen Logo" class="logo-icon" style="height: 35px; width: auto; object-fit: contain;">
+                </a>
                 <div class="header-actions">
                     <button id="theme-toggle" class="icon-btn" title="Toggle Theme">🌓</button>
                     <button id="mobile-menu-toggle" class="icon-btn mobile-only" title="Toggle Menu">☰</button>
@@ -59,9 +60,9 @@ function injectNavbar() {
 
         <aside id="mobile-sidebar" class="mobile-sidebar">
             <div class="sidebar-header">
-                <a href="/" class="sidebar-logo">
-                    <div class="sidebar-logo-icon">⚡</div>
-                    SmartGen
+                <a href="/" class="sidebar-logo" style="display: flex; align-items: center; gap: 8px; text-decoration: none;">
+                    <img src="/assets/images/logo.png" alt="SmartGen Logo" class="sidebar-logo-icon" style="height: 30px; width: auto; object-fit: contain;">
+                    <span style="font-weight: bold;">SmartGen</span>
                 </a>
                 <button id="sidebar-close" class="sidebar-close-btn" title="Close Menu">✕</button>
             </div>
@@ -151,9 +152,9 @@ function injectFooter() {
         <div class="container">
             <div class="footer-top">
                 <div class="footer-brand-section">
-                    <div class="footer-logo">
-                        <div class="logo-icon" style="width: 40px; height: 40px; font-size: 1.5rem;">⚡</div>
-                        <h3>SmartGen</h3>
+                    <div class="footer-logo" style="display: flex; align-items: center; gap: 10px;">
+                        <img src="/assets/images/logo.png" alt="SmartGen Logo" class="logo-icon" style="width: 40px; height: 40px; object-fit: contain;">
+                        <h3 style="margin: 0;">SmartGen</h3>
                     </div>
                     <p class="footer-description">Fast, secure, and 100% free client-side web utilities for developers, marketers, and everyday users.</p>
                 </div>

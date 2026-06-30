@@ -14,7 +14,7 @@ function injectNavbar() {
         <div class="container">
             <div class="header-content">
                 <a href="/" class="logo">
-                    <div class="logo-icon">"/assets/images/logo.png/</div></a>
+                    <div class="logo-icon">"/assets/images/logo.png</div></a>
                 <div class="header-actions">
                     <button id="theme-toggle" class="icon-btn" title="Toggle Theme">🌓</button>
                     <button id="mobile-menu-toggle" class="icon-btn mobile-only" title="Toggle Menu">☰</button>

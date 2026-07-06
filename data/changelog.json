@@ -1,5 +1,10 @@
 [
   {
+    "title": "Add FAQ data for SmartGen",
+    "date": "2026-07-06T06:07:13Z",
+    "description": "This JSON file contains a list of frequently asked questions (FAQs) about SmartGen, covering topics such as features, privacy, tools, and support."
+  },
+  {
     "title": "Create chatbot.css with styles for SmartGen Chatbot",
     "date": "2026-07-06T06:06:05Z",
     "description": "Added styles for SmartGen Chatbot including layout, colors, and responsive design."

@@ -13,8 +13,9 @@ function injectNavbar() {
     header.innerHTML = `
         <div class="container">
             <div class="header-content">
-                <a href="/" class="logo" style="display: flex; align-items: center; gap: 8px; text-decoration: none;">
-                    <img src="https://raw.githubusercontent.com/bayzed123/smartgendocshub/main/assets/images/logo.png" alt="SmartGen Logo" class="logo-icon" style="height: 35px; width: auto; object-fit: contain;">
+                <a href="/" class="logo">
+                    <div class="logo-icon">⚡</div>
+                    SmartGen
                 </a>
                 <div class="header-actions">
                     <button id="theme-toggle" class="icon-btn" title="Toggle Theme">🌓</button>
@@ -23,8 +24,9 @@ function injectNavbar() {
                 <nav id="nav-links">
                     <a href="/">Home</a>
                     <a href="/blog/">Blog</a>
+                    <a href="/tools/">Tools</a>
                     <div class="dropdown" id="tools-dropdown">
-                        <a href="/#all-tools" class="dropdown-trigger">Tools</a>
+                        <a href="/tools/" class="dropdown-trigger">Directory</a>
                         <div class="dropdown-content">
                             <div class="dropdown-category">
                                 <h4>📈 Marketing</h4>
@@ -60,9 +62,9 @@ function injectNavbar() {
 
         <aside id="mobile-sidebar" class="mobile-sidebar">
             <div class="sidebar-header">
-                <a href="/" class="sidebar-logo" style="display: flex; align-items: center; gap: 8px; text-decoration: none;">
-                    <img src="https://raw.githubusercontent.com/bayzed123/smartgendocshub/main/assets/images/logo.png" alt="SmartGen Logo" class="sidebar-logo-icon" style="height: 30px; width: auto; object-fit: contain;">
-                    <span style="font-weight: bold;">SmartGen</span>
+                <a href="/" class="sidebar-logo">
+                    <div class="sidebar-logo-icon">⚡</div>
+                    SmartGen
                 </a>
                 <button id="sidebar-close" class="sidebar-close-btn" title="Close Menu">✕</button>
             </div>
@@ -70,6 +72,7 @@ function injectNavbar() {
             <div class="sidebar-nav-links" style="display: flex; flex-direction: column; padding: 20px; overflow-y: auto;">
                 <a href="/" class="nav-item" style="color: var(--text-primary); padding: 10px 0; text-decoration: none; font-weight: 600; font-size: 1rem;">🏠 Home</a>
                 <a href="/blog/" class="nav-item" style="color: var(--text-primary); padding: 10px 0; text-decoration: none; font-weight: 600; font-size: 1rem;">📝 Blog</a>
+                <a href="/tools/" class="nav-item" style="color: var(--text-primary); padding: 10px 0; text-decoration: none; font-weight: 600; font-size: 1rem;">🛠️ All Tools</a>
                 <hr style="margin: 15px 0; border: 0; border-top: 1px solid var(--border-color, #e5e7eb);">
                 
                 <div class="nav-category" style="font-weight: 700; color: var(--text-secondary, #6b7280); margin-top: 10px; font-size: 0.85rem; text-transform: uppercase;">🧑‍💻 Developer Tools</div>
@@ -152,9 +155,9 @@ function injectFooter() {
         <div class="container">
             <div class="footer-top">
                 <div class="footer-brand-section">
-                    <div class="footer-logo" style="display: flex; align-items: center; gap: 10px;">
-                        <img src="https://raw.githubusercontent.com/bayzed123/smartgendocshub/main/assets/images/logo.png" alt="SmartGen Logo" class="logo-icon" style="width: 40px; height: 40px; object-fit: contain;">
-                        <h3 style="margin: 0;">SmartGen</h3>
+                    <div class="footer-logo">
+                        <div class="logo-icon" style="width: 40px; height: 40px; font-size: 1.5rem;">⚡</div>
+                        <h3>SmartGen</h3>
                     </div>
                     <p class="footer-description">Fast, secure, and 100% free client-side web utilities for developers, marketers, and everyday users.</p>
                 </div>
@@ -218,8 +221,10 @@ function injectFooter() {
                         <h4 class="footer-accordion-trigger">📚 RESOURCES <span class="accordion-icon"></span></h4>
                         <ul class="footer-links">
                             <li><a href="/blog/" style="font-weight: 700; color: #2563eb;">📖 Read Our Blog</a></li>
+                            <li><a href="/tools/" style="font-weight: 700; color: #2563eb;">🛠️ Tool Directory</a></li>
                             <li><a href="/about/">About Us</a></li>
                             <li><a href="/contact/">Contact Support</a></li>
+                            <li><a href="https://github.com/bayzed123/SmartGenQR.oi" target="_blank">⭐ Star on GitHub</a></li>
                         </ul>
                     </div>
                     <div class="footer-column">
@@ -240,6 +245,7 @@ function injectFooter() {
                             <li><a href="/disclaimer/">Disclaimer</a></li>
                             <li><a href="/cookies/">Cookie Policy</a></li>
                             <li><a href="/updates/">Updates & Changelog</a></li>
+                            <li><a href="/docs/">Developer Docs</a></li>
                         </ul>
                     </div>
                 </div>

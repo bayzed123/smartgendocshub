@@ -96,12 +96,9 @@ Updating the website is as simple as writing text.
 
 <!-- START_LINK_CHECKER -->
 
-### ⚠️ Link Status Report
+### ✅ All Systems Operational
 
-| Broken URL | Error Code |
-|---|---|
-| https://smartgentools.com/privacy-eeat-enhanced/ | 404 |
-| https://smartgentools.com/tool-content-template/ | 404 |
+**Status:** All tools and pages in the sitemap are working perfectly! No broken links found.
 
 <!-- END_LINK_CHECKER -->
 

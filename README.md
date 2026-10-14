@@ -96,9 +96,11 @@ Updating the website is as simple as writing text.
 
 <!-- START_LINK_CHECKER -->
 
-### ✅ All Systems Operational
+### ⚠️ Link Status Report
 
-**Status:** All tools and pages in the sitemap are working perfectly! No broken links found.
+| Broken URL | Error Code |
+|---|---|
+| https://smartgentools.com/blog/python-course-class-01-orientation-and-setup/ | 503 |
 
 <!-- END_LINK_CHECKER -->
 
